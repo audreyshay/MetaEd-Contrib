@@ -7,7 +7,7 @@ Ed-Fi licenseess can download, mix, and match these community-contributed MetaEd
 
 ## Usage Guidelines
 
-The MetaEd project files available here can be used by any licensee in their ODS implementation: simply copy the project to the Extensions folder in your fork of the `Ed-Fi-Ods-Implementation` repository (alongside the Grand Bend sample). Now you can begin working with it as you would work with your own custom MetaEd project. If you make changes, you should commit them to your `Ed-Fi-Ods-Implementation` repository only - do not copy back to this `MetaEd-Contrib` repository.
+This repository provides a mechanism for community members to share their MetaEd project files with one other. Simply copy the shared project to the Extensions folder in your fork of the `Ed-Fi-Ods-Implementation` repository (alongside the Grand Bend sample). Now you can begin working with it as you would work with your own custom MetaEd project. If you make changes, you should commit them to your `Ed-Fi-Ods-Implementation` repository only - do not copy back to this `MetaEd-Contrib` repository.
 
 ## Contribution Guidelines
 
