@@ -13,15 +13,25 @@ This repository provides a mechanism for community members to share their MetaEd
 
 To contribute to this repository, please:
 
+1. Clone this repository with git.
 1. Load your files into a folder with a meaningful / descriptive name.
     1. Do not modify someone else's folder / files.
 1. Include a readme file containing:
     1. A brief description of the model.
     1. List the intended ODS version number.
     1. (optional) Your contact information if community members have questions. It is understood that you are under no obligation to provide support; however, providing contact information helps in creating a community of practice.
+1. Create a new branch, commit your change to that branch, and push the change to GitHub.
 1. Submit a pull request for merge into the master branch.
 
 Your pull request will be reviewed by a repository manager. So long as your pull request follows these guidelines and appears to contribute something useful to the community, it will be approved and merged.
+
+### Using Git
+
+:information_source: if you are new to Git, you might want to first explore one of these resources:
+
+* [Git basics](https://www.atlassian.com/git) (from Atlassian)
+* [GitHub for Atom](https://github.atom.io/) (from GitHub - use Git commands right from the MetaEd-IDE!)
+* [Resources to learn Git](https://try.github.io/) (from GitHub)
 
 ## License
 Copyright &copy; Ed-Fi Alliance. All rights reserved.
