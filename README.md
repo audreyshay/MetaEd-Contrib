@@ -1,6 +1,6 @@
 # MetaEd-Contrib
 
-Ed-Fi licenseess can download, mix, and match these community-contributed MetaEd models for extending their ODS/API implementations. For more information on MetaEd:
+Ed-Fi licensees can download, mix, and match these community-contributed MetaEd models for extending their ODS/API implementations. For more information on MetaEd:
 
 * [Overview](https://techdocs.ed-fi.org/display/ETKB/MetaEd+IDE)
 * [Documentation Site](https://techdocs.ed-fi.org/display/ETKB/MetaEd+IDE)
