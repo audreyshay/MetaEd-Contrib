@@ -1,0 +1,27 @@
+Domain Entity LocalAccount
+    documentation "The set of account codes defined by an education organization for a fiscal year.It provides a formal record of the debits and credits relating to the specific account."
+    shared string AccountIdentifier
+        documentation "Code value for the valid combination of account dimensions by LEA under which financials are reported. "
+        is part of identity
+    domain entity EducationOrganization
+        documentation "A reference to the education organization for which the account is applicable."
+        is part of identity
+        is queryable field
+    year FiscalYear
+        documentation "Fiscal year for the account"
+        is part of identity
+        is queryable field
+
+    shared string AccountName
+      documentation "A descriptive name for the account"
+      is optional
+    domain entity ChartOfAccount
+      documentation "References the ChartOfAccount with which the LocalAccount is associated."
+      is required
+      with context ChartOfAccount
+      merge ChartOfAccount with FiscalYear
+
+    //Optional Collection
+    descriptor ReportingTag
+        documentation "Optional tag for accountability reporting (e.g. ESSA)."
+        is optional collection
