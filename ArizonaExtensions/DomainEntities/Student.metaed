@@ -1,0 +1,8 @@
+Domain Entity Student additions
+  string TribalName
+    documentation "A name borne in common by members of a tribe or clan. This  is
+                  used for matching purposes only. Note: Name provided by Tribe,
+                  not name of Tribe."
+    is optional
+    min length 1
+    max length 75

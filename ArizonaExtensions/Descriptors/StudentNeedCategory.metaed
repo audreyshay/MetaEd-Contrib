@@ -1,0 +1,3 @@
+Descriptor StudentNeedCategory
+    documentation "This descriptor defines a category of a student need."
+    

@@ -1,0 +1,7 @@
+Association StudentDropOutRecoveryProgramAssociation based on GeneralStudentProgramAssociation
+documentation ""
+  date WrittenLearningPlanDate
+    documentation "The date the initial Written Learning Plan was approved. Note: A new Written
+                  Learning Plan date indicating preparation of a new plan must be submitted
+                  each academic (fiscal) year."
+    is required

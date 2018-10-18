@@ -1,0 +1,11 @@
+Domain Entity StudentSchoolAssociationMembershipFTE
+documentation "This association represents the full-time equivalency of the student school association"
+  date FTEStartDate
+    documentation "The start date for the StudentSchoolAssociationMembership"
+    is part of identity
+  date FTEEndDate
+    documentation "The end date for the StudentSchoolAssociationMembership"
+    is optional
+  descriptor MembershipFTE
+    documentation "The membership full-time equivalency descriptor"
+    is required

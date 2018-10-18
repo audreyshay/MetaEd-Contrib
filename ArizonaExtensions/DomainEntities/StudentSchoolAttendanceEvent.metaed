@@ -1,0 +1,7 @@
+Domain Entity StudentSchoolAttendanceEvent additions
+  descriptor AbsenceAmount
+    documentation "Absence Amount descriptor. Absence Amounts must be less than or equal to the  Student Membership FTE, since absences are measured in quarter day increments."
+    is optional
+  integer InstructionalMinutes
+    documentation "The amount of time, in minutes, that the student received instruction during the reported attendance period and the 'In Attendance' code is used"
+    is optional

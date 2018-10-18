@@ -1,0 +1,26 @@
+Domain Entity Track
+  documentation "This represents a calendar track for a school"
+  domain entity School
+    documentation "OrganizationID of the School which is tied to the track"
+    is part of identity
+    with context TrackSchoolId
+  descriptor TrackNumber
+    documentation "The track number descriptor (e.g. 01, 02, 03 etc.)"
+    is part of identity
+  domain entity LocalEducationAgency
+    documentation "The LEA id of the district submitting the track"
+    is part of identity
+    with context Track
+  date BeginDate
+    documentation "The first date of the track"
+    is required
+  date EndDate
+    documentation "The last date of the track"
+    is required
+  shared integer TotalInstructionalDays named TotalInstructionalDays
+    documentation "The total number of instructional days in the school calendar.
+                  National Education Data Model (NEDM): Total Days in Session"
+    is required
+  descriptor NumberOfInstructionalDaysInWeek
+    documentation "The number of instructional days in a week descriptor (e.g. 3, 4, 5)"
+    is required

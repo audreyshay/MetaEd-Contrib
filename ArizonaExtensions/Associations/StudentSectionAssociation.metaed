@@ -1,0 +1,21 @@
+Association StudentSectionAssociation additions
+string Note
+  documentation "Any Clarifying information for this course section"
+  is optional
+  min length 1
+  max length 250
+descriptor CourseEntry
+  documentation "The way the student entered this course section, either as a new
+                enrollee or as a transfer from another section at the same school"
+  is optional
+descriptor CourseExit
+  documentation "The type of exit the student had from this course section"
+  is optional
+bool DualCredit
+  documentation "A flag indicating if this student is earning Dual Credit in a Dual
+                Credit Course."
+  is optional
+bool ConcurrentEnrollment
+  documentation "A flag indicating if this student is concurrently enrolled in a
+                course that offers concurrent enrollment"
+  is optional

@@ -1,0 +1,5 @@
+Descriptor MembershipType
+  documentation "Membership Type identifies whether a school has primary responsibility
+                for managing a specific student's curriculum or not. The 'P' code
+                value will allow the reporting of students who are enrolled in
+                a SPED program but not enrolled in a school."

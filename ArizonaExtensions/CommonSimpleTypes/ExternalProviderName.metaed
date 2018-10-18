@@ -1,0 +1,6 @@
+Shared String ExternalProviderName
+  documentation "If the course is being provided by an external organization, e.g.
+                a distance education or virtual course, the name of that providing
+                organization."
+  min length 1
+  max length 75

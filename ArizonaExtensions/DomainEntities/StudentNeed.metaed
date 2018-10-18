@@ -1,0 +1,24 @@
+Domain Entity StudentNeed
+  documentation "This entity represents a need for a student"
+  domain entity Student
+    documentation "A unique alphanumeric code assigned to a student"
+    is part of identity
+  domain entity EducationOrganization
+    documentation "The identifier assigned to an education agency reporting the need"
+    is part of identity
+  descriptor StudentNeed
+    documentation "The student need descriptor code"
+    is part of identity
+  date StudentNeedEntryDate
+    documentation "The date the student began the state of having the Need."
+    is part of identity
+  date StudentNeedExitDate
+    documentation "The date the student exited the state of having the Need."
+    is optional
+  bool PrimaryStudentNeedIndicator
+    documentation "Indicates if the SPED Need being serviced is the Primary Need."
+    is optional
+  descriptor PrimaryNightTimeResidence
+    documentation "The Primary Night time residence descriptor associated with student
+                  who have been designated as Homeless."
+    is optional

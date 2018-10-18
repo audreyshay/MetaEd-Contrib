@@ -1,0 +1,20 @@
+Domain Entity StudentDropOutRecoveryProgramMonthlyUpdate
+  documentation ""
+  association StudentDropOutRecoveryProgramAssociation
+    documentation "The drop out recovery program that the monthly update is reported"
+    is part of identity
+  date RevisedWrittenLearningPlanDate
+    documentation "The Revised Learning Plan Date is used when plan requires changes
+                  to  the initial written plan."
+    is optional
+  descriptor Month
+    documentation "the month for which the progress update is reported"
+    is part of identity
+  bool SatisfactoryProgress
+    documentation "Indicates whether student maintained satisfactory progress during
+                  the month prior to this record. This data must be submitted each
+                  month that the student is enrolled in the DRP regardless of the
+                  student's progress. This field is nullable.  If no data is submitted,
+                  it will be NULL.  If the LEA/School submits data it will be a
+                  0 or a 1 where 0 = Unsatisfactory and 1 = Satisfactory"
+  is optional

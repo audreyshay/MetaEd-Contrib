@@ -1,0 +1,14 @@
+Domain Entity StudentSchoolAssociationTuitionPayer
+documentation "This association represents the tuition payer codes of the student school association"
+  association StudentSchoolAssociation
+    documentation ""
+    is part of identity
+  date PayerStartDate
+    documentation "The start date for the StudentSchoolAssociationTuitionPayer"
+    is part of identity
+  date PayerEndDate
+    documentation "The end date for the StudentSchoolAssociationTuitionPayer"
+    is optional
+  descriptor TuitionPayer
+    documentation "The Tuition Payer descriptor"
+    is required

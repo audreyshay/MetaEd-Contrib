@@ -1,0 +1,27 @@
+Domain Entity CalendarDateTrackEvent
+  documentation "The calendar track event associated with a calendar date."
+  date Date
+        documentation "The month, day, and year of the CalendarDate."
+        is part of identity
+  domain entity Track
+    documentation "The track reference"
+    is part of identity
+  descriptor TrackEvent
+      documentation "The type of scheduled or unscheduled event for the day. For example:
+
+                    Instructional day
+
+                    Teacher only day
+
+                    Holiday
+
+                    Make-up day
+
+                    Weather day
+
+                    Student late arrival/early dismissal."
+      is part of identity
+  shared decimal EventDuration named EventDuration
+      documentation "The amount of time for the event as recognized by the school: 1 day = 1,
+                    1/2 day = 0.5, 1/3 day = 0.33."
+      is required

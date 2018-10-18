@@ -1,0 +1,6 @@
+Shared String ProviderTeacherLastName
+  documentation "If the course is being provided by an external provider, the last,
+                family, or surname of the provider's primary instructor. Required
+                when Teacher 1 Last Name is not provided."
+  min length 1
+  max length 50

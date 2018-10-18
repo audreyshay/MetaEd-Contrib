@@ -1,0 +1,5 @@
+Descriptor StudentNeed
+  documentation "This descriptor defines a characteristic of a student need"
+  descriptor StudentNeedCategory
+    documentation ""
+    is required
