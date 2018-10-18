@@ -1,0 +1,18 @@
+Common Ethnicity
+    documentation "Defines the codes that describes the race of an individual."
+    descriptor Race
+        documentation "Indicates the code for the race"
+        is part of identity
+    integer RaceOrder
+        documentation "Order in which a individual's race is identified."
+        is optional
+    integer RacePercentage
+        documentation "The percentage that the individual identifies self with a race."
+        is optional
+    descriptor Race
+        documentation "Indicates the equivalent federal code for the race/ethnicity of an individual."
+        is optional
+        with context Federal
+    datetime EthnicityLastModifiedDate
+        documentation "The date and time the table row was last changed."
+        is required

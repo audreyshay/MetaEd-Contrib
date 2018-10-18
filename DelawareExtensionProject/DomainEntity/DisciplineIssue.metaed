@@ -1,0 +1,43 @@
+Domain Entity DisciplineIssue
+    documentation "This represents discipline issues entered through the teacher access center."
+    shared integer IssueIdentifier
+        documentation "A unique number that identifies the issue."
+        is part of identity
+    domain entity School
+        documentation "This relates to the school the issue occurred."
+        is part of identity
+    date IssueDate
+        documentation "The date the issue occurred."
+        is required
+    domain entity Staff
+        documentation "The identifier of the staff who reported the issue."
+        is required
+    descriptor IncidentLocation
+        documentation "Identifies the location of the incident."
+        is optional
+        with context Issue
+    descriptor IssueCategory
+        documentation "Identifies the type that classifies the issue."
+        is optional
+    bool IssueResolved
+        documentation "Indicates if the teacher has resolved the issue."
+        is optional
+    descriptor IssueSource
+        documentation "Indicates whwere the issue occurred. Used for further validation of the Issue_source_detail."
+        is optional
+    shared string Detail
+        documentation "Provides detail of where the issue occurred."
+        is optional
+        with context IssueSource
+    descriptor IssueStatus
+        documentation "Indicates the status of the issue."
+        is optional
+    common Related
+        documentation "The identifier of the related issue."
+        is optional collection
+    shared string Comment
+        documentation "Indicates the description of the issue."
+        is optional
+    integer CourseSession
+        documentation "The course session that goes with the issue_source_detail (section_key) when issue source = 'C'."
+        is optional

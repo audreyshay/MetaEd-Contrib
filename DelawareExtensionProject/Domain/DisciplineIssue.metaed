@@ -1,0 +1,11 @@
+Domain DisciplineIssue
+    documentation "This domain represents discipline issues captured in the Teacher Access Center."
+    domain entity DisciplineIssue
+    domain entity DisciplineIssueRefer
+    domain entity DisciplineIssueAction
+    domain entity DisciplineIssueStudent
+    domain entity DisciplineIncident
+    domain entity Student
+    domain entity School
+    domain entity Staff
+    common Related

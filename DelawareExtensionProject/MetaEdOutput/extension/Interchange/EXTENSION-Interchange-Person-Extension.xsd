@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- (c)2018 Ed-Fi Alliance, LLC. All Rights Reserved. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0300" targetNamespace="http://ed-fi.org/0300" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="EXTENSION-Ed-Fi-Extended-Core.xsd" />
+  <xs:annotation>
+    <xs:documentation>===== Person Interchange Model =====</xs:documentation>
+  </xs:annotation>
+  <xs:element name="InterchangePerson">
+    <xs:annotation>
+      <xs:documentation>This interchange identifies a person, who can be a student, staff or nonstudent.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="Person" type="EXTENSION-Person" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

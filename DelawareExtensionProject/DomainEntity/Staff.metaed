@@ -1,0 +1,8 @@
+Domain Entity Staff additions
+    domain entity Person
+        documentation inherited
+        is optional
+    descriptor Race
+        documentation inherited
+        is optional
+        with context Federal

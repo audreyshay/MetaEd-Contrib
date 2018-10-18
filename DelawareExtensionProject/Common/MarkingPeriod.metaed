@@ -1,0 +1,8 @@
+Common MarkingPeriod
+    documentation "Defines the marking periods that the class meets."
+    descriptor GradingPeriod
+        documentation "The code for a marking period when the class meets."
+        is part of identity
+    integer UsedSeat
+        documentation "The number of seats used for the session in the specified marking period."
+        is optional

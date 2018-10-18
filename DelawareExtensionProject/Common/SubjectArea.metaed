@@ -1,0 +1,11 @@
+Common SubjectArea
+    documentation "Subject areas that the course meets as part of graduation requirements."
+    descriptor AcademicSubject
+        documentation "The code of the subject area the course meets."
+        is part of identity
+    integer SubjectOrder
+        documentation "The order of the subject area."
+        is optional
+    datetime SubjectAreaLastModifiedDate
+        documentation "The date and time the table row was last changed."
+        is required

@@ -1,0 +1,2 @@
+Descriptor IncidentRelatedTo
+    documentation "Defines the codes that identify what the incident is related to."

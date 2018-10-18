@@ -1,0 +1,14 @@
+Domain Entity MedicalReferralFollowUp
+    documentation "Referral followup information for a person for a specific type of exam."
+    domain entity Person
+        documentation "The person receiving the discipline action."
+        is part of identity
+    descriptor FollowupCategory
+        documentation inherited
+        is part of identity
+    descriptor MedicalTestCategory
+        documentation inherited
+        is part of identity
+    datetime TestDate
+        documentation "The datetime of the exam associated with this referral."
+        is part of identity

@@ -1,0 +1,4 @@
+Shared String Number
+    documentation "This represents the number."
+    min length 1
+    max length 10

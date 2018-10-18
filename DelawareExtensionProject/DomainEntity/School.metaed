@@ -1,0 +1,7 @@
+Domain Entity School additions
+    descriptor AttendanceConfigurationCategory
+        documentation "Indicates the period type that is used for taking attendance."
+        is optional
+    bool UnitCountException
+        documentation "Indicates if the school has a unit count exception"
+        is optional

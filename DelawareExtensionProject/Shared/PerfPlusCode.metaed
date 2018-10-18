@@ -1,0 +1,4 @@
+Shared String PerfPlusCode
+    documentation "Indicates the subject area code used in PerformancePLUS."
+    min length 1
+    max length 50

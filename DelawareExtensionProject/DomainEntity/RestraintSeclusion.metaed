@@ -1,0 +1,108 @@
+Domain Entity RestraintSeclusion
+    documentation "This is documentation."
+    domain entity School
+        documentation "Relates the restraint seclusion to the school where the event occurred. "
+        is part of identity
+    domain entity Student
+        documentation "The student involved in restraint secluson event."
+        is part of identity
+    shared string Detail
+        documentation "Indicates the additional detail regrading the restraint seclusion event."
+        is optional
+        with context Additional
+    shared string Detail
+        documentation "Indicates the detail regrading the behaviour during the restraint seclusion event."
+        is required
+        with context BehaviorDuringRestraint
+    shared string Description
+        documentation "Indicates the description of changes for the restraint seclusion event."
+        is optional
+        with context Change
+    time EventTime
+        documentation "An indication of the time of day the event occurred."
+        is part of identity
+    date EventDate
+        documentation "The month, day, and year on which the restraint secluson event occurred."
+        is part of identity
+    shared string Detail
+        documentation "Indicates the detail of the de-escalation technique used in the restraint seclusion event."
+        is required
+        with context DeescalationTechnique
+    descriptor IncidentLocation
+        documentation "Identifies where the restraint seclusion event occurred."
+        is optional
+    date RestraintReportDate
+        documentation "Indicates the date on which the restraint secluson event was reported."
+        is optional
+    duration Duration
+        documentation "Indicates the length in minutes of the restarint secluson event."
+        is optional
+        with context Restarint
+    integer ConsecutiveRestraintCount
+        documentation "Indicates the number of times a restraint secluson event occurred in a day."
+        is optional
+    descriptor NotificationMethod
+        documentation "Indicates the method of notification used for notifying parent or guardian about the restraint secluson event."
+        is required
+    shared string Detail
+        documentation "Indicates the non violent technique detail regrading the restraint seclusion event."
+        is required
+        with context NonViolentTechnique
+    bool ParentGuardianNotified
+        documentation "Indicates if the parent or guradian was notified about the restarint secluson event."
+        is optional
+    date ParentGuardianNotifiedDate
+        documentation "Indicates the date on which the parent or guardian was notified."
+        is required
+    time ParentGuardianNotifiedTime
+        documentation "Indicates the time of day the parent or guardian was notified about the restarint secluson event."
+        is required
+    shared string Detail
+        documentation "Indicates the policy Change detail regrading the restraint seclusion event."
+        is optional
+        with context PolicyChange
+    descriptor RestraintEventReason
+        documentation "Indicates the behavior that caused the restraint secluson event."
+        is part of identity
+    descriptor RestraintEventCategory
+        documentation "Indicates the type of the restraint or seclusion performed."
+        is part of identity
+    shared string Detail
+        documentation "Indicates the event details prior to the restraint seclusion event."
+        is required
+        with context PriorToEvent
+    bool StaffInjured
+        documentation "Indicates if staff was injured during the restarint secluson event."
+        is optional
+    descriptor Treatment
+        documentation "Indicates the treatment provided to staff injured during restraint secluson event."
+        is optional
+        with context Staff
+    common StaffProvidingRestraint
+        documentation "Identifies the staff responsible for providing restarint."
+        is required collection
+    shared string Detail
+        documentation "Indicates the traing detail for staff involved in restraint seclusion event."
+        is optional
+        with context StaffTraining
+    bool StudentInjured
+        documentation "Indicates if student was injured during the restarint secluson event."
+        is optional
+    descriptor Treatment
+        documentation "Indicates the treatment provided to student injured during restarint secluson event."
+        is optional
+        with context Student
+    shared string Detail
+        documentation "Indicates the student interview detail regrading the restraint seclusion event."
+        is optional
+        with context StudentInterview
+    descriptor SupportPlanChange
+        documentation "Indicates the type of support plan change."
+        is required
+    bool UsedCrisisResponseTeam
+        documentation "Indicates if crisis response team was used during the restarint secluson event."
+        is optional
+    shared string Detail
+        documentation "Indicates the witness interview detail regrading the restraint seclusion event."
+        is optional
+        with context WitnessInterview

@@ -1,0 +1,22 @@
+Domain Entity DisciplineIssueRefer
+    documentation "This represents the referral information on discipline issues that were referred."
+    domain entity DisciplineIssue
+        documentation "Reference to the DisciplineIssue associated with the DisciplineIssueRefer."
+        is part of identity
+    date ReferDate
+        documentation "The date the referral was sent."
+        is part of identity
+    shared integer Sequence
+        documentation "Allows multiple referrals for the same issue on the same date."
+        is part of identity
+        with context Refer
+    descriptor IssueStatus
+        documentation "Indicates the status of the referral."
+        is optional
+        with context Refer
+    shared string Comment
+        documentation "Provides the description of the referral."
+        is optional
+    domain entity DisciplineIncident
+        documentation "Reference to the DisciplineIncident associated with the DisciplineIssueRefer."
+        is optional

@@ -1,0 +1,4 @@
+Shared String ReportCardPrintValue
+    documentation "Indicates the value that is printed on the report card for the mark."
+    min length 1
+    max length 3

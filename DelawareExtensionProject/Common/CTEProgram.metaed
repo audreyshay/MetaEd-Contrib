@@ -1,0 +1,20 @@
+Common CTEProgram additions
+    bool PathwayConcentrator
+        documentation "Indicates if this pathway is the concentrator."
+        is optional
+    descriptor TechnicalSkillsAssessment
+        documentation "Identifies the results of the end of pathway assessment."
+        is optional
+        with context EndOfPathway
+	descriptor Certification
+        documentation "Identifies the certification received for the pathway."
+        is optional
+        with context First
+    descriptor Certification
+        documentation "Identifies the certification received for the pathway."
+        is optional
+        with context Second
+    descriptor Certification
+        documentation "Identifies the certification received for the pathway."
+        is optional
+        with context Third

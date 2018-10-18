@@ -1,0 +1,2 @@
+Descriptor ServiceStatus
+    documentation "Defines the codes that identify the status of the service."

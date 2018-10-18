@@ -1,0 +1,27 @@
+Domain Entity DisciplineIssueAction
+    documentation "This represents the action associated with a discipline issue."
+    domain entity DisciplineIssue
+        documentation "Reference to the discipline issue associated with the action."
+        is part of identity
+    shared integer Sequence
+        documentation "Allows multiple corrective action to be inserted under the same date."
+        is part of identity
+        with context Entered
+    date ActionEndDate
+        documentation "The end date of an assigned action."
+        is optional
+    date ActionStartDate
+        documentation "The start date of an assigned action."
+        is optional
+    bool ActionCompleted
+        documentation "Indicates if the corrective action was actually completed by the student."
+        is optional
+    shared string Comment
+        documentation "This represents the comments concerning the action."
+        is optional
+    descriptor IssueActionCategory
+        documentation "Identifies the code of the corrective action."
+        is optional
+    bool ParentsContacted
+        documentation "Indicates if parent or guardian was contacted regarding the issue and the action."
+        is optional

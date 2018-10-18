@@ -1,0 +1,4 @@
+Shared Decimal ActionDuration
+    documentation "Indicates the duration fo the action."
+    total digits 5
+    decimal places 2

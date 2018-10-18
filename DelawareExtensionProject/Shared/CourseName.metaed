@@ -1,0 +1,4 @@
+Shared String CourseName
+    documentation "Indicates the name of the course."
+    min length 1
+    max length 255

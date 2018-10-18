@@ -1,0 +1,5 @@
+Common Issue
+    documentation "Date medicine is issued."
+    datetime IssueDate
+      documentation "Date issued."
+      is part of identity

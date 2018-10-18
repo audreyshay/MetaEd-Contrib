@@ -1,0 +1,20 @@
+Domain Entity PersonMedicalAlert
+    documentation "Defines the codes that describe a person's known medical conditions."
+    domain entity Person
+        documentation "The person the medical alert relates to."
+        is part of identity
+    domain entity MedicalAlert
+        documentation "Reference the MedicalAlert associated with a student."
+        is part of identity
+    date StartDate
+        documentation "Identifies the start date of a medical alert."
+        is part of identity
+    date EndDate
+        documentation "Identifies the end date for a medical alert."
+        is optional
+    shared string Description
+        documentation "Comments on medical conditions and alerts."
+        is optional
+    shared integer Sequence
+        documentation "The sequence number for prioritizing medical alerts."
+        is optional

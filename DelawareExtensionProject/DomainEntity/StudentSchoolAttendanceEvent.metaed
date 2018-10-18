@@ -1,0 +1,7 @@
+Domain Entity StudentSchoolAttendanceEvent additions
+    integer AbsentTime
+        documentation "The periods or minutes the student is absent."
+        is optional
+    integer ScheduledTime
+        documentation "The number of periods or number of minutes that the student was scheduled for the day."
+        is optional

@@ -1,0 +1,4 @@
+Domain Entity Student additions
+    domain entity Person
+        documentation inherited
+        is optional

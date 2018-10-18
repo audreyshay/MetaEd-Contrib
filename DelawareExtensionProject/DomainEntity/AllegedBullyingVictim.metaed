@@ -1,0 +1,38 @@
+Domain Entity AllegedBullyingVictim
+    documentation "This represents the victims of alleged bullying incidents."
+    domain entity Student
+        documentation "Identifies the student involved as the alleged bullying victim."
+        is part of identity
+    domain entity School
+        documentation "This relates the school to where the alleged bullying incident occurred."
+        is part of identity
+    date AllegedIncidentDate
+        documentation "The date of the alleged bullying incident."
+        is part of identity
+    descriptor BullyingCategory
+        documentation "Indicates the type of bullying."
+        is optional collection
+    shared string Comment
+        documentation "Indicates the follow up detail regarding the alleged bullying incident."
+        is optional
+        with context Followup
+    shared string Description
+        documentation "The description of the alleged bullying incident."
+        is optional
+        with context Incident
+    descriptor IncidentLocation
+        documentation "Indicates the location where alleged bullying incident occurred."
+        is optional
+    bool MultiplePriorEvent
+        documentation "Indicates if student was involved in multiple prior alleged bullying incidents."
+        is optional
+    descriptor IncidentRelatedTo
+        documentation "Indicates the reason for the alleged bullying incident."
+        is required
+        with context Reason
+    date ReportDate
+        documentation "Indicates the date on which the alleged bullying incident was reported."
+        is required
+    shared string ReportedBy
+        documentation "Identifies the person who reported the alleged bullying incident."
+        is optional

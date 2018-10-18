@@ -1,0 +1,7 @@
+Domain RestarintSeclusion
+    documentation "This domain identifies restraint seclusion events."
+    domain entity RestraintSeclusion
+    domain entity Student
+    domain entity School
+    domain entity Staff
+    common StaffProvidingRestraint

@@ -1,0 +1,14 @@
+Domain Entity Section additions
+    shared string Description
+        documentation "The description of the part of the course section."
+        is optional
+    domain entity LevelDetail
+        documentation inherited
+        is optional
+        with context Course
+    common SubjectArea
+        documentation "Subject areas that the course meets as part of graduation requirements."
+        is optional collection
+    common MarkingPeriod
+        documentation "The marking periods that the class meets."
+        is optional collection

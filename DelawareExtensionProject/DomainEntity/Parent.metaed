@@ -1,0 +1,4 @@
+Domain Entity Parent additions
+    common extension Address
+        documentation "Parent's address, if different from the student address."
+        is optional collection

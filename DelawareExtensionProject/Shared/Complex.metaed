@@ -1,0 +1,4 @@
+Shared String Complex
+    documentation "The apartment or housing complex name."
+    min length 1
+    max length 255

@@ -1,0 +1,4 @@
+Shared String PersonId
+    documentation "The unique identifier for a person."
+    min length 1
+    max length 60

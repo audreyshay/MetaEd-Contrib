@@ -1,0 +1,45 @@
+Domain Entity StudentTransportation
+    documentation "This represents the travel information for student."
+    domain entity Student
+        documentation "The student being transported."
+        is part of identity
+    domain entity LocalEducationAgency
+        documentation "The school district for student being transported."
+        is part of identity
+    descriptor TravelDirection
+        documentation "identifies the direction in which student is transported."
+        is part of identity
+    descriptor TravelDayOfWeek
+        documentation "Indicates the day of the week on which student is transported."
+        is part of identity
+    integer TravelSegment
+        documentation "Indicates the segment number associated with the specified travel day."
+        is part of identity
+    integer TravelTrip
+        documentation "Indicates the number identifying the travel trip for the student."
+        is part of identity
+    descriptor TravelCategory
+        documentation "Indicates the type of travel."
+        is required
+    shared string Number
+        documentation "Identifies the bus number for the travel segment."
+        is optional
+        with context Bus
+    shared string Number
+        documentation "Identifies the bus route number for the travel segment."
+        is optional
+        with context BusRoute
+    shared string ShuttleStop
+        documentation "Indicates the shuttle stop for the travel segment."
+        is optional
+    shared string Description
+        documentation "The description associated with the stop for the segment."
+        is optional
+        with context Stop
+    shared string Number
+        documentation "Identifies the bus stop number for the travel segment."
+        is optional
+        with context Stop
+    time StopTime
+        documentation "Indicates the stop time for the travel segment."
+        is optional

@@ -1,0 +1,2 @@
+Descriptor StaffRole
+    documentation "Defines the codes that identify the role of the staff for a course."
