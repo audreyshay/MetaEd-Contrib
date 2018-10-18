@@ -1,0 +1,25 @@
+Association StudentCTEProgramAssociation additions
+  descriptor CertificatedProgramStatus
+    documentation "Indicator of Certificated Program Status"
+    is optional
+  descriptor StateEndorsedRegionalCareerPathwayStatus
+    documentation "Indicator of StateEndorsedRegionalCareerPathwayStatus"
+    is optional
+
+  // per comments on https://tracker.ed-fi.org/browse/ODS-2413, common extension use should be required
+  //but then API won't build, extending the common ultimately may not be supported
+  //for now adding the two properties directly to the program extension since there is an L1 to only allow one CTEProgram
+  //and the achieves the same data being collected
+
+  //common extension CTEProgram
+  //  documentation "The career cluster representing the career path of the Vocational/Career Tech concentrator."
+  //  is optional collection
+
+    descriptor IacCode
+      documentation "IacCode of concentration."
+      is optional
+      with context CTEConcentration
+    descriptor CteProgramArea
+      documentation "WI Program areas of concentration."
+      is optional collection
+      with context CTEConcentration

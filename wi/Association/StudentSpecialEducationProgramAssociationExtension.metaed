@@ -1,0 +1,5 @@
+Association StudentSpecialEducationProgramAssociation additions
+  domain entity School
+      documentation ""
+      is optional
+      with context FapeResponsible

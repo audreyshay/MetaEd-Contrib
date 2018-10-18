@@ -1,0 +1,3 @@
+Descriptor CertificatedProgramStatus
+    documentation "Status in a certificated program"
+    

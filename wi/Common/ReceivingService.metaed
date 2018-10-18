@@ -1,0 +1,8 @@
+Common ReceivingService
+  documentation "The status of a student during a specific count date"
+  descriptor CountDateName
+    documentation "The count date name for the student status (e.g 3rd Fri Sept)"
+  is part of identity
+  descriptor CountDateReceivingService
+    documentation "The status of the student during the specific count date (e.g. Present)"
+  is required
