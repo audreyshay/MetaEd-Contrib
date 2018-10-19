@@ -1,5 +1,8 @@
 Domain Entity StudentSchoolAssociationMembershipFTE
 documentation "This association represents the full-time equivalency of the student school association"
+  association StudentSchoolAssociation
+    documentation "The reference to StudentSchoolAssociation"
+    is part of identity
   date FTEStartDate
     documentation "The start date for the StudentSchoolAssociationMembership"
     is part of identity
