@@ -79,7 +79,7 @@
       <xs:enumeration value="EducationPlanDescriptor" />
       <xs:enumeration value="ElectronicMailTypeDescriptor" />
       <xs:enumeration value="EmploymentStatusDescriptor" />
-      <xs:enumeration value="EndOfCourseAssessmentCodeTypeDescriptor" />
+      <xs:enumeration value="EndOfCourseAssessmentCodeDescriptor" />
       <xs:enumeration value="EntryGradeLevelReasonDescriptor" />
       <xs:enumeration value="EntryTypeDescriptor" />
       <xs:enumeration value="EventCircumstanceDescriptor" />

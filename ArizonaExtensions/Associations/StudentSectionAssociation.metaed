@@ -14,8 +14,8 @@ descriptor CourseExit
 bool DualCredit
   documentation "A flag indicating if this student is earning Dual Credit in a Dual
                 Credit Course."
-  is optional
+  is required
 bool ConcurrentEnrollment
   documentation "A flag indicating if this student is concurrently enrolled in a
                 course that offers concurrent enrollment"
-  is optional
+  is required
