@@ -1,0 +1,6 @@
+Domain Entity StudentSchoolAttendanceEvent additions
+  shared decimal AttendanceDuration named AttendanceDuration
+      documentation "The portion of the day to which the attendance event applies.
+                     A value of 1.00 would indicate that the event was for the entire school day.
+                     A value of 0.25 would indicate that the event was for one quarter of the school day."
+      is optional

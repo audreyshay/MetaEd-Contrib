@@ -1,0 +1,4 @@
+Shared String Evaluator1StaffId
+    documentation "Evalutator 1 Staff Id (may or may not be district employee/staff member) correspoinding to the teacher of the course."
+    min length 1
+    max length 32

@@ -1,0 +1,10 @@
+Domain Entity DisciplineAction additions
+    descriptor UnilateralRemoval
+        documentation "For SPED students only who were were subject to Uniliteral Removal"
+        is optional
+    bool GFSAExpulsionModifiedToLessThanOneYear
+        documentation "True = Student expelled under GFSA had expulsion modified to less than one year."
+        is optional
+    bool GFSAAlternativePlacement
+        documentation "True = Student expelled under GFSA received Alternative Placement"
+        is optional

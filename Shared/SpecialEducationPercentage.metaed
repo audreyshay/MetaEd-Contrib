@@ -1,0 +1,4 @@
+Shared Integer SpecialEducationPercentage
+    documentation "Provide the percentage of time student spends receiving special education and/or related services separate from general education peers.  This value is to be provided as an integer without a percentage sign. For example, 25% is to specified as 25."
+		min value 0
+		max value 100

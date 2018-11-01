@@ -1,0 +1,4 @@
+Shared Decimal AttendanceDuration
+    documentation "Used to report the portion of the day to which the Attendance event applies"
+    total digits 3
+    decimal places 2

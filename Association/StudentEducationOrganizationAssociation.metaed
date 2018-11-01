@@ -1,0 +1,16 @@
+Association StudentEducationOrganizationAssociation additions
+descriptor SchoolFoodServicesEligibility
+    documentation "An indication of a student's level of eligibility for free and reduced lunch programs."
+    is optional
+bool HighAbilityLearnerEligibility
+    documentation "Student has been identified as High Ability Learner (does not indicate participation)"
+    is optional
+bool HighAbilityLearnerParticipant
+    documentation "Student participated in High Ability Learner program."
+    is optional
+bool HonorsOrAdvancedPlacement
+    documentation "Student is in grades 9 through 12 and participated in an honors program or advanced placement classes in accordance with local school board policy."
+    is optional
+descriptor ImmigrantIndicator
+    documentation "Reference to the descripton that best reflects the student's immigrant status."
+    is optional

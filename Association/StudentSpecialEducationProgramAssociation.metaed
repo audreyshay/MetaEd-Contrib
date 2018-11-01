@@ -1,0 +1,13 @@
+Association StudentSpecialEducationProgramAssociation additions
+    descriptor LevelOfProgramParticipation
+      documentation "Indication of IDEA Part B or Part C program participation."
+      is optional
+    descriptor PlacementType
+      documentation "placement type"
+      is optional
+    shared integer SpecialEducationPercentage named SpecialEducationPercentage
+        documentation "The percentage of time the student spends receiving special education and/or related services separate from general education peers.  This value is to be provided as an integer without a percentage sign. For example, 25% is to be specified as 25"
+        is optional
+    bool ToTakeAlternateAssessment
+        documentation "True = Indicates the student needs alternate assessment."
+        is optional

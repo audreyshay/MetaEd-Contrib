@@ -1,0 +1,4 @@
+Domain Entity Section additions
+    descriptor SectionDelivery
+        documentation "Delivery method for a section of a course"
+        is optional collection

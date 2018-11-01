@@ -1,0 +1,10 @@
+Domain Entity Grade additions
+    shared string ControllingDistrictCode named Evaluator1ControllingDistrictCode
+        documentation "County District Number associated with the Staff ID (Evaluator 1 Staff ID) provided."
+        is optional
+    shared string Evaluator1StaffId named Evaluator1StaffId
+        documentation "Evalutator 1 Staff Id (may or may not be district employee/staff member) correspoinding to the teacher of the course"
+        is optional
+    descriptor DualCredit
+        documentation "To indicate if student earned both high school and postsecondary credit for this course."
+        is optional

@@ -1,0 +1,21 @@
+Association StudentSchoolAssociation additions
+    bool NewToDistrict
+        documentation "Student is new to district."
+        is optional
+    shared string DistrictOfResidence named DistrictOfResidence
+        documentation "District where student resides.  Use 00-0000 if student resides out-of-state."
+        is optional
+    shared integer FullTimeEquivalency named FullTimeEquivalency
+        documentation "Provide the full-time equivalent for this student’s assignment to a school for services or instruction in whole numbers.  A full-time student would have an FTE value of 100."
+        is optional
+    shared string SchoolOfResidence named SchoolOfResidence
+        documentation "School within a district where student resides. Use 00-0000-000 if student resides out-of-state."
+        is optional
+    domain entity School
+        documentation "School within a district where student's records should be reported for state reporting purposes."
+        is optional
+        with context Reporting
+   domain entity School
+        documentation "School from which the student expectes to graduate. Required only enrollment record is not at Expected High school of Graduation and for grades 9-12."
+        is optional
+        with context ExpectedHighSchoolOfGraduation
