@@ -92,6 +92,11 @@ REFERENCES [edfi].[StudentCTEProgramAssociation] ([BeginDate], [EducationOrganiz
 ON DELETE CASCADE
 GO
 
+ALTER TABLE [wi].[StudentDisciplineIncidentAssociationExtension] WITH CHECK ADD CONSTRAINT [FK_StudentDisciplineIncidentAssociationExtension_StudentDisciplineIncidentAssociation] FOREIGN KEY ([IncidentIdentifier], [SchoolId], [StudentUSI])
+REFERENCES [edfi].[StudentDisciplineIncidentAssociation] ([IncidentIdentifier], [SchoolId], [StudentUSI])
+ON DELETE CASCADE
+GO
+
 ALTER TABLE [wi].[StudentEducationOrganizationAssociationExtension] WITH CHECK ADD CONSTRAINT [FK_StudentEducationOrganizationAssociationExtension_LocalEducationAgency] FOREIGN KEY ([ResidentLocalEducationAgencyId])
 REFERENCES [edfi].[LocalEducationAgency] ([LocalEducationAgencyId])
 GO

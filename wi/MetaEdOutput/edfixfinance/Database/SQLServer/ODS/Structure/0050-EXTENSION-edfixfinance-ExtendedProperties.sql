@@ -39,35 +39,19 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A descriptive 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The code representation of the account Balance Sheet dimension.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccount', @level2type=N'COLUMN', @level2name=N'BalanceSheetCode'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The fiscal year for which the account Balance Sheet dimension is valid.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccount', @level2type=N'COLUMN', @level2name=N'BalanceSheetFiscalYear'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The code representation of the account Function dimension.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccount', @level2type=N'COLUMN', @level2name=N'FunctionCode'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The fiscal year for which the account Function dimension is valid.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccount', @level2type=N'COLUMN', @level2name=N'FunctionFiscalYear'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The code representation of the account Fund dimension.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccount', @level2type=N'COLUMN', @level2name=N'FundCode'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The fiscal year for which the account Fund dimension is valid.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccount', @level2type=N'COLUMN', @level2name=N'FundFiscalYear'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The code representation of the account Object dimension.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccount', @level2type=N'COLUMN', @level2name=N'ObjectCode'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The fiscal year for which the account Object dimension is valid.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccount', @level2type=N'COLUMN', @level2name=N'ObjectFiscalYear'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The code representation of the account Operational Unit dimension.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccount', @level2type=N'COLUMN', @level2name=N'OperationalUnitCode'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The fiscal year for which the account Operational Unit dimension is valid.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccount', @level2type=N'COLUMN', @level2name=N'OperationalUnitFiscalYear'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The code representation of the account Program dimension.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccount', @level2type=N'COLUMN', @level2name=N'ProgramCode'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The fiscal year for which the account Program dimension is valid.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccount', @level2type=N'COLUMN', @level2name=N'ProgramFiscalYear'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The code representation of the account Project dimension.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccount', @level2type=N'COLUMN', @level2name=N'ProjectCode'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The fiscal year for which the account Project dimension is valid.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccount', @level2type=N'COLUMN', @level2name=N'ProjectFiscalYear'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The code representation of the account Source dimension.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccount', @level2type=N'COLUMN', @level2name=N'SourceCode'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The fiscal year for which the account Source dimension is valid.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccount', @level2type=N'COLUMN', @level2name=N'SourceFiscalYear'
 GO
 
 -- Extended Properties [edfixfinance].[ChartOfAccountReportingTag] --
@@ -138,12 +122,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Fiscal year for the account', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'LocalAccount', @level2type=N'COLUMN', @level2name=N'FiscalYear'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A descriptive name for the account', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'LocalAccount', @level2type=N'COLUMN', @level2name=N'AccountName'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'SEA populated Code value for the valid combination of account dimensions under which financials are reported.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'LocalAccount', @level2type=N'COLUMN', @level2name=N'ChartOfAccountIdentifier'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Fiscal year for the account', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'LocalAccount', @level2type=N'COLUMN', @level2name=N'ChartOfAccountFiscalYear'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'LocalAccount', @level2type=N'COLUMN', @level2name=N'ChartOfAccountEducationOrganizationId'
 GO
 
 -- Extended Properties [edfixfinance].[LocalAccountReportingTag] --

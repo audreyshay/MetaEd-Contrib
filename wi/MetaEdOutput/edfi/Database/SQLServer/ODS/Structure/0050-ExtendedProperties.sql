@@ -151,18 +151,11 @@ GO
 -- Extended Properties [edfi].[Assessment] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This entity represents a tool, instrument, process, or exhibition composed of a systematic sampling of behavior for measuring a student''s competence, knowledge, skills, or behavior. An assessment can be used to measure differences in individuals or groups and changes in performance from one occasion to the next.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Assessment'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Assessment', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Assessment', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Assessment', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Assessment', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Assessment', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Assessment', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The category of an assessment based on format and content. For example:
         Achievement test
@@ -172,14 +165,9 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The category o
         Cognitive and perceptual skills test
         ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Assessment', @level2type=N'COLUMN', @level2name=N'AssessmentCategoryDescriptorId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'If the assessment spans a range of grades, then this attribute holds the lowest grade assessed. If only one grade level is assessed, then this attribute is omitted. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Assessment', @level2type=N'COLUMN', @level2name=N'LowestAssessedGradeLevelDescriptorId'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Identifies the form of the assessment, for example a regular versus makeup form, multiple choice versus constructed response, etc.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Assessment', @level2type=N'COLUMN', @level2name=N'AssessmentForm'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Assessment', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month, day, and year that the conceptual design for the assessment was most recently revised substantially.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Assessment', @level2type=N'COLUMN', @level2name=N'RevisionDate'
 GO
@@ -189,7 +177,29 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Reflects the s
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The AssessmentFamily this Assessment is a member of.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Assessment', @level2type=N'COLUMN', @level2name=N'AssessmentFamily'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Assessment', @level2type=N'COLUMN', @level2name=N'Namespace'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Assessment', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Indicates that the assessment is adaptive.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Assessment', @level2type=N'COLUMN', @level2name=N'AdaptiveAssessment'
+GO
+
+-- Extended Properties [edfi].[AssessmentAcademicSubject] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentAcademicSubject'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentAcademicSubject', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentAcademicSubject', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentAcademicSubject', @level2type=N'COLUMN', @level2name=N'Namespace'
+GO
+
+-- Extended Properties [edfi].[AssessmentAssessedGradeLevel] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level(s) for which an assessment is designed. The semantics of null is assumed to mean that the assessment is not associated with any grade level.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentAssessedGradeLevel'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentAssessedGradeLevel', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level(s) for which an assessment is designed. The semantics of null is assumed to mean that the assessment is not associated with any grade level.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentAssessedGradeLevel', @level2type=N'COLUMN', @level2name=N'GradeLevelDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentAssessedGradeLevel', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 
 -- Extended Properties [edfi].[AssessmentCategoryDescriptor] --
@@ -201,18 +211,9 @@ GO
 -- Extended Properties [edfi].[AssessmentContentStandard] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An indication as to whether an assessment conforms to a standard (e.g., local standard, statewide standard, regional standard, association standard).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentContentStandard'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentContentStandard', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentContentStandard', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentContentStandard', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentContentStandard', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentContentStandard', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentContentStandard', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The name of the content standard, for example Common Core.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentContentStandard', @level2type=N'COLUMN', @level2name=N'Title'
 GO
@@ -236,39 +237,21 @@ GO
 -- Extended Properties [edfi].[AssessmentContentStandardAuthor] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The person or organization chiefly responsible for the intellectual content of the standard.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentContentStandardAuthor'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentContentStandardAuthor', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentContentStandardAuthor', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentContentStandardAuthor', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentContentStandardAuthor', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentContentStandardAuthor', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The person or organization chiefly responsible for the intellectual content of the standard.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentContentStandardAuthor', @level2type=N'COLUMN', @level2name=N'Author'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentContentStandardAuthor', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 
 -- Extended Properties [edfi].[AssessmentIdentificationCode] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment by a school, school system, a state, or other agency or entity.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentIdentificationCode'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentIdentificationCode', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentIdentificationCode', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentIdentificationCode', @level2type=N'COLUMN', @level2name=N'AssessmentIdentificationSystemDescriptorId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentIdentificationCode', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentIdentificationCode', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentIdentificationCode', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentIdentificationCode', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment by a school, school system, state, or other agency or entity.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentIdentificationCode', @level2type=N'COLUMN', @level2name=N'IdentificationCode'
 GO
@@ -284,20 +267,11 @@ GO
 -- Extended Properties [edfi].[AssessmentItem] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This entity represents one of many single measures that make up an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItem'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItem', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItem', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItem', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItem', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItem', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to a space, room, site, building, individual, organization, program, or institution by a school, school system, state, or other agency or entity.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItem', @level2type=N'COLUMN', @level2name=N'IdentificationCode'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItem', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Category or type of the AssessmentItem. For example:
         Multiple choice
@@ -325,22 +299,13 @@ GO
 -- Extended Properties [edfi].[AssessmentItemLearningStandard] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'LearningStandard tested by this item.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItemLearningStandard'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItemLearningStandard', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItemLearningStandard', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItemLearningStandard', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItemLearningStandard', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItemLearningStandard', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to a space, room, site, building, individual, organization, program, or institution by a school, school system, state, or other agency or entity.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItemLearningStandard', @level2type=N'COLUMN', @level2name=N'IdentificationCode'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItemLearningStandard', @level2type=N'COLUMN', @level2name=N'LearningStandardId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItemLearningStandard', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 
 -- Extended Properties [edfi].[AssessmentItemResultDescriptor] --
@@ -356,20 +321,11 @@ GO
 -- Extended Properties [edfi].[AssessmentLanguage] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An indication of the languages in which the assessment is designed.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentLanguage'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentLanguage', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentLanguage', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentLanguage', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentLanguage', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentLanguage', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An indication of the languages in which the assessment is designed.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentLanguage', @level2type=N'COLUMN', @level2name=N'LanguageDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentLanguage', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 
 -- Extended Properties [edfi].[AssessmentPerformanceLevel] --
@@ -378,20 +334,11 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Definition of 
         2. Specification of performance level by cut score, using only minimum score
         3. Specification of performance level without any mapping to scores.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPerformanceLevel'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The method that the instructor of the class uses to report the performance and achievement of all students. It may be a qualitative method such as individualized teacher comments or a quantitative method such as a letter or numerical grade. In some cases, more than one type of reporting method may be used.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentReportingMethodDescriptorId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The performance level(s) defined for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'PerformanceLevelDescriptorId'
 GO
@@ -405,18 +352,9 @@ GO
 -- Extended Properties [edfi].[AssessmentPeriod] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The period or window in which an assessment is supposed to be administered.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPeriod'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPeriod', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPeriod', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPeriod', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPeriod', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPeriod', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPeriod', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The period of time in which an assessment is supposed to be administered (e.g., Beginning of Year, Middle of Year, End of Year).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentPeriod', @level2type=N'COLUMN', @level2name=N'AssessmentPeriodDescriptorId'
 GO
@@ -434,20 +372,11 @@ GO
 -- Extended Properties [edfi].[AssessmentProgram] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The programs associated with the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentProgram'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentProgram', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentProgram', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentProgram', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentProgram', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentProgram', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentProgram', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentProgram', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentProgram', @level2type=N'COLUMN', @level2name=N'ProgramName'
 GO
@@ -463,20 +392,11 @@ GO
 -- Extended Properties [edfi].[AssessmentScore] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Definition of the scores to be expected from this assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentScore'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentScore', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentScore', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentScore', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The method that the administrator of the assessment uses to report the performance and achievement of all students. It may be a qualitative method such as performance level descriptors or a quantitative method such as a numerical grade or cut score. More than one type of reporting method may be used.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentScore', @level2type=N'COLUMN', @level2name=N'AssessmentReportingMethodDescriptorId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentScore', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentScore', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentScore', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The minimum score possible on the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentScore', @level2type=N'COLUMN', @level2name=N'MinimumScore'
 GO
@@ -488,20 +408,11 @@ GO
 -- Extended Properties [edfi].[AssessmentSection] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The Section(s) to which the Assessment is associated.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentSection'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentSection', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentSection', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentSection', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentSection', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentSection', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The local code assigned by the School that identifies the course offering provided for the instruction of students.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentSection', @level2type=N'COLUMN', @level2name=N'LocalCourseCode'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentSection', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentSection', @level2type=N'COLUMN', @level2name=N'SchoolId'
 GO
@@ -961,15 +872,13 @@ GO
 -- Extended Properties [edfi].[CourseLearningObjective] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Learning Objectives to be mastered in the course.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseLearningObjective'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseLearningObjective', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a course.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseLearningObjective', @level2type=N'COLUMN', @level2name=N'CourseCode'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseLearningObjective', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The designated title of the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseLearningObjective', @level2type=N'COLUMN', @level2name=N'Objective'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning objective in the context of a standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseLearningObjective', @level2type=N'COLUMN', @level2name=N'LearningObjectiveId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level for which the LearningObjective is targeted.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseLearningObjective', @level2type=N'COLUMN', @level2name=N'ObjectiveGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseLearningObjective', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 
 -- Extended Properties [edfi].[CourseLearningStandard] --
@@ -1289,7 +1198,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An indication of whether the student received educational services when removed from the regular school program for disciplinary reasons.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'DisciplineAction', @level2type=N'COLUMN', @level2name=N'ReceivedEducationServicesDuringExpulsion'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An indication as to whether an offense and/or disciplinary action resulted in a meeting of a student’s Individualized Education Program (IEP) team to determine appropriate placement.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'DisciplineAction', @level2type=N'COLUMN', @level2name=N'IEPPlacementMeetingIndicator'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An indication as to whether an offense and/or disciplinary action resulted in a meeting of a student''s Individualized Education Program (IEP) team to determine appropriate placement.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'DisciplineAction', @level2type=N'COLUMN', @level2name=N'IEPPlacementMeetingIndicator'
 GO
 
 -- Extended Properties [edfi].[DisciplineActionDiscipline] --
@@ -1818,17 +1727,15 @@ GO
 -- Extended Properties [edfi].[GradebookEntryLearningObjective] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'LearningObjectives associated with the GradebookEntry.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GradebookEntryLearningObjective'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GradebookEntryLearningObjective', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The date the assignment, homework, or assessment was assigned or executed.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GradebookEntryLearningObjective', @level2type=N'COLUMN', @level2name=N'DateAssigned'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The name or title of the activity to be recorded in the GradebookEntry.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GradebookEntryLearningObjective', @level2type=N'COLUMN', @level2name=N'GradebookEntryTitle'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning objective in the context of a standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GradebookEntryLearningObjective', @level2type=N'COLUMN', @level2name=N'LearningObjectiveId'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The local code assigned by the School that identifies the course offering provided for the instruction of students.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GradebookEntryLearningObjective', @level2type=N'COLUMN', @level2name=N'LocalCourseCode'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The designated title of the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GradebookEntryLearningObjective', @level2type=N'COLUMN', @level2name=N'Objective'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level for which the LearningObjective is targeted.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GradebookEntryLearningObjective', @level2type=N'COLUMN', @level2name=N'ObjectiveGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GradebookEntryLearningObjective', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GradebookEntryLearningObjective', @level2type=N'COLUMN', @level2name=N'SchoolId'
 GO
@@ -1976,18 +1883,7 @@ GO
 -- Extended Properties [edfi].[GraduationPlanRequiredAssessment] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The assessments and associated required score and performance level needed to satisfy graduation requirements.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessment'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessment', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessment', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessment', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessment', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessment', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessment', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
 GO
@@ -1995,28 +1891,21 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The type of ac
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The school year the student is expected to graduate.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessment', @level2type=N'COLUMN', @level2name=N'GraduationSchoolYear'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessment', @level2type=N'COLUMN', @level2name=N'Namespace'
+GO
 
 -- Extended Properties [edfi].[GraduationPlanRequiredAssessmentPerformanceLevel] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Performance level required to be met or exceeded.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentPerformanceLevel'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The type of academic plan the student is following for graduation: for example, Minimum, Recommended, Distinguished, or Standard.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'GraduationPlanTypeDescriptorId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The school year the student is expected to graduate.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'GraduationSchoolYear'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The performance level(s) defined for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'PerformanceLevelDescriptorId'
 GO
@@ -2032,26 +1921,17 @@ GO
 -- Extended Properties [edfi].[GraduationPlanRequiredAssessmentScore] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Score required to be met or exceeded.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentScore'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentScore', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentScore', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentScore', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The method that the administrator of the assessment uses to report the performance and achievement of all students. It may be a qualitative method such as performance level descriptors or a quantitative method such as a numerical grade or cut score. More than one type of reporting method may be used.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentScore', @level2type=N'COLUMN', @level2name=N'AssessmentReportingMethodDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentScore', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentScore', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentScore', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The type of academic plan the student is following for graduation: for example, Minimum, Recommended, Distinguished, or Standard.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentScore', @level2type=N'COLUMN', @level2name=N'GraduationPlanTypeDescriptorId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The school year the student is expected to graduate.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentScore', @level2type=N'COLUMN', @level2name=N'GraduationSchoolYear'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentScore', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The minimum score possible on the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'GraduationPlanRequiredAssessmentScore', @level2type=N'COLUMN', @level2name=N'MinimumScore'
 GO
@@ -2463,13 +2343,11 @@ GO
 -- Extended Properties [edfi].[LearningObjective] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This entity represents identified learning objectives for courses in specific grades.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjective'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjective', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning objective in the context of a standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjective', @level2type=N'COLUMN', @level2name=N'LearningObjectiveId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjective', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The designated title of the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjective', @level2type=N'COLUMN', @level2name=N'Objective'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level for which the LearningObjective is targeted.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjective', @level2type=N'COLUMN', @level2name=N'ObjectiveGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning objective in the context of a standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjective', @level2type=N'COLUMN', @level2name=N'LearningObjectiveId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjective', @level2type=N'COLUMN', @level2name=N'Description'
 GO
@@ -2477,23 +2355,27 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Reflects the s
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'One or more statements that describes the criteria used by teachers and students to check for attainment of a learning objective. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjective', @level2type=N'COLUMN', @level2name=N'SuccessCriteria'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The designated title of the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjective', @level2type=N'COLUMN', @level2name=N'ParentObjective'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning objective in the context of a standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjective', @level2type=N'COLUMN', @level2name=N'ParentLearningObjectiveId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjective', @level2type=N'COLUMN', @level2name=N'ParentAcademicSubjectDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjective', @level2type=N'COLUMN', @level2name=N'ParentNamespace'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level for which the LearningObjective is targeted.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjective', @level2type=N'COLUMN', @level2name=N'ParentObjectiveGradeLevelDescriptorId'
+
+-- Extended Properties [edfi].[LearningObjectiveAcademicSubject] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveAcademicSubject'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjective', @level2type=N'COLUMN', @level2name=N'Namespace'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveAcademicSubject', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning objective in the context of a standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveAcademicSubject', @level2type=N'COLUMN', @level2name=N'LearningObjectiveId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveAcademicSubject', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 
 -- Extended Properties [edfi].[LearningObjectiveContentStandard] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A reference to the type of content standard (e.g., state, national)', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveContentStandard'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveContentStandard', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning objective in the context of a standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveContentStandard', @level2type=N'COLUMN', @level2name=N'LearningObjectiveId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The designated title of the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveContentStandard', @level2type=N'COLUMN', @level2name=N'Objective'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level for which the LearningObjective is targeted.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveContentStandard', @level2type=N'COLUMN', @level2name=N'ObjectiveGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveContentStandard', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The name of the content standard, for example Common Core.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveContentStandard', @level2type=N'COLUMN', @level2name=N'Title'
 GO
@@ -2517,25 +2399,31 @@ GO
 -- Extended Properties [edfi].[LearningObjectiveContentStandardAuthor] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The person or organization chiefly responsible for the intellectual content of the standard.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveContentStandardAuthor'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveContentStandardAuthor', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The person or organization chiefly responsible for the intellectual content of the standard.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveContentStandardAuthor', @level2type=N'COLUMN', @level2name=N'Author'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The designated title of the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveContentStandardAuthor', @level2type=N'COLUMN', @level2name=N'Objective'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning objective in the context of a standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveContentStandardAuthor', @level2type=N'COLUMN', @level2name=N'LearningObjectiveId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level for which the LearningObjective is targeted.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveContentStandardAuthor', @level2type=N'COLUMN', @level2name=N'ObjectiveGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveContentStandardAuthor', @level2type=N'COLUMN', @level2name=N'Namespace'
+GO
+
+-- Extended Properties [edfi].[LearningObjectiveGradeLevel] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level for which the LearningObjective is targeted. The semantics of null is assumed to mean that the learning objective is not associated with any grade level.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveGradeLevel'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level for which the LearningObjective is targeted. The semantics of null is assumed to mean that the learning objective is not associated with any grade level.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveGradeLevel', @level2type=N'COLUMN', @level2name=N'GradeLevelDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning objective in the context of a standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveGradeLevel', @level2type=N'COLUMN', @level2name=N'LearningObjectiveId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveGradeLevel', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 
 -- Extended Properties [edfi].[LearningObjectiveLearningStandard] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'LearningStandard(s) included in this objective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveLearningStandard'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveLearningStandard', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning objective in the context of a standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveLearningStandard', @level2type=N'COLUMN', @level2name=N'LearningObjectiveId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveLearningStandard', @level2type=N'COLUMN', @level2name=N'LearningStandardId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The designated title of the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveLearningStandard', @level2type=N'COLUMN', @level2name=N'Objective'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level for which the LearningObjective is targeted.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveLearningStandard', @level2type=N'COLUMN', @level2name=N'ObjectiveGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningObjectiveLearningStandard', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 
 -- Extended Properties [edfi].[LearningStandard] --
@@ -2699,7 +2587,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The total Titl
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The amount of Section 1003(a) and 1003(g) allocations to LEAs.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LocalEducationAgencyFederalFunds', @level2type=N'COLUMN', @level2name=N'SchoolImprovementAllocation'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An indication of the percentage of the Title I, Part A allocation that the SEA reserved in accordance with Section 1003(a) of ESEA and §200.100(a) of ED''s regulations governing the reservation of funds for school improvement under Section 1003(a) of ESEA.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LocalEducationAgencyFederalFunds', @level2type=N'COLUMN', @level2name=N'SchoolImprovementReservedFundsPercentage'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An indication of the percentage of the Title I, Part A allocation that the SEA reserved in accordance with Section 1003(a) of ESEA and 200.100(a) of ED''s regulations governing the reservation of funds for school improvement under Section 1003(a) of ESEA.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LocalEducationAgencyFederalFunds', @level2type=N'COLUMN', @level2name=N'SchoolImprovementReservedFundsPercentage'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The dollar amount spent on supplemental educational services during the school year under Title I, Part A, Section 1116 of ESEA as amended.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LocalEducationAgencyFederalFunds', @level2type=N'COLUMN', @level2name=N'SupplementalEducationalServicesFundsSpent'
 GO
@@ -2771,20 +2659,11 @@ GO
 -- Extended Properties [edfi].[ObjectiveAssessment] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This entity represents subtests that assess specific learning objectives.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessment'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to a space, room, site, building, individual, organization, program, or institution by a school, school system, a state, or other agency or entity.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'IdentificationCode'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The maximum raw score achievable across all assessment items that are correct and scored at the maximum.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'MaxRawScore'
 GO
@@ -2800,88 +2679,54 @@ GO
 -- Extended Properties [edfi].[ObjectiveAssessmentAssessmentItem] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'References individual test items, if appropriate.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentAssessmentItem'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentAssessmentItem', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentAssessmentItem', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentAssessmentItem', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to a space, room, site, building, individual, organization, program, or institution by a school, school system, state, or other agency or entity.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentAssessmentItem', @level2type=N'COLUMN', @level2name=N'AssessmentItemIdentificationCode'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentAssessmentItem', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentAssessmentItem', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to a space, room, site, building, individual, organization, program, or institution by a school, school system, a state, or other agency or entity.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentAssessmentItem', @level2type=N'COLUMN', @level2name=N'IdentificationCode'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentAssessmentItem', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 
 -- Extended Properties [edfi].[ObjectiveAssessmentLearningObjective] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'References the LearningObjective(s) the ObjectiveAssessment tests.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningObjective'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningObjective', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningObjective', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningObjective', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningObjective', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningObjective', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to a space, room, site, building, individual, organization, program, or institution by a school, school system, a state, or other agency or entity.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningObjective', @level2type=N'COLUMN', @level2name=N'IdentificationCode'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The designated title of the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningObjective', @level2type=N'COLUMN', @level2name=N'Objective'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning objective in the context of a standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningObjective', @level2type=N'COLUMN', @level2name=N'LearningObjectiveId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningObjective', @level2type=N'COLUMN', @level2name=N'LearningObjectiveNamespace'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningObjective', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 
 -- Extended Properties [edfi].[ObjectiveAssessmentLearningStandard] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'LearningStandard tested by this ObjectiveAssessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningStandard'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningStandard', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningStandard', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningStandard', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningStandard', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningStandard', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to a space, room, site, building, individual, organization, program, or institution by a school, school system, a state, or other agency or entity.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningStandard', @level2type=N'COLUMN', @level2name=N'IdentificationCode'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningStandard', @level2type=N'COLUMN', @level2name=N'LearningStandardId'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentLearningStandard', @level2type=N'COLUMN', @level2name=N'Namespace'
+GO
 
 -- Extended Properties [edfi].[ObjectiveAssessmentPerformanceLevel] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Definition of the performance levels and the associated cut scores. Three styles are supported:
-        1. Specification of performance level by minimum and maximum score    
-        2. Specification of performance level by cut score, using only minimum score    
-        3. Specification of performance level without any mapping to scores.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentPerformanceLevel'
+        1. Specification of performance level by minimum and maximum score
+        2. Specification of performance level by cut score, using only minimum score
+        3. Specification of performance level without any mapping to scores', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentPerformanceLevel'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The method that the instructor of the class uses to report the performance and achievement of all students. It may be a qualitative method such as individualized teacher comments or a quantitative method such as a letter or numerical grade. In some cases, more than one type of reporting method may be used.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentReportingMethodDescriptorId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to a space, room, site, building, individual, organization, program, or institution by a school, school system, a state, or other agency or entity.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'IdentificationCode'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The performance level(s) defined for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'PerformanceLevelDescriptorId'
 GO
@@ -2895,22 +2740,13 @@ GO
 -- Extended Properties [edfi].[ObjectiveAssessmentScore] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Definition of the scores to be expected from this objective assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentScore'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentScore', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentScore', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentScore', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The method that the administrator of the assessment uses to report the performance and achievement of all students. It may be a qualitative method such as performance level descriptors or a quantitative method such as a numerical grade or cut score. More than one type of reporting method may be used.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentScore', @level2type=N'COLUMN', @level2name=N'AssessmentReportingMethodDescriptorId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentScore', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentScore', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to a space, room, site, building, individual, organization, program, or institution by a school, school system, a state, or other agency or entity.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentScore', @level2type=N'COLUMN', @level2name=N'IdentificationCode'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentScore', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The minimum score possible on the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ObjectiveAssessmentScore', @level2type=N'COLUMN', @level2name=N'MinimumScore'
 GO
@@ -3308,13 +3144,11 @@ GO
 -- Extended Properties [edfi].[ProgramLearningObjective] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'References the LearningObjective(s) with which the Program is associated.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ProgramLearningObjective'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ProgramLearningObjective', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ProgramLearningObjective', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The designated title of the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ProgramLearningObjective', @level2type=N'COLUMN', @level2name=N'Objective'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning objective in the context of a standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ProgramLearningObjective', @level2type=N'COLUMN', @level2name=N'LearningObjectiveId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level for which the LearningObjective is targeted.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ProgramLearningObjective', @level2type=N'COLUMN', @level2name=N'ObjectiveGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ProgramLearningObjective', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ProgramLearningObjective', @level2type=N'COLUMN', @level2name=N'ProgramName'
 GO
@@ -3370,7 +3204,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique ident
 GO
 
 -- Extended Properties [edfi].[ProgressDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This descriptor defines yearly progress or growth from last year’s assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ProgressDescriptor'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This descriptor defines yearly progress or growth from last year''s assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ProgressDescriptor'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ProgressDescriptor', @level2type=N'COLUMN', @level2name=N'ProgressDescriptorId'
 GO
@@ -3530,8 +3364,6 @@ GO
 -- Extended Properties [edfi].[ReportCardStudentLearningObjective] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The StudentLearningObjective evaluations associated for this grading period.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ReportCardStudentLearningObjective'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ReportCardStudentLearningObjective', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ReportCardStudentLearningObjective', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The name of the period for which grades are reported.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ReportCardStudentLearningObjective', @level2type=N'COLUMN', @level2name=N'GradingPeriodDescriptorId'
@@ -3542,9 +3374,9 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The sequential order of this period relative to other periods.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ReportCardStudentLearningObjective', @level2type=N'COLUMN', @level2name=N'GradingPeriodSequence'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The designated title of the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ReportCardStudentLearningObjective', @level2type=N'COLUMN', @level2name=N'Objective'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning objective in the context of a standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ReportCardStudentLearningObjective', @level2type=N'COLUMN', @level2name=N'LearningObjectiveId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level for which the LearningObjective is targeted.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ReportCardStudentLearningObjective', @level2type=N'COLUMN', @level2name=N'ObjectiveGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ReportCardStudentLearningObjective', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ReportCardStudentLearningObjective', @level2type=N'COLUMN', @level2name=N'StudentUSI'
 GO
@@ -4840,24 +4672,17 @@ GO
 -- Extended Properties [edfi].[StudentAssessment] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This entity represents the analysis or scoring of a student''s response on an assessment. The analysis results in a value that represents a student''s performance on a set of items on a test.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessment'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessment', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessment', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month(s), day(s), and year on which an assessment is administered or first day of administration if over multiple days.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessment', @level2type=N'COLUMN', @level2name=N'AdministrationDate'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessment', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessment', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessment', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessment', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment administered to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessment', @level2type=N'COLUMN', @level2name=N'StudentAssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessment', @level2type=N'COLUMN', @level2name=N'StudentUSI'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Assessment Administration End Date, if administered over multiple days.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessment', @level2type=N'COLUMN', @level2name=N'AdministrationEndDate'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The date and time an assessment was completed by the student. The use of ISO-8601 formats with a timezone designator (UTC or time offset) is recommended in order to prevent ambiguity due to time zones.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessment', @level2type=N'COLUMN', @level2name=N'AdministrationDate'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The date and time an assessment administration ended.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessment', @level2type=N'COLUMN', @level2name=N'AdministrationEndDate'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The unique number for the assessment form or answer document.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessment', @level2type=N'COLUMN', @level2name=N'SerialNumber'
 GO
@@ -4904,8 +4729,6 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The specific t
         Oral Administration
         ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentAccommodation'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentAccommodation', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The specific type of special variation used in how an examination is presented, how it is administered, or how the test taker is allowed to respond. This generally refers to changes that do not substantially alter what the examination measures. The proper use of accommodations does not substantially change academic level or performance criteria. For example:
         Braille
         Enlarged monitor view
@@ -4915,18 +4738,11 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The specific t
         Oral Administration
         ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentAccommodation', @level2type=N'COLUMN', @level2name=N'AccommodationDescriptorId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month(s), day(s), and year on which an assessment is administered or first day of administration if over multiple days.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentAccommodation', @level2type=N'COLUMN', @level2name=N'AdministrationDate'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentAccommodation', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentAccommodation', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentAccommodation', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentAccommodation', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentAccommodation', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment administered to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentAccommodation', @level2type=N'COLUMN', @level2name=N'StudentAssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentAccommodation', @level2type=N'COLUMN', @level2name=N'StudentUSI'
 GO
@@ -4934,22 +4750,13 @@ GO
 -- Extended Properties [edfi].[StudentAssessmentItem] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The student''s response to an assessment item and the item-level scores such as correct, incorrect, or met standard.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentItem'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentItem', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month(s), day(s), and year on which an assessment is administered or first day of administration if over multiple days.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentItem', @level2type=N'COLUMN', @level2name=N'AdministrationDate'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentItem', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentItem', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentItem', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentItem', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to a space, room, site, building, individual, organization, program, or institution by a school, school system, state, or other agency or entity.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentItem', @level2type=N'COLUMN', @level2name=N'IdentificationCode'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentItem', @level2type=N'COLUMN', @level2name=N'Namespace'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment administered to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentItem', @level2type=N'COLUMN', @level2name=N'StudentAssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentItem', @level2type=N'COLUMN', @level2name=N'StudentUSI'
 GO
@@ -4978,24 +4785,15 @@ GO
 -- Extended Properties [edfi].[StudentAssessmentPerformanceLevel] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The performance level(s) achieved for the StudentAssessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentPerformanceLevel'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month(s), day(s), and year on which an assessment is administered or first day of administration if over multiple days.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AdministrationDate'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The method that the instructor of the class uses to report the performance and achievement. It may be a qualitative method such as individualized teacher comments or a quantitative method such as a letter or numerical grade. In some cases, more than one type of reporting method may be used.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentReportingMethodDescriptorId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A specification of which performance level value describes the student proficiency.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'PerformanceLevelDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment administered to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'StudentAssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'StudentUSI'
 GO
@@ -5005,22 +4803,13 @@ GO
 -- Extended Properties [edfi].[StudentAssessmentScoreResult] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A meaningful score or statistical expression of the performance of an individual. The results can be expressed as a number, percentile, range, level, etc.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentScoreResult'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month(s), day(s), and year on which an assessment is administered or first day of administration if over multiple days.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'AdministrationDate'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The method that the administrator of the assessment uses to report the performance and achievement of all students. It may be a qualitative method such as performance level descriptors or a quantitative method such as a numerical grade or cut score. More than one type of reporting method may be used.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'AssessmentReportingMethodDescriptorId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment administered to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'StudentAssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'StudentUSI'
 GO
@@ -5032,22 +4821,13 @@ GO
 -- Extended Properties [edfi].[StudentAssessmentStudentObjectiveAssessment] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The student''s score and/or performance levels earned for an ObjectiveAssessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessment'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month(s), day(s), and year on which an assessment is administered or first day of administration if over multiple days.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'AdministrationDate'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to a space, room, site, building, individual, organization, program, or institution by a school, school system, a state, or other agency or entity.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'IdentificationCode'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'Namespace'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment administered to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'StudentAssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessment', @level2type=N'COLUMN', @level2name=N'StudentUSI'
 GO
@@ -5055,26 +4835,17 @@ GO
 -- Extended Properties [edfi].[StudentAssessmentStudentObjectiveAssessmentPerformanceLevel] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The PerformanceLevel(s) achieved for the ObjectiveAssessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentPerformanceLevel'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month(s), day(s), and year on which an assessment is administered or first day of administration if over multiple days.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AdministrationDate'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The method that the instructor of the class uses to report the performance and achievement. It may be a qualitative method such as individualized teacher comments or a quantitative method such as a letter or numerical grade. In some cases, more than one type of reporting method may be used.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentReportingMethodDescriptorId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to a space, room, site, building, individual, organization, program, or institution by a school, school system, a state, or other agency or entity.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'IdentificationCode'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'Namespace'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A specification of which performance level value describes the student proficiency.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'PerformanceLevelDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment administered to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'StudentAssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentPerformanceLevel', @level2type=N'COLUMN', @level2name=N'StudentUSI'
 GO
@@ -5084,24 +4855,15 @@ GO
 -- Extended Properties [edfi].[StudentAssessmentStudentObjectiveAssessmentScoreResult] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A meaningful score or statistical expression of the performance of an individual. The results can be expressed as a number, percentile, range, level, etc.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentScoreResult'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month(s), day(s), and year on which an assessment is administered or first day of administration if over multiple days.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'AdministrationDate'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The typical grade level for which an assessment is designed. If the assessment spans a range of grades, then this attribute holds the highest grade assessed. If only one grade level is assessed then only this attribute is used. For example:
-        Adult
-        Prekindergarten
-        First grade
-        Second grade
-        ...', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'AssessedGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'AssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The method that the administrator of the assessment uses to report the performance and achievement of all students. It may be a qualitative method such as performance level descriptors or a quantitative method such as a numerical grade or cut score. More than one type of reporting method may be used.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'AssessmentReportingMethodDescriptorId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The title or name of the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'AssessmentTitle'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The version identifier for the assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'AssessmentVersion'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to a space, room, site, building, individual, organization, program, or institution by a school, school system, a state, or other agency or entity.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'IdentificationCode'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the Assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'Namespace'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to an assessment administered to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'StudentAssessmentIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentAssessmentStudentObjectiveAssessmentScoreResult', @level2type=N'COLUMN', @level2name=N'StudentUSI'
 GO
@@ -5876,7 +5638,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Field indicati
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The proficiency level for the yearly English language assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment', @level2type=N'COLUMN', @level2name=N'ProficiencyDescriptorId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The yearly progress or growth from last year’s assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment', @level2type=N'COLUMN', @level2name=N'ProgressDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The yearly progress or growth from last year''s assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment', @level2type=N'COLUMN', @level2name=N'ProgressDescriptorId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Student is monitored on content achievement who are no longer receiving services.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment', @level2type=N'COLUMN', @level2name=N'MonitoredDescriptorId'
 GO
@@ -5908,8 +5670,6 @@ GO
 -- Extended Properties [edfi].[StudentLearningObjective] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This entity represents the competency assessed or evaluated for the student against a specific LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjective'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjective', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The name of the period for which grades are reported.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjective', @level2type=N'COLUMN', @level2name=N'GradingPeriodDescriptorId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjective', @level2type=N'COLUMN', @level2name=N'GradingPeriodSchoolId'
@@ -5918,9 +5678,9 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The sequential order of this period relative to other periods.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjective', @level2type=N'COLUMN', @level2name=N'GradingPeriodSequence'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The designated title of the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjective', @level2type=N'COLUMN', @level2name=N'Objective'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning objective in the context of a standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjective', @level2type=N'COLUMN', @level2name=N'LearningObjectiveId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level for which the LearningObjective is targeted.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjective', @level2type=N'COLUMN', @level2name=N'ObjectiveGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjective', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjective', @level2type=N'COLUMN', @level2name=N'StudentUSI'
 GO
@@ -5931,8 +5691,6 @@ GO
 
 -- Extended Properties [edfi].[StudentLearningObjectiveGeneralStudentProgramAssociation] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Relates the Student and Program associated with the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveGeneralStudentProgramAssociation'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveGeneralStudentProgramAssociation', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month, day, and year on which the Student first received services.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveGeneralStudentProgramAssociation', @level2type=N'COLUMN', @level2name=N'BeginDate'
 GO
@@ -5946,9 +5704,9 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The sequential order of this period relative to other periods.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveGeneralStudentProgramAssociation', @level2type=N'COLUMN', @level2name=N'GradingPeriodSequence'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The designated title of the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveGeneralStudentProgramAssociation', @level2type=N'COLUMN', @level2name=N'Objective'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning objective in the context of a standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveGeneralStudentProgramAssociation', @level2type=N'COLUMN', @level2name=N'LearningObjectiveId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level for which the LearningObjective is targeted.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveGeneralStudentProgramAssociation', @level2type=N'COLUMN', @level2name=N'ObjectiveGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveGeneralStudentProgramAssociation', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveGeneralStudentProgramAssociation', @level2type=N'COLUMN', @level2name=N'ProgramEducationOrganizationId'
 GO
@@ -5962,8 +5720,6 @@ GO
 -- Extended Properties [edfi].[StudentLearningObjectiveStudentSectionAssociation] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Relates the Student and Section associated with the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveStudentSectionAssociation'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveStudentSectionAssociation', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Month, day, and year of the Student''s entry or assignment to the Section.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveStudentSectionAssociation', @level2type=N'COLUMN', @level2name=N'BeginDate'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The name of the period for which grades are reported.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveStudentSectionAssociation', @level2type=N'COLUMN', @level2name=N'GradingPeriodDescriptorId'
@@ -5974,11 +5730,11 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The sequential order of this period relative to other periods.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveStudentSectionAssociation', @level2type=N'COLUMN', @level2name=N'GradingPeriodSequence'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning objective in the context of a standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveStudentSectionAssociation', @level2type=N'COLUMN', @level2name=N'LearningObjectiveId'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The local code assigned by the School that identifies the course offering provided for the instruction of students.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveStudentSectionAssociation', @level2type=N'COLUMN', @level2name=N'LocalCourseCode'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The designated title of the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveStudentSectionAssociation', @level2type=N'COLUMN', @level2name=N'Objective'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level for which the LearningObjective is targeted.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveStudentSectionAssociation', @level2type=N'COLUMN', @level2name=N'ObjectiveGradeLevelDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningObjective.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveStudentSectionAssociation', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentLearningObjectiveStudentSectionAssociation', @level2type=N'COLUMN', @level2name=N'SchoolId'
 GO
@@ -6018,11 +5774,11 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month, day
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month, day, and year on which the Student first entered a U.S. school.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentMigrantEducationProgramAssociation', @level2type=N'COLUMN', @level2name=N'USInitialSchoolEntry'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The Qualifying Arrival Date (QAD) is the date the child joins the worker who has already moved, or the date when the worker joins the child who has already moved. The QAD is the date that the child’s eligibility for the MEP begins. The QAD is not affected by subsequent non-qualifying moves.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentMigrantEducationProgramAssociation', @level2type=N'COLUMN', @level2name=N'QualifyingArrivalDate'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The Qualifying Arrival Date (QAD) is the date the child joins the worker who has already moved, or the date when the worker joins the child who has already moved. The QAD is the date that the child''s eligibility for the MEP begins. The QAD is not affected by subsequent non-qualifying moves.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentMigrantEducationProgramAssociation', @level2type=N'COLUMN', @level2name=N'QualifyingArrivalDate'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The verified State residency for the student.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentMigrantEducationProgramAssociation', @level2type=N'COLUMN', @level2name=N'StateResidencyDate'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The Eligibility Expiration Date is used to determine end of eligibility and to account for a child’s eligibility expiring earlier than 36 months from the child’s QAD. A child’s eligibility would end earlier than 36 months from the child’s QAD, if the child is no longer entitled to a free public education (e.g., graduated with a high school diploma, obtained a high school equivalency diploma (HSED), or for other reasons as determined by States’ requirements), or if the child passes away.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentMigrantEducationProgramAssociation', @level2type=N'COLUMN', @level2name=N'EligibilityExpirationDate'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The Eligibility Expiration Date is used to determine end of eligibility and to account for a child''s eligibility expiring earlier than 36 months from the child''s QAD. A child''s eligibility would end earlier than 36 months from the child''s QAD, if the child is no longer entitled to a free public education (e.g., graduated with a high school diploma, obtained a high school equivalency diploma (HSED), or for other reasons as determined by States'' requirements), or if the child passes away.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentMigrantEducationProgramAssociation', @level2type=N'COLUMN', @level2name=N'EligibilityExpirationDate'
 GO
 
 -- Extended Properties [edfi].[StudentMigrantEducationProgramAssociationMigrantEducationProgramService] --

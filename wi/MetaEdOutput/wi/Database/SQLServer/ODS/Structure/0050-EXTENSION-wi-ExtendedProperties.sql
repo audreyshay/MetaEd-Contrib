@@ -94,6 +94,18 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'IacCode of concentration.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentCTEProgramAssociationExtension', @level2type=N'COLUMN', @level2name=N'CTEConcentrationIacCodeDescriptorId'
 GO
 
+-- Extended Properties [wi].[StudentDisciplineIncidentAssociationExtension] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentDisciplineIncidentAssociationExtension'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A locally assigned unique identifier (within the school or school district) to identify each specific DisciplineIncident or occurrence. The same identifier should be used to document the entire DisciplineIncident even if it included multiple offenses and multiple offenders.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentDisciplineIncidentAssociationExtension', @level2type=N'COLUMN', @level2name=N'IncidentIdentifier'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentDisciplineIncidentAssociationExtension', @level2type=N'COLUMN', @level2name=N'SchoolId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentDisciplineIncidentAssociationExtension', @level2type=N'COLUMN', @level2name=N'StudentUSI'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Incident resulted in serious bodily injury. Serious Bodily Injury involves a substantial risk of death; extreme physical pain; protracted and obvious disfigurement; or protracted loss or impairment of the function of a bodily member, organ, or faculty (18 USC Section 1365 (3)(h)).', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentDisciplineIncidentAssociationExtension', @level2type=N'COLUMN', @level2name=N'SeriousBodilyInjury'
+GO
+
 -- Extended Properties [wi].[StudentEducationOrganizationAssociationExtension] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentEducationOrganizationAssociationExtension'
 GO

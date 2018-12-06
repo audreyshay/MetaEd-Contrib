@@ -1,5 +1,5 @@
 {
-  "odsApiVersion": "3.0.0",
+  "odsApiVersion": "3.1.0",
   "schemaDefinition": {
     "logicalName": "EdFiXFinance",
     "physicalName": "edfixfinance"
@@ -820,19 +820,6 @@
       "schema": "edfixfinance",
       "name": "LocalAccount",
       "locallyDefinedProperties": [
-        {
-          "propertyName": "AccountIdentifier",
-          "propertyType": {
-            "dbType": "String",
-            "maxLength": 50,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "Code value for the valid combination of account dimensions by LEA under which financials are reported. ",
-          "isIdentifying": true,
-          "isServerAssigned": false
-        },
         {
           "propertyName": "AccountName",
           "propertyType": {
@@ -2124,15 +2111,15 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "BalanceSheetFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
             "precision": 5,
             "scale": 0,
-            "isNullable": true
+            "isNullable": false
           },
-          "description": "The fiscal year for which the account Balance Sheet dimension is valid.",
+          "description": "Fiscal year for the account",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2244,15 +2231,15 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "FunctionFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
             "precision": 5,
             "scale": 0,
-            "isNullable": true
+            "isNullable": false
           },
-          "description": "The fiscal year for which the account Function dimension is valid.",
+          "description": "Fiscal year for the account",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2317,15 +2304,15 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "FundFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
             "precision": 5,
             "scale": 0,
-            "isNullable": true
+            "isNullable": false
           },
-          "description": "The fiscal year for which the account Fund dimension is valid.",
+          "description": "Fiscal year for the account",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2390,15 +2377,15 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "ObjectFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
             "precision": 5,
             "scale": 0,
-            "isNullable": true
+            "isNullable": false
           },
-          "description": "The fiscal year for which the account Object dimension is valid.",
+          "description": "Fiscal year for the account",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2463,15 +2450,15 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "OperationalUnitFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
             "precision": 5,
             "scale": 0,
-            "isNullable": true
+            "isNullable": false
           },
-          "description": "The fiscal year for which the account Operational Unit dimension is valid.",
+          "description": "Fiscal year for the account",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2536,15 +2523,15 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "ProgramFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
             "precision": 5,
             "scale": 0,
-            "isNullable": true
+            "isNullable": false
           },
-          "description": "The fiscal year for which the account Program dimension is valid.",
+          "description": "Fiscal year for the account",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2609,15 +2596,15 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "ProjectFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
             "precision": 5,
             "scale": 0,
-            "isNullable": true
+            "isNullable": false
           },
-          "description": "The fiscal year for which the account Project dimension is valid.",
+          "description": "Fiscal year for the account",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2682,15 +2669,15 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "SourceFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
             "precision": 5,
             "scale": 0,
-            "isNullable": true
+            "isNullable": false
           },
-          "description": "The fiscal year for which the account Source dimension is valid.",
+          "description": "Fiscal year for the account",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -3136,7 +3123,7 @@
         "schema": "edfixfinance",
         "name": "FK_LocalAccount_ChartOfAccount"
       },
-      "cardinality": "OneToZeroOrMore",
+      "cardinality": "OneToOne",
       "primaryEntityFullName": {
         "schema": "edfixfinance",
         "name": "ChartOfAccount"
@@ -3152,7 +3139,7 @@
             "isNullable": false
           },
           "description": "SEA populated Code value for the valid combination of account dimensions under which financials are reported.",
-          "isIdentifying": false,
+          "isIdentifying": true,
           "isServerAssigned": false
         },
         {
@@ -3165,7 +3152,7 @@
             "isNullable": false
           },
           "description": "The identifier assigned to an education organization.",
-          "isIdentifying": false,
+          "isIdentifying": true,
           "isServerAssigned": false
         },
         {
@@ -3178,7 +3165,7 @@
             "isNullable": false
           },
           "description": "Fiscal year for the account",
-          "isIdentifying": false,
+          "isIdentifying": true,
           "isServerAssigned": false
         }
       ],
@@ -3188,7 +3175,7 @@
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "ChartOfAccountIdentifier",
+          "propertyName": "AccountIdentifier",
           "propertyType": {
             "dbType": "String",
             "maxLength": 50,
@@ -3196,12 +3183,12 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "SEA populated Code value for the valid combination of account dimensions under which financials are reported.",
-          "isIdentifying": false,
+          "description": "Code value for the valid combination of account dimensions by LEA under which financials are reported. ",
+          "isIdentifying": true,
           "isServerAssigned": false
         },
         {
-          "propertyName": "ChartOfAccountEducationOrganizationId",
+          "propertyName": "EducationOrganizationId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -3210,11 +3197,11 @@
             "isNullable": false
           },
           "description": "The identifier assigned to an education organization.",
-          "isIdentifying": false,
+          "isIdentifying": true,
           "isServerAssigned": false
         },
         {
-          "propertyName": "ChartOfAccountFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
@@ -3223,11 +3210,11 @@
             "isNullable": false
           },
           "description": "Fiscal year for the account",
-          "isIdentifying": false,
+          "isIdentifying": true,
           "isServerAssigned": false
         }
       ],
-      "isIdentifying": false,
+      "isIdentifying": true,
       "isRequired": true
     },
     {

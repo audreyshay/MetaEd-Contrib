@@ -28,12 +28,12 @@ CREATE NONCLUSTERED INDEX [FK_ChartOfAccount_AccountTypeDescriptor]
 ON [edfixfinance].[ChartOfAccount] ([AccountTypeDescriptorId] ASC)
 GO
 
-ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_BalanceSheetDimension] FOREIGN KEY ([BalanceSheetCode], [BalanceSheetFiscalYear])
+ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_BalanceSheetDimension] FOREIGN KEY ([BalanceSheetCode], [FiscalYear])
 REFERENCES [edfixfinance].[BalanceSheetDimension] ([Code], [FiscalYear])
 GO
 
 CREATE NONCLUSTERED INDEX [FK_ChartOfAccount_BalanceSheetDimension]
-ON [edfixfinance].[ChartOfAccount] ([BalanceSheetCode] ASC, [BalanceSheetFiscalYear] ASC)
+ON [edfixfinance].[ChartOfAccount] ([BalanceSheetCode] ASC, [FiscalYear] ASC)
 GO
 
 ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_EducationOrganization] FOREIGN KEY ([EducationOrganizationId])
@@ -44,60 +44,60 @@ CREATE NONCLUSTERED INDEX [FK_ChartOfAccount_EducationOrganization]
 ON [edfixfinance].[ChartOfAccount] ([EducationOrganizationId] ASC)
 GO
 
-ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_FunctionDimension] FOREIGN KEY ([FunctionCode], [FunctionFiscalYear])
+ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_FunctionDimension] FOREIGN KEY ([FunctionCode], [FiscalYear])
 REFERENCES [edfixfinance].[FunctionDimension] ([Code], [FiscalYear])
 GO
 
 CREATE NONCLUSTERED INDEX [FK_ChartOfAccount_FunctionDimension]
-ON [edfixfinance].[ChartOfAccount] ([FunctionCode] ASC, [FunctionFiscalYear] ASC)
+ON [edfixfinance].[ChartOfAccount] ([FunctionCode] ASC, [FiscalYear] ASC)
 GO
 
-ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_FundDimension] FOREIGN KEY ([FundCode], [FundFiscalYear])
+ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_FundDimension] FOREIGN KEY ([FundCode], [FiscalYear])
 REFERENCES [edfixfinance].[FundDimension] ([Code], [FiscalYear])
 GO
 
 CREATE NONCLUSTERED INDEX [FK_ChartOfAccount_FundDimension]
-ON [edfixfinance].[ChartOfAccount] ([FundCode] ASC, [FundFiscalYear] ASC)
+ON [edfixfinance].[ChartOfAccount] ([FundCode] ASC, [FiscalYear] ASC)
 GO
 
-ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_ObjectDimension] FOREIGN KEY ([ObjectCode], [ObjectFiscalYear])
+ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_ObjectDimension] FOREIGN KEY ([ObjectCode], [FiscalYear])
 REFERENCES [edfixfinance].[ObjectDimension] ([Code], [FiscalYear])
 GO
 
 CREATE NONCLUSTERED INDEX [FK_ChartOfAccount_ObjectDimension]
-ON [edfixfinance].[ChartOfAccount] ([ObjectCode] ASC, [ObjectFiscalYear] ASC)
+ON [edfixfinance].[ChartOfAccount] ([ObjectCode] ASC, [FiscalYear] ASC)
 GO
 
-ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_OperationalUnitDimension] FOREIGN KEY ([OperationalUnitCode], [OperationalUnitFiscalYear])
+ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_OperationalUnitDimension] FOREIGN KEY ([OperationalUnitCode], [FiscalYear])
 REFERENCES [edfixfinance].[OperationalUnitDimension] ([Code], [FiscalYear])
 GO
 
 CREATE NONCLUSTERED INDEX [FK_ChartOfAccount_OperationalUnitDimension]
-ON [edfixfinance].[ChartOfAccount] ([OperationalUnitCode] ASC, [OperationalUnitFiscalYear] ASC)
+ON [edfixfinance].[ChartOfAccount] ([OperationalUnitCode] ASC, [FiscalYear] ASC)
 GO
 
-ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_ProgramDimension] FOREIGN KEY ([ProgramCode], [ProgramFiscalYear])
+ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_ProgramDimension] FOREIGN KEY ([ProgramCode], [FiscalYear])
 REFERENCES [edfixfinance].[ProgramDimension] ([Code], [FiscalYear])
 GO
 
 CREATE NONCLUSTERED INDEX [FK_ChartOfAccount_ProgramDimension]
-ON [edfixfinance].[ChartOfAccount] ([ProgramCode] ASC, [ProgramFiscalYear] ASC)
+ON [edfixfinance].[ChartOfAccount] ([ProgramCode] ASC, [FiscalYear] ASC)
 GO
 
-ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_ProjectDimension] FOREIGN KEY ([ProjectCode], [ProjectFiscalYear])
+ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_ProjectDimension] FOREIGN KEY ([ProjectCode], [FiscalYear])
 REFERENCES [edfixfinance].[ProjectDimension] ([Code], [FiscalYear])
 GO
 
 CREATE NONCLUSTERED INDEX [FK_ChartOfAccount_ProjectDimension]
-ON [edfixfinance].[ChartOfAccount] ([ProjectCode] ASC, [ProjectFiscalYear] ASC)
+ON [edfixfinance].[ChartOfAccount] ([ProjectCode] ASC, [FiscalYear] ASC)
 GO
 
-ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_SourceDimension] FOREIGN KEY ([SourceCode], [SourceFiscalYear])
+ALTER TABLE [edfixfinance].[ChartOfAccount] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccount_SourceDimension] FOREIGN KEY ([SourceCode], [FiscalYear])
 REFERENCES [edfixfinance].[SourceDimension] ([Code], [FiscalYear])
 GO
 
 CREATE NONCLUSTERED INDEX [FK_ChartOfAccount_SourceDimension]
-ON [edfixfinance].[ChartOfAccount] ([SourceCode] ASC, [SourceFiscalYear] ASC)
+ON [edfixfinance].[ChartOfAccount] ([SourceCode] ASC, [FiscalYear] ASC)
 GO
 
 ALTER TABLE [edfixfinance].[ChartOfAccountReportingTag] WITH CHECK ADD CONSTRAINT [FK_ChartOfAccountReportingTag_ChartOfAccount] FOREIGN KEY ([AccountIdentifier], [EducationOrganizationId], [FiscalYear])
@@ -156,12 +156,8 @@ CREATE NONCLUSTERED INDEX [FK_FundDimensionReportingTag_ReportingTagDescriptor]
 ON [edfixfinance].[FundDimensionReportingTag] ([ReportingTagDescriptorId] ASC)
 GO
 
-ALTER TABLE [edfixfinance].[LocalAccount] WITH CHECK ADD CONSTRAINT [FK_LocalAccount_ChartOfAccount] FOREIGN KEY ([ChartOfAccountIdentifier], [ChartOfAccountEducationOrganizationId], [ChartOfAccountFiscalYear])
+ALTER TABLE [edfixfinance].[LocalAccount] WITH CHECK ADD CONSTRAINT [FK_LocalAccount_ChartOfAccount] FOREIGN KEY ([AccountIdentifier], [EducationOrganizationId], [FiscalYear])
 REFERENCES [edfixfinance].[ChartOfAccount] ([AccountIdentifier], [EducationOrganizationId], [FiscalYear])
-GO
-
-CREATE NONCLUSTERED INDEX [FK_LocalAccount_ChartOfAccount]
-ON [edfixfinance].[LocalAccount] ([ChartOfAccountIdentifier] ASC, [ChartOfAccountEducationOrganizationId] ASC, [ChartOfAccountFiscalYear] ASC)
 GO
 
 ALTER TABLE [edfixfinance].[LocalAccount] WITH CHECK ADD CONSTRAINT [FK_LocalAccount_EducationOrganization] FOREIGN KEY ([EducationOrganizationId])

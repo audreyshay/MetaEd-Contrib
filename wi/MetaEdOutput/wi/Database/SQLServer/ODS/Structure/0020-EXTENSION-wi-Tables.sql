@@ -128,6 +128,23 @@ GO
 ALTER TABLE [wi].[StudentCTEProgramAssociationExtension] ADD CONSTRAINT [StudentCTEProgramAssociationExtension_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
+-- Table [wi].[StudentDisciplineIncidentAssociationExtension] --
+CREATE TABLE [wi].[StudentDisciplineIncidentAssociationExtension] (
+    [IncidentIdentifier] [NVARCHAR](20) NOT NULL,
+    [SchoolId] [INT] NOT NULL,
+    [StudentUSI] [INT] NOT NULL,
+    [SeriousBodilyInjury] [BIT] NULL,
+    [CreateDate] [DATETIME] NOT NULL,
+    CONSTRAINT [StudentDisciplineIncidentAssociationExtension_PK] PRIMARY KEY CLUSTERED (
+        [IncidentIdentifier] ASC,
+        [SchoolId] ASC,
+        [StudentUSI] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [wi].[StudentDisciplineIncidentAssociationExtension] ADD CONSTRAINT [StudentDisciplineIncidentAssociationExtension_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
+GO
+
 -- Table [wi].[StudentEducationOrganizationAssociationExtension] --
 CREATE TABLE [wi].[StudentEducationOrganizationAssociationExtension] (
     [EducationOrganizationId] [INT] NOT NULL,
