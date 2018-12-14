@@ -1,7 +1,4 @@
 Domain Entity Section additions
-common SectionCourseCharacteristic
-  documentation "A collection of course level characteristics for a section"
-  is optional collection
 common SectionExternalProviderTeacher
   documentation "A collection fo external teachers assigned to a section"
   is optional collection

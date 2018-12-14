@@ -74,6 +74,7 @@
       <xs:enumeration value="DisciplineActionLengthDifferenceReasonDescriptor" />
       <xs:enumeration value="DisciplineDescriptor" />
       <xs:enumeration value="EducationalEnvironmentDescriptor" />
+      <xs:enumeration value="EducationLevelDescriptor" />
       <xs:enumeration value="EducationOrganizationCategoryDescriptor" />
       <xs:enumeration value="EducationOrganizationIdentificationSystemDescriptor" />
       <xs:enumeration value="EducationPlanDescriptor" />
@@ -166,7 +167,6 @@
       <xs:enumeration value="SeparationDescriptor" />
       <xs:enumeration value="SeparationReasonDescriptor" />
       <xs:enumeration value="ServiceDescriptor" />
-      <xs:enumeration value="SessionTypeDescriptor" />
       <xs:enumeration value="SexDescriptor" />
       <xs:enumeration value="SpecialEducationProgramServiceDescriptor" />
       <xs:enumeration value="SpecialEducationSettingDescriptor" />
@@ -187,8 +187,6 @@
       <xs:enumeration value="TermDescriptor" />
       <xs:enumeration value="TitleIPartAParticipantDescriptor" />
       <xs:enumeration value="TitleIPartASchoolDesignationDescriptor" />
-      <xs:enumeration value="TrackEventDescriptor" />
-      <xs:enumeration value="TrackNumberDescriptor" />
       <xs:enumeration value="TribalAffiliationDescriptor" />
       <xs:enumeration value="TuitionPayerDescriptor" />
       <xs:enumeration value="VisaDescriptor" />

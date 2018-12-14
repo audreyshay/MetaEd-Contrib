@@ -11,8 +11,15 @@ Association StudentSchoolAssociation additions
                   will allow the reporting of students who are enrolled in a SPED program
                   but not enrolled in a school."
     is required
-  domain entity Track
-    documentation "For schools or districts with multiple tracks, identifies the
-                  track to which this enrollment applies. (If the school does not
-                  have its own calendar, it will use the district's calendar.)"
-    is optional
+  common StudentSchoolAssociationLocalEducationAgency
+     documentation "This association represents any special enrollment characteristics of the student school association"
+     is optional collection
+  common StudentSchoolAssociationMembershipFTE
+     documentation "This association represents the full-time equivalency of the student school association"
+     is optional collection
+  common StudentSchoolAssociationTuitionPayer
+     documentation "This association represents the tuition payer codes of the student school association"
+     is optional collection
+  common StudentSchoolAssociationSpecialEnrollment
+     documentation "This association represents any special enrollment characteristics of the student school association"
+     is optional collection

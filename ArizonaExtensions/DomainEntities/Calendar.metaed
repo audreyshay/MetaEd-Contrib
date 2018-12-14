@@ -1,0 +1,5 @@
+Domain Entity Calendar additions
+domain entity LocalEducationAgency
+  documentation "The LEA id of the district submitting the track"
+  is required
+  with context Calendar

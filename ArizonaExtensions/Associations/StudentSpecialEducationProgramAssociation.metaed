@@ -1,0 +1,4 @@
+Association StudentSpecialEducationProgramAssociation additions
+ bool MainSPEDSchool
+      documentation "A flag indicating if this is Primary school for SPED concurrency or not"
+      is optional

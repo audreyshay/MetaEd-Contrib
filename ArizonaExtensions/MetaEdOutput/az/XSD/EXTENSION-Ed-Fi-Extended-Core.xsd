@@ -1,57 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- (c)2018 Ed-Fi Alliance, LLC. All Rights Reserved. -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0300" xmlns:ann="http://ed-fi.org/annotation" targetNamespace="http://ed-fi.org/0300" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0310" xmlns:ann="http://ed-fi.org/annotation" targetNamespace="http://ed-fi.org/0310" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xs:include schemaLocation="Ed-Fi-Core.xsd" />
   <xs:annotation>
-    <xs:documentation>===== Ed-Fi 3.0.0 Extensions =====</xs:documentation>
+    <xs:documentation>===== Ed-Fi 3.1.0 Extensions =====</xs:documentation>
   </xs:annotation>
   <xs:annotation>
     <xs:documentation>===== Domain Entities =====</xs:documentation>
   </xs:annotation>
-  <xs:complexType name="EXTENSION-CalendarDateTrackEvent">
+  <xs:complexType name="EXTENSION-CalendarExtension">
     <xs:annotation>
-      <xs:documentation>The calendar track event associated with a calendar date.</xs:documentation>
+      <xs:documentation></xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Domain Entity</ann:TypeGroup>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="ComplexObjectType">
+      <xs:extension base="Calendar">
         <xs:sequence>
-          <xs:element name="Date" type="xs:date">
+          <xs:element name="CalendarLocalEducationAgencyReference" type="LocalEducationAgencyReferenceType">
             <xs:annotation>
-              <xs:documentation>The month, day, and year of the CalendarDate.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="TrackReference" type="EXTENSION-TrackReferenceType">
-            <xs:annotation>
-              <xs:documentation>The track reference</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="TrackEvent" type="EXTENSION-TrackEventDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>The type of scheduled or unscheduled event for the day. For example:
-              
-                                  Instructional day
-              
-                                  Teacher only day
-              
-                                  Holiday
-              
-                                  Make-up day
-              
-                                  Weather day
-              
-                                  Student late arrival/early dismissal.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>EXTENSION-TrackEventDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="EventDuration" type="EventDuration">
-            <xs:annotation>
-              <xs:documentation>The amount of time for the event as recognized by the school: 1 day = 1,
-                                  1/2 day = 0.5, 1/3 day = 0.33.</xs:documentation>
+              <xs:documentation>The LEA id of the district submitting the track</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -68,11 +37,11 @@
     <xs:complexContent>
       <xs:extension base="CourseOffering">
         <xs:sequence>
-          <xs:element name="EndOfCourseAssessmentCodeType" type="EXTENSION-EndOfCourseAssessmentCodeTypeDescriptorReferenceType" minOccurs="0">
+          <xs:element name="EndOfCourseAssessmentCode" type="EXTENSION-EndOfCourseAssessmentCodeDescriptorReferenceType" minOccurs="0">
             <xs:annotation>
               <xs:documentation>The end of course assesment code. Submitted for courses that end with Assessment testing</xs:documentation>
               <xs:appinfo>
-                <ann:Descriptor>EXTENSION-EndOfCourseAssessmentCodeTypeDescriptor</ann:Descriptor>
+                <ann:Descriptor>EXTENSION-EndOfCourseAssessmentCodeDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -95,11 +64,6 @@
     <xs:complexContent>
       <xs:extension base="Section">
         <xs:sequence>
-          <xs:element name="SectionCourseCharacteristic" type="EXTENSION-SectionCourseCharacteristic" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>A collection of course level characteristics for a section</xs:documentation>
-            </xs:annotation>
-          </xs:element>
           <xs:element name="SectionExternalProviderTeacher" type="EXTENSION-SectionExternalProviderTeacher" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>A collection fo external teachers assigned to a section</xs:documentation>
@@ -120,30 +84,6 @@
           <xs:element name="Note" type="EXTENSION-Note" minOccurs="0">
             <xs:annotation>
               <xs:documentation>This is a free field that may contain up to 250 characters.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-SessionExtension">
-    <xs:annotation>
-      <xs:documentation></xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Session">
-        <xs:sequence>
-          <xs:element name="SessionType" type="EXTENSION-SessionTypeDescriptorReferenceType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>The Session Type is a code indicating whether the session in which
-                              the course is conducted is a Semester, Trimester, Quarter, Full
-                              Year. Can be thought of as 'term definition'.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>EXTENSION-SessionTypeDescriptor</ann:Descriptor>
-              </xs:appinfo>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -187,27 +127,6 @@
                                 student's progress. This field is nullable.  If no data is submitted,
                                 it will be NULL.  If the LEA/School submits data it will be a
                                 0 or a 1 where 0 = Unsatisfactory and 1 = Satisfactory</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-StudentExtension">
-    <xs:annotation>
-      <xs:documentation></xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Student">
-        <xs:sequence>
-          <xs:element name="TribalName" type="EXTENSION-TribalName" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>A name borne in common by members of a tribe or clan. This  is
-                                used for matching purposes only. Note: Name provided by Tribe,
-                                not name of Tribe.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -289,154 +208,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="EXTENSION-StudentSchoolAssociationLocalEducationAgency">
-    <xs:annotation>
-      <xs:documentation>This association indicates any relationship between a student school association and a Local Education Agency</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="ComplexObjectType">
-        <xs:sequence>
-          <xs:element name="StudentSchoolAssociationReference" type="StudentSchoolAssociationReferenceType">
-            <xs:annotation>
-              <xs:documentation>The reference to StudentSchoolAssociation</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="StartDate" type="xs:date">
-            <xs:annotation>
-              <xs:documentation>The start date of the association</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="EndDate" type="xs:date" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>The end date of the association</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="LocalEducationAgencyReference" type="LocalEducationAgencyReferenceType">
-            <xs:annotation>
-              <xs:documentation>The reference to the LocalEducationAgency</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="MembershipResponsibility" type="EXTENSION-MembershipResponsibilityDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>The membership responsibility descriptor</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>EXTENSION-MembershipResponsibilityDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-StudentSchoolAssociationMembershipFTE">
-    <xs:annotation>
-      <xs:documentation>This association represents the full-time equivalency of the student school association</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="ComplexObjectType">
-        <xs:sequence>
-          <xs:element name="FTEStartDate" type="xs:date">
-            <xs:annotation>
-              <xs:documentation>The start date for the StudentSchoolAssociationMembership</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="FTEEndDate" type="xs:date" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>The end date for the StudentSchoolAssociationMembership</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="MembershipFTE" type="EXTENSION-MembershipFTEDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>The membership full-time equivalency descriptor</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>EXTENSION-MembershipFTEDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-StudentSchoolAssociationSpecialEnrollment">
-    <xs:annotation>
-      <xs:documentation>This association represents any special enrollment characteristics of the student school association</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="ComplexObjectType">
-        <xs:sequence>
-          <xs:element name="StudentSchoolAssociationReference" type="StudentSchoolAssociationReferenceType">
-            <xs:annotation>
-              <xs:documentation>The reference to StudentSchoolAssociation</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="SpecialEnrollmentStartDate" type="xs:date">
-            <xs:annotation>
-              <xs:documentation>The start date for the StudentSchoolAssociationSpecialEnrollment</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="SpecialEnrollmentEndDate" type="xs:date" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>The end date for the StudentSchoolAssociationSpecialEnrollment</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="SpecialEnrollment" type="EXTENSION-SpecialEnrollmentDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>The special enrollment descriptor</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>EXTENSION-SpecialEnrollmentDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-StudentSchoolAssociationTuitionPayer">
-    <xs:annotation>
-      <xs:documentation>This association represents the tuition payer codes of the student school association</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="ComplexObjectType">
-        <xs:sequence>
-          <xs:element name="StudentSchoolAssociationReference" type="StudentSchoolAssociationReferenceType">
-            <xs:annotation>
-              <xs:documentation></xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="PayerStartDate" type="xs:date">
-            <xs:annotation>
-              <xs:documentation>The start date for the StudentSchoolAssociationTuitionPayer</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="PayerEndDate" type="xs:date" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>The end date for the StudentSchoolAssociationTuitionPayer</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="TuitionPayer" type="EXTENSION-TuitionPayerDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>The Tuition Payer descriptor</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>EXTENSION-TuitionPayerDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="EXTENSION-StudentSchoolAttendanceEventExtension">
     <xs:annotation>
       <xs:documentation></xs:documentation>
@@ -447,73 +218,9 @@
     <xs:complexContent>
       <xs:extension base="StudentSchoolAttendanceEvent">
         <xs:sequence>
-          <xs:element name="AbsenceAmount" type="EXTENSION-AbsenceAmountDescriptorReferenceType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>Absence Amount descriptor. Absence Amounts must be less than or equal to the  Student Membership FTE, since absences are measured in quarter day increments.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>EXTENSION-AbsenceAmountDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
           <xs:element name="InstructionalMinutes" type="xs:int" minOccurs="0">
             <xs:annotation>
               <xs:documentation>The amount of time, in minutes, that the student received instruction during the reported attendance period and the 'In Attendance' code is used</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-Track">
-    <xs:annotation>
-      <xs:documentation>This represents a calendar track for a school</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="ComplexObjectType">
-        <xs:sequence>
-          <xs:element name="TrackSchoolIdSchoolReference" type="SchoolReferenceType">
-            <xs:annotation>
-              <xs:documentation>OrganizationID of the School which is tied to the track</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="TrackNumber" type="EXTENSION-TrackNumberDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>The track number descriptor (e.g. 01, 02, 03 etc.)</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>EXTENSION-TrackNumberDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="TrackLocalEducationAgencyReference" type="LocalEducationAgencyReferenceType">
-            <xs:annotation>
-              <xs:documentation>The LEA id of the district submitting the track</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="BeginDate" type="xs:date">
-            <xs:annotation>
-              <xs:documentation>The first date of the track</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="EndDate" type="xs:date">
-            <xs:annotation>
-              <xs:documentation>The last date of the track</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="TotalInstructionalDays" type="TotalInstructionalDays">
-            <xs:annotation>
-              <xs:documentation>The total number of instructional days in the school calendar.
-                                National Education Data Model (NEDM): Total Days in Session</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="NumberOfInstructionalDaysInWeek" type="EXTENSION-NumberOfInstructionalDaysInWeekDescriptorReferenceType">
-            <xs:annotation>
-              <xs:documentation>The number of instructional days in a week descriptor (e.g. 3, 4, 5)</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>EXTENSION-NumberOfInstructionalDaysInWeekDescriptor</ann:Descriptor>
-              </xs:appinfo>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -559,7 +266,18 @@
       <xs:extension base="DescriptorType" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="EXTENSION-EndOfCourseAssessmentCodeTypeDescriptor">
+  <xs:complexType name="EXTENSION-EducationLevelDescriptor">
+    <xs:annotation>
+      <xs:documentation>This descriptor defines education level of a staff who is asscoiated with education organization.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-EndOfCourseAssessmentCodeDescriptor">
     <xs:annotation>
       <xs:documentation>Submitted for courses that end with Assessment testing</xs:documentation>
       <xs:appinfo>
@@ -655,19 +373,6 @@
       <xs:extension base="DescriptorType" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="EXTENSION-SessionTypeDescriptor">
-    <xs:annotation>
-      <xs:documentation>The Session Type is a code indicating whether the session in which
-                        the course is conducted is a Semester, Trimester, Quarter, Full
-                        Year. Can be thought of as 'term definition'</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="EXTENSION-SpecialEnrollmentDescriptor">
     <xs:annotation>
       <xs:documentation>This descriptor describes special enrollment codes</xs:documentation>
@@ -712,30 +417,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="EXTENSION-TrackEventDescriptor">
-    <xs:annotation>
-      <xs:documentation>This descriptor defines the types of scheduled or unscheduled event for the day
-                          (e.g., Instructional day, Teacher only day, Holiday, Make-up day, Weather day,
-                          Student late arrival/early dismissal day).</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-TrackNumberDescriptor">
-    <xs:annotation>
-      <xs:documentation>This descriptor defines the allowed track numbers (e.g., 01, 02, 03, 04, 05, 06)</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Descriptor</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DescriptorType" />
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="EXTENSION-TuitionPayerDescriptor">
     <xs:annotation>
       <xs:documentation>This descriptor defines the tuition payer codes</xs:documentation>
@@ -750,6 +431,48 @@
   <xs:annotation>
     <xs:documentation>===== Associations =====</xs:documentation>
   </xs:annotation>
+  <xs:complexType name="EXTENSION-StaffEducationOrganizationEmploymentAssociationExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="StaffEducationOrganizationEmploymentAssociation">
+        <xs:sequence>
+          <xs:element name="EducationLevel" type="EXTENSION-EducationLevelDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>It defines the staff education level</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-EducationLevelDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Benefits" type="EXTENSION-Benefits" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>It is benefit percentage.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Salary" type="Currency">
+            <xs:annotation>
+              <xs:documentation>Salary defined for a staff.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="FullTimeEquivalencyOther" type="Percent" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The ratio between the hours of work expected in a position and the hours of work normally expected in a full-time position in the same setting.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PSP" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>Purchased Services Personnel (PSP) employees.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="EXTENSION-StudentDropOutRecoveryProgramAssociation">
     <xs:annotation>
       <xs:documentation></xs:documentation>
@@ -803,11 +526,24 @@
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="TrackReference" type="EXTENSION-TrackReferenceType" minOccurs="0">
+          <xs:element name="StudentSchoolAssociationLocalEducationAgency" type="EXTENSION-StudentSchoolAssociationLocalEducationAgency" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation>For schools or districts with multiple tracks, identifies the
-                                track to which this enrollment applies. (If the school does not
-                                have its own calendar, it will use the district's calendar.)</xs:documentation>
+              <xs:documentation>This association represents any special enrollment characteristics of the student school association</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StudentSchoolAssociationMembershipFTE" type="EXTENSION-StudentSchoolAssociationMembershipFTE" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>This association represents the full-time equivalency of the student school association</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StudentSchoolAssociationTuitionPayer" type="EXTENSION-StudentSchoolAssociationTuitionPayer" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>This association represents the tuition payer codes of the student school association</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StudentSchoolAssociationSpecialEnrollment" type="EXTENSION-StudentSchoolAssociationSpecialEnrollment" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>This association represents any special enrollment characteristics of the student school association</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -846,13 +582,13 @@
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="DualCredit" type="xs:boolean" minOccurs="0">
+          <xs:element name="DualCredit" type="xs:boolean">
             <xs:annotation>
               <xs:documentation>A flag indicating if this student is earning Dual Credit in a Dual
                               Credit Course.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ConcurrentEnrollment" type="xs:boolean" minOccurs="0">
+          <xs:element name="ConcurrentEnrollment" type="xs:boolean">
             <xs:annotation>
               <xs:documentation>A flag indicating if this student is concurrently enrolled in a
                               course that offers concurrent enrollment</xs:documentation>
@@ -862,68 +598,28 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:annotation>
-    <xs:documentation>===== Extended Reference Types =====</xs:documentation>
-  </xs:annotation>
-  <xs:complexType name="EXTENSION-CalendarDateTrackEventIdentityType">
+  <xs:complexType name="EXTENSION-StudentSpecialEducationProgramAssociationExtension">
     <xs:annotation>
-      <xs:documentation>Identity of a CalendarDateTrackEvent.</xs:documentation>
+      <xs:documentation></xs:documentation>
       <xs:appinfo>
-        <ann:TypeGroup>Identity</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="Date" type="xs:date">
-        <xs:annotation>
-          <xs:documentation>The month, day, and year of the CalendarDate.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="TrackReference" type="EXTENSION-TrackReferenceType">
-        <xs:annotation>
-          <xs:documentation>The track reference</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="TrackEvent" type="EXTENSION-TrackEventDescriptorReferenceType">
-        <xs:annotation>
-          <xs:documentation>The type of scheduled or unscheduled event for the day. For example:
-              
-                                  Instructional day
-              
-                                  Teacher only day
-              
-                                  Holiday
-              
-                                  Make-up day
-              
-                                  Weather day
-              
-                                  Student late arrival/early dismissal.</xs:documentation>
-          <xs:appinfo>
-            <ann:Descriptor>EXTENSION-TrackEventDescriptor</ann:Descriptor>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-CalendarDateTrackEventReferenceType">
-    <xs:annotation>
-      <xs:documentation>Provides alternative references for a CalendarDateTrackEvent. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
+        <ann:TypeGroup>Association</ann:TypeGroup>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="ReferenceType">
+      <xs:extension base="StudentSpecialEducationProgramAssociation">
         <xs:sequence>
-          <xs:element name="CalendarDateTrackEventIdentity" type="EXTENSION-CalendarDateTrackEventIdentityType" minOccurs="0">
+          <xs:element name="MainSPEDSchool" type="xs:boolean" minOccurs="0">
             <xs:annotation>
-              <xs:documentation>Identity of a CalendarDateTrackEvent.</xs:documentation>
+              <xs:documentation>A flag indicating if this is Primary school for SPED concurrency or not</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Extended Reference Types =====</xs:documentation>
+  </xs:annotation>
   <xs:complexType name="EXTENSION-StudentDropOutRecoveryProgramAssociationIdentityType">
     <xs:annotation>
       <xs:documentation>Identity of a StudentDropOutRecoveryProgramAssociation.</xs:documentation>
@@ -1067,212 +763,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="EXTENSION-StudentSchoolAssociationLocalEducationAgencyIdentityType">
-    <xs:annotation>
-      <xs:documentation>Identity of a StudentSchoolAssociationLocalEducationAgency.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Identity</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="StudentSchoolAssociationReference" type="StudentSchoolAssociationReferenceType">
-        <xs:annotation>
-          <xs:documentation>The reference to StudentSchoolAssociation</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="StartDate" type="xs:date">
-        <xs:annotation>
-          <xs:documentation>The start date of the association</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="MembershipResponsibility" type="EXTENSION-MembershipResponsibilityDescriptorReferenceType">
-        <xs:annotation>
-          <xs:documentation>The membership responsibility descriptor</xs:documentation>
-          <xs:appinfo>
-            <ann:Descriptor>EXTENSION-MembershipResponsibilityDescriptor</ann:Descriptor>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-StudentSchoolAssociationLocalEducationAgencyReferenceType">
-    <xs:annotation>
-      <xs:documentation>Provides alternative references for a StudentSchoolAssociationLocalEducationAgency. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="ReferenceType">
-        <xs:sequence>
-          <xs:element name="StudentSchoolAssociationLocalEducationAgencyIdentity" type="EXTENSION-StudentSchoolAssociationLocalEducationAgencyIdentityType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>Identity of a StudentSchoolAssociationLocalEducationAgency.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-StudentSchoolAssociationMembershipFTEIdentityType">
-    <xs:annotation>
-      <xs:documentation>Identity of a StudentSchoolAssociationMembershipFTE.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Identity</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="FTEStartDate" type="xs:date">
-        <xs:annotation>
-          <xs:documentation>The start date for the StudentSchoolAssociationMembership</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-StudentSchoolAssociationMembershipFTEReferenceType">
-    <xs:annotation>
-      <xs:documentation>Provides alternative references for a StudentSchoolAssociationMembershipFTE. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="ReferenceType">
-        <xs:sequence>
-          <xs:element name="StudentSchoolAssociationMembershipFTEIdentity" type="EXTENSION-StudentSchoolAssociationMembershipFTEIdentityType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>Identity of a StudentSchoolAssociationMembershipFTE.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-StudentSchoolAssociationSpecialEnrollmentIdentityType">
-    <xs:annotation>
-      <xs:documentation>Identity of a StudentSchoolAssociationSpecialEnrollment.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Identity</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="StudentSchoolAssociationReference" type="StudentSchoolAssociationReferenceType">
-        <xs:annotation>
-          <xs:documentation>The reference to StudentSchoolAssociation</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="SpecialEnrollmentStartDate" type="xs:date">
-        <xs:annotation>
-          <xs:documentation>The start date for the StudentSchoolAssociationSpecialEnrollment</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-StudentSchoolAssociationSpecialEnrollmentReferenceType">
-    <xs:annotation>
-      <xs:documentation>Provides alternative references for a StudentSchoolAssociationSpecialEnrollment. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="ReferenceType">
-        <xs:sequence>
-          <xs:element name="StudentSchoolAssociationSpecialEnrollmentIdentity" type="EXTENSION-StudentSchoolAssociationSpecialEnrollmentIdentityType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>Identity of a StudentSchoolAssociationSpecialEnrollment.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-StudentSchoolAssociationTuitionPayerIdentityType">
-    <xs:annotation>
-      <xs:documentation>Identity of a StudentSchoolAssociationTuitionPayer.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Identity</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="StudentSchoolAssociationReference" type="StudentSchoolAssociationReferenceType">
-        <xs:annotation>
-          <xs:documentation></xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="PayerStartDate" type="xs:date">
-        <xs:annotation>
-          <xs:documentation>The start date for the StudentSchoolAssociationTuitionPayer</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-StudentSchoolAssociationTuitionPayerReferenceType">
-    <xs:annotation>
-      <xs:documentation>Provides alternative references for a StudentSchoolAssociationTuitionPayer. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="ReferenceType">
-        <xs:sequence>
-          <xs:element name="StudentSchoolAssociationTuitionPayerIdentity" type="EXTENSION-StudentSchoolAssociationTuitionPayerIdentityType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>Identity of a StudentSchoolAssociationTuitionPayer.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-TrackIdentityType">
-    <xs:annotation>
-      <xs:documentation>Identity of a Track.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Identity</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="TrackSchoolIdSchoolReference" type="SchoolReferenceType">
-        <xs:annotation>
-          <xs:documentation>OrganizationID of the School which is tied to the track</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="TrackNumber" type="EXTENSION-TrackNumberDescriptorReferenceType">
-        <xs:annotation>
-          <xs:documentation>The track number descriptor (e.g. 01, 02, 03 etc.)</xs:documentation>
-          <xs:appinfo>
-            <ann:Descriptor>EXTENSION-TrackNumberDescriptor</ann:Descriptor>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="TrackLocalEducationAgencyReference" type="LocalEducationAgencyReferenceType">
-        <xs:annotation>
-          <xs:documentation>The LEA id of the district submitting the track</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-TrackReferenceType">
-    <xs:annotation>
-      <xs:documentation>Provides alternative references for a Track. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="ReferenceType">
-        <xs:sequence>
-          <xs:element name="TrackIdentity" type="EXTENSION-TrackIdentityType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>Identity of a Track.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:annotation>
     <xs:documentation>===== Extended Descriptor Reference Types =====</xs:documentation>
   </xs:annotation>
@@ -1306,7 +796,16 @@
     </xs:annotation>
     <xs:restriction base="DescriptorReferenceType" />
   </xs:simpleType>
-  <xs:simpleType name="EXTENSION-EndOfCourseAssessmentCodeTypeDescriptorReferenceType">
+  <xs:simpleType name="EXTENSION-EducationLevelDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>This descriptor defines education level of a staff who is asscoiated with education organization.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-EndOfCourseAssessmentCodeDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Submitted for courses that end with Assessment testing</xs:documentation>
       <xs:appinfo>
@@ -1386,17 +885,6 @@
     </xs:annotation>
     <xs:restriction base="DescriptorReferenceType" />
   </xs:simpleType>
-  <xs:simpleType name="EXTENSION-SessionTypeDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>The Session Type is a code indicating whether the session in which
-                        the course is conducted is a Semester, Trimester, Quarter, Full
-                        Year. Can be thought of as 'term definition'</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
   <xs:simpleType name="EXTENSION-SpecialEnrollmentDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>This descriptor describes special enrollment codes</xs:documentation>
@@ -1418,26 +906,6 @@
   <xs:simpleType name="EXTENSION-StudentNeedDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>This descriptor defines a characteristic of a student need</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-TrackEventDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>This descriptor defines the types of scheduled or unscheduled event for the day
-                          (e.g., Instructional day, Teacher only day, Holiday, Make-up day, Weather day,
-                          Student late arrival/early dismissal day).</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="DescriptorReferenceType" />
-  </xs:simpleType>
-  <xs:simpleType name="EXTENSION-TrackNumberDescriptorReferenceType">
-    <xs:annotation>
-      <xs:documentation>This descriptor defines the allowed track numbers (e.g., 01, 02, 03, 04, 05, 06)</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
       </xs:appinfo>
@@ -1472,24 +940,6 @@
       <xs:element name="InstructionalMinutesPlanned" type="xs:int">
         <xs:annotation>
           <xs:documentation>Number of Instructional minutes planned for given ScheduledDate</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="EXTENSION-SectionCourseCharacteristic">
-    <xs:annotation>
-      <xs:documentation>A collection of course level characteristics for a section</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Common</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="CourseLevelCharacteristic" type="CourseLevelCharacteristicDescriptorReferenceType">
-        <xs:annotation>
-          <xs:documentation>An indication of the nature and difficulty of instruction</xs:documentation>
-          <xs:appinfo>
-            <ann:Descriptor>CourseLevelCharacteristicDescriptor</ann:Descriptor>
-          </xs:appinfo>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -1557,6 +1007,123 @@
           <xs:documentation>The grade level associated with the current section</xs:documentation>
           <xs:appinfo>
             <ann:Descriptor>GradeLevelDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentSchoolAssociationLocalEducationAgency">
+    <xs:annotation>
+      <xs:documentation>This association indicates any relationship between a student school association and a Local Education Agency</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="StartDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>The start date of the association</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EndDate" type="xs:date" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The end date of the association</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LocalEducationAgencyReference" type="LocalEducationAgencyReferenceType">
+        <xs:annotation>
+          <xs:documentation>The reference to the LocalEducationAgency</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MembershipResponsibility" type="EXTENSION-MembershipResponsibilityDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>The membership responsibility descriptor</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-MembershipResponsibilityDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentSchoolAssociationMembershipFTE">
+    <xs:annotation>
+      <xs:documentation>This association represents the full-time equivalency of the student school association</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="FTEStartDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>The start date for the StudentSchoolAssociationMembership</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FTEEndDate" type="xs:date" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The end date for the StudentSchoolAssociationMembership</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MembershipFTE" type="EXTENSION-MembershipFTEDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>The membership full-time equivalency descriptor</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-MembershipFTEDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentSchoolAssociationSpecialEnrollment">
+    <xs:annotation>
+      <xs:documentation>This association represents any special enrollment characteristics of the student school association</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="SpecialEnrollmentStartDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>The start date for the StudentSchoolAssociationSpecialEnrollment</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SpecialEnrollmentEndDate" type="xs:date" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The end date for the StudentSchoolAssociationSpecialEnrollment</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SpecialEnrollment" type="EXTENSION-SpecialEnrollmentDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>The special enrollment descriptor</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-SpecialEnrollmentDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentSchoolAssociationTuitionPayer">
+    <xs:annotation>
+      <xs:documentation>This association represents the tuition payer codes of the student school association</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PayerStartDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>The start date for the StudentSchoolAssociationTuitionPayer</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PayerEndDate" type="xs:date" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The end date for the StudentSchoolAssociationTuitionPayer</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TuitionPayer" type="EXTENSION-TuitionPayerDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>The Tuition Payer descriptor</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-TuitionPayerDescriptor</ann:Descriptor>
           </xs:appinfo>
         </xs:annotation>
       </xs:element>
@@ -1656,21 +1223,21 @@
       <xs:maxLength value="250" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="EXTENSION-TribalName">
+  <xs:annotation>
+    <xs:documentation>===== Numeric Simple Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="EXTENSION-Benefits">
     <xs:annotation>
-      <xs:documentation>A name borne in common by members of a tribe or clan. This  is
-                          used for matching purposes only. Note: Name provided by Tribe,
-                          not name of Tribe.</xs:documentation>
+      <xs:documentation>Benefits percentage are calculated for non PSP employee.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Simple</ann:TypeGroup>
       </xs:appinfo>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1" />
-      <xs:maxLength value="75" />
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="100" />
+      <xs:totalDigits value="5" />
+      <xs:fractionDigits value="2" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:annotation>
-    <xs:documentation>===== Numeric Simple Types =====</xs:documentation>
-  </xs:annotation>
 </xs:schema>

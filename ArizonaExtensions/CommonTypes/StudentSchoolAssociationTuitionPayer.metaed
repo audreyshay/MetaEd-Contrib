@@ -1,8 +1,5 @@
-Domain Entity StudentSchoolAssociationTuitionPayer
+Common StudentSchoolAssociationTuitionPayer
 documentation "This association represents the tuition payer codes of the student school association"
-  association StudentSchoolAssociation
-    documentation ""
-    is part of identity
   date PayerStartDate
     documentation "The start date for the StudentSchoolAssociationTuitionPayer"
     is part of identity

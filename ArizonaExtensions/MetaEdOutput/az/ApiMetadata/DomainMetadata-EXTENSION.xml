@@ -3,17 +3,17 @@
   <Aggregate root="AbsenceAmountDescriptor">
     <Entity table="AbsenceAmountDescriptor" isA="Descriptor" schema="az"/>
   </Aggregate>
-  <Aggregate root="CalendarDateTrackEvent">
-    <Entity table="CalendarDateTrackEvent" schema="az"/>
-  </Aggregate>
   <Aggregate root="CourseEntryDescriptor">
     <Entity table="CourseEntryDescriptor" isA="Descriptor" schema="az"/>
   </Aggregate>
   <Aggregate root="CourseExitDescriptor">
     <Entity table="CourseExitDescriptor" isA="Descriptor" schema="az"/>
   </Aggregate>
-  <Aggregate root="EndOfCourseAssessmentCodeTypeDescriptor">
-    <Entity table="EndOfCourseAssessmentCodeTypeDescriptor" isA="Descriptor" schema="az"/>
+  <Aggregate root="EducationLevelDescriptor">
+    <Entity table="EducationLevelDescriptor" isA="Descriptor" schema="az"/>
+  </Aggregate>
+  <Aggregate root="EndOfCourseAssessmentCodeDescriptor">
+    <Entity table="EndOfCourseAssessmentCodeDescriptor" isA="Descriptor" schema="az"/>
   </Aggregate>
   <Aggregate root="ExitWithdrawReasonDescriptor">
     <Entity table="ExitWithdrawReasonDescriptor" isA="Descriptor" schema="az"/>
@@ -36,9 +36,6 @@
   <Aggregate root="PrimaryNightTimeResidenceDescriptor">
     <Entity table="PrimaryNightTimeResidenceDescriptor" isA="Descriptor" schema="az"/>
   </Aggregate>
-  <Aggregate root="SessionTypeDescriptor">
-    <Entity table="SessionTypeDescriptor" isA="Descriptor" schema="az"/>
-  </Aggregate>
   <Aggregate root="SpecialEnrollmentDescriptor">
     <Entity table="SpecialEnrollmentDescriptor" isA="Descriptor" schema="az"/>
   </Aggregate>
@@ -57,27 +54,6 @@
   <Aggregate root="StudentNeedDescriptor">
     <Entity table="StudentNeedDescriptor" isA="Descriptor" schema="az"/>
   </Aggregate>
-  <Aggregate root="StudentSchoolAssociationLocalEducationAgency">
-    <Entity table="StudentSchoolAssociationLocalEducationAgency" schema="az"/>
-  </Aggregate>
-  <Aggregate root="StudentSchoolAssociationMembershipFTE">
-    <Entity table="StudentSchoolAssociationMembershipFTE" schema="az"/>
-  </Aggregate>
-  <Aggregate root="StudentSchoolAssociationSpecialEnrollment">
-    <Entity table="StudentSchoolAssociationSpecialEnrollment" schema="az"/>
-  </Aggregate>
-  <Aggregate root="StudentSchoolAssociationTuitionPayer">
-    <Entity table="StudentSchoolAssociationTuitionPayer" schema="az"/>
-  </Aggregate>
-  <Aggregate root="Track">
-    <Entity table="Track" schema="az"/>
-  </Aggregate>
-  <Aggregate root="TrackEventDescriptor">
-    <Entity table="TrackEventDescriptor" isA="Descriptor" schema="az"/>
-  </Aggregate>
-  <Aggregate root="TrackNumberDescriptor">
-    <Entity table="TrackNumberDescriptor" isA="Descriptor" schema="az"/>
-  </Aggregate>
   <Aggregate root="TuitionPayerDescriptor">
     <Entity table="TuitionPayerDescriptor" isA="Descriptor" schema="az"/>
   </Aggregate>
@@ -85,11 +61,16 @@
     <Entity table="CourseOfferingCourseSchedule" schema="az"/>
   </AggregateExtension>
   <AggregateExtension root="Section">
-    <Entity table="SectionCourseCharacteristic" schema="az"/>
     <Entity table="SectionExternalProviderTeacher" schema="az"/>
     <Entity table="SectionGradeLevel" schema="az"/>
   </AggregateExtension>
   <AggregateExtension root="StudentProgramAttendanceEvent">
     <Entity table="StudentProgramAttendanceEventTimeLog" schema="az"/>
+  </AggregateExtension>
+  <AggregateExtension root="StudentSchoolAssociation">
+    <Entity table="StudentSchoolAssociationLocalEducationAgency" schema="az"/>
+    <Entity table="StudentSchoolAssociationMembershipFTE" schema="az"/>
+    <Entity table="StudentSchoolAssociationSpecialEnrollment" schema="az"/>
+    <Entity table="StudentSchoolAssociationTuitionPayer" schema="az"/>
   </AggregateExtension>
 </AggregateExtensions>

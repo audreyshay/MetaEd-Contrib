@@ -1,4 +1,0 @@
-Descriptor SessionType
-  documentation "The Session Type is a code indicating whether the session in which
-                the course is conducted is a Semester, Trimester, Quarter, Full
-                Year. Can be thought of as 'term definition'"

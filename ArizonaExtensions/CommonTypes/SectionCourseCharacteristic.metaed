@@ -1,5 +1,0 @@
-Common SectionCourseCharacteristic
-  documentation "A collection of course level characteristics for a section"
-  descriptor CourseLevelCharacteristic
-    documentation "An indication of the nature and difficulty of instruction"
-    is part of identity

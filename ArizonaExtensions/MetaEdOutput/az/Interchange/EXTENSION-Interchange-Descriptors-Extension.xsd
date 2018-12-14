@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- (c)2018 Ed-Fi Alliance, LLC. All Rights Reserved. -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0300" targetNamespace="http://ed-fi.org/0300" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0310" targetNamespace="http://ed-fi.org/0310" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xs:include schemaLocation="EXTENSION-Ed-Fi-Extended-Core.xsd" />
   <xs:annotation>
     <xs:documentation>===== Descriptors Interchange Model =====</xs:documentation>
@@ -174,7 +174,8 @@ The Descriptor interchange is used to describe metadata about the descriptors an
         <xs:element name="AbsenceAmountDescriptor" type="EXTENSION-AbsenceAmountDescriptor" />
         <xs:element name="CourseEntryDescriptor" type="EXTENSION-CourseEntryDescriptor" />
         <xs:element name="CourseExitDescriptor" type="EXTENSION-CourseExitDescriptor" />
-        <xs:element name="EndOfCourseAssessmentCodeTypeDescriptor" type="EXTENSION-EndOfCourseAssessmentCodeTypeDescriptor" />
+        <xs:element name="EducationLevelDescriptor" type="EXTENSION-EducationLevelDescriptor" />
+        <xs:element name="EndOfCourseAssessmentCodeDescriptor" type="EXTENSION-EndOfCourseAssessmentCodeDescriptor" />
         <xs:element name="ExitWithdrawReasonDescriptor" type="EXTENSION-ExitWithdrawReasonDescriptor" />
         <xs:element name="MembershipFTEDescriptor" type="EXTENSION-MembershipFTEDescriptor" />
         <xs:element name="MembershipResponsibilityDescriptor" type="EXTENSION-MembershipResponsibilityDescriptor" />
@@ -182,12 +183,9 @@ The Descriptor interchange is used to describe metadata about the descriptors an
         <xs:element name="MonthDescriptor" type="EXTENSION-MonthDescriptor" />
         <xs:element name="NumberOfInstructionalDaysInWeekDescriptor" type="EXTENSION-NumberOfInstructionalDaysInWeekDescriptor" />
         <xs:element name="PrimaryNightTimeResidenceDescriptor" type="EXTENSION-PrimaryNightTimeResidenceDescriptor" />
-        <xs:element name="SessionTypeDescriptor" type="EXTENSION-SessionTypeDescriptor" />
         <xs:element name="SpecialEnrollmentDescriptor" type="EXTENSION-SpecialEnrollmentDescriptor" />
         <xs:element name="StudentNeedDescriptor" type="EXTENSION-StudentNeedDescriptor" />
         <xs:element name="StudentNeedCategoryDescriptor" type="EXTENSION-StudentNeedCategoryDescriptor" />
-        <xs:element name="TrackEventDescriptor" type="EXTENSION-TrackEventDescriptor" />
-        <xs:element name="TrackNumberDescriptor" type="EXTENSION-TrackNumberDescriptor" />
         <xs:element name="TuitionPayerDescriptor" type="EXTENSION-TuitionPayerDescriptor" />
       </xs:choice>
     </xs:complexType>

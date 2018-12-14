@@ -7,31 +7,21 @@ CREATE TABLE [az].[AbsenceAmountDescriptor] (
 ) ON [PRIMARY]
 GO
 
--- Table [az].[CalendarDateTrackEvent] --
-CREATE TABLE [az].[CalendarDateTrackEvent] (
-    [Date] [DATE] NOT NULL,
-    [TrackEventDescriptorId] [INT] NOT NULL,
-    [TrackLocalEducationAgencyId] [INT] NOT NULL,
-    [TrackNumberDescriptorId] [INT] NOT NULL,
-    [TrackSchoolId] [INT] NOT NULL,
-    [EventDuration] [DECIMAL](3, 2) NOT NULL,
+-- Table [az].[CalendarExtension] --
+CREATE TABLE [az].[CalendarExtension] (
+    [CalendarCode] [NVARCHAR](60) NOT NULL,
+    [SchoolId] [INT] NOT NULL,
+    [SchoolYear] [SMALLINT] NOT NULL,
+    [CalendarLocalEducationAgencyId] [INT] NOT NULL,
     [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
-    [Id] [UNIQUEIDENTIFIER] NOT NULL,
-    CONSTRAINT [CalendarDateTrackEvent_PK] PRIMARY KEY CLUSTERED (
-        [Date] ASC,
-        [TrackEventDescriptorId] ASC,
-        [TrackLocalEducationAgencyId] ASC,
-        [TrackNumberDescriptorId] ASC,
-        [TrackSchoolId] ASC
+    CONSTRAINT [CalendarExtension_PK] PRIMARY KEY CLUSTERED (
+        [CalendarCode] ASC,
+        [SchoolId] ASC,
+        [SchoolYear] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-ALTER TABLE [az].[CalendarDateTrackEvent] ADD CONSTRAINT [CalendarDateTrackEvent_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
-GO
-ALTER TABLE [az].[CalendarDateTrackEvent] ADD CONSTRAINT [CalendarDateTrackEvent_DF_Id] DEFAULT (newid()) FOR [Id]
-GO
-ALTER TABLE [az].[CalendarDateTrackEvent] ADD CONSTRAINT [CalendarDateTrackEvent_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
+ALTER TABLE [az].[CalendarExtension] ADD CONSTRAINT [CalendarExtension_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
 -- Table [az].[CourseEntryDescriptor] --
@@ -79,7 +69,7 @@ CREATE TABLE [az].[CourseOfferingExtension] (
     [SchoolId] [INT] NOT NULL,
     [SchoolYear] [SMALLINT] NOT NULL,
     [SessionName] [NVARCHAR](60) NOT NULL,
-    [EndOfCourseAssessmentCodeTypeDescriptorId] [INT] NULL,
+    [EndOfCourseAssessmentCodeDescriptorId] [INT] NULL,
     [CreateDate] [DATETIME] NOT NULL,
     CONSTRAINT [CourseOfferingExtension_PK] PRIMARY KEY CLUSTERED (
         [LocalCourseCode] ASC,
@@ -92,11 +82,20 @@ GO
 ALTER TABLE [az].[CourseOfferingExtension] ADD CONSTRAINT [CourseOfferingExtension_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
--- Table [az].[EndOfCourseAssessmentCodeTypeDescriptor] --
-CREATE TABLE [az].[EndOfCourseAssessmentCodeTypeDescriptor] (
-    [EndOfCourseAssessmentCodeTypeDescriptorId] [INT] NOT NULL,
-    CONSTRAINT [EndOfCourseAssessmentCodeTypeDescriptor_PK] PRIMARY KEY CLUSTERED (
-        [EndOfCourseAssessmentCodeTypeDescriptorId] ASC
+-- Table [az].[EducationLevelDescriptor] --
+CREATE TABLE [az].[EducationLevelDescriptor] (
+    [EducationLevelDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [EducationLevelDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [EducationLevelDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-- Table [az].[EndOfCourseAssessmentCodeDescriptor] --
+CREATE TABLE [az].[EndOfCourseAssessmentCodeDescriptor] (
+    [EndOfCourseAssessmentCodeDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [EndOfCourseAssessmentCodeDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [EndOfCourseAssessmentCodeDescriptorId] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -162,28 +161,6 @@ CREATE TABLE [az].[PrimaryNightTimeResidenceDescriptor] (
         [PrimaryNightTimeResidenceDescriptorId] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-GO
-
--- Table [az].[SectionCourseCharacteristic] --
-CREATE TABLE [az].[SectionCourseCharacteristic] (
-    [CourseLevelCharacteristicDescriptorId] [INT] NOT NULL,
-    [LocalCourseCode] [NVARCHAR](60) NOT NULL,
-    [SchoolId] [INT] NOT NULL,
-    [SchoolYear] [SMALLINT] NOT NULL,
-    [SectionIdentifier] [NVARCHAR](255) NOT NULL,
-    [SessionName] [NVARCHAR](60) NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    CONSTRAINT [SectionCourseCharacteristic_PK] PRIMARY KEY CLUSTERED (
-        [CourseLevelCharacteristicDescriptorId] ASC,
-        [LocalCourseCode] ASC,
-        [SchoolId] ASC,
-        [SchoolYear] ASC,
-        [SectionIdentifier] ASC,
-        [SessionName] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-ALTER TABLE [az].[SectionCourseCharacteristic] ADD CONSTRAINT [SectionCourseCharacteristic_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
 -- Table [az].[SectionExtension] --
@@ -259,32 +236,6 @@ GO
 ALTER TABLE [az].[SectionGradeLevel] ADD CONSTRAINT [SectionGradeLevel_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
--- Table [az].[SessionExtension] --
-CREATE TABLE [az].[SessionExtension] (
-    [SchoolId] [INT] NOT NULL,
-    [SchoolYear] [SMALLINT] NOT NULL,
-    [SessionName] [NVARCHAR](60) NOT NULL,
-    [SessionTypeDescriptorId] [INT] NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    CONSTRAINT [SessionExtension_PK] PRIMARY KEY CLUSTERED (
-        [SchoolId] ASC,
-        [SchoolYear] ASC,
-        [SessionName] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-ALTER TABLE [az].[SessionExtension] ADD CONSTRAINT [SessionExtension_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
-GO
-
--- Table [az].[SessionTypeDescriptor] --
-CREATE TABLE [az].[SessionTypeDescriptor] (
-    [SessionTypeDescriptorId] [INT] NOT NULL,
-    CONSTRAINT [SessionTypeDescriptor_PK] PRIMARY KEY CLUSTERED (
-        [SessionTypeDescriptorId] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
 -- Table [az].[SpecialEnrollmentDescriptor] --
 CREATE TABLE [az].[SpecialEnrollmentDescriptor] (
     [SpecialEnrollmentDescriptorId] [INT] NOT NULL,
@@ -292,6 +243,29 @@ CREATE TABLE [az].[SpecialEnrollmentDescriptor] (
         [SpecialEnrollmentDescriptorId] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+
+-- Table [az].[StaffEducationOrganizationEmploymentAssociationExtension] --
+CREATE TABLE [az].[StaffEducationOrganizationEmploymentAssociationExtension] (
+    [EducationOrganizationId] [INT] NOT NULL,
+    [EmploymentStatusDescriptorId] [INT] NOT NULL,
+    [HireDate] [DATE] NOT NULL,
+    [StaffUSI] [INT] NOT NULL,
+    [EducationLevelDescriptorId] [INT] NULL,
+    [Benefits] [DECIMAL](5, 2) NULL,
+    [Salary] [MONEY] NOT NULL,
+    [FullTimeEquivalencyOther] [DECIMAL](5, 4) NULL,
+    [PSP] [BIT] NOT NULL,
+    [CreateDate] [DATETIME] NOT NULL,
+    CONSTRAINT [StaffEducationOrganizationEmploymentAssociationExtension_PK] PRIMARY KEY CLUSTERED (
+        [EducationOrganizationId] ASC,
+        [EmploymentStatusDescriptorId] ASC,
+        [HireDate] ASC,
+        [StaffUSI] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [az].[StaffEducationOrganizationEmploymentAssociationExtension] ADD CONSTRAINT [StaffEducationOrganizationEmploymentAssociationExtension_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
 -- Table [az].[StudentDropOutRecoveryProgramAssociation] --
@@ -325,6 +299,7 @@ CREATE TABLE [az].[StudentDropOutRecoveryProgramMonthlyUpdate] (
     [StudentUSI] [INT] NOT NULL,
     [RevisedWrittenLearningPlanDate] [DATE] NULL,
     [SatisfactoryProgress] [BIT] NULL,
+    [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME] NOT NULL,
     [LastModifiedDate] [DATETIME] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
@@ -346,19 +321,6 @@ GO
 ALTER TABLE [az].[StudentDropOutRecoveryProgramMonthlyUpdate] ADD CONSTRAINT [StudentDropOutRecoveryProgramMonthlyUpdate_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
 GO
 
--- Table [az].[StudentExtension] --
-CREATE TABLE [az].[StudentExtension] (
-    [StudentUSI] [INT] NOT NULL,
-    [TribalName] [NVARCHAR](75) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    CONSTRAINT [StudentExtension_PK] PRIMARY KEY CLUSTERED (
-        [StudentUSI] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-ALTER TABLE [az].[StudentExtension] ADD CONSTRAINT [StudentExtension_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
-GO
-
 -- Table [az].[StudentNeed] --
 CREATE TABLE [az].[StudentNeed] (
     [EducationOrganizationId] [INT] NOT NULL,
@@ -368,6 +330,7 @@ CREATE TABLE [az].[StudentNeed] (
     [StudentNeedExitDate] [DATE] NULL,
     [PrimaryStudentNeedIndicator] [BIT] NULL,
     [PrimaryNightTimeResidenceDescriptorId] [INT] NULL,
+    [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME] NOT NULL,
     [LastModifiedDate] [DATETIME] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
@@ -439,9 +402,6 @@ CREATE TABLE [az].[StudentSchoolAssociationExtension] (
     [StudentUSI] [INT] NOT NULL,
     [ExitWithdrawReasonDescriptorId] [INT] NULL,
     [MembershipTypeDescriptorId] [INT] NOT NULL,
-    [TrackSchoolId] [INT] NULL,
-    [TrackNumberDescriptorId] [INT] NULL,
-    [TrackLocalEducationAgencyId] [INT] NULL,
     [CreateDate] [DATETIME] NOT NULL,
     CONSTRAINT [StudentSchoolAssociationExtension_PK] PRIMARY KEY CLUSTERED (
         [EntryDate] ASC,
@@ -463,8 +423,6 @@ CREATE TABLE [az].[StudentSchoolAssociationLocalEducationAgency] (
     [EndDate] [DATE] NULL,
     [LocalEducationAgencyId] [INT] NOT NULL,
     [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
-    [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [StudentSchoolAssociationLocalEducationAgency_PK] PRIMARY KEY CLUSTERED (
         [EntryDate] ASC,
         [MembershipResponsibilityDescriptorId] ASC,
@@ -476,29 +434,25 @@ CREATE TABLE [az].[StudentSchoolAssociationLocalEducationAgency] (
 GO
 ALTER TABLE [az].[StudentSchoolAssociationLocalEducationAgency] ADD CONSTRAINT [StudentSchoolAssociationLocalEducationAgency_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
-ALTER TABLE [az].[StudentSchoolAssociationLocalEducationAgency] ADD CONSTRAINT [StudentSchoolAssociationLocalEducationAgency_DF_Id] DEFAULT (newid()) FOR [Id]
-GO
-ALTER TABLE [az].[StudentSchoolAssociationLocalEducationAgency] ADD CONSTRAINT [StudentSchoolAssociationLocalEducationAgency_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
-GO
 
 -- Table [az].[StudentSchoolAssociationMembershipFTE] --
 CREATE TABLE [az].[StudentSchoolAssociationMembershipFTE] (
+    [EntryDate] [DATE] NOT NULL,
     [FTEStartDate] [DATE] NOT NULL,
+    [SchoolId] [INT] NOT NULL,
+    [StudentUSI] [INT] NOT NULL,
     [FTEEndDate] [DATE] NULL,
     [MembershipFTEDescriptorId] [INT] NOT NULL,
     [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
-    [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [StudentSchoolAssociationMembershipFTE_PK] PRIMARY KEY CLUSTERED (
-        [FTEStartDate] ASC
+        [EntryDate] ASC,
+        [FTEStartDate] ASC,
+        [SchoolId] ASC,
+        [StudentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [az].[StudentSchoolAssociationMembershipFTE] ADD CONSTRAINT [StudentSchoolAssociationMembershipFTE_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
-GO
-ALTER TABLE [az].[StudentSchoolAssociationMembershipFTE] ADD CONSTRAINT [StudentSchoolAssociationMembershipFTE_DF_Id] DEFAULT (newid()) FOR [Id]
-GO
-ALTER TABLE [az].[StudentSchoolAssociationMembershipFTE] ADD CONSTRAINT [StudentSchoolAssociationMembershipFTE_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
 GO
 
 -- Table [az].[StudentSchoolAssociationSpecialEnrollment] --
@@ -510,8 +464,6 @@ CREATE TABLE [az].[StudentSchoolAssociationSpecialEnrollment] (
     [SpecialEnrollmentEndDate] [DATE] NULL,
     [SpecialEnrollmentDescriptorId] [INT] NOT NULL,
     [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
-    [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [StudentSchoolAssociationSpecialEnrollment_PK] PRIMARY KEY CLUSTERED (
         [EntryDate] ASC,
         [SchoolId] ASC,
@@ -521,10 +473,6 @@ CREATE TABLE [az].[StudentSchoolAssociationSpecialEnrollment] (
 ) ON [PRIMARY]
 GO
 ALTER TABLE [az].[StudentSchoolAssociationSpecialEnrollment] ADD CONSTRAINT [StudentSchoolAssociationSpecialEnrollment_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
-GO
-ALTER TABLE [az].[StudentSchoolAssociationSpecialEnrollment] ADD CONSTRAINT [StudentSchoolAssociationSpecialEnrollment_DF_Id] DEFAULT (newid()) FOR [Id]
-GO
-ALTER TABLE [az].[StudentSchoolAssociationSpecialEnrollment] ADD CONSTRAINT [StudentSchoolAssociationSpecialEnrollment_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
 GO
 
 -- Table [az].[StudentSchoolAssociationTuitionPayer] --
@@ -536,8 +484,6 @@ CREATE TABLE [az].[StudentSchoolAssociationTuitionPayer] (
     [PayerEndDate] [DATE] NULL,
     [TuitionPayerDescriptorId] [INT] NOT NULL,
     [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
-    [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [StudentSchoolAssociationTuitionPayer_PK] PRIMARY KEY CLUSTERED (
         [EntryDate] ASC,
         [PayerStartDate] ASC,
@@ -548,10 +494,6 @@ CREATE TABLE [az].[StudentSchoolAssociationTuitionPayer] (
 GO
 ALTER TABLE [az].[StudentSchoolAssociationTuitionPayer] ADD CONSTRAINT [StudentSchoolAssociationTuitionPayer_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
-ALTER TABLE [az].[StudentSchoolAssociationTuitionPayer] ADD CONSTRAINT [StudentSchoolAssociationTuitionPayer_DF_Id] DEFAULT (newid()) FOR [Id]
-GO
-ALTER TABLE [az].[StudentSchoolAssociationTuitionPayer] ADD CONSTRAINT [StudentSchoolAssociationTuitionPayer_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
-GO
 
 -- Table [az].[StudentSchoolAttendanceEventExtension] --
 CREATE TABLE [az].[StudentSchoolAttendanceEventExtension] (
@@ -561,7 +503,6 @@ CREATE TABLE [az].[StudentSchoolAttendanceEventExtension] (
     [SchoolYear] [SMALLINT] NOT NULL,
     [SessionName] [NVARCHAR](60) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
-    [AbsenceAmountDescriptorId] [INT] NULL,
     [InstructionalMinutes] [INT] NULL,
     [CreateDate] [DATETIME] NOT NULL,
     CONSTRAINT [StudentSchoolAttendanceEventExtension_PK] PRIMARY KEY CLUSTERED (
@@ -589,8 +530,8 @@ CREATE TABLE [az].[StudentSectionAssociationExtension] (
     [Note] [NVARCHAR](250) NULL,
     [CourseEntryDescriptorId] [INT] NULL,
     [CourseExitDescriptorId] [INT] NULL,
-    [DualCredit] [BIT] NULL,
-    [ConcurrentEnrollment] [BIT] NULL,
+    [DualCredit] [BIT] NOT NULL,
+    [ConcurrentEnrollment] [BIT] NOT NULL,
     [CreateDate] [DATETIME] NOT NULL,
     CONSTRAINT [StudentSectionAssociationExtension_PK] PRIMARY KEY CLUSTERED (
         [BeginDate] ASC,
@@ -606,48 +547,27 @@ GO
 ALTER TABLE [az].[StudentSectionAssociationExtension] ADD CONSTRAINT [StudentSectionAssociationExtension_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
--- Table [az].[Track] --
-CREATE TABLE [az].[Track] (
-    [TrackLocalEducationAgencyId] [INT] NOT NULL,
-    [TrackNumberDescriptorId] [INT] NOT NULL,
-    [TrackSchoolId] [INT] NOT NULL,
+-- Table [az].[StudentSpecialEducationProgramAssociationExtension] --
+CREATE TABLE [az].[StudentSpecialEducationProgramAssociationExtension] (
     [BeginDate] [DATE] NOT NULL,
-    [EndDate] [DATE] NOT NULL,
-    [TotalInstructionalDays] [INT] NOT NULL,
-    [NumberOfInstructionalDaysInWeekDescriptorId] [INT] NOT NULL,
+    [EducationOrganizationId] [INT] NOT NULL,
+    [ProgramEducationOrganizationId] [INT] NOT NULL,
+    [ProgramName] [NVARCHAR](60) NOT NULL,
+    [ProgramTypeDescriptorId] [INT] NOT NULL,
+    [StudentUSI] [INT] NOT NULL,
+    [MainSPEDSchool] [BIT] NULL,
     [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
-    [Id] [UNIQUEIDENTIFIER] NOT NULL,
-    CONSTRAINT [Track_PK] PRIMARY KEY CLUSTERED (
-        [TrackLocalEducationAgencyId] ASC,
-        [TrackNumberDescriptorId] ASC,
-        [TrackSchoolId] ASC
+    CONSTRAINT [StudentSpecialEducationProgramAssociationExtension_PK] PRIMARY KEY CLUSTERED (
+        [BeginDate] ASC,
+        [EducationOrganizationId] ASC,
+        [ProgramEducationOrganizationId] ASC,
+        [ProgramName] ASC,
+        [ProgramTypeDescriptorId] ASC,
+        [StudentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-ALTER TABLE [az].[Track] ADD CONSTRAINT [Track_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
-GO
-ALTER TABLE [az].[Track] ADD CONSTRAINT [Track_DF_Id] DEFAULT (newid()) FOR [Id]
-GO
-ALTER TABLE [az].[Track] ADD CONSTRAINT [Track_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
-GO
-
--- Table [az].[TrackEventDescriptor] --
-CREATE TABLE [az].[TrackEventDescriptor] (
-    [TrackEventDescriptorId] [INT] NOT NULL,
-    CONSTRAINT [TrackEventDescriptor_PK] PRIMARY KEY CLUSTERED (
-        [TrackEventDescriptorId] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-
--- Table [az].[TrackNumberDescriptor] --
-CREATE TABLE [az].[TrackNumberDescriptor] (
-    [TrackNumberDescriptorId] [INT] NOT NULL,
-    CONSTRAINT [TrackNumberDescriptor_PK] PRIMARY KEY CLUSTERED (
-        [TrackNumberDescriptorId] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+ALTER TABLE [az].[StudentSpecialEducationProgramAssociationExtension] ADD CONSTRAINT [StudentSpecialEducationProgramAssociationExtension_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
 -- Table [az].[TuitionPayerDescriptor] --

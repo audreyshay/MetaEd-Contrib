@@ -1,8 +1,5 @@
-Domain Entity StudentSchoolAssociationSpecialEnrollment
+Common StudentSchoolAssociationSpecialEnrollment
 documentation "This association represents any special enrollment characteristics of the student school association"
-  association StudentSchoolAssociation
-    documentation "The reference to StudentSchoolAssociation"
-    is part of identity
   date SpecialEnrollmentStartDate
     documentation "The start date for the StudentSchoolAssociationSpecialEnrollment"
     is part of identity

@@ -1,8 +1,5 @@
-Domain Entity StudentSchoolAssociationLocalEducationAgency
+Common StudentSchoolAssociationLocalEducationAgency
 documentation "This association indicates any relationship between a student school association and a Local Education Agency"
-  association StudentSchoolAssociation
-    documentation "The reference to StudentSchoolAssociation"
-    is part of identity
   date StartDate
     documentation "The start date of the association"
     is part of identity

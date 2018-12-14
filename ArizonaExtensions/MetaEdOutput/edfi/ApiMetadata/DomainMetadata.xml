@@ -48,9 +48,11 @@
   </Aggregate>
   <Aggregate root="Assessment">
     <Entity table="Assessment"/>
+    <Entity table="AssessmentAcademicSubject" isRequiredCollection="true"/>
+    <Entity table="AssessmentAssessedGradeLevel"/>
     <Entity table="AssessmentContentStandard"/>
     <Entity table="AssessmentContentStandardAuthor"/>
-    <Entity table="AssessmentIdentificationCode" isRequiredCollection="true"/>
+    <Entity table="AssessmentIdentificationCode"/>
     <Entity table="AssessmentLanguage"/>
     <Entity table="AssessmentPerformanceLevel"/>
     <Entity table="AssessmentPeriod"/>
@@ -451,8 +453,10 @@
   </Aggregate>
   <Aggregate root="LearningObjective">
     <Entity table="LearningObjective"/>
+    <Entity table="LearningObjectiveAcademicSubject" isRequiredCollection="true"/>
     <Entity table="LearningObjectiveContentStandard"/>
     <Entity table="LearningObjectiveContentStandardAuthor"/>
+    <Entity table="LearningObjectiveGradeLevel"/>
     <Entity table="LearningObjectiveLearningStandard"/>
   </Aggregate>
   <Aggregate root="LearningStandard">
