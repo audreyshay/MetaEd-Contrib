@@ -3,7 +3,7 @@ Domain Entity OperationalUnitDimension
     shared string Code
         documentation "The code representation of the account Operational Unit dimension."
         is part of identity
-    year FiscalYear
+    shared short LocalFiscalYear named FiscalYear
         documentation "The fiscal year for which the account Operational Unit dimension is valid."
         is part of identity
     shared string CodeName

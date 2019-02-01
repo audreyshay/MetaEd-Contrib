@@ -4,7 +4,7 @@ Domain Entity ChartOfAccount
         documentation "SEA populated Code value for the valid combination of account dimensions under which financials are reported."
         is part of identity
         is queryable field
-    year FiscalYear
+    shared short LocalFiscalYear named FiscalYear
         documentation "Fiscal year for the account"
         is part of identity
         is queryable field
@@ -20,49 +20,49 @@ Domain Entity ChartOfAccount
         documentation "A descriptive name for the account"
         is optional
 
-    //Optional NCES Account Dimensions
+    //Optional NCES Account Dimensions1
   domain entity BalanceSheetDimension
         documentation "References the BalanceSheetDimension with which the ChartOfAccount is associated."
         is optional
         with context BalanceSheet
-        merge BalanceSheetBalanceSheetDimension with FiscalYear
+        merge BalanceSheetBalanceSheetDimension.FiscalYear with FiscalYear
     domain entity FunctionDimension
         documentation "References the FunctionDimension with which the ChartOfAccount is associated."
         is optional
         with context Function
-        merge FunctionFunctionDimension with FiscalYear
+        merge FunctionFunctionDimension.FiscalYear with FiscalYear
     domain entity FundDimension
         documentation "References the FundDimension with which the ChartOfAccount is associated."
         is optional
         with context Fund
-        merge FundFundDimension with FiscalYear
+        merge FundFundDimension.FiscalYear with FiscalYear
     domain entity ObjectDimension
         documentation "References the ObjectDimension with which the ChartOfAccount is associated."
         is optional
         with context Object
-        merge ObjectObjectDimension with FiscalYear
+        merge ObjectObjectDimension.FiscalYear with FiscalYear
     domain entity OperationalUnitDimension
         documentation "References the OperationalUnitDimension with which the ChartOfAccount is associated."
         is optional
         with context OperationalUnit
-        merge OperationalUnitOperationalUnitDimension with FiscalYear
+        merge OperationalUnitOperationalUnitDimension.FiscalYear with FiscalYear
     domain entity ProgramDimension
         documentation "References the ProgramDimension with which the ChartOfAccount is associated."
         is optional
         with context Program
-        merge ProgramProgramDimension with FiscalYear
+        merge ProgramProgramDimension.FiscalYear with FiscalYear
     domain entity ProjectDimension
         documentation "References the ProjectDimension with which the ChartOfAccount is associated."
         is optional
         with context Project
-        merge ProjectProjectDimension with FiscalYear
+        merge ProjectProjectDimension.FiscalYear with FiscalYear
     domain entity SourceDimension
         documentation "References the SourceDimension with which the ChartOfAccount is associated."
         is optional
         with context Source
-        merge SourceSourceDimension with FiscalYear
+        merge SourceSourceDimension.FiscalYear with FiscalYear
 
     //Optional Collection
-    descriptor ReportingTag
+    common ReportingTag
         documentation "Optional tag for accountability reporting (e.g. ESSA)."
         is optional collection

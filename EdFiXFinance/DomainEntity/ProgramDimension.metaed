@@ -3,7 +3,7 @@ Domain Entity ProgramDimension
     shared string Code
         documentation "The code representation of the account Program dimension."
         is part of identity
-    year FiscalYear
+    shared short LocalFiscalYear named FiscalYear
         documentation "The fiscal year for which the account Program dimension is valid."
         is part of identity
     shared string CodeName
