@@ -3,7 +3,7 @@ Domain Entity ObjectDimension
     shared string Code
         documentation "The code representation of the account Object dimension."
         is part of identity
-    year FiscalYear
+    shared short LocalFiscalYear named FiscalYear
         documentation "The fiscal year for which the account Object dimension is valid."
         is part of identity
     shared string CodeName

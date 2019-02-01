@@ -3,7 +3,7 @@ Domain Entity SourceDimension
     shared string Code
         documentation "The code representation of the account Source dimension."
         is part of identity
-    year FiscalYear
+    shared short LocalFiscalYear named FiscalYear
         documentation "The fiscal year for which the account Source dimension is valid."
         is part of identity
     shared string CodeName

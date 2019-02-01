@@ -7,7 +7,7 @@ Domain Entity LocalAccount
         documentation "A reference to the education organization for which the account is applicable."
         is part of identity
         is queryable field
-    year FiscalYear
+    shared short LocalFiscalYear named FiscalYear
         documentation "Fiscal year for the account"
         is part of identity
         is queryable field
@@ -19,9 +19,9 @@ Domain Entity LocalAccount
       documentation "References the ChartOfAccount with which the LocalAccount is associated."
       is required
       with context ChartOfAccount
-      merge ChartOfAccount with FiscalYear
+      merge ChartOfAccount.FiscalYear with FiscalYear
 
     //Optional Collection
-    descriptor ReportingTag
+    common ReportingTag
         documentation "Optional tag for accountability reporting (e.g. ESSA)."
         is optional collection
