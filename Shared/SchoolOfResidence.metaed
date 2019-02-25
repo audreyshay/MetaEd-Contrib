@@ -1,4 +1,0 @@
-Shared String SchoolOfResidence
-    documentation "11-digit NDE assigned number to identify the School Of Residence, must include leading zeros and hyphens (xx-xxxx-xxx)"
-    min length 11
-    max length 11

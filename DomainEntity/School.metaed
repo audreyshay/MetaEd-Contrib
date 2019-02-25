@@ -1,7 +1,0 @@
-Domain Entity School additions
-    domain entity EducationServiceCenter
-        documentation "Education Service Center of which the School is an organizational component."
-        is optional
-    bool SchoolWideTitleI
-        documentation "An indication of whether the school is Schoolwide Title I."
-        is optional

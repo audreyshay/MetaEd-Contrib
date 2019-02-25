@@ -1,0 +1,4 @@
+Domain Entity CalendarDate additions
+  shared decimal EventDuration named InstructionalDuration
+    documentation "The portion of the day that instruction occurred."
+    is required

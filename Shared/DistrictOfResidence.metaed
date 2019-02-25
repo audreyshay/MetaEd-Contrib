@@ -1,4 +1,0 @@
-Shared String DistrictOfResidence
-    documentation "7-digit NDE assigned number to identify the District Of Residence, must include leading zeros and hyphen (xx-xxxx)"
-    min length 7
-    max length 7

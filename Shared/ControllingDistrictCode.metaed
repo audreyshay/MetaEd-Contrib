@@ -1,4 +1,0 @@
-Shared String ControllingDistrictCode
-    documentation "6-digit NDE assigned number that identifies the entity that holds the contract for the staff reported, must include leading zeros and hyphen (xx-xxxx)"
-    min length 7
-    max length 7
