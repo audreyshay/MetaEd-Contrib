@@ -8,3 +8,6 @@ Association StudentSpecialEducationProgramAssociation additions
     bool ToTakeAlternateAssessment
         documentation "True = Indicates the student needs alternate assessment."
         is optional
+    date InitialSpecialEducationEntryDate
+        documentation "Date when the child's first IEP or IFSP"
+        is optional

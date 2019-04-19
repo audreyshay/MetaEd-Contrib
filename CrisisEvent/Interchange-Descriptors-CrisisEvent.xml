@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InterchangeDescriptors xmlns="http://ed-fi.org/0310" xmlns:ann="http://ed-fi.org/annotation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://ed-fi.org/0310 ../../../../Schemas/EXTENSION-Interchange-Descriptors-Extension.xsd">
+	<CrisisTypeDescriptor>
+		<CodeValue>Chemical</CodeValue>
+		<ShortDescription>Chemical</ShortDescription>
+		<Description>Chemical</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Dam failure</CodeValue>
+		<ShortDescription>Dam failure</ShortDescription>
+		<Description>Dam failure</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Earthquake</CodeValue>
+		<ShortDescription>Earthquake</ShortDescription>
+		<Description>Earthquake</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Fire</CodeValue>
+		<ShortDescription>Fire</ShortDescription>
+		<Description>Fire</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Flood</CodeValue>
+		<ShortDescription>Flood</ShortDescription>
+		<Description>Flood</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Hazardous material</CodeValue>
+		<ShortDescription>Hazardous material</ShortDescription>
+		<Description>Hazardous material</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Heat</CodeValue>
+		<ShortDescription>Heat</ShortDescription>
+		<Description>Heat</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Hurricane</CodeValue>
+		<ShortDescription>Hurricane</ShortDescription>
+		<Description>Hurricane</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Landslide</CodeValue>
+		<ShortDescription>Landslide</ShortDescription>
+		<Description>Landslide</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Nuclear power</CodeValue>
+		<ShortDescription>Nuclear power</ShortDescription>
+		<Description>Nuclear power</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Plant emergency</CodeValue>
+		<ShortDescription>Plant emergency</ShortDescription>
+		<Description>Plant emergency</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Terrorism</CodeValue>
+		<ShortDescription>Terrorism</ShortDescription>
+		<Description>Terrorism</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Thunderstorm</CodeValue>
+		<ShortDescription>Thunderstorm</ShortDescription>
+		<Description>Thunderstorm</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Tornado</CodeValue>
+		<ShortDescription>Tornado</ShortDescription>
+		<Description>Tornado</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Tsunami</CodeValue>
+		<ShortDescription>Tsunami</ShortDescription>
+		<Description>Tsunami</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Volcano</CodeValue>
+		<ShortDescription>Volcano</ShortDescription>
+		<Description>Volcano</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Wildfire</CodeValue>
+		<ShortDescription>Wildfire</ShortDescription>
+		<Description>Wildfire</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Winter storm</CodeValue>
+		<ShortDescription>Winter storm</ShortDescription>
+		<Description>Winter storm</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+	<CrisisTypeDescriptor>
+		<CodeValue>Other</CodeValue>
+		<ShortDescription>Other</ShortDescription>
+		<Description>Other</Description>
+		<Namespace>uri://nces.ed.gov/CrisisType</Namespace>
+	</CrisisTypeDescriptor>
+</InterchangeDescriptors>

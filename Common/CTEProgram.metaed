@@ -1,0 +1,4 @@
+Common CTEProgram additions
+descriptor TechnicalSkillsAssessment
+    documentation "Results of technical skills assessment aligned with industry recognized standards."
+    is optional
