@@ -1,0 +1,16 @@
+{{#tables}}
+CREATE TABLE [{{{schema}}}DW].[{{{name}}}] (
+    [EffectiveDate] [DATETIME] NOT NULL,
+{{#columns}}
+    [{{{name}}}] {{{dataType}}} {{#unless isNullable}}NOT {{/unless}}NULL,
+{{/columns}}
+    CONSTRAINT [{{{name}}}_PK] PRIMARY KEY CLUSTERED (
+        [EffectiveDate] ASC,
+{{#primaryKeys}}
+        [{{{name}}}] ASC{{#unless @last}},{{/unless}}
+{{/primaryKeys}}
+    )
+)
+GO
+
+{{/tables}}

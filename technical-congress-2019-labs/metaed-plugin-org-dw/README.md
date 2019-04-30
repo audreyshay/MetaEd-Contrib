@@ -1,0 +1,19 @@
+# Simplest Data Warehouse Plugin
+
+This is a plugin that generates a SQL script that creates identical tables to those in the Ed-Fi ODS with the addition of a hard-coded effective date column on each table.  To use it, first download all of the third-party npm packages with:
+```
+yarn install
+```
+Then, confirm everything is working correctly with:
+```
+yarn test
+```
+Then, transpile the plugin with:
+```
+yarn build
+```
+And finally, link the plugin into your existing MetaEd IDE installation with something like:
+```
+mklink /J C:\MetaEd-IDE\node_modules\metaed-plugin-org-dw C:\metaed-tc-2019-labs\metaed-plugin-org-dw
+```
+where in this example the MetaEd IDE installation is in `C:\MetaEd-IDE` and the labs are located at `C:\metaed-tc-2019-labs`.  Open the MetaEd IDE, and the plugin should be shown as loaded in the `MetaEd -> About` tab.

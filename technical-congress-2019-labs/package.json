@@ -1,0 +1,10 @@
+{
+  "name": "metaed-tc-2019-labs",
+  "version": "1.0.0",
+  "description": "Lab exercises for the MetaEd session",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "repository": "https://github.com/Ed-Fi-Alliance/Ed-Fi-Model",
+  "publishConfig": {
+    "registry": "https://www.myget.org/F/ed-fi/npm/"
+  }
+}

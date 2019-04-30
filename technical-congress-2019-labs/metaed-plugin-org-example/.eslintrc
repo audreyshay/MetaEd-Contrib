@@ -1,0 +1,45 @@
+{
+  "parser": "typescript-eslint-parser",
+  "extends": [
+    "airbnb-base",
+    "prettier"
+  ],
+  "plugins": [
+    "typescript",
+    "prettier"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".mjs",
+          ".js",
+          ".json",
+          ".ts"
+        ]
+      }
+    },
+    "import/extensions": [
+      ".js",
+      ".mjs",
+      ".jsx",
+      ".ts",
+      ".tsx"
+    ]
+  },
+  "rules": {
+    "import/no-duplicates": "off",
+    "no-unused-vars": "off",
+    "typescript/no-unused-vars": "off",
+    "max-len": "off",
+    "no-await-in-loop": "off",
+    "import/prefer-default-export": "off",
+    "no-param-reassign": [
+      2,
+      {
+        "props": false
+      }
+    ],
+    "prettier/prettier": "warn"
+  }
+}
