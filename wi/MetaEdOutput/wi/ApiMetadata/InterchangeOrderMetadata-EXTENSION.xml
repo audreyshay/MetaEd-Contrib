@@ -85,6 +85,7 @@
     <Element name="MediumOfInstructionDescriptor" />
     <Element name="MagnetSpecialProgramEmphasisSchoolDescriptor" />
     <Element name="LocalEducationAgencyCategoryDescriptor" />
+    <Element name="LocaleDescriptor" />
     <Element name="LimitedEnglishProficiencyDescriptor" />
     <Element name="LicenseTypeDescriptor" />
     <Element name="LicenseStatusDescriptor" />

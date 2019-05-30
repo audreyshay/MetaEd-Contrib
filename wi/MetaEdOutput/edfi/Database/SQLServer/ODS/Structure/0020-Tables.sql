@@ -383,7 +383,7 @@ CREATE TABLE [edfi].[AssessmentItem] (
     [CorrectResponse] [NVARCHAR](20) NULL,
     [ExpectedTimeAssessed] [NVARCHAR](30) NULL,
     [Nomenclature] [NVARCHAR](35) NULL,
-    [AsessmentItemURI] [NVARCHAR](255) NULL,
+    [AssessmentItemURI] [NVARCHAR](255) NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME] NOT NULL,
     [LastModifiedDate] [DATETIME] NOT NULL,
@@ -1333,6 +1333,26 @@ GO
 ALTER TABLE [edfi].[CourseOffering] ADD CONSTRAINT [CourseOffering_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
 GO
 
+-- Table [edfi].[CourseOfferingCourseLevelCharacteristic] --
+CREATE TABLE [edfi].[CourseOfferingCourseLevelCharacteristic] (
+    [CourseLevelCharacteristicDescriptorId] [INT] NOT NULL,
+    [LocalCourseCode] [NVARCHAR](60) NOT NULL,
+    [SchoolId] [INT] NOT NULL,
+    [SchoolYear] [SMALLINT] NOT NULL,
+    [SessionName] [NVARCHAR](60) NOT NULL,
+    [CreateDate] [DATETIME] NOT NULL,
+    CONSTRAINT [CourseOfferingCourseLevelCharacteristic_PK] PRIMARY KEY CLUSTERED (
+        [CourseLevelCharacteristicDescriptorId] ASC,
+        [LocalCourseCode] ASC,
+        [SchoolId] ASC,
+        [SchoolYear] ASC,
+        [SessionName] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [edfi].[CourseOfferingCourseLevelCharacteristic] ADD CONSTRAINT [CourseOfferingCourseLevelCharacteristic_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
+GO
+
 -- Table [edfi].[CourseOfferingCurriculumUsed] --
 CREATE TABLE [edfi].[CourseOfferingCurriculumUsed] (
     [CurriculumUsedDescriptorId] [INT] NOT NULL,
@@ -1351,6 +1371,26 @@ CREATE TABLE [edfi].[CourseOfferingCurriculumUsed] (
 ) ON [PRIMARY]
 GO
 ALTER TABLE [edfi].[CourseOfferingCurriculumUsed] ADD CONSTRAINT [CourseOfferingCurriculumUsed_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
+GO
+
+-- Table [edfi].[CourseOfferingOfferedGradeLevel] --
+CREATE TABLE [edfi].[CourseOfferingOfferedGradeLevel] (
+    [GradeLevelDescriptorId] [INT] NOT NULL,
+    [LocalCourseCode] [NVARCHAR](60) NOT NULL,
+    [SchoolId] [INT] NOT NULL,
+    [SchoolYear] [SMALLINT] NOT NULL,
+    [SessionName] [NVARCHAR](60) NOT NULL,
+    [CreateDate] [DATETIME] NOT NULL,
+    CONSTRAINT [CourseOfferingOfferedGradeLevel_PK] PRIMARY KEY CLUSTERED (
+        [GradeLevelDescriptorId] ASC,
+        [LocalCourseCode] ASC,
+        [SchoolId] ASC,
+        [SchoolYear] ASC,
+        [SessionName] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [edfi].[CourseOfferingOfferedGradeLevel] ADD CONSTRAINT [CourseOfferingOfferedGradeLevel_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
 -- Table [edfi].[CourseRepeatCodeDescriptor] --
@@ -1989,6 +2029,8 @@ CREATE TABLE [edfi].[EducationOrganizationAddress] (
     [Latitude] [NVARCHAR](20) NULL,
     [Longitude] [NVARCHAR](20) NULL,
     [DoNotPublishIndicator] [BIT] NULL,
+    [CongressionalDistrict] [NVARCHAR](30) NULL,
+    [LocaleDescriptorId] [INT] NULL,
     [CreateDate] [DATETIME] NOT NULL,
     CONSTRAINT [EducationOrganizationAddress_PK] PRIMARY KEY CLUSTERED (
         [AddressTypeDescriptorId] ASC,
@@ -3402,7 +3444,6 @@ CREATE TABLE [edfi].[LearningStandard] (
     [Description] [NVARCHAR](1024) NOT NULL,
     [LearningStandardItemCode] [NVARCHAR](60) NULL,
     [URI] [NVARCHAR](255) NULL,
-    [AcademicSubjectDescriptorId] [INT] NOT NULL,
     [CourseTitle] [NVARCHAR](60) NULL,
     [SuccessCriteria] [NVARCHAR](150) NULL,
     [ParentLearningStandardId] [NVARCHAR](60) NULL,
@@ -3422,6 +3463,20 @@ GO
 ALTER TABLE [edfi].[LearningStandard] ADD CONSTRAINT [LearningStandard_DF_Id] DEFAULT (newid()) FOR [Id]
 GO
 ALTER TABLE [edfi].[LearningStandard] ADD CONSTRAINT [LearningStandard_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
+GO
+
+-- Table [edfi].[LearningStandardAcademicSubject] --
+CREATE TABLE [edfi].[LearningStandardAcademicSubject] (
+    [AcademicSubjectDescriptorId] [INT] NOT NULL,
+    [LearningStandardId] [NVARCHAR](60) NOT NULL,
+    [CreateDate] [DATETIME] NOT NULL,
+    CONSTRAINT [LearningStandardAcademicSubject_PK] PRIMARY KEY CLUSTERED (
+        [AcademicSubjectDescriptorId] ASC,
+        [LearningStandardId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [edfi].[LearningStandardAcademicSubject] ADD CONSTRAINT [LearningStandardAcademicSubject_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
 -- Table [edfi].[LearningStandardCategoryDescriptor] --
@@ -3548,6 +3603,15 @@ CREATE TABLE [edfi].[LimitedEnglishProficiencyDescriptor] (
 ) ON [PRIMARY]
 GO
 
+-- Table [edfi].[LocaleDescriptor] --
+CREATE TABLE [edfi].[LocaleDescriptor] (
+    [LocaleDescriptorId] [INT] NOT NULL,
+    CONSTRAINT [LocaleDescriptor_PK] PRIMARY KEY CLUSTERED (
+        [LocaleDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
 -- Table [edfi].[LocalEducationAgency] --
 CREATE TABLE [edfi].[LocalEducationAgency] (
     [LocalEducationAgencyId] [INT] NOT NULL,
@@ -3611,7 +3675,7 @@ GO
 
 -- Table [edfi].[Location] --
 CREATE TABLE [edfi].[Location] (
-    [ClassroomIdentificationCode] [NVARCHAR](20) NOT NULL,
+    [ClassroomIdentificationCode] [NVARCHAR](60) NOT NULL,
     [SchoolId] [INT] NOT NULL,
     [MaximumNumberOfSeats] [INT] NULL,
     [OptimalNumberOfSeats] [INT] NULL,
@@ -3966,6 +4030,8 @@ CREATE TABLE [edfi].[ParentAddress] (
     [Latitude] [NVARCHAR](20) NULL,
     [Longitude] [NVARCHAR](20) NULL,
     [DoNotPublishIndicator] [BIT] NULL,
+    [CongressionalDistrict] [NVARCHAR](30) NULL,
+    [LocaleDescriptorId] [INT] NULL,
     [CreateDate] [DATETIME] NOT NULL,
     CONSTRAINT [ParentAddress_PK] PRIMARY KEY CLUSTERED (
         [AddressTypeDescriptorId] ASC,
@@ -4909,7 +4975,7 @@ CREATE TABLE [edfi].[Section] (
     [AvailableCreditConversion] [DECIMAL](9, 2) NULL,
     [InstructionLanguageDescriptorId] [INT] NULL,
     [LocationSchoolId] [INT] NULL,
-    [LocationClassroomIdentificationCode] [NVARCHAR](20) NULL,
+    [LocationClassroomIdentificationCode] [NVARCHAR](60) NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME] NOT NULL,
     [LastModifiedDate] [DATETIME] NOT NULL,
@@ -5014,6 +5080,50 @@ CREATE TABLE [edfi].[SectionClassPeriod] (
 ) ON [PRIMARY]
 GO
 ALTER TABLE [edfi].[SectionClassPeriod] ADD CONSTRAINT [SectionClassPeriod_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
+GO
+
+-- Table [edfi].[SectionCourseLevelCharacteristic] --
+CREATE TABLE [edfi].[SectionCourseLevelCharacteristic] (
+    [CourseLevelCharacteristicDescriptorId] [INT] NOT NULL,
+    [LocalCourseCode] [NVARCHAR](60) NOT NULL,
+    [SchoolId] [INT] NOT NULL,
+    [SchoolYear] [SMALLINT] NOT NULL,
+    [SectionIdentifier] [NVARCHAR](255) NOT NULL,
+    [SessionName] [NVARCHAR](60) NOT NULL,
+    [CreateDate] [DATETIME] NOT NULL,
+    CONSTRAINT [SectionCourseLevelCharacteristic_PK] PRIMARY KEY CLUSTERED (
+        [CourseLevelCharacteristicDescriptorId] ASC,
+        [LocalCourseCode] ASC,
+        [SchoolId] ASC,
+        [SchoolYear] ASC,
+        [SectionIdentifier] ASC,
+        [SessionName] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [edfi].[SectionCourseLevelCharacteristic] ADD CONSTRAINT [SectionCourseLevelCharacteristic_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
+GO
+
+-- Table [edfi].[SectionOfferedGradeLevel] --
+CREATE TABLE [edfi].[SectionOfferedGradeLevel] (
+    [GradeLevelDescriptorId] [INT] NOT NULL,
+    [LocalCourseCode] [NVARCHAR](60) NOT NULL,
+    [SchoolId] [INT] NOT NULL,
+    [SchoolYear] [SMALLINT] NOT NULL,
+    [SectionIdentifier] [NVARCHAR](255) NOT NULL,
+    [SessionName] [NVARCHAR](60) NOT NULL,
+    [CreateDate] [DATETIME] NOT NULL,
+    CONSTRAINT [SectionOfferedGradeLevel_PK] PRIMARY KEY CLUSTERED (
+        [GradeLevelDescriptorId] ASC,
+        [LocalCourseCode] ASC,
+        [SchoolId] ASC,
+        [SchoolYear] ASC,
+        [SectionIdentifier] ASC,
+        [SessionName] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [edfi].[SectionOfferedGradeLevel] ADD CONSTRAINT [SectionOfferedGradeLevel_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
 -- Table [edfi].[SectionProgram] --
@@ -5241,6 +5351,8 @@ CREATE TABLE [edfi].[StaffAddress] (
     [Latitude] [NVARCHAR](20) NULL,
     [Longitude] [NVARCHAR](20) NULL,
     [DoNotPublishIndicator] [BIT] NULL,
+    [CongressionalDistrict] [NVARCHAR](30) NULL,
+    [LocaleDescriptorId] [INT] NULL,
     [CreateDate] [DATETIME] NOT NULL,
     CONSTRAINT [StaffAddress_PK] PRIMARY KEY CLUSTERED (
         [AddressTypeDescriptorId] ASC,
@@ -5395,6 +5507,8 @@ CREATE TABLE [edfi].[StaffEducationOrganizationContactAssociationAddress] (
     [Longitude] [NVARCHAR](20) NULL,
     [AddressTypeDescriptorId] [INT] NOT NULL,
     [DoNotPublishIndicator] [BIT] NULL,
+    [CongressionalDistrict] [NVARCHAR](30) NULL,
+    [LocaleDescriptorId] [INT] NULL,
     [CreateDate] [DATETIME] NOT NULL,
     CONSTRAINT [StaffEducationOrganizationContactAssociationAddress_PK] PRIMARY KEY CLUSTERED (
         [ContactTitle] ASC,
@@ -6691,6 +6805,8 @@ CREATE TABLE [edfi].[StudentEducationOrganizationAssociationAddress] (
     [Latitude] [NVARCHAR](20) NULL,
     [Longitude] [NVARCHAR](20) NULL,
     [DoNotPublishIndicator] [BIT] NULL,
+    [CongressionalDistrict] [NVARCHAR](30) NULL,
+    [LocaleDescriptorId] [INT] NULL,
     [CreateDate] [DATETIME] NOT NULL,
     CONSTRAINT [StudentEducationOrganizationAssociationAddress_PK] PRIMARY KEY CLUSTERED (
         [AddressTypeDescriptorId] ASC,

@@ -205,7 +205,9 @@
   </Aggregate>
   <Aggregate root="CourseOffering">
     <Entity table="CourseOffering"/>
+    <Entity table="CourseOfferingCourseLevelCharacteristic"/>
     <Entity table="CourseOfferingCurriculumUsed"/>
+    <Entity table="CourseOfferingOfferedGradeLevel"/>
   </Aggregate>
   <Aggregate root="CourseRepeatCodeDescriptor">
     <Entity table="CourseRepeatCodeDescriptor" isA="Descriptor"/>
@@ -461,6 +463,7 @@
   </Aggregate>
   <Aggregate root="LearningStandard">
     <Entity table="LearningStandard"/>
+    <Entity table="LearningStandardAcademicSubject" isRequiredCollection="true"/>
     <Entity table="LearningStandardContentStandard"/>
     <Entity table="LearningStandardContentStandardAuthor"/>
     <Entity table="LearningStandardGradeLevel" isRequiredCollection="true"/>
@@ -489,6 +492,9 @@
   </Aggregate>
   <Aggregate root="LocalEducationAgencyCategoryDescriptor">
     <Entity table="LocalEducationAgencyCategoryDescriptor" isA="Descriptor"/>
+  </Aggregate>
+  <Aggregate root="LocaleDescriptor">
+    <Entity table="LocaleDescriptor" isA="Descriptor"/>
   </Aggregate>
   <Aggregate root="Location" allowPrimaryKeyUpdates="true">
     <Entity table="Location"/>
@@ -700,6 +706,8 @@
     <Entity table="Section"/>
     <Entity table="SectionCharacteristic"/>
     <Entity table="SectionClassPeriod"/>
+    <Entity table="SectionCourseLevelCharacteristic"/>
+    <Entity table="SectionOfferedGradeLevel"/>
     <Entity table="SectionProgram"/>
   </Aggregate>
   <Aggregate root="SectionAttendanceTakenEvent">
@@ -717,7 +725,7 @@
   <Aggregate root="ServiceDescriptor">
     <Entity table="ServiceDescriptor" isA="Descriptor"/>
   </Aggregate>
-  <Aggregate root="Session">
+  <Aggregate root="Session" allowPrimaryKeyUpdates="true">
     <Entity table="Session"/>
     <Entity table="SessionAcademicWeek"/>
     <Entity table="SessionGradingPeriod"/>
