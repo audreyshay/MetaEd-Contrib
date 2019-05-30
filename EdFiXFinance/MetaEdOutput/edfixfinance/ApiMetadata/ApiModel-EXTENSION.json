@@ -1,5 +1,5 @@
 {
-  "odsApiVersion": "3.0.0",
+  "odsApiVersion": "3.1.0",
   "schemaDefinition": {
     "logicalName": "EdFiXFinance",
     "physicalName": "edfixfinance"
@@ -505,6 +505,19 @@
           "description": "",
           "isIdentifying": false,
           "isServerAssigned": false
+        },
+        {
+          "propertyName": "TagValue",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 100,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "TagValue",
+          "isIdentifying": false,
+          "isServerAssigned": false
         }
       ],
       "identifiers": [
@@ -936,6 +949,19 @@
             "isNullable": false
           },
           "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "TagValue",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 100,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "TagValue",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2124,15 +2150,15 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "BalanceSheetFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
             "precision": 5,
             "scale": 0,
-            "isNullable": true
+            "isNullable": false
           },
-          "description": "The fiscal year for which the account Balance Sheet dimension is valid.",
+          "description": "Fiscal year for the account",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2244,15 +2270,15 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "FunctionFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
             "precision": 5,
             "scale": 0,
-            "isNullable": true
+            "isNullable": false
           },
-          "description": "The fiscal year for which the account Function dimension is valid.",
+          "description": "Fiscal year for the account",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2317,15 +2343,15 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "FundFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
             "precision": 5,
             "scale": 0,
-            "isNullable": true
+            "isNullable": false
           },
-          "description": "The fiscal year for which the account Fund dimension is valid.",
+          "description": "Fiscal year for the account",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2390,15 +2416,15 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "ObjectFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
             "precision": 5,
             "scale": 0,
-            "isNullable": true
+            "isNullable": false
           },
-          "description": "The fiscal year for which the account Object dimension is valid.",
+          "description": "Fiscal year for the account",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2463,15 +2489,15 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "OperationalUnitFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
             "precision": 5,
             "scale": 0,
-            "isNullable": true
+            "isNullable": false
           },
-          "description": "The fiscal year for which the account Operational Unit dimension is valid.",
+          "description": "Fiscal year for the account",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2536,15 +2562,15 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "ProgramFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
             "precision": 5,
             "scale": 0,
-            "isNullable": true
+            "isNullable": false
           },
-          "description": "The fiscal year for which the account Program dimension is valid.",
+          "description": "Fiscal year for the account",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2609,15 +2635,15 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "ProjectFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
             "precision": 5,
             "scale": 0,
-            "isNullable": true
+            "isNullable": false
           },
-          "description": "The fiscal year for which the account Project dimension is valid.",
+          "description": "Fiscal year for the account",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2682,15 +2708,15 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "SourceFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
             "precision": 5,
             "scale": 0,
-            "isNullable": true
+            "isNullable": false
           },
-          "description": "The fiscal year for which the account Source dimension is valid.",
+          "description": "Fiscal year for the account",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2836,7 +2862,7 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "Optional tag for accountability reporting (e.g. ESSA).",
+          "description": "ReportinTag Descriptor",
           "isIdentifying": true,
           "isServerAssigned": false
         }
@@ -3214,7 +3240,7 @@
           "isServerAssigned": false
         },
         {
-          "propertyName": "ChartOfAccountFiscalYear",
+          "propertyName": "FiscalYear",
           "propertyType": {
             "dbType": "Int16",
             "maxLength": 0,
@@ -3415,7 +3441,7 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "Optional tag for accountability reporting (e.g. ESSA).",
+          "description": "ReportinTag Descriptor",
           "isIdentifying": true,
           "isServerAssigned": false
         }

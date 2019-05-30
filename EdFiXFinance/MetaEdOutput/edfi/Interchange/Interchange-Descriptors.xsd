@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- (c)2018 Ed-Fi Alliance, LLC. All Rights Reserved. -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0300" targetNamespace="http://ed-fi.org/0300" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<!-- (c)2019 Ed-Fi Alliance, LLC. All Rights Reserved. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0310" targetNamespace="http://ed-fi.org/0310" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xs:include schemaLocation="Ed-Fi-Core.xsd" />
   <xs:annotation>
     <xs:documentation>===== Descriptors Interchange Model =====</xs:documentation>
@@ -99,6 +99,7 @@ The Descriptor interchange is used to describe metadata about the descriptors an
         <xs:element name="LicenseStatusDescriptor" type="LicenseStatusDescriptor" />
         <xs:element name="LicenseTypeDescriptor" type="LicenseTypeDescriptor" />
         <xs:element name="LimitedEnglishProficiencyDescriptor" type="LimitedEnglishProficiencyDescriptor" />
+        <xs:element name="LocaleDescriptor" type="LocaleDescriptor" />
         <xs:element name="LocalEducationAgencyCategoryDescriptor" type="LocalEducationAgencyCategoryDescriptor" />
         <xs:element name="MagnetSpecialProgramEmphasisSchoolDescriptor" type="MagnetSpecialProgramEmphasisSchoolDescriptor" />
         <xs:element name="MediumOfInstructionDescriptor" type="MediumOfInstructionDescriptor" />
