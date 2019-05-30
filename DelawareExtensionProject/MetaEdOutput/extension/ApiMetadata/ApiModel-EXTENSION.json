@@ -942,18 +942,6 @@
     {
       "aggregateRootEntityName": {
         "schema": "edfi",
-        "name": "Parent"
-      },
-      "extensionEntityNames": [
-        {
-          "schema": "extension",
-          "name": "ParentAddressExtension"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "edfi",
         "name": "Section"
       },
       "extensionEntityNames": [
@@ -970,25 +958,9 @@
     {
       "aggregateRootEntityName": {
         "schema": "edfi",
-        "name": "StudentCTEProgramAssociation"
-      },
-      "extensionEntityNames": [
-        {
-          "schema": "extension",
-          "name": "StudentCTEProgramAssociationCTEProgramExtension"
-        }
-      ]
-    },
-    {
-      "aggregateRootEntityName": {
-        "schema": "edfi",
         "name": "StudentEducationOrganizationAssociation"
       },
       "extensionEntityNames": [
-        {
-          "schema": "extension",
-          "name": "StudentEducationOrganizationAssociationAddressExtension"
-        },
         {
           "schema": "extension",
           "name": "StudentEducationOrganizationAssociationEthnicity"
@@ -1898,7 +1870,7 @@
         {
           "propertyName": "DisciplineIncidentLastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -2008,7 +1980,7 @@
         {
           "propertyName": "IncidentRelatedToLastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -2496,7 +2468,7 @@
         {
           "propertyName": "RelatedLastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -3259,7 +3231,7 @@
         {
           "propertyName": "OfficeInDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -3272,7 +3244,7 @@
         {
           "propertyName": "OfficeOutDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -3488,7 +3460,7 @@
         {
           "propertyName": "TestDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -3583,7 +3555,7 @@
         {
           "propertyName": "TestDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -4029,7 +4001,7 @@
         {
           "propertyName": "EthnicityLastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -4197,6 +4169,19 @@
             "isNullable": true
           },
           "description": "The apartment or housing complex name.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
           "isIdentifying": false,
           "isServerAssigned": false
         },
@@ -5049,7 +5034,7 @@
         {
           "propertyName": "IssueDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -5828,7 +5813,7 @@
         {
           "propertyName": "SubjectAreaLastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -6097,6 +6082,19 @@
       "name": "StudentCTEProgramAssociationCTEProgramExtension",
       "locallyDefinedProperties": [
         {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
           "propertyName": "PathwayConcentrator",
           "propertyType": {
             "dbType": "Boolean",
@@ -6274,6 +6272,19 @@
           "isServerAssigned": false
         },
         {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
           "propertyName": "Development",
           "propertyType": {
             "dbType": "String",
@@ -6322,7 +6333,7 @@
         {
           "propertyName": "EthnicityLastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -11383,7 +11394,7 @@
         {
           "propertyName": "OfficeInDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -11428,7 +11439,7 @@
         {
           "propertyName": "OfficeInDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -11529,7 +11540,7 @@
         {
           "propertyName": "OfficeInDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -11574,7 +11585,7 @@
         {
           "propertyName": "OfficeInDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -11628,7 +11639,7 @@
         {
           "propertyName": "OfficeInDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -11673,7 +11684,7 @@
         {
           "propertyName": "OfficeInDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -11774,7 +11785,7 @@
         {
           "propertyName": "OfficeInDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -11819,7 +11830,7 @@
         {
           "propertyName": "OfficeInDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,

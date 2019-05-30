@@ -953,11 +953,14 @@ CREATE TABLE [extension].[ParentAddressExtension] (
     [ParentUSI] [INT] NOT NULL,
     [Complex] [NVARCHAR](255) NULL,
     [Development] [NVARCHAR](255) NULL,
+    [CreateDate] [DATETIME] NOT NULL,
     CONSTRAINT [ParentAddressExtension_PK] PRIMARY KEY CLUSTERED (
         [AddressTypeDescriptorId] ASC,
         [ParentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+ALTER TABLE [extension].[ParentAddressExtension] ADD CONSTRAINT [ParentAddressExtension_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
 -- Table [extension].[ParticipationCodeDescriptor] --
@@ -1614,6 +1617,7 @@ CREATE TABLE [extension].[StudentCTEProgramAssociationCTEProgramExtension] (
     [FirstCertificationDescriptorId] [INT] NULL,
     [SecondCertificationDescriptorId] [INT] NULL,
     [ThirdCertificationDescriptorId] [INT] NULL,
+    [CreateDate] [DATETIME] NOT NULL,
     CONSTRAINT [StudentCTEProgramAssociationCTEProgramExtension_PK] PRIMARY KEY CLUSTERED (
         [BeginDate] ASC,
         [CareerPathwayDescriptorId] ASC,
@@ -1624,6 +1628,8 @@ CREATE TABLE [extension].[StudentCTEProgramAssociationCTEProgramExtension] (
         [StudentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+ALTER TABLE [extension].[StudentCTEProgramAssociationCTEProgramExtension] ADD CONSTRAINT [StudentCTEProgramAssociationCTEProgramExtension_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
 -- Table [extension].[StudentEarlyChildhoodProgramAssociation] --
@@ -1661,12 +1667,15 @@ CREATE TABLE [extension].[StudentEducationOrganizationAssociationAddressExtensio
     [StudentUSI] [INT] NOT NULL,
     [Complex] [NVARCHAR](255) NULL,
     [Development] [NVARCHAR](255) NULL,
+    [CreateDate] [DATETIME] NOT NULL,
     CONSTRAINT [StudentEducationOrganizationAssociationAddressExtension_PK] PRIMARY KEY CLUSTERED (
         [AddressTypeDescriptorId] ASC,
         [EducationOrganizationId] ASC,
         [StudentUSI] ASC
     ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+ALTER TABLE [extension].[StudentEducationOrganizationAssociationAddressExtension] ADD CONSTRAINT [StudentEducationOrganizationAssociationAddressExtension_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
 -- Table [extension].[StudentEducationOrganizationAssociationEthnicity] --

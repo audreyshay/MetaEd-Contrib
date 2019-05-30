@@ -233,18 +233,11 @@
     <Entity table="DisciplineIncidentReason" schema="extension"/>
     <Entity table="DisciplineIncidentReferral" schema="extension"/>
   </AggregateExtension>
-  <AggregateExtension root="Parent">
-    <Entity table="ParentAddressExtension" schema="extension"/>
-  </AggregateExtension>
   <AggregateExtension root="Section">
     <Entity table="SectionMarkingPeriod" schema="extension"/>
     <Entity table="SectionSubjectArea" schema="extension"/>
   </AggregateExtension>
-  <AggregateExtension root="StudentCTEProgramAssociation">
-    <Entity table="StudentCTEProgramAssociationCTEProgramExtension" schema="extension"/>
-  </AggregateExtension>
   <AggregateExtension root="StudentEducationOrganizationAssociation">
-    <Entity table="StudentEducationOrganizationAssociationAddressExtension" schema="extension"/>
     <Entity table="StudentEducationOrganizationAssociationEthnicity" schema="extension"/>
     <Entity table="StudentEducationOrganizationAssociationMultiliteracy" schema="extension"/>
     <Entity table="StudentEducationOrganizationAssociationScholarship" schema="extension"/>
