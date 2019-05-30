@@ -95,6 +95,7 @@
     <Element name="MediumOfInstructionDescriptor" />
     <Element name="MagnetSpecialProgramEmphasisSchoolDescriptor" />
     <Element name="LocalEducationAgencyCategoryDescriptor" />
+    <Element name="LocaleDescriptor" />
     <Element name="LimitedEnglishProficiencyDescriptor" />
     <Element name="LicenseTypeDescriptor" />
     <Element name="LicenseStatusDescriptor" />
@@ -182,9 +183,6 @@
     <Element name="AcademicHonorCategoryDescriptor" />
     <Element name="AbsenceEventCategoryDescriptor" />
   </Interchange>
-  <Interchange name="Student" order="20">
-    <Element name="Student" />
-  </Interchange>
   <Interchange name="StudentProgram" order="20">
     <Element name="StudentSchoolFoodServiceProgramAssociation" />
     <Element name="StudentTitleIPartAProgramAssociation" />
@@ -197,9 +195,8 @@
     <Element name="StudentSpecialEducationProgramAssociation" />
     <Element name="StudentMigrantEducationProgramAssociation" />
   </Interchange>
-  <Interchange name="Standards" order="30">
-    <Element name="LearningStandard" />
-    <Element name="LearningObjective" />
+  <Interchange name="Student" order="20">
+    <Element name="Student" />
   </Interchange>
   <Interchange name="EducationOrgCalendar" order="30">
     <Element name="AcademicWeek" />
@@ -208,14 +205,25 @@
     <Element name="Calendar" />
     <Element name="CalendarDate" />
   </Interchange>
-  <Interchange name="Parent" order="40">
-    <Element name="Parent" />
-    <Element name="StudentParentAssociation" />
+  <Interchange name="Standards" order="30">
+    <Element name="LearningStandard" />
+    <Element name="LearningObjective" />
   </Interchange>
   <Interchange name="MasterSchedule" order="40">
     <Element name="BellSchedule" />
     <Element name="CourseOffering" />
     <Element name="Section" />
+  </Interchange>
+  <Interchange name="Parent" order="40">
+    <Element name="Parent" />
+    <Element name="StudentParentAssociation" />
+  </Interchange>
+  <Interchange name="StudentEnrollment" order="50">
+    <Element name="StudentEducationOrganizationResponsibilityAssociation" />
+    <Element name="StudentEducationOrganizationAssociation" />
+    <Element name="GraduationPlan" />
+    <Element name="StudentSchoolAssociation" />
+    <Element name="StudentSectionAssociation" />
   </Interchange>
   <Interchange name="EducationOrganization" order="50">
     <Element name="PostSecondaryInstitution" />
@@ -236,13 +244,6 @@
     <Element name="Program" />
     <Element name="Course" />
   </Interchange>
-  <Interchange name="StudentEnrollment" order="50">
-    <Element name="StudentEducationOrganizationResponsibilityAssociation" />
-    <Element name="StudentEducationOrganizationAssociation" />
-    <Element name="GraduationPlan" />
-    <Element name="StudentSchoolAssociation" />
-    <Element name="StudentSectionAssociation" />
-  </Interchange>
   <Interchange name="StaffAssociation" order="60">
     <Element name="Credential" />
     <Element name="Staff" />
@@ -256,15 +257,15 @@
     <Element name="StaffSchoolAssociation" />
     <Element name="StaffAbsenceEvent" />
   </Interchange>
-  <Interchange name="PostSecondaryEvent" order="70">
-    <Element name="PostSecondaryEvent" />
-  </Interchange>
   <Interchange name="StudentAttendance" order="70">
     <Element name="StudentSectionAttendanceEvent" />
     <Element name="StudentSchoolAttendanceEvent" />
     <Element name="StudentProgramAttendanceEvent" />
     <Element name="StudentInterventionAttendanceEvent" />
     <Element name="SectionAttendanceTakenEvent" />
+  </Interchange>
+  <Interchange name="PostSecondaryEvent" order="70">
+    <Element name="PostSecondaryEvent" />
   </Interchange>
   <Interchange name="StudentGrade" order="110">
     <Element name="CompetencyObjective" />

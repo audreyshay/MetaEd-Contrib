@@ -29,6 +29,7 @@ GO
 ALTER TABLE [az].[CourseOfferingCourseSchedule] WITH CHECK ADD CONSTRAINT [FK_CourseOfferingCourseSchedule_CourseOffering] FOREIGN KEY ([LocalCourseCode], [SchoolId], [SchoolYear], [SessionName])
 REFERENCES [edfi].[CourseOffering] ([LocalCourseCode], [SchoolId], [SchoolYear], [SessionName])
 ON DELETE CASCADE
+ON UPDATE CASCADE
 GO
 
 CREATE NONCLUSTERED INDEX [FK_CourseOfferingCourseSchedule_CourseOffering]
@@ -38,6 +39,7 @@ GO
 ALTER TABLE [az].[CourseOfferingExtension] WITH CHECK ADD CONSTRAINT [FK_CourseOfferingExtension_CourseOffering] FOREIGN KEY ([LocalCourseCode], [SchoolId], [SchoolYear], [SessionName])
 REFERENCES [edfi].[CourseOffering] ([LocalCourseCode], [SchoolId], [SchoolYear], [SessionName])
 ON DELETE CASCADE
+ON UPDATE CASCADE
 GO
 
 ALTER TABLE [az].[CourseOfferingExtension] WITH CHECK ADD CONSTRAINT [FK_CourseOfferingExtension_EndOfCourseAssessmentCodeDescriptor] FOREIGN KEY ([EndOfCourseAssessmentCodeDescriptorId])
@@ -338,6 +340,7 @@ GO
 ALTER TABLE [az].[StudentSchoolAttendanceEventExtension] WITH CHECK ADD CONSTRAINT [FK_StudentSchoolAttendanceEventExtension_StudentSchoolAttendanceEvent] FOREIGN KEY ([AttendanceEventCategoryDescriptorId], [EventDate], [SchoolId], [SchoolYear], [SessionName], [StudentUSI])
 REFERENCES [edfi].[StudentSchoolAttendanceEvent] ([AttendanceEventCategoryDescriptorId], [EventDate], [SchoolId], [SchoolYear], [SessionName], [StudentUSI])
 ON DELETE CASCADE
+ON UPDATE CASCADE
 GO
 
 ALTER TABLE [az].[StudentSectionAssociationExtension] WITH CHECK ADD CONSTRAINT [FK_StudentSectionAssociationExtension_CourseEntryDescriptor] FOREIGN KEY ([CourseEntryDescriptorId])
