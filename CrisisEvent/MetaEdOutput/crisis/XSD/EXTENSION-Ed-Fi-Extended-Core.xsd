@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- (c)2019 Ed-Fi Alliance, LLC. All Rights Reserved. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0310" xmlns:ann="http://ed-fi.org/annotation" targetNamespace="http://ed-fi.org/0310" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="Ed-Fi-Core.xsd" />
+  <xs:annotation>
+    <xs:documentation>===== Ed-Fi 3.1.0 Extensions =====</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>===== Domain Entities =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-CrisisDetails">
+    <xs:annotation>
+      <xs:documentation>Information about the specific crisis that occurred.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ComplexObjectType">
+        <xs:sequence>
+          <xs:element name="CrisisEvent" type="EXTENSION-CrisisEventDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>The specific event that occurred</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-CrisisEventDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CrisisType" type="EXTENSION-CrisisTypeDescriptorReferenceType">
+            <xs:annotation>
+              <xs:documentation>The type of crisis event that occurred</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-CrisisTypeDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CrisisStartDate" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>First date that the crisis occurred</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CrisisDesription" type="EXTENSION-CrisisDesription" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Description of the event</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Descriptors =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-CrisisEventDescriptor">
+    <xs:annotation>
+      <xs:documentation>The specific event that occurred.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-CrisisTypeDescriptor">
+    <xs:annotation>
+      <xs:documentation>The type of crisis event that occurred.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Associations =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-StudentEducationOrganizationAssociationExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="StudentEducationOrganizationAssociation">
+        <xs:sequence>
+          <xs:element name="StudentCrisisEvent" type="EXTENSION-StudentCrisisEvent" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Information on the crisis that has affected a student.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Extended Reference Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-CrisisDetailsIdentityType">
+    <xs:annotation>
+      <xs:documentation>Identity of a CrisisDetails.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Identity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CrisisEvent" type="EXTENSION-CrisisEventDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>The specific event that occurred</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-CrisisEventDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-CrisisDetailsReferenceType">
+    <xs:annotation>
+      <xs:documentation>Provides alternative references for a CrisisDetails. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ReferenceType">
+        <xs:sequence>
+          <xs:element name="CrisisDetailsIdentity" type="EXTENSION-CrisisDetailsIdentityType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identity of a CrisisDetails.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Extended Descriptor Reference Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="EXTENSION-CrisisEventDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>The specific event that occurred.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CrisisTypeDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>The type of crisis event that occurred.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:annotation>
+    <xs:documentation>===== Common Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-StudentCrisisEvent">
+    <xs:annotation>
+      <xs:documentation>Information on the crisis that has affected a student</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CrisisEvent" type="EXTENSION-CrisisEventDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>The specific event that affected the student</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-CrisisEventDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DisplacedStudentIndicator" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>An indication that the student was displaced from their home due to the crisis. The student may or may not be considered homeless due to the displacement.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Enumerations and Enumerated Collections =====</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>===== String Simple Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="EXTENSION-CrisisDesription">
+    <xs:annotation>
+      <xs:documentation>Description of the event</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1024" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:annotation>
+    <xs:documentation>===== Numeric Simple Types =====</xs:documentation>
+  </xs:annotation>
+</xs:schema>

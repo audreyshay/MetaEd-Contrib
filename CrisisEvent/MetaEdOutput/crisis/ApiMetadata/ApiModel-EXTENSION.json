@@ -1,0 +1,542 @@
+{
+  "odsApiVersion": "3.1.0",
+  "schemaDefinition": {
+    "logicalName": "crisis",
+    "physicalName": "crisis"
+  },
+  "aggregateDefinitions": [
+    {
+      "aggregateRootEntityName": {
+        "schema": "crisis",
+        "name": "CrisisDetails"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "crisis",
+          "name": "CrisisDetails"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "crisis",
+        "name": "CrisisEventDescriptor"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "crisis",
+          "name": "CrisisEventDescriptor"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "crisis",
+        "name": "CrisisTypeDescriptor"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "crisis",
+          "name": "CrisisTypeDescriptor"
+        }
+      ]
+    }
+  ],
+  "aggregateExtensionDefinitions": [
+    {
+      "aggregateRootEntityName": {
+        "schema": "edfi",
+        "name": "StudentEducationOrganizationAssociation"
+      },
+      "extensionEntityNames": [
+        {
+          "schema": "crisis",
+          "name": "StudentEducationOrganizationAssociationStudentCrisisEvent"
+        }
+      ]
+    }
+  ],
+  "entityDefinitions": [
+    {
+      "schema": "crisis",
+      "name": "CrisisDetails",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CrisisDesription",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 1024,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "Description of the event",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CrisisStartDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "First date that the crisis occurred",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "Id",
+          "propertyType": {
+            "dbType": "Guid",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "LastModifiedDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "CrisisDetails_PK",
+          "identifyingPropertyNames": [
+            "CrisisEventDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        },
+        {
+          "identifierName": "UX_CrisisDetails_Id",
+          "identifyingPropertyNames": [
+            "Id"
+          ],
+          "isPrimary": false,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "Information about the specific crisis that occurred."
+    },
+    {
+      "schema": "crisis",
+      "name": "CrisisEventDescriptor",
+      "locallyDefinedProperties": [],
+      "identifiers": [
+        {
+          "identifierName": "CrisisEventDescriptor_PK",
+          "identifyingPropertyNames": [
+            "CrisisEventDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "The specific event that occurred."
+    },
+    {
+      "schema": "crisis",
+      "name": "CrisisTypeDescriptor",
+      "locallyDefinedProperties": [],
+      "identifiers": [
+        {
+          "identifierName": "CrisisTypeDescriptor_PK",
+          "identifyingPropertyNames": [
+            "CrisisTypeDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "The type of crisis event that occurred."
+    },
+    {
+      "schema": "crisis",
+      "name": "StudentEducationOrganizationAssociationStudentCrisisEvent",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "DisplacedStudentIndicator",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "An indication that the student was displaced from their home due to the crisis. The student may or may not be considered homeless due to the displacement.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "StudentEducationOrganizationAssociationStudentCrisisEvent_PK",
+          "identifyingPropertyNames": [
+            "CrisisEventDescriptorId",
+            "EducationOrganizationId",
+            "StudentUSI"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "Information on the crisis that has affected a student."
+    }
+  ],
+  "associationDefinitions": [
+    {
+      "fullName": {
+        "schema": "crisis",
+        "name": "FK_CrisisDetails_CrisisEventDescriptor"
+      },
+      "cardinality": "OneToOne",
+      "primaryEntityFullName": {
+        "schema": "crisis",
+        "name": "CrisisEventDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "CrisisEventDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "crisis",
+        "name": "CrisisDetails"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "CrisisEventDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The specific event that occurred",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "crisis",
+        "name": "FK_CrisisDetails_CrisisTypeDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "crisis",
+        "name": "CrisisTypeDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "CrisisTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "crisis",
+        "name": "CrisisDetails"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "CrisisTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The type of crisis event that occurred",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "crisis",
+        "name": "FK_CrisisEventDescriptor_Descriptor"
+      },
+      "cardinality": "OneToOneInheritance",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Descriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "DescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "crisis",
+        "name": "CrisisEventDescriptor"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "CrisisEventDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "crisis",
+        "name": "FK_CrisisTypeDescriptor_Descriptor"
+      },
+      "cardinality": "OneToOneInheritance",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Descriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "DescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "crisis",
+        "name": "CrisisTypeDescriptor"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "CrisisTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "crisis",
+        "name": "FK_StudentEducationOrganizationAssociationStudentCrisisEvent_CrisisEventDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "crisis",
+        "name": "CrisisEventDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "CrisisEventDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "crisis",
+        "name": "StudentEducationOrganizationAssociationStudentCrisisEvent"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "CrisisEventDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The specific event that affected the student",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "crisis",
+        "name": "FK_StudentEducationOrganizationAssociationStudentCrisisEvent_StudentEducationOrganizationAssociation"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "StudentEducationOrganizationAssociation"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "crisis",
+        "name": "StudentEducationOrganizationAssociationStudentCrisisEvent"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AggregateExtensions logicalSchema="crisis" schema="crisis">
+  <Aggregate root="CrisisDetails">
+    <Entity table="CrisisDetails" schema="crisis"/>
+  </Aggregate>
+  <Aggregate root="CrisisEventDescriptor">
+    <Entity table="CrisisEventDescriptor" isA="Descriptor" schema="crisis"/>
+  </Aggregate>
+  <Aggregate root="CrisisTypeDescriptor">
+    <Entity table="CrisisTypeDescriptor" isA="Descriptor" schema="crisis"/>
+  </Aggregate>
+  <AggregateExtension root="StudentEducationOrganizationAssociation">
+    <Entity table="StudentEducationOrganizationAssociationStudentCrisisEvent" schema="crisis"/>
+  </AggregateExtension>
+</AggregateExtensions>
