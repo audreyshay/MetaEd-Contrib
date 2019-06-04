@@ -1,7 +1,7 @@
 {
   "odsApiVersion": "3.1.0",
   "schemaDefinition": {
-    "logicalName": "wi",
+    "logicalName": "Wi",
     "physicalName": "wi"
   },
   "aggregateDefinitions": [

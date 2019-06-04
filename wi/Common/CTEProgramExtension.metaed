@@ -1,4 +1,4 @@
-Common CTEProgram additions
+Common EdFi.CTEProgram additions
   descriptor IacCode
     documentation "IacCode of concentration."
     is optional

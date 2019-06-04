@@ -1,0 +1,60 @@
+Name components:  CertificatedProgramStatusDescriptor
+SQL Server name:  CertificatedProgramStatusDescriptor  (length 35)
+PostgreSQL name:  CertificatedProgramStatusDescriptor  (length 35)
+
+Name components:  CountDateNameDescriptor
+SQL Server name:  CountDateNameDescriptor  (length 23)
+PostgreSQL name:  CountDateNameDescriptor  (length 23)
+
+Name components:  CountDateReceivingServiceDescriptor
+SQL Server name:  CountDateReceivingServiceDescriptor  (length 35)
+PostgreSQL name:  CountDateReceivingServiceDescriptor  (length 35)
+
+Name components:  CteProgramAreaDescriptor
+SQL Server name:  CteProgramAreaDescriptor  (length 24)
+PostgreSQL name:  CteProgramAreaDescriptor  (length 24)
+
+Name components:  DisciplineActionExtension
+SQL Server name:  DisciplineActionExtension  (length 25)
+PostgreSQL name:  DisciplineActionExtension  (length 25)
+
+Name components:  IacCodeDescriptor
+SQL Server name:  IacCodeDescriptor  (length 17)
+PostgreSQL name:  IacCodeDescriptor  (length 17)
+
+Name components:  ModifiedTermDescriptor
+SQL Server name:  ModifiedTermDescriptor  (length 22)
+PostgreSQL name:  ModifiedTermDescriptor  (length 22)
+
+Name components:  StateEndorsedRegionalCareerPathwayStatusDescriptor
+SQL Server name:  StateEndorsedRegionalCareerPathwayStatusDescriptor  (length 50)
+PostgreSQL name:  StateEndorsedRegionalCareerPathwayStatusDescriptor  (length 50)
+
+Name components:  StudentCTEProgramAssociation,CTEConcentrationCteProgramArea
+SQL Server name:  StudentCTEProgramAssociationCTEConcentrationCteProgramArea  (length 58)
+PostgreSQL name:  StudentCTEProgramAssociationCTEConcentrationCteProgramArea  (length 58)
+
+Name components:  StudentCTEProgramAssociationExtension
+SQL Server name:  StudentCTEProgramAssociationExtension  (length 37)
+PostgreSQL name:  StudentCTEProgramAssociationExtension  (length 37)
+
+Name components:  StudentDisciplineIncidentAssociationExtension
+SQL Server name:  StudentDisciplineIncidentAssociationExtension  (length 45)
+PostgreSQL name:  StudentDisciplineIncidentAssociationExtension  (length 45)
+
+Name components:  StudentEducationOrganizationAssociationExtension
+SQL Server name:  StudentEducationOrganizationAssociationExtension  (length 48)
+PostgreSQL name:  StudentEducationOrganizationAssociationExtension  (length 48)
+
+Name components:  StudentSchoolAssociationExtension
+SQL Server name:  StudentSchoolAssociationExtension  (length 33)
+PostgreSQL name:  StudentSchoolAssociationExtension  (length 33)
+
+Name components:  StudentSchoolAssociation,ReceivingService
+SQL Server name:  StudentSchoolAssociationReceivingService  (length 40)
+PostgreSQL name:  StudentSchoolAssociationReceivingService  (length 40)
+
+Name components:  StudentSpecialEducationProgramAssociationExtension
+SQL Server name:  StudentSpecialEducationProgramAssociationExtension  (length 50)
+PostgreSQL name:  StudentSpecialEducationProgramAssociationExtension  (length 50)
+
