@@ -1,4 +1,4 @@
-Domain Entity Section additions
+Domain Entity EdFi.Section additions
 common SectionExternalProviderTeacher
   documentation "A collection fo external teachers assigned to a section"
   is optional collection

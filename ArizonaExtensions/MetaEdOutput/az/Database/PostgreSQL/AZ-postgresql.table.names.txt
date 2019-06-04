@@ -1,0 +1,140 @@
+Name components:  AbsenceAmountDescriptor
+SQL Server name:  AbsenceAmountDescriptor  (length 23)
+PostgreSQL name:  AbsenceAmountDescriptor  (length 23)
+
+Name components:  CalendarExtension
+SQL Server name:  CalendarExtension  (length 17)
+PostgreSQL name:  CalendarExtension  (length 17)
+
+Name components:  CourseEntryDescriptor
+SQL Server name:  CourseEntryDescriptor  (length 21)
+PostgreSQL name:  CourseEntryDescriptor  (length 21)
+
+Name components:  CourseExitDescriptor
+SQL Server name:  CourseExitDescriptor  (length 20)
+PostgreSQL name:  CourseExitDescriptor  (length 20)
+
+Name components:  CourseOffering,CourseOfferingCourseSchedule
+SQL Server name:  CourseOfferingCourseSchedule  (length 28)
+PostgreSQL name:  CourseOfferingCourseOfferingCourseSchedule  (length 42)
+
+Name components:  CourseOfferingExtension
+SQL Server name:  CourseOfferingExtension  (length 23)
+PostgreSQL name:  CourseOfferingExtension  (length 23)
+
+Name components:  EducationLevelDescriptor
+SQL Server name:  EducationLevelDescriptor  (length 24)
+PostgreSQL name:  EducationLevelDescriptor  (length 24)
+
+Name components:  EndOfCourseAssessmentCodeDescriptor
+SQL Server name:  EndOfCourseAssessmentCodeDescriptor  (length 35)
+PostgreSQL name:  EndOfCourseAssessmentCodeDescriptor  (length 35)
+
+Name components:  ExitWithdrawReasonDescriptor
+SQL Server name:  ExitWithdrawReasonDescriptor  (length 28)
+PostgreSQL name:  ExitWithdrawReasonDescriptor  (length 28)
+
+Name components:  MembershipFTEDescriptor
+SQL Server name:  MembershipFTEDescriptor  (length 23)
+PostgreSQL name:  MembershipFTEDescriptor  (length 23)
+
+Name components:  MembershipResponsibilityDescriptor
+SQL Server name:  MembershipResponsibilityDescriptor  (length 34)
+PostgreSQL name:  MembershipResponsibilityDescriptor  (length 34)
+
+Name components:  MembershipTypeDescriptor
+SQL Server name:  MembershipTypeDescriptor  (length 24)
+PostgreSQL name:  MembershipTypeDescriptor  (length 24)
+
+Name components:  MonthDescriptor
+SQL Server name:  MonthDescriptor  (length 15)
+PostgreSQL name:  MonthDescriptor  (length 15)
+
+Name components:  NumberOfInstructionalDaysInWeekDescriptor
+SQL Server name:  NumberOfInstructionalDaysInWeekDescriptor  (length 41)
+PostgreSQL name:  NumberOfInstructionalDaysInWeekDescriptor  (length 41)
+
+Name components:  PrimaryNightTimeResidenceDescriptor
+SQL Server name:  PrimaryNightTimeResidenceDescriptor  (length 35)
+PostgreSQL name:  PrimaryNightTimeResidenceDescriptor  (length 35)
+
+Name components:  SectionExtension
+SQL Server name:  SectionExtension  (length 16)
+PostgreSQL name:  SectionExtension  (length 16)
+
+Name components:  Section,SectionExternalProviderTeacher
+SQL Server name:  SectionExternalProviderTeacher  (length 30)
+PostgreSQL name:  SectionSectionExternalProviderTeacher  (length 37)
+
+Name components:  Section,SectionGradeLevel
+SQL Server name:  SectionGradeLevel  (length 17)
+PostgreSQL name:  SectionSectionGradeLevel  (length 24)
+
+Name components:  SpecialEnrollmentDescriptor
+SQL Server name:  SpecialEnrollmentDescriptor  (length 27)
+PostgreSQL name:  SpecialEnrollmentDescriptor  (length 27)
+
+Name components:  StaffEducationOrganizationEmploymentAssociationExtension
+SQL Server name:  StaffEducationOrganizationEmploymentAssociationExtension  (length 56)
+PostgreSQL name:  StaffEducationOrganizationEmploymentAssociationExtension  (length 56)
+
+Name components:  StudentDropOutRecoveryProgramAssociation
+SQL Server name:  StudentDropOutRecoveryProgramAssociation  (length 40)
+PostgreSQL name:  StudentDropOutRecoveryProgramAssociation  (length 40)
+
+Name components:  StudentDropOutRecoveryProgramMonthlyUpdate
+SQL Server name:  StudentDropOutRecoveryProgramMonthlyUpdate  (length 42)
+PostgreSQL name:  StudentDropOutRecoveryProgramMonthlyUpdate  (length 42)
+
+Name components:  StudentNeed
+SQL Server name:  StudentNeed  (length 11)
+PostgreSQL name:  StudentNeed  (length 11)
+
+Name components:  StudentNeedCategoryDescriptor
+SQL Server name:  StudentNeedCategoryDescriptor  (length 29)
+PostgreSQL name:  StudentNeedCategoryDescriptor  (length 29)
+
+Name components:  StudentNeedDescriptor
+SQL Server name:  StudentNeedDescriptor  (length 21)
+PostgreSQL name:  StudentNeedDescriptor  (length 21)
+
+Name components:  StudentProgramAttendanceEvent,TimeLog
+SQL Server name:  StudentProgramAttendanceEventTimeLog  (length 36)
+PostgreSQL name:  StudentProgramAttendanceEventTimeLog  (length 36)
+
+Name components:  StudentSchoolAssociationExtension
+SQL Server name:  StudentSchoolAssociationExtension  (length 33)
+PostgreSQL name:  StudentSchoolAssociationExtension  (length 33)
+
+Name components:  StudentSchoolAssociation,StudentSchoolAssociationLocalEducationAgency
+SQL Server name:  StudentSchoolAssociationLocalEducationAgency  (length 44)
+PostgreSQL name:  StudentSchoolAssociationStudentSchoolAssociationLocalEdu-bd2774  (length 63)
+
+Name components:  StudentSchoolAssociation,StudentSchoolAssociationMembershipFTE
+SQL Server name:  StudentSchoolAssociationMembershipFTE  (length 37)
+PostgreSQL name:  StudentSchoolAssociationStudentSchoolAssociationMembershipFTE  (length 61)
+
+Name components:  StudentSchoolAssociation,StudentSchoolAssociationSpecialEnrollment
+SQL Server name:  StudentSchoolAssociationSpecialEnrollment  (length 41)
+PostgreSQL name:  StudentSchoolAssociationStudentSchoolAssociationSpecialE-1166cc  (length 63)
+
+Name components:  StudentSchoolAssociation,StudentSchoolAssociationTuitionPayer
+SQL Server name:  StudentSchoolAssociationTuitionPayer  (length 36)
+PostgreSQL name:  StudentSchoolAssociationStudentSchoolAssociationTuitionPayer  (length 60)
+
+Name components:  StudentSchoolAttendanceEventExtension
+SQL Server name:  StudentSchoolAttendanceEventExtension  (length 37)
+PostgreSQL name:  StudentSchoolAttendanceEventExtension  (length 37)
+
+Name components:  StudentSectionAssociationExtension
+SQL Server name:  StudentSectionAssociationExtension  (length 34)
+PostgreSQL name:  StudentSectionAssociationExtension  (length 34)
+
+Name components:  StudentSpecialEducationProgramAssociationExtension
+SQL Server name:  StudentSpecialEducationProgramAssociationExtension  (length 50)
+PostgreSQL name:  StudentSpecialEducationProgramAssociationExtension  (length 50)
+
+Name components:  TuitionPayerDescriptor
+SQL Server name:  TuitionPayerDescriptor  (length 22)
+PostgreSQL name:  TuitionPayerDescriptor  (length 22)
+

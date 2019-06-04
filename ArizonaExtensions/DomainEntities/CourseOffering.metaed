@@ -1,4 +1,4 @@
-Domain Entity CourseOffering additions
+Domain Entity EdFi.CourseOffering additions
  descriptor EndOfCourseAssessmentCode
   documentation "The end of course assesment code. Submitted for courses that end with Assessment testing"
   is optional

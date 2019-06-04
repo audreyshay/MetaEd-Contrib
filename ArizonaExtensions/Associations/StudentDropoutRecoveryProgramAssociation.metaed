@@ -1,4 +1,4 @@
-Association StudentDropOutRecoveryProgramAssociation based on GeneralStudentProgramAssociation
+Association StudentDropOutRecoveryProgramAssociation based on EdFi.GeneralStudentProgramAssociation
 documentation ""
   date WrittenLearningPlanDate
     documentation "The date the initial Written Learning Plan was approved. Note: A new Written

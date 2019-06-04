@@ -1,5 +1,5 @@
 Common SectionGradeLevel
   documentation "The grade level associated with the current section."
-  descriptor GradeLevel
+  descriptor EdFi.GradeLevel
     documentation "The grade level associated with the current section"
     is part of identity

@@ -1,4 +1,4 @@
-Association StudentSectionAssociation additions
+Association EdFi.StudentSectionAssociation additions
 string Note
   documentation "Any Clarifying information for this course section"
   is optional
