@@ -1,5 +1,5 @@
-Association StudentDisciplineIncidentAssociation additions
-    descriptor Weapon
+Association EdFi.StudentDisciplineIncidentAssociation additions
+    descriptor EdFi.Weapon
         documentation "Identifies the type of weapon used during an incident."
         is optional collection
     bool GunFreeSchoolViolation

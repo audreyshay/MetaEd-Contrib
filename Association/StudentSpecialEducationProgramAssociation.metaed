@@ -1,4 +1,4 @@
-Association StudentSpecialEducationProgramAssociation additions
+Association EdFi.StudentSpecialEducationProgramAssociation additions
     descriptor SpecialEducationProgram
         documentation "Type of program a Special Education student is in - Part B or Part C."
         is optional

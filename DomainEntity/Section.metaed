@@ -1,4 +1,4 @@
-Domain Entity Section additions
+Domain Entity EdFi.Section additions
 shared string CourseStaffIdOverride
     documentation "Staff Id of non district employee correspoinding to the teacher of the course."
     is optional

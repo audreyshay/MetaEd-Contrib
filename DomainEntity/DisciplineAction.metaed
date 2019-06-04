@@ -1,4 +1,4 @@
-Domain Entity DisciplineAction additions
+Domain Entity EdFi.DisciplineAction additions
     descriptor UnilateralRemoval
         documentation "For SPED students only who were were subject to Uniliteral Removal"
         is optional

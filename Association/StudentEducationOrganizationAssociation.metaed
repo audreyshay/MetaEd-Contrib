@@ -1,4 +1,4 @@
-Association StudentEducationOrganizationAssociation additions
+Association EdFi.StudentEducationOrganizationAssociation additions
 descriptor ImmigrantIndicator
     documentation "Description that best reflects the student's immigrant status."
     is optional

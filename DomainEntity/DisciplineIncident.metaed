@@ -1,4 +1,4 @@
-Domain Entity DisciplineIncident additions
+Domain Entity EdFi.DisciplineIncident additions
     bool HomicideIndicator
         documentation "Indicates if this discipline incident involved homicide."
         is optional

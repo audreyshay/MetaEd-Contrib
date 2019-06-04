@@ -1,0 +1,104 @@
+Name components:  CalendarDateExtension
+SQL Server name:  CalendarDateExtension  (length 21)
+PostgreSQL name:  CalendarDateExtension  (length 21)
+
+Name components:  CareerEducationProgramDescriptor
+SQL Server name:  CareerEducationProgramDescriptor  (length 32)
+PostgreSQL name:  CareerEducationProgramDescriptor  (length 32)
+
+Name components:  DisciplineActionExtension
+SQL Server name:  DisciplineActionExtension  (length 25)
+PostgreSQL name:  DisciplineActionExtension  (length 25)
+
+Name components:  DisciplineIncidentExtension
+SQL Server name:  DisciplineIncidentExtension  (length 27)
+PostgreSQL name:  DisciplineIncidentExtension  (length 27)
+
+Name components:  DualCreditDescriptor
+SQL Server name:  DualCreditDescriptor  (length 20)
+PostgreSQL name:  DualCreditDescriptor  (length 20)
+
+Name components:  EarlyLearningSettingDescriptor
+SQL Server name:  EarlyLearningSettingDescriptor  (length 30)
+PostgreSQL name:  EarlyLearningSettingDescriptor  (length 30)
+
+Name components:  ImmigrantIndicatorDescriptor
+SQL Server name:  ImmigrantIndicatorDescriptor  (length 28)
+PostgreSQL name:  ImmigrantIndicatorDescriptor  (length 28)
+
+Name components:  PlacementTypeDescriptor
+SQL Server name:  PlacementTypeDescriptor  (length 23)
+PostgreSQL name:  PlacementTypeDescriptor  (length 23)
+
+Name components:  PositionTitleDescriptor
+SQL Server name:  PositionTitleDescriptor  (length 23)
+PostgreSQL name:  PositionTitleDescriptor  (length 23)
+
+Name components:  PostGraduateActivity
+SQL Server name:  PostGraduateActivity  (length 20)
+PostgreSQL name:  PostGraduateActivity  (length 20)
+
+Name components:  PostGraduateActivityDescriptor
+SQL Server name:  PostGraduateActivityDescriptor  (length 30)
+PostgreSQL name:  PostGraduateActivityDescriptor  (length 30)
+
+Name components:  PostGraduateActivityDeterminationDescriptor
+SQL Server name:  PostGraduateActivityDeterminationDescriptor  (length 43)
+PostgreSQL name:  PostGraduateActivityDeterminationDescriptor  (length 43)
+
+Name components:  Section,SectionDelivery
+SQL Server name:  SectionDelivery  (length 15)
+PostgreSQL name:  SectionSectionDelivery  (length 22)
+
+Name components:  SectionDeliveryDescriptor
+SQL Server name:  SectionDeliveryDescriptor  (length 25)
+PostgreSQL name:  SectionDeliveryDescriptor  (length 25)
+
+Name components:  SectionExtension
+SQL Server name:  SectionExtension  (length 16)
+PostgreSQL name:  SectionExtension  (length 16)
+
+Name components:  SpecialEducationProgramDescriptor
+SQL Server name:  SpecialEducationProgramDescriptor  (length 33)
+PostgreSQL name:  SpecialEducationProgramDescriptor  (length 33)
+
+Name components:  StudentCTEProgramAssociationExtension
+SQL Server name:  StudentCTEProgramAssociationExtension  (length 37)
+PostgreSQL name:  StudentCTEProgramAssociationExtension  (length 37)
+
+Name components:  StudentDisciplineIncidentAssociationExtension
+SQL Server name:  StudentDisciplineIncidentAssociationExtension  (length 45)
+PostgreSQL name:  StudentDisciplineIncidentAssociationExtension  (length 45)
+
+Name components:  StudentDisciplineIncidentAssociation,Weapon
+SQL Server name:  StudentDisciplineIncidentAssociationWeapon  (length 42)
+PostgreSQL name:  StudentDisciplineIncidentAssociationWeapon  (length 42)
+
+Name components:  StudentEarlyLearningProgramAssociation
+SQL Server name:  StudentEarlyLearningProgramAssociation  (length 38)
+PostgreSQL name:  StudentEarlyLearningProgramAssociation  (length 38)
+
+Name components:  StudentEducationOrganizationAssociationExtension
+SQL Server name:  StudentEducationOrganizationAssociationExtension  (length 48)
+PostgreSQL name:  StudentEducationOrganizationAssociationExtension  (length 48)
+
+Name components:  StudentLanguageInstructionProgramAssociationExtension
+SQL Server name:  StudentLanguageInstructionProgramAssociationExtension  (length 53)
+PostgreSQL name:  StudentLanguageInstructionProgramAssociationExtension  (length 53)
+
+Name components:  StudentSchoolAssociationExtension
+SQL Server name:  StudentSchoolAssociationExtension  (length 33)
+PostgreSQL name:  StudentSchoolAssociationExtension  (length 33)
+
+Name components:  StudentSectionAssociationExtension
+SQL Server name:  StudentSectionAssociationExtension  (length 34)
+PostgreSQL name:  StudentSectionAssociationExtension  (length 34)
+
+Name components:  StudentSpecialEducationProgramAssociationExtension
+SQL Server name:  StudentSpecialEducationProgramAssociationExtension  (length 50)
+PostgreSQL name:  StudentSpecialEducationProgramAssociationExtension  (length 50)
+
+Name components:  UnilateralRemovalDescriptor
+SQL Server name:  UnilateralRemovalDescriptor  (length 27)
+PostgreSQL name:  UnilateralRemovalDescriptor  (length 27)
+

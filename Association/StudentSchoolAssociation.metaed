@@ -1,4 +1,4 @@
-Association StudentSchoolAssociation additions
+Association EdFi.StudentSchoolAssociation additions
     bool NewToDistrict
         documentation "1 = Student is new to district."
         is optional
