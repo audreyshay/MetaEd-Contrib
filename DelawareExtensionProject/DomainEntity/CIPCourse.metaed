@@ -1,6 +1,6 @@
 Domain Entity CIPCourse
     documentation "Identifies courses that are CIP."
-    shared string CIPCode
+    shared string EdFi.CIPCode
         documentation "Indicates the code for the CIP course."
         is part of identity
     integer Pathway

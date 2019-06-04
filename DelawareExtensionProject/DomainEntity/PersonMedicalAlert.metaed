@@ -12,7 +12,7 @@ Domain Entity PersonMedicalAlert
     date EndDate
         documentation "Identifies the end date for a medical alert."
         is optional
-    shared string Description
+    shared string EdFi.Description
         documentation "Comments on medical conditions and alerts."
         is optional
     shared integer Sequence

@@ -1,4 +1,4 @@
-Domain Entity DisciplineIncident additions
+Domain Entity EdFi.DisciplineIncident additions
     descriptor Referral
         documentation "Indicates the type of referral made for the incident."
         is optional collection
@@ -8,7 +8,7 @@ Domain Entity DisciplineIncident additions
     shared string Number
         documentation "Identifies the badge number of the responding officer to the incident."
         is optional
-        with context LawEnforcementBadge
+        role name LawEnforcementBadge
     shared string LawEnforcementDepartment
         documentation "Identifies the police department to which the incident was reported."
         is optional
@@ -27,8 +27,8 @@ Domain Entity DisciplineIncident additions
     shared string ChangeUID
         documentation "Identifies the person who last changed the table row."
         is optional
-        with context DisciplineIncident
+        role name DisciplineIncident
     shared string CreationUID
         documentation "Identifies the person who created the table row."
         is optional
-        with context DisciplineIncident
+        role name DisciplineIncident

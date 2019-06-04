@@ -4,4 +4,4 @@ Interchange DisciplineIssue
     domain entity DisciplineIssueRefer
     domain entity DisciplineIssueAction
     domain entity DisciplineIssueStudent
-    domain entity DisciplineIncident
+    domain entity EdFi.DisciplineIncident

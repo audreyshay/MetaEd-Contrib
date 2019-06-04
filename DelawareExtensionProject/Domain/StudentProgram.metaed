@@ -1,15 +1,15 @@
 Domain StudentProgram
     documentation "This domain represents the programs that students participates in."
-    domain entity Student
-    domain entity EducationOrganization
-    domain entity Staff
-    domain entity Program
-    domain entity School
-    association StudentProgramAssociation
-    association StaffProgramAssociation
-    association StudentSpecialEducationProgramAssociation
-    association StudentLanguageInstructionProgramAssociation
+    domain entity EdFi.Student
+    domain entity EdFi.EducationOrganization
+    domain entity EdFi.Staff
+    domain entity EdFi.Program
+    domain entity EdFi.School
+    association EdFi.StudentProgramAssociation
+    association EdFi.StaffProgramAssociation
+    association EdFi.StudentSpecialEducationProgramAssociation
+    association EdFi.StudentLanguageInstructionProgramAssociation
     association Student504ProgramAssociation
     association StudentEarlyChildhoodProgramAssociation
     common LanguageImmersion
-    common CTEProgram
+    common EdFi.CTEProgram

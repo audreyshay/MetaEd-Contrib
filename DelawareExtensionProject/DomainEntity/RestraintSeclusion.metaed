@@ -1,23 +1,23 @@
 Domain Entity RestraintSeclusion
     documentation "This is documentation."
-    domain entity School
+    domain entity EdFi.School
         documentation "Relates the restraint seclusion to the school where the event occurred. "
         is part of identity
-    domain entity Student
+    domain entity EdFi.Student
         documentation "The student involved in restraint secluson event."
         is part of identity
     shared string Detail
         documentation "Indicates the additional detail regrading the restraint seclusion event."
         is optional
-        with context Additional
+        role name Additional
     shared string Detail
         documentation "Indicates the detail regrading the behaviour during the restraint seclusion event."
         is required
-        with context BehaviorDuringRestraint
-    shared string Description
+        role name BehaviorDuringRestraint
+    shared string EdFi.Description
         documentation "Indicates the description of changes for the restraint seclusion event."
         is optional
-        with context Change
+        role name Change
     time EventTime
         documentation "An indication of the time of day the event occurred."
         is part of identity
@@ -27,8 +27,8 @@ Domain Entity RestraintSeclusion
     shared string Detail
         documentation "Indicates the detail of the de-escalation technique used in the restraint seclusion event."
         is required
-        with context DeescalationTechnique
-    descriptor IncidentLocation
+        role name DeescalationTechnique
+    descriptor EdFi.IncidentLocation
         documentation "Identifies where the restraint seclusion event occurred."
         is optional
     date RestraintReportDate
@@ -37,7 +37,7 @@ Domain Entity RestraintSeclusion
     duration Duration
         documentation "Indicates the length in minutes of the restarint secluson event."
         is optional
-        with context Restarint
+        role name Restarint
     integer ConsecutiveRestraintCount
         documentation "Indicates the number of times a restraint secluson event occurred in a day."
         is optional
@@ -47,7 +47,7 @@ Domain Entity RestraintSeclusion
     shared string Detail
         documentation "Indicates the non violent technique detail regrading the restraint seclusion event."
         is required
-        with context NonViolentTechnique
+        role name NonViolentTechnique
     bool ParentGuardianNotified
         documentation "Indicates if the parent or guradian was notified about the restarint secluson event."
         is optional
@@ -60,8 +60,8 @@ Domain Entity RestraintSeclusion
     shared string Detail
         documentation "Indicates the policy Change detail regrading the restraint seclusion event."
         is optional
-        with context PolicyChange
-    descriptor RestraintEventReason
+        role name PolicyChange
+    descriptor EdFi.RestraintEventReason
         documentation "Indicates the behavior that caused the restraint secluson event."
         is part of identity
     descriptor RestraintEventCategory
@@ -70,32 +70,32 @@ Domain Entity RestraintSeclusion
     shared string Detail
         documentation "Indicates the event details prior to the restraint seclusion event."
         is required
-        with context PriorToEvent
+        role name PriorToEvent
     bool StaffInjured
         documentation "Indicates if staff was injured during the restarint secluson event."
         is optional
     descriptor Treatment
         documentation "Indicates the treatment provided to staff injured during restraint secluson event."
         is optional
-        with context Staff
+        role name Staff
     common StaffProvidingRestraint
         documentation "Identifies the staff responsible for providing restarint."
         is required collection
     shared string Detail
         documentation "Indicates the traing detail for staff involved in restraint seclusion event."
         is optional
-        with context StaffTraining
+        role name StaffTraining
     bool StudentInjured
         documentation "Indicates if student was injured during the restarint secluson event."
         is optional
     descriptor Treatment
         documentation "Indicates the treatment provided to student injured during restarint secluson event."
         is optional
-        with context Student
+        role name Student
     shared string Detail
         documentation "Indicates the student interview detail regrading the restraint seclusion event."
         is optional
-        with context StudentInterview
+        role name StudentInterview
     descriptor SupportPlanChange
         documentation "Indicates the type of support plan change."
         is required
@@ -105,4 +105,4 @@ Domain Entity RestraintSeclusion
     shared string Detail
         documentation "Indicates the witness interview detail regrading the restraint seclusion event."
         is optional
-        with context WitnessInterview
+        role name WitnessInterview

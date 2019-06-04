@@ -1,4 +1,4 @@
-Association StudentCTEProgramAssociation additions
-    common extension CTEProgram
+Association EdFi.StudentCTEProgramAssociation additions
+    common extension EdFi.CTEProgram
         documentation "The career cluster representing the career path of the Vocational/Career Tech concentrator."
         is optional collection

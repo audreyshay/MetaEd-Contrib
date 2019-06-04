@@ -1,4 +1,4 @@
-Association StudentEarlyChildhoodProgramAssociation based on GeneralStudentProgramAssociation
+Association StudentEarlyChildhoodProgramAssociation based on EdFi.GeneralStudentProgramAssociation
     documentation "This association represents the early childhood program(S) that a student participates in or receives services from."
     shared string AverageDaysPerWeek
         documentation "Indicates the average days per week student participates in the early childhood program."

@@ -1,11 +1,11 @@
-Domain Entity Section additions
-    shared string Description
+Domain Entity EdFi.Section additions
+    shared string EdFi.Description
         documentation "The description of the part of the course section."
         is optional
     domain entity LevelDetail
         documentation inherited
         is optional
-        with context Course
+        role name Course
     common SubjectArea
         documentation "Subject areas that the course meets as part of graduation requirements."
         is optional collection

@@ -1,4 +1,4 @@
-Interchange StudentProgram additions
+Interchange EdFi.StudentProgram additions
     association Student504ProgramAssociation
     association StudentEarlyChildhoodProgramAssociation
     domain entity RestraintSeclusion

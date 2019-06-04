@@ -3,7 +3,7 @@ Common Related
     shared integer IssueIdentifier
         documentation "The identifier of the related issue."
         is part of identity
-        with context Related
+        role name Related
     datetime RelatedLastModifiedDate
         documentation "The date and time the table row was last changed."
         is required

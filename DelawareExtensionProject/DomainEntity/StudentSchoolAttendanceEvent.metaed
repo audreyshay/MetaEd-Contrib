@@ -1,4 +1,4 @@
-Domain Entity StudentSchoolAttendanceEvent additions
+Domain Entity EdFi.StudentSchoolAttendanceEvent additions
     integer AbsentTime
         documentation "The periods or minutes the student is absent."
         is optional

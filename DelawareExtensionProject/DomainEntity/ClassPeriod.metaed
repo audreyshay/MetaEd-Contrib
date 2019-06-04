@@ -1,8 +1,8 @@
-Domain Entity ClassPeriod additions
+Domain Entity EdFi.ClassPeriod additions
     integer AttendancePeriodOrder
         documentation "Number indicating the order that the period should be listed."
         is optional
-    shared string Description
+    shared string EdFi.Description
         documentation "Description of the attendance period."
         is optional
     common Cycle

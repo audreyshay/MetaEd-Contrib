@@ -9,14 +9,14 @@ Domain Entity DisciplineIssueRefer
     shared integer Sequence
         documentation "Allows multiple referrals for the same issue on the same date."
         is part of identity
-        with context Refer
+        role name Refer
     descriptor IssueStatus
         documentation "Indicates the status of the referral."
         is optional
-        with context Refer
+        role name Refer
     shared string Comment
         documentation "Provides the description of the referral."
         is optional
-    domain entity DisciplineIncident
+    domain entity EdFi.DisciplineIncident
         documentation "Reference to the DisciplineIncident associated with the DisciplineIssueRefer."
         is optional

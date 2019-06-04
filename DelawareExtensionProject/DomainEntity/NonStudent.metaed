@@ -3,13 +3,13 @@ Domain Entity NonStudent
     shared string NonStudentLocalId
         documentation "The local identification number for the non student."
         is part of identity
-    domain entity LocalEducationAgency
+    domain entity EdFi.LocalEducationAgency
         documentation "School district number that relates to non-student."
         is part of identity
-    inline common Name
+    inline common EdFi.Name
         documentation "The full legal name of the non student."
         is optional
-    inline common BirthData
+    inline common EdFi.BirthData
         documentation "The set of elements capturing the releveant data for non student birth information."
         is optional
     bool HispanicLatinoEthnicity
@@ -18,10 +18,10 @@ Domain Entity NonStudent
     common Ethnicity
         documentation "Code for the ethnicity of the non student."
         is optional
-    descriptor Sex
+    descriptor EdFi.Sex
         documentation "Gender of the non student."
         is optional
-    domain entity School
+    domain entity EdFi.School
         documentation "School that relates to non-student."
         is optional
     domain entity Person

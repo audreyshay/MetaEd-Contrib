@@ -1,6 +1,6 @@
 Common Institution
     documentation "This represents the post secondary instituion information when student applies to college."
-    domain entity PostSecondaryInstitution
+    domain entity EdFi.PostSecondaryInstitution
         documentation "Identifies the post secondary instituion student applied to."
         is part of identity
     descriptor AcceptanceStatus

@@ -1,4 +1,4 @@
-Common Address additions
+Common EdFi.Address additions
     shared string Complex
         documentation "The apartment or housing complex name."
         is optional

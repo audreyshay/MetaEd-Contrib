@@ -1,6 +1,6 @@
 Domain Entity MedicationBox
     documentation "This entity represents an indiviudal medicane for a student."
-    domain entity LocalEducationAgency
+    domain entity EdFi.LocalEducationAgency
         documentation "The district encompasing this medicane."
         is part of identity
     integer MedicationBoxId
@@ -9,7 +9,7 @@ Domain Entity MedicationBox
     shared string MedicationCode
       documentation "This is the code for the medication."
       is optional
-    shared string Description
+    shared string EdFi.Description
       documentation "This is the description of the medication."
       is optional
-      with context Medication
+      role name Medication

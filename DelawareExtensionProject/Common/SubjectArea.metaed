@@ -1,6 +1,6 @@
 Common SubjectArea
     documentation "Subject areas that the course meets as part of graduation requirements."
-    descriptor AcademicSubject
+    descriptor EdFi.AcademicSubject
         documentation "The code of the subject area the course meets."
         is part of identity
     integer SubjectOrder

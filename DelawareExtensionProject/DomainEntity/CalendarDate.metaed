@@ -1,4 +1,4 @@
-Domain Entity CalendarDate additions
+Domain Entity EdFi.CalendarDate additions
     descriptor Cycle
         documentation "Indicates the code for specifying the cycle day."
         is optional

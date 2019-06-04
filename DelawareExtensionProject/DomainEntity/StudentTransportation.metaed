@@ -1,9 +1,9 @@
 Domain Entity StudentTransportation
     documentation "This represents the travel information for student."
-    domain entity Student
+    domain entity EdFi.Student
         documentation "The student being transported."
         is part of identity
-    domain entity LocalEducationAgency
+    domain entity EdFi.LocalEducationAgency
         documentation "The school district for student being transported."
         is part of identity
     descriptor TravelDirection
@@ -24,22 +24,22 @@ Domain Entity StudentTransportation
     shared string Number
         documentation "Identifies the bus number for the travel segment."
         is optional
-        with context Bus
+        role name Bus
     shared string Number
         documentation "Identifies the bus route number for the travel segment."
         is optional
-        with context BusRoute
+        role name BusRoute
     shared string ShuttleStop
         documentation "Indicates the shuttle stop for the travel segment."
         is optional
-    shared string Description
+    shared string EdFi.Description
         documentation "The description associated with the stop for the segment."
         is optional
-        with context Stop
+        role name Stop
     shared string Number
         documentation "Identifies the bus stop number for the travel segment."
         is optional
-        with context Stop
+        role name Stop
     time StopTime
         documentation "Indicates the stop time for the travel segment."
         is optional

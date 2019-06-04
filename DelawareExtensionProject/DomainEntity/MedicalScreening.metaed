@@ -12,10 +12,10 @@ Domain Entity MedicalScreening
     bool AthleticStatus
       documentation "If true, then indicates this screening is for the athletic exam."
       is optional
-    descriptor GradeLevel
+    descriptor EdFi.GradeLevel
       documentation "Grade level if person is student."
       is optional
-      domain entity School
+      domain entity EdFi.School
         documentation "School where screening occured."
         is optional
-        with context SchoolOfService
+        role name SchoolOfService

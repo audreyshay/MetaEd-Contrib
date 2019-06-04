@@ -1,4 +1,4 @@
-Domain Entity Parent additions
-    common extension Address
+Domain Entity EdFi.Parent additions
+    common extension EdFi.Address
         documentation "Parent's address, if different from the student address."
         is optional collection

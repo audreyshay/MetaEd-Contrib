@@ -1,4 +1,4 @@
-Association StudentEducationOrganizationAssociation additions
+Association EdFi.StudentEducationOrganizationAssociation additions
     descriptor ChoiceCategory
         documentation "Indicates the type of choice transfer, if student transfered."
         is optional
@@ -26,6 +26,6 @@ Association StudentEducationOrganizationAssociation additions
     common Ethnicity
         documentation "Indicates the additional attributes that identify the race/ethnicity of an individual."
         is optional collection
-    common extension Address
+    common extension EdFi.Address
         documentation "The set of elements that describes an address, including the street address, city, state, and ZIP code."
         is optional collection

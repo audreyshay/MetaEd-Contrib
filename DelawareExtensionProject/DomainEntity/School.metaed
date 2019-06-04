@@ -1,4 +1,4 @@
-Domain Entity School additions
+Domain Entity EdFi.School additions
     descriptor AttendanceConfigurationCategory
         documentation "Indicates the period type that is used for taking attendance."
         is optional

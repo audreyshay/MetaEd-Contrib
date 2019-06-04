@@ -3,13 +3,13 @@ Common LanguageImmersion
     shared string Comment
         documentation "This identifies the comment associated with the language immersion."
         is optional
-    descriptor GradeLevel
+    descriptor EdFi.GradeLevel
         documentation "Indicates the grade level when student participated in language immersion program."
         is optional
-    descriptor Language
+    descriptor EdFi.Language
         documentation "Indicates the language student is taking/took to participate in language immersion program."
         is part of identity
-        with context Immersion
-    enumeration SchoolYear
+        role name Immersion
+    enumeration EdFi.SchoolYear
         documentation "Indicates the school year when student participated in language immersion program."
         is optional

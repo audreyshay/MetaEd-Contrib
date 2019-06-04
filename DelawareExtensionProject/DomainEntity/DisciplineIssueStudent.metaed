@@ -3,16 +3,16 @@ Domain Entity DisciplineIssueStudent
     domain entity DisciplineIssue
         documentation "Reference to the DisciplineIssue associated with a student."
         is part of identity
-    domain entity Student
+    domain entity EdFi.Student
         documentation "The identifier of the student involved in the discipline issue."
         is part of identity
     shared string Comment
         documentation "provides description of the issue."
         is optional
-    descriptor StudentParticipationCode
+    descriptor EdFi.StudentParticipationCode
         documentation "Indicates how the disciplinarian thinks the student was involved in the issue."
         is optional
-        with context AdminAssigned
-    descriptor StudentParticipationCode
+        role name AdminAssigned
+    descriptor EdFi.StudentParticipationCode
         documentation "Indicates how the teacher thinks the student was involved in the issue."
         is optional

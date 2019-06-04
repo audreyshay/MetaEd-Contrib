@@ -9,7 +9,7 @@ Domain Entity MedicalOfficeVisit
     datetime OfficeOutDate
         documentation "The date and time the person left the medical office."
         is optional
-    descriptor ContactType
+    descriptor EdFi.ContactType
         documentation "The type of contact made resulting from person visiting medical office."
         is optional collection
     descriptor MedicalDisposition
@@ -21,7 +21,7 @@ Domain Entity MedicalOfficeVisit
     descriptor MedicalVisitReason
         documentation "The reason for visiting the medical office."
         is optional collection
-    domain entity School
+    domain entity EdFi.School
         documentation "The school the service was provided"
         is optional
-        with context SchoolOfService
+        role name SchoolOfService

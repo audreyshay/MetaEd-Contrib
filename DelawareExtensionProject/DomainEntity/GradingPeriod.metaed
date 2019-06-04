@@ -1,4 +1,4 @@
-Domain Entity GradingPeriod additions
+Domain Entity EdFi.GradingPeriod additions
     integer EndWeek
         documentation "The end-week number for the marking period."
         is optional

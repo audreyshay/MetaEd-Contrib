@@ -1,4 +1,4 @@
-Domain Entity Student additions
+Domain Entity EdFi.Student additions
     domain entity Person
         documentation inherited
         is optional

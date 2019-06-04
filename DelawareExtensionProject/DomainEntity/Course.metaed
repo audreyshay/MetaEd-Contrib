@@ -1,4 +1,4 @@
-Domain Entity Course additions
+Domain Entity EdFi.Course additions
     bool Active
         documentation "The current status of the course."
         is optional
@@ -20,20 +20,20 @@ Domain Entity Course additions
     descriptor ServiceStatus
         documentation "Indicates the status of the service of the secondary staff in the classroom."
         is optional
-        with context SecondaryStaffClassroom
-    descriptor CredentialField
+        role name SecondaryStaffClassroom
+    descriptor EdFi.CredentialField
         documentation "Indicates the specialty requirement for the staff teaching the course."
         is optional
-        with context Staff
-    descriptor CredentialField
+        role name Staff
+    descriptor EdFi.CredentialField
         documentation "Indicates the specialty requirement for the secondary staff teaching the course."
         is optional
-        with context SecondaryStaff
+        role name SecondaryStaff
     descriptor StaffRole
         documentation "Indicates the role of the secondary staff for the course."
         is optional
-        with context Secondary
-    domain entity School
+        role name Secondary
+    domain entity EdFi.School
         documentation "Identifes school with a unit count exception."
         is optional
-        with context UnitCountException
+        role name UnitCountException

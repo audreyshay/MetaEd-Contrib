@@ -1,4 +1,4 @@
-Association StudentParentAssociation additions
-    descriptor ContactType
+Association EdFi.StudentParentAssociation additions
+    descriptor EdFi.ContactType
         documentation "Indicates the type of contact it is for this student."
         is optional

@@ -1,4 +1,4 @@
-Association StudentSpecialEducationProgramAssociation additions
+Association EdFi.StudentSpecialEducationProgramAssociation additions
     descriptor DiplomaCertificateCategory
         documentation "Indicates whether student is working towards a diploma or certificate."
         is optional

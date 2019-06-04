@@ -1,0 +1,456 @@
+Name components:  AcceptanceStatusDescriptor
+SQL Server name:  AcceptanceStatusDescriptor  (length 26)
+PostgreSQL name:  AcceptanceStatusDescriptor  (length 26)
+
+Name components:  AllegedBullyingVictim
+SQL Server name:  AllegedBullyingVictim  (length 21)
+PostgreSQL name:  AllegedBullyingVictim  (length 21)
+
+Name components:  AllegedBullyingVictim,BullyingCategory
+SQL Server name:  AllegedBullyingVictimBullyingCategory  (length 37)
+PostgreSQL name:  AllegedBullyingVictimBullyingCategory  (length 37)
+
+Name components:  APExamCodeDescriptor
+SQL Server name:  APExamCodeDescriptor  (length 20)
+PostgreSQL name:  APExamCodeDescriptor  (length 20)
+
+Name components:  AttendanceConfigurationCategoryDescriptor
+SQL Server name:  AttendanceConfigurationCategoryDescriptor  (length 41)
+PostgreSQL name:  AttendanceConfigurationCategoryDescriptor  (length 41)
+
+Name components:  BullyingCategoryDescriptor
+SQL Server name:  BullyingCategoryDescriptor  (length 26)
+PostgreSQL name:  BullyingCategoryDescriptor  (length 26)
+
+Name components:  CalendarDateExtension
+SQL Server name:  CalendarDateExtension  (length 21)
+PostgreSQL name:  CalendarDateExtension  (length 21)
+
+Name components:  CertificateCategoryDescriptor
+SQL Server name:  CertificateCategoryDescriptor  (length 29)
+PostgreSQL name:  CertificateCategoryDescriptor  (length 29)
+
+Name components:  CertificationDescriptor
+SQL Server name:  CertificationDescriptor  (length 23)
+PostgreSQL name:  CertificationDescriptor  (length 23)
+
+Name components:  ChoiceCategoryDescriptor
+SQL Server name:  ChoiceCategoryDescriptor  (length 24)
+PostgreSQL name:  ChoiceCategoryDescriptor  (length 24)
+
+Name components:  CIPCourse
+SQL Server name:  CIPCourse  (length 9)
+PostgreSQL name:  CIPCourse  (length 9)
+
+Name components:  ClassPeriod,Cycle
+SQL Server name:  ClassPeriodCycle  (length 16)
+PostgreSQL name:  ClassPeriodCycle  (length 16)
+
+Name components:  ClassPeriodExtension
+SQL Server name:  ClassPeriodExtension  (length 20)
+PostgreSQL name:  ClassPeriodExtension  (length 20)
+
+Name components:  CoreSubjectDescriptor
+SQL Server name:  CoreSubjectDescriptor  (length 21)
+PostgreSQL name:  CoreSubjectDescriptor  (length 21)
+
+Name components:  CourseExtension
+SQL Server name:  CourseExtension  (length 15)
+PostgreSQL name:  CourseExtension  (length 15)
+
+Name components:  CycleDescriptor
+SQL Server name:  CycleDescriptor  (length 15)
+PostgreSQL name:  CycleDescriptor  (length 15)
+
+Name components:  DiplomaCertificateCategoryDescriptor
+SQL Server name:  DiplomaCertificateCategoryDescriptor  (length 36)
+PostgreSQL name:  DiplomaCertificateCategoryDescriptor  (length 36)
+
+Name components:  DisciplineDispositionDescriptor
+SQL Server name:  DisciplineDispositionDescriptor  (length 31)
+PostgreSQL name:  DisciplineDispositionDescriptor  (length 31)
+
+Name components:  DisciplineIncidentCode
+SQL Server name:  DisciplineIncidentCode  (length 22)
+PostgreSQL name:  DisciplineIncidentCode  (length 22)
+
+Name components:  DisciplineIncidentExtension
+SQL Server name:  DisciplineIncidentExtension  (length 27)
+PostgreSQL name:  DisciplineIncidentExtension  (length 27)
+
+Name components:  DisciplineIncident,IncidentReason
+SQL Server name:  DisciplineIncidentReason  (length 24)
+PostgreSQL name:  DisciplineIncidentIncidentReason  (length 32)
+
+Name components:  DisciplineIncident,Referral
+SQL Server name:  DisciplineIncidentReferral  (length 26)
+PostgreSQL name:  DisciplineIncidentReferral  (length 26)
+
+Name components:  DisciplineIssue
+SQL Server name:  DisciplineIssue  (length 15)
+PostgreSQL name:  DisciplineIssue  (length 15)
+
+Name components:  DisciplineIssueAction
+SQL Server name:  DisciplineIssueAction  (length 21)
+PostgreSQL name:  DisciplineIssueAction  (length 21)
+
+Name components:  DisciplineIssueRefer
+SQL Server name:  DisciplineIssueRefer  (length 20)
+PostgreSQL name:  DisciplineIssueRefer  (length 20)
+
+Name components:  DisciplineIssue,Related
+SQL Server name:  DisciplineIssueRelated  (length 22)
+PostgreSQL name:  DisciplineIssueRelated  (length 22)
+
+Name components:  DisciplineIssueStudent
+SQL Server name:  DisciplineIssueStudent  (length 22)
+PostgreSQL name:  DisciplineIssueStudent  (length 22)
+
+Name components:  FerpaOptOutDescriptor
+SQL Server name:  FerpaOptOutDescriptor  (length 21)
+PostgreSQL name:  FerpaOptOutDescriptor  (length 21)
+
+Name components:  FollowupCategoryDescriptor
+SQL Server name:  FollowupCategoryDescriptor  (length 26)
+PostgreSQL name:  FollowupCategoryDescriptor  (length 26)
+
+Name components:  FundingNeedsCategoryDescriptor
+SQL Server name:  FundingNeedsCategoryDescriptor  (length 30)
+PostgreSQL name:  FundingNeedsCategoryDescriptor  (length 30)
+
+Name components:  GradeTypeDetail
+SQL Server name:  GradeTypeDetail  (length 15)
+PostgreSQL name:  GradeTypeDetail  (length 15)
+
+Name components:  GradeTypeWhenTakenDescriptor
+SQL Server name:  GradeTypeWhenTakenDescriptor  (length 28)
+PostgreSQL name:  GradeTypeWhenTakenDescriptor  (length 28)
+
+Name components:  GradingPeriodExtension
+SQL Server name:  GradingPeriodExtension  (length 22)
+PostgreSQL name:  GradingPeriodExtension  (length 22)
+
+Name components:  ImmunizationCodeDescriptor
+SQL Server name:  ImmunizationCodeDescriptor  (length 26)
+PostgreSQL name:  ImmunizationCodeDescriptor  (length 26)
+
+Name components:  IncidentRelatedToDescriptor
+SQL Server name:  IncidentRelatedToDescriptor  (length 27)
+PostgreSQL name:  IncidentRelatedToDescriptor  (length 27)
+
+Name components:  IncidentTimeFrameDescriptor
+SQL Server name:  IncidentTimeFrameDescriptor  (length 27)
+PostgreSQL name:  IncidentTimeFrameDescriptor  (length 27)
+
+Name components:  InjuryDescriptor
+SQL Server name:  InjuryDescriptor  (length 16)
+PostgreSQL name:  InjuryDescriptor  (length 16)
+
+Name components:  IssueActionCategoryDescriptor
+SQL Server name:  IssueActionCategoryDescriptor  (length 29)
+PostgreSQL name:  IssueActionCategoryDescriptor  (length 29)
+
+Name components:  IssueCategoryDescriptor
+SQL Server name:  IssueCategoryDescriptor  (length 23)
+PostgreSQL name:  IssueCategoryDescriptor  (length 23)
+
+Name components:  IssueSourceDescriptor
+SQL Server name:  IssueSourceDescriptor  (length 21)
+PostgreSQL name:  IssueSourceDescriptor  (length 21)
+
+Name components:  IssueStatusDescriptor
+SQL Server name:  IssueStatusDescriptor  (length 21)
+PostgreSQL name:  IssueStatusDescriptor  (length 21)
+
+Name components:  LevelDetail
+SQL Server name:  LevelDetail  (length 11)
+PostgreSQL name:  LevelDetail  (length 11)
+
+Name components:  MedicalAlert
+SQL Server name:  MedicalAlert  (length 12)
+PostgreSQL name:  MedicalAlert  (length 12)
+
+Name components:  MedicalAlertCategoryDescriptor
+SQL Server name:  MedicalAlertCategoryDescriptor  (length 30)
+PostgreSQL name:  MedicalAlertCategoryDescriptor  (length 30)
+
+Name components:  MedicalDispositionDescriptor
+SQL Server name:  MedicalDispositionDescriptor  (length 28)
+PostgreSQL name:  MedicalDispositionDescriptor  (length 28)
+
+Name components:  MedicalOfficeVisit
+SQL Server name:  MedicalOfficeVisit  (length 18)
+PostgreSQL name:  MedicalOfficeVisit  (length 18)
+
+Name components:  MedicalOfficeVisit,ContactType
+SQL Server name:  MedicalOfficeVisitContactType  (length 29)
+PostgreSQL name:  MedicalOfficeVisitContactType  (length 29)
+
+Name components:  MedicalOfficeVisit,MedicalDisposition
+SQL Server name:  MedicalOfficeVisitMedicalDisposition  (length 36)
+PostgreSQL name:  MedicalOfficeVisitMedicalDisposition  (length 36)
+
+Name components:  MedicalOfficeVisit,MedicalTreatmentCode
+SQL Server name:  MedicalOfficeVisitMedicalTreatmentCode  (length 38)
+PostgreSQL name:  MedicalOfficeVisitMedicalTreatmentCode  (length 38)
+
+Name components:  MedicalOfficeVisit,MedicalVisitReason
+SQL Server name:  MedicalOfficeVisitMedicalVisitReason  (length 36)
+PostgreSQL name:  MedicalOfficeVisitMedicalVisitReason  (length 36)
+
+Name components:  MedicalReferralFollowUp
+SQL Server name:  MedicalReferralFollowUp  (length 23)
+PostgreSQL name:  MedicalReferralFollowUp  (length 23)
+
+Name components:  MedicalScreening
+SQL Server name:  MedicalScreening  (length 16)
+PostgreSQL name:  MedicalScreening  (length 16)
+
+Name components:  MedicalTestCategoryDescriptor
+SQL Server name:  MedicalTestCategoryDescriptor  (length 29)
+PostgreSQL name:  MedicalTestCategoryDescriptor  (length 29)
+
+Name components:  MedicalTreatmentCodeDescriptor
+SQL Server name:  MedicalTreatmentCodeDescriptor  (length 30)
+PostgreSQL name:  MedicalTreatmentCodeDescriptor  (length 30)
+
+Name components:  MedicalVisitReasonDescriptor
+SQL Server name:  MedicalVisitReasonDescriptor  (length 28)
+PostgreSQL name:  MedicalVisitReasonDescriptor  (length 28)
+
+Name components:  MedicationBox
+SQL Server name:  MedicationBox  (length 13)
+PostgreSQL name:  MedicationBox  (length 13)
+
+Name components:  NonStudent
+SQL Server name:  NonStudent  (length 10)
+PostgreSQL name:  NonStudent  (length 10)
+
+Name components:  NonStudent,Ethnicity
+SQL Server name:  NonStudentEthnicity  (length 19)
+PostgreSQL name:  NonStudentEthnicity  (length 19)
+
+Name components:  NonStudent,PersonalIdentificationDocument
+SQL Server name:  NonStudentPersonalIdentificationDocument  (length 40)
+PostgreSQL name:  NonStudentPersonalIdentificationDocument  (length 40)
+
+Name components:  NotificationMethodDescriptor
+SQL Server name:  NotificationMethodDescriptor  (length 28)
+PostgreSQL name:  NotificationMethodDescriptor  (length 28)
+
+Name components:  Parent,AddressExtension
+SQL Server name:  ParentAddressExtension  (length 22)
+PostgreSQL name:  ParentAddressExtension  (length 22)
+
+Name components:  ParticipationCodeDescriptor
+SQL Server name:  ParticipationCodeDescriptor  (length 27)
+PostgreSQL name:  ParticipationCodeDescriptor  (length 27)
+
+Name components:  Person
+SQL Server name:  Person  (length 6)
+PostgreSQL name:  Person  (length 6)
+
+Name components:  PersonCategoryDescriptor
+SQL Server name:  PersonCategoryDescriptor  (length 24)
+PostgreSQL name:  PersonCategoryDescriptor  (length 24)
+
+Name components:  PersonDisciplineAction
+SQL Server name:  PersonDisciplineAction  (length 22)
+PostgreSQL name:  PersonDisciplineAction  (length 22)
+
+Name components:  PersonDisciplineAction,Discipline
+SQL Server name:  PersonDisciplineActionDiscipline  (length 32)
+PostgreSQL name:  PersonDisciplineActionDiscipline  (length 32)
+
+Name components:  PersonDisciplineAction,DisciplineDisposition
+SQL Server name:  PersonDisciplineActionDisciplineDisposition  (length 43)
+PostgreSQL name:  PersonDisciplineActionDisciplineDisposition  (length 43)
+
+Name components:  PersonDisciplineAction,PersonDisciplineIncidentAssociation
+SQL Server name:  PersonDisciplineActionPersonDisciplineIncidentAssociation  (length 57)
+PostgreSQL name:  PersonDisciplineActionPersonDisciplineIncidentAssociation  (length 57)
+
+Name components:  PersonDisciplineIncidentAssociation
+SQL Server name:  PersonDisciplineIncidentAssociation  (length 35)
+PostgreSQL name:  PersonDisciplineIncidentAssociation  (length 35)
+
+Name components:  PersonDisciplineIncidentAssociation,OffenderBehavior
+SQL Server name:  PersonDisciplineIncidentAssociationOffenderBehavior  (length 51)
+PostgreSQL name:  PersonDisciplineIncidentAssociationOffenderBehavior  (length 51)
+
+Name components:  PersonDisciplineIncidentAssociation,VictimInjury
+SQL Server name:  PersonDisciplineIncidentAssociationVictimInjury  (length 47)
+PostgreSQL name:  PersonDisciplineIncidentAssociationVictimInjury  (length 47)
+
+Name components:  PersonImmunization
+SQL Server name:  PersonImmunization  (length 18)
+PostgreSQL name:  PersonImmunization  (length 18)
+
+Name components:  PersonMedicalAlert
+SQL Server name:  PersonMedicalAlert  (length 18)
+PostgreSQL name:  PersonMedicalAlert  (length 18)
+
+Name components:  PersonMedicationBoxAssociation
+SQL Server name:  PersonMedicationBoxAssociation  (length 30)
+PostgreSQL name:  PersonMedicationBoxAssociation  (length 30)
+
+Name components:  PersonMedicationBoxAssociation,Issue
+SQL Server name:  PersonMedicationBoxAssociationIssue  (length 35)
+PostgreSQL name:  PersonMedicationBoxAssociationIssue  (length 35)
+
+Name components:  PostSecondaryDetail
+SQL Server name:  PostSecondaryDetail  (length 19)
+PostgreSQL name:  PostSecondaryDetail  (length 19)
+
+Name components:  PostSecondaryDetail,Institution
+SQL Server name:  PostSecondaryDetailInstitution  (length 30)
+PostgreSQL name:  PostSecondaryDetailInstitution  (length 30)
+
+Name components:  ReasonNotApplied4PlusCollegeDescriptor
+SQL Server name:  ReasonNotApplied4PlusCollegeDescriptor  (length 38)
+PostgreSQL name:  ReasonNotApplied4PlusCollegeDescriptor  (length 38)
+
+Name components:  ReferralDescriptor
+SQL Server name:  ReferralDescriptor  (length 18)
+PostgreSQL name:  ReferralDescriptor  (length 18)
+
+Name components:  Regulation619ComplianceReasonDescriptor
+SQL Server name:  Regulation619ComplianceReasonDescriptor  (length 39)
+PostgreSQL name:  Regulation619ComplianceReasonDescriptor  (length 39)
+
+Name components:  RestraintEventCategoryDescriptor
+SQL Server name:  RestraintEventCategoryDescriptor  (length 32)
+PostgreSQL name:  RestraintEventCategoryDescriptor  (length 32)
+
+Name components:  RestraintSeclusion
+SQL Server name:  RestraintSeclusion  (length 18)
+PostgreSQL name:  RestraintSeclusion  (length 18)
+
+Name components:  RestraintSeclusion,StaffProvidingRestraint
+SQL Server name:  RestraintSeclusionStaffProvidingRestraint  (length 41)
+PostgreSQL name:  RestraintSeclusionStaffProvidingRestraint  (length 41)
+
+Name components:  SchoolExtension
+SQL Server name:  SchoolExtension  (length 15)
+PostgreSQL name:  SchoolExtension  (length 15)
+
+Name components:  SectionExtension
+SQL Server name:  SectionExtension  (length 16)
+PostgreSQL name:  SectionExtension  (length 16)
+
+Name components:  Section,MarkingPeriod
+SQL Server name:  SectionMarkingPeriod  (length 20)
+PostgreSQL name:  SectionMarkingPeriod  (length 20)
+
+Name components:  Section,SubjectArea
+SQL Server name:  SectionSubjectArea  (length 18)
+PostgreSQL name:  SectionSubjectArea  (length 18)
+
+Name components:  ServiceStatusDescriptor
+SQL Server name:  ServiceStatusDescriptor  (length 23)
+PostgreSQL name:  ServiceStatusDescriptor  (length 23)
+
+Name components:  StaffEducationOrganizationAssignmentAssociationExtension
+SQL Server name:  StaffEducationOrganizationAssignmentAssociationExtension  (length 56)
+PostgreSQL name:  StaffEducationOrganizationAssignmentAssociationExtension  (length 56)
+
+Name components:  StaffExtension
+SQL Server name:  StaffExtension  (length 14)
+PostgreSQL name:  StaffExtension  (length 14)
+
+Name components:  StaffProgramAssociationExtension
+SQL Server name:  StaffProgramAssociationExtension  (length 32)
+PostgreSQL name:  StaffProgramAssociationExtension  (length 32)
+
+Name components:  StaffRoleDescriptor
+SQL Server name:  StaffRoleDescriptor  (length 19)
+PostgreSQL name:  StaffRoleDescriptor  (length 19)
+
+Name components:  Student504ProgramAssociation
+SQL Server name:  Student504ProgramAssociation  (length 28)
+PostgreSQL name:  Student504ProgramAssociation  (length 28)
+
+Name components:  StudentCTEProgramAssociation,CTEProgramExtension
+SQL Server name:  StudentCTEProgramAssociationCTEProgramExtension  (length 47)
+PostgreSQL name:  StudentCTEProgramAssociationCTEProgramExtension  (length 47)
+
+Name components:  StudentEarlyChildhoodProgramAssociation
+SQL Server name:  StudentEarlyChildhoodProgramAssociation  (length 39)
+PostgreSQL name:  StudentEarlyChildhoodProgramAssociation  (length 39)
+
+Name components:  StudentEducationOrganizationAssociation,AddressExtension
+SQL Server name:  StudentEducationOrganizationAssociationAddressExtension  (length 55)
+PostgreSQL name:  StudentEducationOrganizationAssociationAddressExtension  (length 55)
+
+Name components:  StudentEducationOrganizationAssociation,Ethnicity
+SQL Server name:  StudentEducationOrganizationAssociationEthnicity  (length 48)
+PostgreSQL name:  StudentEducationOrganizationAssociationEthnicity  (length 48)
+
+Name components:  StudentEducationOrganizationAssociationExtension
+SQL Server name:  StudentEducationOrganizationAssociationExtension  (length 48)
+PostgreSQL name:  StudentEducationOrganizationAssociationExtension  (length 48)
+
+Name components:  StudentEducationOrganizationAssociation,Multiliteracy
+SQL Server name:  StudentEducationOrganizationAssociationMultiliteracy  (length 52)
+PostgreSQL name:  StudentEducationOrganizationAssociationMultiliteracy  (length 52)
+
+Name components:  StudentEducationOrganizationAssociation,Scholarship
+SQL Server name:  StudentEducationOrganizationAssociationScholarship  (length 50)
+PostgreSQL name:  StudentEducationOrganizationAssociationScholarship  (length 50)
+
+Name components:  StudentEducationOrganizationResponsibilityAssociation,Transfer
+SQL Server name:  StudentEducationOrganizationResponsibilityAssociationTransfer  (length 61)
+PostgreSQL name:  StudentEducationOrganizationResponsibilityAssociationTransfer  (length 61)
+
+Name components:  StudentExtension
+SQL Server name:  StudentExtension  (length 16)
+PostgreSQL name:  StudentExtension  (length 16)
+
+Name components:  StudentLanguageInstructionProgramAssociation,LanguageImmersion
+SQL Server name:  StudentLanguageInstructionProgramAssociationLanguageImmersion  (length 61)
+PostgreSQL name:  StudentLanguageInstructionProgramAssociationLanguageImmersion  (length 61)
+
+Name components:  StudentParentAssociationExtension
+SQL Server name:  StudentParentAssociationExtension  (length 33)
+PostgreSQL name:  StudentParentAssociationExtension  (length 33)
+
+Name components:  StudentSchoolAttendanceEventExtension
+SQL Server name:  StudentSchoolAttendanceEventExtension  (length 37)
+PostgreSQL name:  StudentSchoolAttendanceEventExtension  (length 37)
+
+Name components:  StudentSpecialEducationProgramAssociationExtension
+SQL Server name:  StudentSpecialEducationProgramAssociationExtension  (length 50)
+PostgreSQL name:  StudentSpecialEducationProgramAssociationExtension  (length 50)
+
+Name components:  StudentTransportation
+SQL Server name:  StudentTransportation  (length 21)
+PostgreSQL name:  StudentTransportation  (length 21)
+
+Name components:  SubjectAreaCode
+SQL Server name:  SubjectAreaCode  (length 15)
+PostgreSQL name:  SubjectAreaCode  (length 15)
+
+Name components:  SupportPlanChangeDescriptor
+SQL Server name:  SupportPlanChangeDescriptor  (length 27)
+PostgreSQL name:  SupportPlanChangeDescriptor  (length 27)
+
+Name components:  TravelCategoryDescriptor
+SQL Server name:  TravelCategoryDescriptor  (length 24)
+PostgreSQL name:  TravelCategoryDescriptor  (length 24)
+
+Name components:  TravelDayOfWeekDescriptor
+SQL Server name:  TravelDayOfWeekDescriptor  (length 25)
+PostgreSQL name:  TravelDayOfWeekDescriptor  (length 25)
+
+Name components:  TravelDirectionDescriptor
+SQL Server name:  TravelDirectionDescriptor  (length 25)
+PostgreSQL name:  TravelDirectionDescriptor  (length 25)
+
+Name components:  TreatmentDescriptor
+SQL Server name:  TreatmentDescriptor  (length 19)
+PostgreSQL name:  TreatmentDescriptor  (length 19)
+
+Name components:  VictimCategoryDescriptor
+SQL Server name:  VictimCategoryDescriptor  (length 24)
+PostgreSQL name:  VictimCategoryDescriptor  (length 24)
+

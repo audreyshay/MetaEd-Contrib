@@ -1,4 +1,4 @@
-Association StudentLanguageInstructionProgramAssociation additions
+Association EdFi.StudentLanguageInstructionProgramAssociation additions
     common LanguageImmersion
         documentation "Identifies students participating in a language immersion program."
         is optional collection

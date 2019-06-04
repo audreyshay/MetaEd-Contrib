@@ -6,7 +6,7 @@ Common IncidentReason
     shared string ChangeUID
         documentation "Identifies the person who last changed the table row."
         is optional
-        with context IncidentRelatedTo
+        role name IncidentRelatedTo
     datetime IncidentRelatedToLastModifiedDate
         documentation "The date and time the table row was last changed."
         is required

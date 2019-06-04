@@ -1,9 +1,9 @@
 Common Multiliteracy
     documentation "Indicates the multiliteracy award achieved."
-    descriptor Language
+    descriptor EdFi.Language
         documentation "Indicates the language associated with the multiliteracy award."
         is part of identity
-    shared string AssessmentTitle
+    shared string EdFi.AssessmentTitle
         documentation "Indicates the name of the assessment taken to receive the multiliteracy award."
         is part of identity
     descriptor CertificateCategory

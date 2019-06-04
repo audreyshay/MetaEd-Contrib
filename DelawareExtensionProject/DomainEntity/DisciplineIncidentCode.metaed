@@ -1,6 +1,6 @@
 Domain Entity DisciplineIncidentCode
     documentation "This represents the additional attributes required for the Behavior descriptor."
-    descriptor Behavior
+    descriptor EdFi.Behavior
         documentation "Identifies the type of behavior or discipline incident code."
         is part of identity
     bool Felony

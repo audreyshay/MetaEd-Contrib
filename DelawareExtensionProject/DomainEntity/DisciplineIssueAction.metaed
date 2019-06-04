@@ -6,7 +6,7 @@ Domain Entity DisciplineIssueAction
     shared integer Sequence
         documentation "Allows multiple corrective action to be inserted under the same date."
         is part of identity
-        with context Entered
+        role name Entered
     date ActionEndDate
         documentation "The end date of an assigned action."
         is optional

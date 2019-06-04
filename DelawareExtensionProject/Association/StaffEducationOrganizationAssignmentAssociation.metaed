@@ -1,4 +1,4 @@
-Association StaffEducationOrganizationAssignmentAssociation additions
+Association EdFi.StaffEducationOrganizationAssignmentAssociation additions
     bool Active
         documentation "Indicates the availability of staff member for maintaining student attendance and scheduling courses."
         is optional

@@ -3,7 +3,7 @@ Domain Entity PersonDisciplineAction
     domain entity Person
         documentation "The person receiving the discipline action."
         is part of identity
-    domain entity School
+    domain entity EdFi.School
         documentation "This relates to the school where incident occurred."
         is part of identity
     integer ActionIdentifier
@@ -23,15 +23,15 @@ Domain Entity PersonDisciplineAction
     shared decimal ActionDuration
         documentation "The actual duration of the action."
         is optional
-        with context Actual
+        role name Actual
     shared decimal ActionDuration
         documentation "The scheduled duration of the action."
         is optional
-        with context Scheduled
-    descriptor Discipline
+        role name Scheduled
+    descriptor EdFi.Discipline
         documentation "Indicates the code that represents the action assigned to the offender."
         is required collection
-    descriptor DisciplineActionLengthDifferenceReason
+    descriptor EdFi.DisciplineActionLengthDifferenceReason
       documentation "Indicates the code for the reason for any difference in the scheduled duration and actual duration of the action."
       is optional
     descriptor DisciplineDisposition

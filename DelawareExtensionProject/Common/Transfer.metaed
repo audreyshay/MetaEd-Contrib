@@ -3,6 +3,6 @@ Common Transfer
     shared string ExternalEducationOrganizationName
         documentation "Indicates the name of the education organization student transferred from."
         is part of identity
-    descriptor GradeLevel
+    descriptor EdFi.GradeLevel
         documentation "Indicates the GradeLevel when student transferred."
         is optional

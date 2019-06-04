@@ -2,7 +2,7 @@ Association PersonDisciplineIncidentAssociation
     documentation "This association indicates those persons who were victims, offenders and witnesses for a discipline incident."
     domain entity Person
         documentation "This relates the person who is associated with the discipline incident."
-    domain entity DisciplineIncident
+    domain entity EdFi.DisciplineIncident
         documentation "Reference to the discipline incident associated with the student."
     descriptor ParticipationCode
         documentation "Indicates the code of the participant in the discipline incident."
@@ -16,4 +16,4 @@ Association PersonDisciplineIncidentAssociation
     descriptor Injury
         documentation "Indicates the type of injury receied by the victim."
         is optional collection
-        with context Victim
+        role name Victim

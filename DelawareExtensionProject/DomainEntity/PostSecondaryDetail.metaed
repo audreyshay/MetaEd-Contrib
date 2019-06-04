@@ -1,15 +1,15 @@
 Domain Entity PostSecondaryDetail
     documentation "This represents the post secondary event deatil such as college application."
-    domain entity Student
+    domain entity EdFi.Student
         documentation "This relates the student appliying for college."
         is part of identity
-    domain entity School
+    domain entity EdFi.School
         documentation "This relates the school student is enrolled in while applying to college."
         is part of identity
-    enumeration SchoolYear
+    enumeration EdFi.SchoolYear
         documentation "Indicates the school year student applied for college."
         is part of identity
-    descriptor PostSecondaryEventCategory
+    descriptor EdFi.PostSecondaryEventCategory
         documentation "Indicates the type of post secondary event."
         is part of identity
     descriptor ReasonNotApplied4PlusCollege
