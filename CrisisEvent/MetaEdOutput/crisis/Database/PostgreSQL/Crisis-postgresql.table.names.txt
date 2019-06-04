@@ -1,0 +1,16 @@
+Name components:  CrisisDetails
+SQL Server name:  CrisisDetails  (length 13)
+PostgreSQL name:  CrisisDetails  (length 13)
+
+Name components:  CrisisEventDescriptor
+SQL Server name:  CrisisEventDescriptor  (length 21)
+PostgreSQL name:  CrisisEventDescriptor  (length 21)
+
+Name components:  CrisisTypeDescriptor
+SQL Server name:  CrisisTypeDescriptor  (length 20)
+PostgreSQL name:  CrisisTypeDescriptor  (length 20)
+
+Name components:  StudentEducationOrganizationAssociation,StudentCrisisEvent
+SQL Server name:  StudentEducationOrganizationAssociationStudentCrisisEvent  (length 57)
+PostgreSQL name:  StudentEducationOrganizationAssociationStudentCrisisEvent  (length 57)
+

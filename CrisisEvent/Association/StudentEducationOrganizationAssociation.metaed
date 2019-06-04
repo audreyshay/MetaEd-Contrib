@@ -1,4 +1,4 @@
-Association StudentEducationOrganizationAssociation additions
+Association EdFi.StudentEducationOrganizationAssociation additions
 common StudentCrisisEvent
     documentation "Information on the crisis that has affected a student."
     is optional collection
