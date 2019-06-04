@@ -1,0 +1,100 @@
+Name components:  AccountTypeDescriptor
+SQL Server name:  AccountTypeDescriptor  (length 21)
+PostgreSQL name:  AccountTypeDescriptor  (length 21)
+
+Name components:  BalanceSheetDimension
+SQL Server name:  BalanceSheetDimension  (length 21)
+PostgreSQL name:  BalanceSheetDimension  (length 21)
+
+Name components:  BalanceSheetDimension,ReportingTag
+SQL Server name:  BalanceSheetDimensionReportingTag  (length 33)
+PostgreSQL name:  BalanceSheetDimensionReportingTag  (length 33)
+
+Name components:  ChartOfAccount
+SQL Server name:  ChartOfAccount  (length 14)
+PostgreSQL name:  ChartOfAccount  (length 14)
+
+Name components:  ChartOfAccount,ReportingTag
+SQL Server name:  ChartOfAccountReportingTag  (length 26)
+PostgreSQL name:  ChartOfAccountReportingTag  (length 26)
+
+Name components:  FinancialCollectionDescriptor
+SQL Server name:  FinancialCollectionDescriptor  (length 29)
+PostgreSQL name:  FinancialCollectionDescriptor  (length 29)
+
+Name components:  FunctionDimension
+SQL Server name:  FunctionDimension  (length 17)
+PostgreSQL name:  FunctionDimension  (length 17)
+
+Name components:  FunctionDimension,ReportingTag
+SQL Server name:  FunctionDimensionReportingTag  (length 29)
+PostgreSQL name:  FunctionDimensionReportingTag  (length 29)
+
+Name components:  FundDimension
+SQL Server name:  FundDimension  (length 13)
+PostgreSQL name:  FundDimension  (length 13)
+
+Name components:  FundDimension,ReportingTag
+SQL Server name:  FundDimensionReportingTag  (length 25)
+PostgreSQL name:  FundDimensionReportingTag  (length 25)
+
+Name components:  LocalAccount
+SQL Server name:  LocalAccount  (length 12)
+PostgreSQL name:  LocalAccount  (length 12)
+
+Name components:  LocalAccount,ReportingTag
+SQL Server name:  LocalAccountReportingTag  (length 24)
+PostgreSQL name:  LocalAccountReportingTag  (length 24)
+
+Name components:  LocalActual
+SQL Server name:  LocalActual  (length 11)
+PostgreSQL name:  LocalActual  (length 11)
+
+Name components:  LocalBudget
+SQL Server name:  LocalBudget  (length 11)
+PostgreSQL name:  LocalBudget  (length 11)
+
+Name components:  ObjectDimension
+SQL Server name:  ObjectDimension  (length 15)
+PostgreSQL name:  ObjectDimension  (length 15)
+
+Name components:  ObjectDimension,ReportingTag
+SQL Server name:  ObjectDimensionReportingTag  (length 27)
+PostgreSQL name:  ObjectDimensionReportingTag  (length 27)
+
+Name components:  OperationalUnitDimension
+SQL Server name:  OperationalUnitDimension  (length 24)
+PostgreSQL name:  OperationalUnitDimension  (length 24)
+
+Name components:  OperationalUnitDimension,ReportingTag
+SQL Server name:  OperationalUnitDimensionReportingTag  (length 36)
+PostgreSQL name:  OperationalUnitDimensionReportingTag  (length 36)
+
+Name components:  ProgramDimension
+SQL Server name:  ProgramDimension  (length 16)
+PostgreSQL name:  ProgramDimension  (length 16)
+
+Name components:  ProgramDimension,ReportingTag
+SQL Server name:  ProgramDimensionReportingTag  (length 28)
+PostgreSQL name:  ProgramDimensionReportingTag  (length 28)
+
+Name components:  ProjectDimension
+SQL Server name:  ProjectDimension  (length 16)
+PostgreSQL name:  ProjectDimension  (length 16)
+
+Name components:  ProjectDimension,ReportingTag
+SQL Server name:  ProjectDimensionReportingTag  (length 28)
+PostgreSQL name:  ProjectDimensionReportingTag  (length 28)
+
+Name components:  ReportingTagDescriptor
+SQL Server name:  ReportingTagDescriptor  (length 22)
+PostgreSQL name:  ReportingTagDescriptor  (length 22)
+
+Name components:  SourceDimension
+SQL Server name:  SourceDimension  (length 15)
+PostgreSQL name:  SourceDimension  (length 15)
+
+Name components:  SourceDimension,ReportingTag
+SQL Server name:  SourceDimensionReportingTag  (length 27)
+PostgreSQL name:  SourceDimensionReportingTag  (length 27)
+
