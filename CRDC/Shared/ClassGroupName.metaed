@@ -1,0 +1,4 @@
+Shared String ClassGroupName
+    documentation "The name of the class/group of students."
+    min length 1
+    max length 75

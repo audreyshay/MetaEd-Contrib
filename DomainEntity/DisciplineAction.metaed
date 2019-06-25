@@ -5,6 +5,3 @@ Domain Entity DisciplineAction additions
     bool GFSAExpulsionModifiedToLessThanOneYear
         documentation "True = Student expelled under GFSA had expulsion modified to less than one year."
         is optional
-    bool GFSAAlternativePlacement
-        documentation "True = Student expelled under GFSA received Alternative Placement"
-        is optional

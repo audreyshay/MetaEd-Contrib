@@ -1,0 +1,15 @@
+Association StudentClassGroupAssociation
+    documentation "This entity tracks student enrollment in class/groups at community providers."
+    domain entity Student
+        documentation "Student associated with the Class Group."
+    domain entity ClassGroup
+        documentation "Class Group  associated with the student."
+    date BeginDate
+        documentation "The month, day, and year on which the student began participating in a class/group."
+        is part of identity
+    date EndDate
+        documentation "The month, day, and year on which the student stopped participating in a class/group."
+        is optional
+    descriptor ReasonExited
+        documentation "The reason the student stopped participating in a class/group."
+        is optional

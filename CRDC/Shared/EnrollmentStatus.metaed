@@ -1,0 +1,4 @@
+Shared String EnrollmentStatus
+    documentation "The status of the student's enrollment by the community provider location."
+    min length 0
+    max length 30

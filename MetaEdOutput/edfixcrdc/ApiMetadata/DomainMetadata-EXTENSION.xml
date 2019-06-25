@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AggregateExtensions logicalSchema="Edfixcrdc" schema="edfixcrdc">
+  <Aggregate root="AlternativeStatusDescriptor">
+    <Entity table="AlternativeStatusDescriptor" isA="Descriptor" schema="edfixcrdc"/>
+  </Aggregate>
+  <Aggregate root="ClassGroup">
+    <Entity table="ClassGroup" schema="edfixcrdc"/>
+    <Entity table="ClassGroupCourse" schema="edfixcrdc"/>
+    <Entity table="ClassGroupMeetingTime" schema="edfixcrdc"/>
+  </Aggregate>
+  <Aggregate root="CommunityProviderLocation">
+    <Entity table="CommunityProviderLocation" schema="edfixcrdc"/>
+    <Entity table="CommunityProviderLocationInstructionalCalendar" schema="edfixcrdc"/>
+  </Aggregate>
+  <Aggregate root="MeetingDayDescriptor">
+    <Entity table="MeetingDayDescriptor" isA="Descriptor" schema="edfixcrdc"/>
+  </Aggregate>
+  <Aggregate root="ProgramCostDescriptor">
+    <Entity table="ProgramCostDescriptor" isA="Descriptor" schema="edfixcrdc"/>
+  </Aggregate>
+  <Aggregate root="RestraintCategoryDescriptor">
+    <Entity table="RestraintCategoryDescriptor" isA="Descriptor" schema="edfixcrdc"/>
+  </Aggregate>
+  <Aggregate root="StudentClassGroupAssociation">
+    <Entity table="StudentClassGroupAssociation" schema="edfixcrdc"/>
+  </Aggregate>
+  <Aggregate root="StudentCommunityProviderLocationAssociation">
+    <Entity table="StudentCommunityProviderLocationAssociation" schema="edfixcrdc"/>
+  </Aggregate>
+  <Aggregate root="UngradedDetailDescriptor">
+    <Entity table="UngradedDetailDescriptor" isA="Descriptor" schema="edfixcrdc"/>
+  </Aggregate>
+  <AggregateExtension root="RestraintEvent">
+    <Entity table="RestraintEventRestraintCategory" schema="edfixcrdc"/>
+  </AggregateExtension>
+  <AggregateExtension root="School">
+    <Entity table="SchoolTechnology" schema="edfixcrdc"/>
+  </AggregateExtension>
+</AggregateExtensions>

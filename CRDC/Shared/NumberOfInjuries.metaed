@@ -1,0 +1,3 @@
+Shared Integer NumberOfInjuries
+    documentation "The number of injuries that had occurred at this provider as of the date this license was issued."
+    min value 0

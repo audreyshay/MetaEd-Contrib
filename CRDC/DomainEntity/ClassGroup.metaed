@@ -1,0 +1,29 @@
+Domain Entity ClassGroup
+    documentation "A collection of students at a community provider location."
+    shared string ClassGroupName named ClassGroupName
+        documentation "The name of the class/group of students."
+        is part of identity
+    domain entity CommunityProviderLocation
+        documentation "The community provider location associated with the class group."
+        is part of identity
+    bool SpecialNeedsProvidedIndicator
+        documentation "An indication of whether a class or group serves children with special needs."
+        is part of identity
+    shared integer Capacity named Capacity
+        documentation "The maximum number of students this class group can accomodate at any given time."
+        is optional
+    shared integer DaysAvailablePerWeek named DaysAvailablePerWeek
+        documentation "The number of days per week this class/group meets."
+        is optional
+    shared decimal HoursAvailablePerDay named HoursAvailablePerDay
+        documentation "The number of hours per day the class/group meets."
+        is optional
+    common ClassGroupMeetingTime
+        documentation "The times and days of week this class/group is in session."
+        is optional collection
+    descriptor Service
+        documentation "The services provided to students at this class/group."
+        is optional
+    domain entity Course
+        documentation "The course being offered by the ClassGroup."
+        is optional collection

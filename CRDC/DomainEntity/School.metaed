@@ -1,0 +1,10 @@
+Domain Entity School additions
+    descriptor AlternativeStatus
+      documentation "The alternative status of the school, such as academic or discipline"
+      is optional
+    descriptor UngradedDetail
+      documentation "Description of the population of students who attend an ungraded school"
+      is optional
+    common SchoolTechnology
+      documentation "Technology related information needed for CRDC at school level."
+      is optional

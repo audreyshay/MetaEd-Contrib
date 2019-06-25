@@ -1,0 +1,4 @@
+Shared Decimal DaysTotal
+    documentation "Used to report total days absent/present during Attendance Reporting period."
+    total digits 5
+    decimal places 2

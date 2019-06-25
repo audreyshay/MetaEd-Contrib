@@ -1,0 +1,4 @@
+Domain Entity RestraintEvent additions
+    descriptor RestraintCategory
+        documentation "The category of the restraint administered."
+        is optional collection

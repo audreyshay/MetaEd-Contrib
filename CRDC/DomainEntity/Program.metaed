@@ -1,0 +1,4 @@
+Domain Entity Program additions
+  descriptor ProgramCost
+    documentation "Defines the cost of a program that is offered by the Education Organization"
+    is optional

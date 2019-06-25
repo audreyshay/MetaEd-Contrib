@@ -1,0 +1,59 @@
+Domain Entity CommunityProviderLocation
+    documentation "This entity represents physical locations where services are provided by Community Providers."
+    shared integer CommunityProviderLocationId named CommunityProviderLocationId
+        documentation "A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity."
+        is part of identity
+    domain entity CommunityProvider
+        documentation "Reference to the Community Provider associated with the community provider location."
+        is part of identity
+    shared string AgeRangeDescription named AgeRangeDescription
+        documentation "An indication of the range of ages of students that this provider location can accommodate."
+        is optional
+    shared integer AgeAccepted named YoungestAgeAccepted
+        documentation "The youngest age of students accepted at this location."
+        is optional
+    shared integer AgeAccepted named OldestAgeAccepted
+        documentation "The oldest age of students accepted at this location."
+        is optional
+    shared integer Capacity named Capacity
+        documentation "The maximum number of students this provider location can accommodate at any given time."
+        is optional
+    bool SpecialNeedsProvidedIndicator
+        documentation "An indication of whether a provider location serves children with special needs."
+        is optional
+    time TimeOpen
+        documentation "The time of day this provider location begins providing services."
+        is optional
+    time TimeClose
+        documentation "The time of day this provider location stops providing services."
+        is optional
+    descriptor AddressType
+        documentation "The type of address listed for the community provider location."
+        is optional
+    shared string StreetNumberName named StreetNumberName
+        documentation "The street number and street name or post office box number of an address."
+        is optional
+    shared string ApartmentRoomSuiteNumber named ApartmentRoomSuiteNumber
+        documentation "The street number and street name or post office box number of an address."
+        is optional
+    shared string BuildingSiteNumber named BuildingSiteNumber
+        documentation "The number of the building on the site, if more than one building shares the same address."
+        is optional
+    shared string City named City
+        documentation "The name of the city in which an address is located."
+        is optional
+    descriptor StateAbbreviation
+        documentation "The abbreviation for the state (within the United States) or outlying area in which an address is located."
+        is optional
+    shared string PostalCode named PostalCode
+        documentation "The five or nine digit zip code or overseas postal code portion of an address."
+        is optional
+    shared string NameOfCounty named NameOfCounty
+        documentation "The name of the county, parish, borough, or comparable unit (within a state) in which an address is located."
+        is optional
+    shared string CountyFIPSCode named CountyFIPSCode
+        documentation "The Federal Information Processing Standards (FIPS) numeric code for the county issued by the National Institute of Standards and Technology (NIST). Counties are considered to be the 'first-order subdivisions' of each State and statistically equivalent entity, regardless of their local designations (county, parish, borough, etc.). Counties in different States will have the same code. A unique county number is created when combined with the 2-digit FIPS State Code"
+        is optional
+    common InstructionalCalendar
+            documentation "Identifies the span of time a community provider is open to provide instruction to students who are under the direction and guidance of teachers and/or administration."
+            is optional

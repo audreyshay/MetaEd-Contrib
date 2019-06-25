@@ -1,0 +1,3057 @@
+{
+  "odsApiVersion": "3.1.0",
+  "schemaDefinition": {
+    "logicalName": "Edfixcrdc",
+    "physicalName": "edfixcrdc"
+  },
+  "aggregateDefinitions": [
+    {
+      "aggregateRootEntityName": {
+        "schema": "edfixcrdc",
+        "name": "AlternativeStatusDescriptor"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "edfixcrdc",
+          "name": "AlternativeStatusDescriptor"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "edfixcrdc",
+        "name": "ClassGroup"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "edfixcrdc",
+          "name": "ClassGroup"
+        },
+        {
+          "schema": "edfixcrdc",
+          "name": "ClassGroupCourse"
+        },
+        {
+          "schema": "edfixcrdc",
+          "name": "ClassGroupMeetingTime"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "edfixcrdc",
+        "name": "CommunityProviderLocation"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "edfixcrdc",
+          "name": "CommunityProviderLocation"
+        },
+        {
+          "schema": "edfixcrdc",
+          "name": "CommunityProviderLocationInstructionalCalendar"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "edfixcrdc",
+        "name": "MeetingDayDescriptor"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "edfixcrdc",
+          "name": "MeetingDayDescriptor"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "edfixcrdc",
+        "name": "ProgramCostDescriptor"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "edfixcrdc",
+          "name": "ProgramCostDescriptor"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "edfixcrdc",
+        "name": "RestraintCategoryDescriptor"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "edfixcrdc",
+          "name": "RestraintCategoryDescriptor"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "edfixcrdc",
+        "name": "StudentClassGroupAssociation"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "edfixcrdc",
+          "name": "StudentClassGroupAssociation"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "edfixcrdc",
+        "name": "StudentCommunityProviderLocationAssociation"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "edfixcrdc",
+          "name": "StudentCommunityProviderLocationAssociation"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "edfixcrdc",
+        "name": "UngradedDetailDescriptor"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "edfixcrdc",
+          "name": "UngradedDetailDescriptor"
+        }
+      ]
+    }
+  ],
+  "aggregateExtensionDefinitions": [
+    {
+      "aggregateRootEntityName": {
+        "schema": "edfi",
+        "name": "RestraintEvent"
+      },
+      "extensionEntityNames": [
+        {
+          "schema": "edfixcrdc",
+          "name": "RestraintEventRestraintCategory"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "edfi",
+        "name": "School"
+      },
+      "extensionEntityNames": [
+        {
+          "schema": "edfixcrdc",
+          "name": "SchoolTechnology"
+        }
+      ]
+    }
+  ],
+  "entityDefinitions": [
+    {
+      "schema": "edfixcrdc",
+      "name": "AlternativeStatusDescriptor",
+      "locallyDefinedProperties": [],
+      "identifiers": [
+        {
+          "identifierName": "AlternativeStatusDescriptor_PK",
+          "identifyingPropertyNames": [
+            "AlternativeStatusDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "The alternative status of the school, such as academic or discipline."
+    },
+    {
+      "schema": "edfixcrdc",
+      "name": "ClassGroup",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "Capacity",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The maximum number of students this class group can accomodate at any given time.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "ClassGroupName",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 75,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The name of the class/group of students.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "DaysAvailablePerWeek",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The number of days per week this class/group meets.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "HoursAvailablePerDay",
+          "propertyType": {
+            "dbType": "Decimal",
+            "maxLength": 0,
+            "precision": 4,
+            "scale": 2,
+            "isNullable": true
+          },
+          "description": "The number of hours per day the class/group meets.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "Id",
+          "propertyType": {
+            "dbType": "Guid",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "LastModifiedDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SpecialNeedsProvidedIndicator",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "An indication of whether a class or group serves children with special needs.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "ClassGroup_PK",
+          "identifyingPropertyNames": [
+            "ClassGroupName",
+            "CommunityProviderId",
+            "CommunityProviderLocationId",
+            "SpecialNeedsProvidedIndicator"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        },
+        {
+          "identifierName": "UX_ClassGroup_Id",
+          "identifyingPropertyNames": [
+            "Id"
+          ],
+          "isPrimary": false,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "A collection of students at a community provider location."
+    },
+    {
+      "schema": "edfixcrdc",
+      "name": "ClassGroupCourse",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "ClassGroupCourse_PK",
+          "identifyingPropertyNames": [
+            "ClassGroupName",
+            "CommunityProviderId",
+            "CommunityProviderLocationId",
+            "CourseCode",
+            "EducationOrganizationId",
+            "SpecialNeedsProvidedIndicator"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "The course being offered by the ClassGroup."
+    },
+    {
+      "schema": "edfixcrdc",
+      "name": "ClassGroupMeetingTime",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "StartTime",
+          "propertyType": {
+            "dbType": "Time",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The time of day a class/group starts providing services.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "StopTime",
+          "propertyType": {
+            "dbType": "Time",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The time of day a class/group stops providing services.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "ClassGroupMeetingTime_PK",
+          "identifyingPropertyNames": [
+            "ClassGroupName",
+            "CommunityProviderId",
+            "CommunityProviderLocationId",
+            "MeetingDayDescriptorId",
+            "SpecialNeedsProvidedIndicator",
+            "StartTime",
+            "StopTime"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "The times and days of week this class/group is in session."
+    },
+    {
+      "schema": "edfixcrdc",
+      "name": "CommunityProviderLocation",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "AgeRangeDescription",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 75,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "An indication of the range of ages of students that this provider location can accommodate.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "ApartmentRoomSuiteNumber",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 50,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The street number and street name or post office box number of an address.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "BuildingSiteNumber",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 20,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The number of the building on the site, if more than one building shares the same address.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "Capacity",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The maximum number of students this provider location can accommodate at any given time.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "City",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 30,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The name of the city in which an address is located.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderLocationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CountyFIPSCode",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 5,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The Federal Information Processing Standards (FIPS) numeric code for the county issued by the National Institute of Standards and Technology (NIST). Counties are considered to be the 'first-order subdivisions' of each State and statistically equivalent entity, regardless of their local designations (county, parish, borough, etc.). Counties in different States will have the same code. A unique county number is created when combined with the 2-digit FIPS State Code",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "Id",
+          "propertyType": {
+            "dbType": "Guid",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "LastModifiedDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "NameOfCounty",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 30,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The name of the county, parish, borough, or comparable unit (within a state) in which an address is located.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "OldestAgeAccepted",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The oldest age of students accepted at this location.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "PostalCode",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 17,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The five or nine digit zip code or overseas postal code portion of an address.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SpecialNeedsProvidedIndicator",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "An indication of whether a provider location serves children with special needs.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "StreetNumberName",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 150,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The street number and street name or post office box number of an address.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "TimeClose",
+          "propertyType": {
+            "dbType": "Time",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The time of day this provider location stops providing services.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "TimeOpen",
+          "propertyType": {
+            "dbType": "Time",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The time of day this provider location begins providing services.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "YoungestAgeAccepted",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The youngest age of students accepted at this location.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "CommunityProviderLocation_PK",
+          "identifyingPropertyNames": [
+            "CommunityProviderId",
+            "CommunityProviderLocationId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        },
+        {
+          "identifierName": "UX_CommunityProviderLocation_Id",
+          "identifyingPropertyNames": [
+            "Id"
+          ],
+          "isPrimary": false,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "This entity represents physical locations where services are provided by Community Providers."
+    },
+    {
+      "schema": "edfixcrdc",
+      "name": "CommunityProviderLocationInstructionalCalendar",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "BeginDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Month, day and year of the first day of the instructional calendar.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "EndDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Month, day and year of the last day of the instuctional calendar.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "TotalInstructionalDaysPerYear",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The total number of instructional days in the intructional calendar.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "CommunityProviderLocationInstructionalCalendar_PK",
+          "identifyingPropertyNames": [
+            "CommunityProviderId",
+            "CommunityProviderLocationId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "Identifies the span of time a community provider is open to provide instruction to students who are under the direction and guidance of teachers and/or administration."
+    },
+    {
+      "schema": "edfixcrdc",
+      "name": "MeetingDayDescriptor",
+      "locallyDefinedProperties": [],
+      "identifiers": [
+        {
+          "identifierName": "MeetingDayDescriptor_PK",
+          "identifyingPropertyNames": [
+            "MeetingDayDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "Indicates meeting day."
+    },
+    {
+      "schema": "edfixcrdc",
+      "name": "ProgramCostDescriptor",
+      "locallyDefinedProperties": [],
+      "identifiers": [
+        {
+          "identifierName": "ProgramCostDescriptor_PK",
+          "identifyingPropertyNames": [
+            "ProgramCostDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "This descriptor defines the cost of a program that is offered by the Education Organization."
+    },
+    {
+      "schema": "edfixcrdc",
+      "name": "ProgramExtension",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "ProgramExtension_PK",
+          "identifyingPropertyNames": [
+            "EducationOrganizationId",
+            "ProgramName",
+            "ProgramTypeDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": ""
+    },
+    {
+      "schema": "edfixcrdc",
+      "name": "RestraintCategoryDescriptor",
+      "locallyDefinedProperties": [],
+      "identifiers": [
+        {
+          "identifierName": "RestraintCategoryDescriptor_PK",
+          "identifyingPropertyNames": [
+            "RestraintCategoryDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "This descriptor defines the categories of the restraint administered."
+    },
+    {
+      "schema": "edfixcrdc",
+      "name": "RestraintEventRestraintCategory",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "RestraintEventRestraintCategory_PK",
+          "identifyingPropertyNames": [
+            "RestraintCategoryDescriptorId",
+            "RestraintEventIdentifier",
+            "SchoolId",
+            "StudentUSI"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "The category of the restraint administered."
+    },
+    {
+      "schema": "edfixcrdc",
+      "name": "SchoolExtension",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "SchoolExtension_PK",
+          "identifyingPropertyNames": [
+            "SchoolId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": ""
+    },
+    {
+      "schema": "edfixcrdc",
+      "name": "SchoolTechnology",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "AllClassroomsHaveWiFi",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Does the school have Wi-Fi access in every classroom?",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "FiberOpticConnection",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Is the school connected to the internet through fiber-optic connection?",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "StudentsBringOwnDevice",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Does the school allow students to bring to the school student-owned devices that can be used to access the internet for student learning?",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "StudentsTakeHomeDevice",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Does the school allow students to take home school-issued devices that can be used to access the internet for student learning?",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "WiFiDeviceCount",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Number of Wi-Fi enabled devices provided by the school to students for student learning use",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "SchoolTechnology_PK",
+          "identifyingPropertyNames": [
+            "SchoolId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "Technology related information needed for CRDC at school level."
+    },
+    {
+      "schema": "edfixcrdc",
+      "name": "StudentClassGroupAssociation",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "BeginDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The month, day, and year on which the student began participating in a class/group.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "EndDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The month, day, and year on which the student stopped participating in a class/group.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "Id",
+          "propertyType": {
+            "dbType": "Guid",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "LastModifiedDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "StudentClassGroupAssociation_PK",
+          "identifyingPropertyNames": [
+            "BeginDate",
+            "ClassGroupName",
+            "CommunityProviderId",
+            "CommunityProviderLocationId",
+            "SpecialNeedsProvidedIndicator",
+            "StudentUSI"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        },
+        {
+          "identifierName": "UX_StudentClassGroupAssociation_Id",
+          "identifyingPropertyNames": [
+            "Id"
+          ],
+          "isPrimary": false,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "This entity tracks student enrollment in class/groups at community providers."
+    },
+    {
+      "schema": "edfixcrdc",
+      "name": "StudentCommunityProviderLocationAssociation",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "BeginDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The month, day, and year on which the student began participating at a provider location.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "EndDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The month, day, and year on which the student stopped participating at a provider location.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "EnrollmentStatus",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 30,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The status of the student's enrollment by the Community Provider Loaction.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "Id",
+          "propertyType": {
+            "dbType": "Guid",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "LastModifiedDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "StudentCommunityProviderLocationAssociation_PK",
+          "identifyingPropertyNames": [
+            "BeginDate",
+            "CommunityProviderId",
+            "CommunityProviderLocationId",
+            "StudentUSI"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        },
+        {
+          "identifierName": "UX_StudentCommunityProviderLocationAssociation_Id",
+          "identifyingPropertyNames": [
+            "Id"
+          ],
+          "isPrimary": false,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "This entity tracks student attendance events such as absent, tardy, etc. at a community provider location level."
+    },
+    {
+      "schema": "edfixcrdc",
+      "name": "UngradedDetailDescriptor",
+      "locallyDefinedProperties": [],
+      "identifiers": [
+        {
+          "identifierName": "UngradedDetailDescriptor_PK",
+          "identifyingPropertyNames": [
+            "UngradedDetailDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "Description of the population of students who attend an ungraded school."
+    }
+  ],
+  "associationDefinitions": [
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_AlternativeStatusDescriptor_Descriptor"
+      },
+      "cardinality": "OneToOneInheritance",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Descriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "DescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "AlternativeStatusDescriptor"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "AlternativeStatusDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_ClassGroup_CommunityProviderLocation"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "CommunityProviderLocation"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "CommunityProviderId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a CommunityProvider.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderLocationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "ClassGroup"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "CommunityProviderId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a CommunityProvider.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderLocationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_ClassGroup_ServiceDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "ServiceDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "ServiceDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "ClassGroup"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ServiceDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The services provided to students at this class/group.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_ClassGroupCourse_ClassGroup"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "ClassGroup"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "ClassGroupName",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 75,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The name of the class/group of students.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a CommunityProvider.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderLocationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SpecialNeedsProvidedIndicator",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "An indication of whether a class or group serves children with special needs.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "ClassGroupCourse"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ClassGroupName",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 75,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The name of the class/group of students.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a CommunityProvider.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderLocationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SpecialNeedsProvidedIndicator",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "An indication of whether a class or group serves children with special needs.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_ClassGroupCourse_Course"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Course"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "CourseCode",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a course.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "ClassGroupCourse"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "CourseCode",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a course.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_ClassGroupMeetingTime_ClassGroup"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "ClassGroup"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "ClassGroupName",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 75,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The name of the class/group of students.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a CommunityProvider.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderLocationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SpecialNeedsProvidedIndicator",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "An indication of whether a class or group serves children with special needs.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "ClassGroupMeetingTime"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ClassGroupName",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 75,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The name of the class/group of students.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a CommunityProvider.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderLocationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SpecialNeedsProvidedIndicator",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "An indication of whether a class or group serves children with special needs.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_ClassGroupMeetingTime_MeetingDayDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "MeetingDayDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "MeetingDayDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "ClassGroupMeetingTime"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "MeetingDayDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Indicates meeting day.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_CommunityProviderLocation_AddressTypeDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "AddressTypeDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "AddressTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "CommunityProviderLocation"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "AddressTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The type of address listed for the community provider location.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_CommunityProviderLocation_CommunityProvider"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "CommunityProvider"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "CommunityProviderId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a CommunityProvider.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "CommunityProviderLocation"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "CommunityProviderId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a CommunityProvider.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_CommunityProviderLocation_StateAbbreviationDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "StateAbbreviationDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "StateAbbreviationDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "CommunityProviderLocation"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "StateAbbreviationDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The abbreviation for the state (within the United States) or outlying area in which an address is located.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_CommunityProviderLocationInstructionalCalendar_CommunityProviderLocation"
+      },
+      "cardinality": "OneToOne",
+      "primaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "CommunityProviderLocation"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "CommunityProviderId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a CommunityProvider.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderLocationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "CommunityProviderLocationInstructionalCalendar"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "CommunityProviderId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a CommunityProvider.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderLocationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_CommunityProviderLocationInstructionalCalendar_SchoolYearType"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "SchoolYearType"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "SchoolYear",
+          "propertyType": {
+            "dbType": "Int16",
+            "maxLength": 0,
+            "precision": 5,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Key for School Year",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "CommunityProviderLocationInstructionalCalendar"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "SchoolYear",
+          "propertyType": {
+            "dbType": "Int16",
+            "maxLength": 0,
+            "precision": 5,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier for the instructional year.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_MeetingDayDescriptor_Descriptor"
+      },
+      "cardinality": "OneToOneInheritance",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Descriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "DescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "MeetingDayDescriptor"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "MeetingDayDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_ProgramCostDescriptor_Descriptor"
+      },
+      "cardinality": "OneToOneInheritance",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Descriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "DescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "ProgramCostDescriptor"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ProgramCostDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_ProgramExtension_Program"
+      },
+      "cardinality": "OneToOneExtension",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Program"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "ProgramName",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "ProgramTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The type of program.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "ProgramExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "ProgramName",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "ProgramTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The type of program.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_ProgramExtension_ProgramCostDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "ProgramCostDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "ProgramCostDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "ProgramExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ProgramCostDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "Defines the cost of a program that is offered by the Education Organization",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_RestraintCategoryDescriptor_Descriptor"
+      },
+      "cardinality": "OneToOneInheritance",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Descriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "DescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "RestraintCategoryDescriptor"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "RestraintCategoryDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_RestraintEventRestraintCategory_RestraintCategoryDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "RestraintCategoryDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "RestraintCategoryDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "RestraintEventRestraintCategory"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "RestraintCategoryDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The category of the restraint administered.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_RestraintEventRestraintCategory_RestraintEvent"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "RestraintEvent"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "RestraintEventIdentifier",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 20,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to a restraint event by a school, school system, state, or other agency or entity.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SchoolId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a school.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "RestraintEventRestraintCategory"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "RestraintEventIdentifier",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 20,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to a restraint event by a school, school system, state, or other agency or entity.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SchoolId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a school.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_SchoolExtension_AlternativeStatusDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "AlternativeStatusDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "AlternativeStatusDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "SchoolExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "AlternativeStatusDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The alternative status of the school, such as academic or discipline",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_SchoolExtension_School"
+      },
+      "cardinality": "OneToOneExtension",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "School"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "SchoolId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a school.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "SchoolExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "SchoolId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a school.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_SchoolExtension_UngradedDetailDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "UngradedDetailDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "UngradedDetailDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "SchoolExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "UngradedDetailDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "Description of the population of students who attend an ungraded school",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_SchoolTechnology_School"
+      },
+      "cardinality": "OneToOne",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "School"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "SchoolId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a school.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "SchoolTechnology"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "SchoolId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a school.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_StudentClassGroupAssociation_ClassGroup"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "ClassGroup"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "ClassGroupName",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 75,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The name of the class/group of students.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a CommunityProvider.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderLocationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SpecialNeedsProvidedIndicator",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "An indication of whether a class or group serves children with special needs.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "StudentClassGroupAssociation"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ClassGroupName",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 75,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The name of the class/group of students.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a CommunityProvider.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderLocationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SpecialNeedsProvidedIndicator",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "An indication of whether a class or group serves children with special needs.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_StudentClassGroupAssociation_ReasonExitedDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "ReasonExitedDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "ReasonExitedDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "StudentClassGroupAssociation"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ReasonExitedDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The reason the student stopped participating in a class/group.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_StudentClassGroupAssociation_Student"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Student"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "StudentClassGroupAssociation"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_StudentCommunityProviderLocationAssociation_CommunityProviderLocation"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "CommunityProviderLocation"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "CommunityProviderId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a CommunityProvider.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderLocationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "StudentCommunityProviderLocationAssociation"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "CommunityProviderId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a CommunityProvider.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "CommunityProviderLocationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_StudentCommunityProviderLocationAssociation_ReasonExitedDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "ReasonExitedDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "ReasonExitedDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "StudentCommunityProviderLocationAssociation"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "ReasonExitedDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The reason the child left the community provider.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_StudentCommunityProviderLocationAssociation_Student"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Student"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "StudentCommunityProviderLocationAssociation"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "edfixcrdc",
+        "name": "FK_UngradedDetailDescriptor_Descriptor"
+      },
+      "cardinality": "OneToOneInheritance",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Descriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "DescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "edfixcrdc",
+        "name": "UngradedDetailDescriptor"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "UngradedDetailDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    }
+  ]
+}

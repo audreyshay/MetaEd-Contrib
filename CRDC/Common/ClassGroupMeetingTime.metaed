@@ -1,0 +1,11 @@
+Common ClassGroupMeetingTime
+    documentation "The times and days of week this class/group is in session."
+    descriptor MeetingDay
+        documentation "Indicates meeting day."
+        is part of identity
+    time StartTime
+        documentation "The time of day a class/group starts providing services."
+        is part of identity
+    time StopTime
+        documentation "The time of day a class/group stops providing services."
+        is part of identity

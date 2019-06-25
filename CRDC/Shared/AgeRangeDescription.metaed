@@ -1,0 +1,4 @@
+Shared String AgeRangeDescription
+    documentation "An indication of the range of ages of students that this provider location can accommodate."
+    min length 1
+    max length 75

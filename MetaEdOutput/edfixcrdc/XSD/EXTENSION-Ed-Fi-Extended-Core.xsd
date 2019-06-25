@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- (c)2019 Ed-Fi Alliance, LLC. All Rights Reserved. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0310" xmlns:ann="http://ed-fi.org/annotation" targetNamespace="http://ed-fi.org/0310" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="Ed-Fi-Core.xsd" />
+  <xs:annotation>
+    <xs:documentation>===== Ed-Fi 3.1.0 Extensions =====</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>===== Domain Entities =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-ClassGroup">
+    <xs:annotation>
+      <xs:documentation>A collection of students at a community provider location.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ComplexObjectType">
+        <xs:sequence>
+          <xs:element name="ClassGroupName" type="EXTENSION-ClassGroupName">
+            <xs:annotation>
+              <xs:documentation>The name of the class/group of students.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CommunityProviderLocationReference" type="EXTENSION-CommunityProviderLocationReferenceType">
+            <xs:annotation>
+              <xs:documentation>The community provider location associated with the class group.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SpecialNeedsProvidedIndicator" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>An indication of whether a class or group serves children with special needs.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Capacity" type="Capacity" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The maximum number of students this class group can accomodate at any given time.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="DaysAvailablePerWeek" type="EXTENSION-DaysAvailablePerWeek" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The number of days per week this class/group meets.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="HoursAvailablePerDay" type="EXTENSION-HoursAvailablePerDay" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The number of hours per day the class/group meets.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ClassGroupMeetingTime" type="EXTENSION-ClassGroupMeetingTime" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The times and days of week this class/group is in session.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Service" type="ServiceDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The services provided to students at this class/group.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>ServiceDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CourseReference" type="CourseReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The course being offered by the ClassGroup.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-CommunityProviderLocation">
+    <xs:annotation>
+      <xs:documentation>This entity represents physical locations where services are provided by Community Providers.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ComplexObjectType">
+        <xs:sequence>
+          <xs:element name="CommunityProviderLocationId" type="EXTENSION-CommunityProviderLocationId">
+            <xs:annotation>
+              <xs:documentation>A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CommunityProviderReference" type="CommunityProviderReferenceType">
+            <xs:annotation>
+              <xs:documentation>Reference to the Community Provider associated with the community provider location.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AgeRangeDescription" type="EXTENSION-AgeRangeDescription" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication of the range of ages of students that this provider location can accommodate.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="YoungestAgeAccepted" type="EXTENSION-AgeAccepted" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The youngest age of students accepted at this location.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="OldestAgeAccepted" type="EXTENSION-AgeAccepted" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The oldest age of students accepted at this location.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Capacity" type="Capacity" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The maximum number of students this provider location can accommodate at any given time.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SpecialNeedsProvidedIndicator" type="xs:boolean" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>An indication of whether a provider location serves children with special needs.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TimeOpen" type="xs:time" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The time of day this provider location begins providing services.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TimeClose" type="xs:time" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The time of day this provider location stops providing services.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AddressType" type="AddressTypeDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The type of address listed for the community provider location.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>AddressTypeDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StreetNumberName" type="StreetNumberName" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The street number and street name or post office box number of an address.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ApartmentRoomSuiteNumber" type="ApartmentRoomSuiteNumber" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The street number and street name or post office box number of an address.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BuildingSiteNumber" type="BuildingSiteNumber" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The number of the building on the site, if more than one building shares the same address.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="City" type="City" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The name of the city in which an address is located.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StateAbbreviation" type="StateAbbreviationDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The abbreviation for the state (within the United States) or outlying area in which an address is located.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>StateAbbreviationDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PostalCode" type="PostalCode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The five or nine digit zip code or overseas postal code portion of an address.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="NameOfCounty" type="NameOfCounty" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The name of the county, parish, borough, or comparable unit (within a state) in which an address is located.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CountyFIPSCode" type="CountyFIPSCode" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The Federal Information Processing Standards (FIPS) numeric code for the county issued by the National Institute of Standards and Technology (NIST). Counties are considered to be the 'first-order subdivisions' of each State and statistically equivalent entity, regardless of their local designations (county, parish, borough, etc.). Counties in different States will have the same code. A unique county number is created when combined with the 2-digit FIPS State Code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="InstructionalCalendar" type="EXTENSION-InstructionalCalendar" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identifies the span of time a community provider is open to provide instruction to students who are under the direction and guidance of teachers and/or administration.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-ProgramExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Program">
+        <xs:sequence>
+          <xs:element name="ProgramCost" type="EXTENSION-ProgramCostDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Defines the cost of a program that is offered by the Education Organization</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-ProgramCostDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-RestraintEventExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="RestraintEvent">
+        <xs:sequence>
+          <xs:element name="RestraintCategory" type="EXTENSION-RestraintCategoryDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The category of the restraint administered.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-RestraintCategoryDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-SchoolExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="School">
+        <xs:sequence>
+          <xs:element name="AlternativeStatus" type="EXTENSION-AlternativeStatusDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The alternative status of the school, such as academic or discipline</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-AlternativeStatusDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="UngradedDetail" type="EXTENSION-UngradedDetailDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Description of the population of students who attend an ungraded school</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-UngradedDetailDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="SchoolTechnology" type="EXTENSION-SchoolTechnology" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Technology related information needed for CRDC at school level.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Descriptors =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-AlternativeStatusDescriptor">
+    <xs:annotation>
+      <xs:documentation>The alternative status of the school, such as academic or discipline.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-MeetingDayDescriptor">
+    <xs:annotation>
+      <xs:documentation>Indicates meeting day.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-ProgramCostDescriptor">
+    <xs:annotation>
+      <xs:documentation>This descriptor defines the cost of a program that is offered by the Education Organization.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-RestraintCategoryDescriptor">
+    <xs:annotation>
+      <xs:documentation>This descriptor defines the categories of the restraint administered.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-UngradedDetailDescriptor">
+    <xs:annotation>
+      <xs:documentation>Description of the population of students who attend an ungraded school.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Associations =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-StudentClassGroupAssociation">
+    <xs:annotation>
+      <xs:documentation>This entity tracks student enrollment in class/groups at community providers.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ComplexObjectType">
+        <xs:sequence>
+          <xs:element name="StudentReference" type="StudentReferenceType">
+            <xs:annotation>
+              <xs:documentation>Student associated with the Class Group.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ClassGroupReference" type="EXTENSION-ClassGroupReferenceType">
+            <xs:annotation>
+              <xs:documentation>Class Group  associated with the student.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BeginDate" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>The month, day, and year on which the student began participating in a class/group.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EndDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The month, day, and year on which the student stopped participating in a class/group.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReasonExited" type="ReasonExitedDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The reason the student stopped participating in a class/group.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>ReasonExitedDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentCommunityProviderLocationAssociation">
+    <xs:annotation>
+      <xs:documentation>This entity tracks student attendance events such as absent, tardy, etc. at a community provider location level.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Association</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ComplexObjectType">
+        <xs:sequence>
+          <xs:element name="StudentReference" type="StudentReferenceType">
+            <xs:annotation>
+              <xs:documentation>Student associated with the Community Provider Location.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CommunityProviderLocationReference" type="EXTENSION-CommunityProviderLocationReferenceType">
+            <xs:annotation>
+              <xs:documentation>Community Provider Location associated with the student.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="BeginDate" type="xs:date">
+            <xs:annotation>
+              <xs:documentation>The month, day, and year on which the student began participating at a provider location.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EndDate" type="xs:date" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The month, day, and year on which the student stopped participating at a provider location.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReasonExited" type="ReasonExitedDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The reason the child left the community provider.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>ReasonExitedDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="EnrollmentStatus" type="EXTENSION-EnrollmentStatus" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The status of the student's enrollment by the Community Provider Loaction.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Extended Reference Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-ClassGroupIdentityType">
+    <xs:annotation>
+      <xs:documentation>Identity of a ClassGroup.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Identity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ClassGroupName" type="EXTENSION-ClassGroupName">
+        <xs:annotation>
+          <xs:documentation>The name of the class/group of students.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CommunityProviderLocationReference" type="EXTENSION-CommunityProviderLocationReferenceType">
+        <xs:annotation>
+          <xs:documentation>The community provider location associated with the class group.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SpecialNeedsProvidedIndicator" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>An indication of whether a class or group serves children with special needs.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-ClassGroupReferenceType">
+    <xs:annotation>
+      <xs:documentation>Provides alternative references for a ClassGroup. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ReferenceType">
+        <xs:sequence>
+          <xs:element name="ClassGroupIdentity" type="EXTENSION-ClassGroupIdentityType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identity of a ClassGroup.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-CommunityProviderLocationIdentityType">
+    <xs:annotation>
+      <xs:documentation>Identity of a CommunityProviderLocation.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Identity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CommunityProviderLocationId" type="EXTENSION-CommunityProviderLocationId">
+        <xs:annotation>
+          <xs:documentation>A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CommunityProviderReference" type="CommunityProviderReferenceType">
+        <xs:annotation>
+          <xs:documentation>Reference to the Community Provider associated with the community provider location.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-CommunityProviderLocationReferenceType">
+    <xs:annotation>
+      <xs:documentation>Provides alternative references for a CommunityProviderLocation. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ReferenceType">
+        <xs:sequence>
+          <xs:element name="CommunityProviderLocationIdentity" type="EXTENSION-CommunityProviderLocationIdentityType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identity of a CommunityProviderLocation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentClassGroupAssociationIdentityType">
+    <xs:annotation>
+      <xs:documentation>Identity of a StudentClassGroupAssociation.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Identity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="StudentReference" type="StudentReferenceType">
+        <xs:annotation>
+          <xs:documentation>Student associated with the Class Group.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ClassGroupReference" type="EXTENSION-ClassGroupReferenceType">
+        <xs:annotation>
+          <xs:documentation>Class Group  associated with the student.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BeginDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>The month, day, and year on which the student began participating in a class/group.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentClassGroupAssociationReferenceType">
+    <xs:annotation>
+      <xs:documentation>Provides alternative references for a StudentClassGroupAssociation. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ReferenceType">
+        <xs:sequence>
+          <xs:element name="StudentClassGroupAssociationIdentity" type="EXTENSION-StudentClassGroupAssociationIdentityType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identity of a StudentClassGroupAssociation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentCommunityProviderLocationAssociationIdentityType">
+    <xs:annotation>
+      <xs:documentation>Identity of a StudentCommunityProviderLocationAssociation.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Identity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="StudentReference" type="StudentReferenceType">
+        <xs:annotation>
+          <xs:documentation>Student associated with the Community Provider Location.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CommunityProviderLocationReference" type="EXTENSION-CommunityProviderLocationReferenceType">
+        <xs:annotation>
+          <xs:documentation>Community Provider Location associated with the student.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BeginDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>The month, day, and year on which the student began participating at a provider location.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentCommunityProviderLocationAssociationReferenceType">
+    <xs:annotation>
+      <xs:documentation>Provides alternative references for a StudentCommunityProviderLocationAssociation. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ReferenceType">
+        <xs:sequence>
+          <xs:element name="StudentCommunityProviderLocationAssociationIdentity" type="EXTENSION-StudentCommunityProviderLocationAssociationIdentityType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identity of a StudentCommunityProviderLocationAssociation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Extended Descriptor Reference Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="EXTENSION-AlternativeStatusDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>The alternative status of the school, such as academic or discipline.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-MeetingDayDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Indicates meeting day.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-ProgramCostDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>This descriptor defines the cost of a program that is offered by the Education Organization.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-RestraintCategoryDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>This descriptor defines the categories of the restraint administered.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-UngradedDetailDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>Description of the population of students who attend an ungraded school.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
+  <xs:annotation>
+    <xs:documentation>===== Common Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-ClassGroupMeetingTime">
+    <xs:annotation>
+      <xs:documentation>The times and days of week this class/group is in session.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="MeetingDay" type="EXTENSION-MeetingDayDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>Indicates meeting day.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-MeetingDayDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StartTime" type="xs:time">
+        <xs:annotation>
+          <xs:documentation>The time of day a class/group starts providing services.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StopTime" type="xs:time">
+        <xs:annotation>
+          <xs:documentation>The time of day a class/group stops providing services.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-CommunityProvderLicense">
+    <xs:annotation>
+      <xs:documentation>Licensing information for the community provider.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="LicensingOrganization" type="LicensingOrganization">
+        <xs:annotation>
+          <xs:documentation>The name of the licensing organization.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LicenseEffectiveDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>The date this license became effective.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LicenseExpiratonDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>The date in which this license expires.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="InitialLicenseDate" type="xs:date" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The first date a license of the given type was assigned to the community provider.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LicenseStatus" type="LicenseStatusDescriptorReferenceType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Indicates the status of the community provider's license.</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>LicenseStatusDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NumberOfFatalities" type="EXTENSION-NumberOfFatalities" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The number of fatalities that had occurred at the provider  as of the date this license was issued.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NumberOfInjuries" type="EXTENSION-NumberOfInjuries" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The number of injuries that had occurred at this provider as of the date this license was issued.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StateLicensedFacilityCapacity" type="Capacity" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The number of injuries that had occurred at this provider as of the date this license was issued.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="YoungestAgeAuthorizedToServe" type="AgeAuthorizedToServe" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The youngest age of children a provider is authorized or licensed to serve.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="OldestAgeAuthorizedToServe" type="AgeAuthorizedToServe" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The oldest age of children a provider is authorized or licensed to serve.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-InstructionalCalendar">
+    <xs:annotation>
+      <xs:documentation>This entity represents the prescribed span of time that a community provider is open to provide instruction to students who are under the direction and guidance of teachers and/or administration.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="SchoolYear" type="SchoolYearType">
+        <xs:annotation>
+          <xs:documentation>The identifier for the instructional year.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BeginDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Month, day and year of the first day of the instructional calendar.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EndDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Month, day and year of the last day of the instuctional calendar.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TotalInstructionalDaysPerYear" type="TotalInstructionalDays">
+        <xs:annotation>
+          <xs:documentation>The total number of instructional days in the intructional calendar.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-SchoolTechnology">
+    <xs:annotation>
+      <xs:documentation>CRDC data items related to the technology capabilities of schools.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="FiberOpticConnection" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Is the school connected to the internet through fiber-optic connection?</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AllClassroomsHaveWiFi" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Does the school have Wi-Fi access in every classroom?</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StudentsTakeHomeDevice" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Does the school allow students to take home school-issued devices that can be used to access the internet for student learning?</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StudentsBringOwnDevice" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Does the school allow students to bring to the school student-owned devices that can be used to access the internet for student learning?</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="WiFiDeviceCount" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Number of Wi-Fi enabled devices provided by the school to students for student learning use</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Enumerations and Enumerated Collections =====</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>===== String Simple Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="EXTENSION-AgeRangeDescription">
+    <xs:annotation>
+      <xs:documentation>An indication of the range of ages of students that this provider location can accommodate.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="75" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-ClassGroupName">
+    <xs:annotation>
+      <xs:documentation>The name of the class/group of students.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="75" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-EnrollmentStatus">
+    <xs:annotation>
+      <xs:documentation>The status of the student's enrollment by the community provider location.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0" />
+      <xs:maxLength value="30" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:annotation>
+    <xs:documentation>===== Numeric Simple Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="EXTENSION-AgeAccepted">
+    <xs:annotation>
+      <xs:documentation>The age of students accepted.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-CommunityProviderLocationId">
+    <xs:annotation>
+      <xs:documentation>The identifier assigned to a Community Provider Location.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-DaysAvailablePerWeek">
+    <xs:annotation>
+      <xs:documentation>The number of days per week this class/group meets.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-DaysTotal">
+    <xs:annotation>
+      <xs:documentation>Used to report total days absent/present during Attendance Reporting period.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="5" />
+      <xs:fractionDigits value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-HoursAvailablePerDay">
+    <xs:annotation>
+      <xs:documentation>The number of hours per day this class/group meets.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="4" />
+      <xs:fractionDigits value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-NumberOfFatalities">
+    <xs:annotation>
+      <xs:documentation>The number of fatalities that had occurred at the provider  as of the date this license was issued.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-NumberOfInjuries">
+    <xs:annotation>
+      <xs:documentation>The number of injuries that had occurred at this provider as of the date this license was issued.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

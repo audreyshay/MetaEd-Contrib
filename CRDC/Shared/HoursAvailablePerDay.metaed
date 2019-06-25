@@ -1,0 +1,4 @@
+Shared Decimal HoursAvailablePerDay
+    documentation "The number of hours per day this class/group meets."
+    total digits 4
+    decimal places 2

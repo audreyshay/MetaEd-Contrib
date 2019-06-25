@@ -11,3 +11,6 @@ Association StudentDisciplineIncidentAssociation additions
     bool ReferralToLawEnforcement
         documentation "Indicates if a student was referred to law enforcement."
         is optional
+    bool SeriousBodilyInjury
+        documentation "Indicates if an incident resulted in serious bodily injury as defined by 18 U.S.C. Section 1365(3)(h)."
+        is optional

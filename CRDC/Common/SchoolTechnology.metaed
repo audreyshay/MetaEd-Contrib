@@ -1,0 +1,17 @@
+Common SchoolTechnology
+    documentation "CRDC data items related to the technology capabilities of schools."
+    bool FiberOpticConnection
+        documentation "Is the school connected to the internet through fiber-optic connection?"
+        is required
+    bool AllClassroomsHaveWiFi
+        documentation "Does the school have Wi-Fi access in every classroom?"
+        is required
+    bool StudentsTakeHomeDevice
+        documentation "Does the school allow students to take home school-issued devices that can be used to access the internet for student learning?"
+        is required
+    bool StudentsBringOwnDevice
+        documentation "Does the school allow students to bring to the school student-owned devices that can be used to access the internet for student learning?"
+        is required
+    integer WiFiDeviceCount
+        documentation "Number of Wi-Fi enabled devices provided by the school to students for student learning use"
+        is required

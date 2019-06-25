@@ -1,0 +1,3 @@
+Shared Integer AgeAccepted
+    documentation "The age of students accepted."
+    min value 0

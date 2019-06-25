@@ -1,0 +1,14 @@
+Common InstructionalCalendar
+    documentation "This entity represents the prescribed span of time that a community provider is open to provide instruction to students who are under the direction and guidance of teachers and/or administration."
+    enumeration SchoolYear
+        documentation "The identifier for the instructional year."
+        is required
+    date BeginDate
+        documentation "Month, day and year of the first day of the instructional calendar."
+        is required
+    date EndDate
+        documentation "Month, day and year of the last day of the instuctional calendar."
+        is required
+    shared integer TotalInstructionalDays named TotalInstructionalDaysPerYear
+        documentation "The total number of instructional days in the intructional calendar."
+        is required

@@ -1,0 +1,32 @@
+Common CommunityProvderLicense
+    documentation "Licensing information for the community provider."
+    shared string LicensingOrganization named LicensingOrganization
+        documentation "The name of the licensing organization."
+        is part of identity
+    date LicenseEffectiveDate
+        documentation "The date this license became effective."
+        is part of identity
+    date LicenseExpiratonDate
+        documentation "The date in which this license expires."
+        is part of identity
+    date InitialLicenseDate
+        documentation "The first date a license of the given type was assigned to the community provider."
+        is optional
+    descriptor LicenseStatus
+        documentation "Indicates the status of the community provider's license."
+        is optional
+    shared integer NumberOfFatalities named NumberOfFatalities
+        documentation "The number of fatalities that had occurred at the provider  as of the date this license was issued."
+        is optional
+    shared integer NumberOfInjuries named NumberOfInjuries
+        documentation "The number of injuries that had occurred at this provider as of the date this license was issued."
+        is optional
+    shared integer Capacity named StateLicensedFacilityCapacity
+        documentation "The number of injuries that had occurred at this provider as of the date this license was issued."
+        is optional
+    shared integer AgeAuthorizedToServe named YoungestAgeAuthorizedToServe
+        documentation "The youngest age of children a provider is authorized or licensed to serve."
+        is optional
+    shared integer AgeAuthorizedToServe named OldestAgeAuthorizedToServe
+        documentation "The oldest age of children a provider is authorized or licensed to serve."
+        is optional

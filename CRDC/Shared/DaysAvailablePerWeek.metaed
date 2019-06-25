@@ -1,0 +1,3 @@
+Shared Integer DaysAvailablePerWeek
+    documentation "The number of days per week this class/group meets."
+    min value 0

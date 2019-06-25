@@ -1,0 +1,3 @@
+Shared Integer NumberOfFatalities
+    documentation "The number of fatalities that had occurred at the provider  as of the date this license was issued."
+    min value 0

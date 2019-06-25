@@ -1,0 +1,18 @@
+Association StudentCommunityProviderLocationAssociation
+    documentation "This entity tracks student attendance events such as absent, tardy, etc. at a community provider location level."
+    domain entity Student
+        documentation "Student associated with the Community Provider Location."
+    domain entity CommunityProviderLocation
+        documentation "Community Provider Location associated with the student."
+    date BeginDate
+        documentation "The month, day, and year on which the student began participating at a provider location."
+        is part of identity
+    date EndDate
+        documentation "The month, day, and year on which the student stopped participating at a provider location."
+        is optional
+    descriptor ReasonExited
+        documentation "The reason the child left the community provider."
+        is optional
+    shared string EnrollmentStatus named EnrollmentStatus
+        documentation "The status of the student's enrollment by the Community Provider Loaction."
+        is optional
