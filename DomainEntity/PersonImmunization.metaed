@@ -1,0 +1,11 @@
+Domain Entity PersonImmunization
+    documentation "This entity captures the immunization details for a person."
+    domain entity Person
+        documentation "Person being immunized."
+        is part of identity
+    descriptor ImmunizationCode
+      documentation inherited
+      is part of identity
+   date ImmunizationDate
+      documentation "Indicates the date of the immunziation."
+      is part of identity

@@ -1,0 +1,5 @@
+Domain StudentTransportation
+    documentation "This domain represents the students' mode of transportation."
+    domain entity Student
+    domain entity StudentTransportation
+    domain entity LocalEducationAgency

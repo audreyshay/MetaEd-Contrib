@@ -1,0 +1,8 @@
+Common Cycle
+    documentation "Indicates the cycle day."
+    descriptor Cycle
+        documentation "Indicates the code for the cycle."
+        is part of identity
+    integer Timeslot
+        documentation "A number indicating the order of this scheduling time unit in the entire day."
+        is part of identity

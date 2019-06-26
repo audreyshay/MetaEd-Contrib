@@ -1,0 +1,2 @@
+Descriptor AcceptanceStatus
+    documentation "Defines the codes that identify the status of the college acceptance."

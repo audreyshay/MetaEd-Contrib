@@ -1,0 +1,15 @@
+Domain StudentProgram
+    documentation "This domain represents the programs that students participates in."
+    domain entity Student
+    domain entity EducationOrganization
+    domain entity Staff
+    domain entity Program
+    domain entity School
+    association StudentProgramAssociation
+    association StaffProgramAssociation
+    association StudentSpecialEducationProgramAssociation
+    association StudentLanguageInstructionProgramAssociation
+    association Student504ProgramAssociation
+    association StudentEarlyChildhoodProgramAssociation
+    common LanguageImmersion
+    common CTEProgram

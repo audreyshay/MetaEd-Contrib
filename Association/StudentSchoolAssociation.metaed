@@ -1,0 +1,4 @@
+Association StudentSchoolAssociation additions
+    descriptor EnrollmentType
+        documentation "Indicates the enrollment type."
+        is optional

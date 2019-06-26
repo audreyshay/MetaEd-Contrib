@@ -1,0 +1,4 @@
+Domain StudentAcademicRecord
+    documentation "This domain represent the additional detail required to capture the student academic record."
+    domain entity GradeTypeDetail
+    domain entity LevelDetail

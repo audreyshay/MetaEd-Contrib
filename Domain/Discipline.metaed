@@ -1,0 +1,7 @@
+Domain Discipline
+    documentation "The discipline domain represents discipline incidents and the action taken to rectify the incident."
+    domain entity DisciplineIncident
+    domain entity PersonDisciplineAction
+    domain entity Person
+    domain entity DisciplineIncidentCode
+    association PersonDisciplineIncidentAssociation

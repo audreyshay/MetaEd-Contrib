@@ -1,0 +1,42 @@
+Domain Entity Course additions
+    bool Active
+        documentation "The current status of the course."
+        is optional
+    descriptor APExamCode
+        documentation "Indicates the code for the AP exam."
+        is optional
+    shared string AveragePassTimeMinutesPerWeek
+        documentation "Indicates the number of times allowed in the hall per week for the course."
+        is optional
+    descriptor CoreSubject
+        documentation "Indicates the core subject associated with the course."
+        is optional
+    shared string FractionOfYearOffered
+        documentation inherited
+        is optional
+    shared string MinutesPerWeekAverage
+        documentation "Indicates the minutes per week the course meets."
+        is optional
+    descriptor ServiceStatus
+        documentation "Indicates the status of the service of the secondary staff in the classroom."
+        is optional
+        with context SecondaryStaffClassroom
+    descriptor CredentialField
+        documentation "Indicates the specialty requirement for the staff teaching the course."
+        is optional
+        with context Staff
+    descriptor CredentialField
+        documentation "Indicates the specialty requirement for the secondary staff teaching the course."
+        is optional
+        with context SecondaryStaff
+    descriptor StaffRole
+        documentation "Indicates the role of the secondary staff for the course."
+        is optional
+        with context Secondary
+    domain entity School
+        documentation "Identifes school with a unit count exception."
+        is optional
+        with context UnitCountException
+    integer LevelNumer
+        documentation "The Default Level Number for this course."
+        is optional

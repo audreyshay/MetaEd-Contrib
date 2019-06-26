@@ -1,0 +1,8 @@
+Domain Entity Person
+    documentation "Defines all the individuals associated with an education organization."
+    shared string PersonId
+        documentation "A unique identifier assigned to a person."
+        is part of identity
+    descriptor PersonCategory
+        documentation "Indicates the type of person."
+        is part of identity

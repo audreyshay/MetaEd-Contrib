@@ -1,0 +1,14 @@
+Domain Entity GradeTypeDetail
+    documentation "This entity identifies additional information that is required to identify the grade type."
+    descriptor GradeType
+        documentation "The code used to represent the mark type."
+        is part of identity
+    domain entity School
+        documentation "Provide user information to lookup and link to an existing school record."
+        is part of identity
+    integer GradeTypeOrder
+        documentation "The order the mark type should appear in."
+        is optional
+    descriptor GradeTypeWhenTaken
+        documentation "Indicates when the mark is captured: once a year, once at each marking period, or once at each IPR run"
+        is optional

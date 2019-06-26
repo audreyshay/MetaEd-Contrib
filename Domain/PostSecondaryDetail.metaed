@@ -1,0 +1,7 @@
+Domain PostSecondaryDetail
+    documentation "This domain identifies post secondary events."
+    domain entity PostSecondaryDetail
+    domain entity PostSecondaryInstitution
+    domain entity Student
+    domain entity School
+    common Institution

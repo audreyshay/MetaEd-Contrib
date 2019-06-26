@@ -1,0 +1,2 @@
+Descriptor FerpaOptOut
+    documentation "Defines the codes that identify the type of opt out for FERPA."

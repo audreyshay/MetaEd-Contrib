@@ -1,0 +1,44 @@
+Association StudentSpecialEducationProgramAssociation additions
+    descriptor DiplomaCertificateCategory
+        documentation "Indicates whether student is working towards a diploma or certificate."
+        is optional
+    bool SpecialEducationFundingCountException
+        documentation "Indicates whether student is not counted for December 1."
+        is optional
+    bool DSTPAccommodation
+        documentation "Indicates whether student receives special education DSTP accomodation."
+        is optional
+    bool EligbleNotReceivingService
+        documentation "Indicates if student is eligible for special education, but is not receiving services."
+        is optional
+    bool EvaluatedNoDisability
+        documentation "Indicates if student was evaluated for special education disability, but has no disability."
+        is optional
+    descriptor FundingNeedsCategory
+        documentation "Indicates the category of the funding need."
+        is optional
+    date InitialConsentToEvaluateDate
+        documentation "Indicates the date when the initail consent was given to evaluate."
+        is optional
+    date InitialEvaluationDate
+        documentation "Indicates the date of the initial evaluation."
+        is optional
+    date LastSpecialistEvaluationDate
+        documentation "Indicates the last date a specialist evelauation was done."
+        is optional
+    shared decimal PercentOutOfRegularClass
+        documentation "Indicates the percentage of time spent out of regular class."
+        is optional
+    date PPPSISPInitiationDate
+        documentation "Indicates the initiation date for PPPS ISp."
+        is optional
+    date PPPSMeetingDate
+        documentation "Indicates the PPPS meeeting date."
+        is optional
+    descriptor ServiceStatus
+        documentation "Indicates the special education service status."
+        is optional
+    domain entity School
+        documentation "Identifies the non-public facility code."
+        is optional
+        with context Private

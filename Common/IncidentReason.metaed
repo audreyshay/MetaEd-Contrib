@@ -1,0 +1,12 @@
+Common IncidentReason
+    documentation "This is documentation."
+    descriptor IncidentRelatedTo
+        documentation "Indicates the category the incident is related to."
+        is part of identity
+    shared string ChangeUID
+        documentation "Identifies the person who last changed the table row."
+        is optional
+        with context IncidentRelatedTo
+    datetime IncidentRelatedToLastModifiedDate
+        documentation "The date and time the table row was last changed."
+        is required

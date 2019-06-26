@@ -1,0 +1,29 @@
+Association StudentEarlyChildhoodProgramAssociation based on GeneralStudentProgramAssociation
+    documentation "This association represents the early childhood program(S) that a student participates in or receives services from."
+    shared string AverageDaysPerWeek
+        documentation "Indicates the average days per week student participates in the early childhood program."
+        is optional
+    shared string AverageHoursPerDay
+        documentation "Indicates the average hours per day student participates in the early childhood program."
+        is optional
+    bool OtherEarlyChildhoodProgram
+        documentation "Indicates if student participates in other early childhood program."
+        is optional
+    bool HomeBased
+        documentation "Indicates if student is home based."
+        is optional
+    bool Regulation619DeterminedEligible
+        documentation "Indicates if the student is determined eligible for regulation 619."
+        is optional
+    date Regulation619PartCReferralDate
+        documentation "Indicates the date student was referred to Part C for regulation 619."
+        is optional
+    date Regulation619ReferralDate
+        documentation "Indicates the date student was referred to regulation 619."
+        is optional
+    date Regulation619TransitionConferenceDate
+        documentation "Indicates the transition conference date for student for regulation 619."
+        is optional
+    descriptor ProgramCharacteristic
+          documentation "Indicates whether program is full year."
+          is optional

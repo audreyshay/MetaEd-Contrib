@@ -1,0 +1,8 @@
+Common StaffProvidingRestraint
+    documentation "This represents the staff that provided the restraint."
+    domain entity Staff
+        documentation "Relates the staff providing the restaint."
+        is part of identity
+    bool TrainedActionTechnique
+        documentation "Indicates if the staff providing restraint utilized a trained action technique."
+        is optional
