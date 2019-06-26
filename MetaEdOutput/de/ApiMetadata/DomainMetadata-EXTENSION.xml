@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AggregateExtensions logicalSchema="De" schema="de">
+  <Aggregate root="APExamCodeDescriptor">
+    <Entity table="APExamCodeDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="AcceptanceStatusDescriptor">
+    <Entity table="AcceptanceStatusDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="AllegedBullyingVictim">
+    <Entity table="AllegedBullyingVictim" schema="de"/>
+    <Entity table="AllegedBullyingVictimBullyingCategory" schema="de"/>
+  </Aggregate>
+  <Aggregate root="AttendanceConfigurationCategoryDescriptor">
+    <Entity table="AttendanceConfigurationCategoryDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="BullyingCategoryDescriptor">
+    <Entity table="BullyingCategoryDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="CIPCourse">
+    <Entity table="CIPCourse" schema="de"/>
+  </Aggregate>
+  <Aggregate root="CertificateCategoryDescriptor">
+    <Entity table="CertificateCategoryDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="CertificationDescriptor">
+    <Entity table="CertificationDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="ChoiceCategoryDescriptor">
+    <Entity table="ChoiceCategoryDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="CoreSubjectDescriptor">
+    <Entity table="CoreSubjectDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="CycleDescriptor">
+    <Entity table="CycleDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="DiplomaCertificateCategoryDescriptor">
+    <Entity table="DiplomaCertificateCategoryDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="DisciplineDispositionDescriptor">
+    <Entity table="DisciplineDispositionDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="DisciplineIncidentCode">
+    <Entity table="DisciplineIncidentCode" schema="de"/>
+  </Aggregate>
+  <Aggregate root="EnrollmentTypeDescriptor">
+    <Entity table="EnrollmentTypeDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="FerpaOptOutDescriptor">
+    <Entity table="FerpaOptOutDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="FollowupCategoryDescriptor">
+    <Entity table="FollowupCategoryDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="FundingNeedsCategoryDescriptor">
+    <Entity table="FundingNeedsCategoryDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="GradeTypeDetail">
+    <Entity table="GradeTypeDetail" schema="de"/>
+  </Aggregate>
+  <Aggregate root="GradeTypeWhenTakenDescriptor">
+    <Entity table="GradeTypeWhenTakenDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="ImmunizationCodeDescriptor">
+    <Entity table="ImmunizationCodeDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="IncidentRelatedToDescriptor">
+    <Entity table="IncidentRelatedToDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="InjuryDescriptor">
+    <Entity table="InjuryDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="LevelDetail">
+    <Entity table="LevelDetail" schema="de"/>
+  </Aggregate>
+  <Aggregate root="MedicalAlert">
+    <Entity table="MedicalAlert" schema="de"/>
+  </Aggregate>
+  <Aggregate root="MedicalAlertCategoryDescriptor">
+    <Entity table="MedicalAlertCategoryDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="MedicalDispositionDescriptor">
+    <Entity table="MedicalDispositionDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="MedicalOfficeVisit">
+    <Entity table="MedicalOfficeVisit" schema="de"/>
+    <Entity table="MedicalOfficeVisitContactType" schema="de"/>
+    <Entity table="MedicalOfficeVisitMedicalDisposition" schema="de"/>
+    <Entity table="MedicalOfficeVisitMedicalTreatmentCode" schema="de"/>
+    <Entity table="MedicalOfficeVisitMedicalVisitReason" schema="de"/>
+  </Aggregate>
+  <Aggregate root="MedicalReferralFollowUp">
+    <Entity table="MedicalReferralFollowUp" schema="de"/>
+  </Aggregate>
+  <Aggregate root="MedicalScreening">
+    <Entity table="MedicalScreening" schema="de"/>
+  </Aggregate>
+  <Aggregate root="MedicalTestCategoryDescriptor">
+    <Entity table="MedicalTestCategoryDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="MedicalTreatmentCodeDescriptor">
+    <Entity table="MedicalTreatmentCodeDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="MedicalVisitReasonDescriptor">
+    <Entity table="MedicalVisitReasonDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="MedicationBox">
+    <Entity table="MedicationBox" schema="de"/>
+  </Aggregate>
+  <Aggregate root="NonStudent">
+    <Entity table="NonStudent" schema="de"/>
+    <Entity table="NonStudentEthnicity" schema="de"/>
+    <Entity table="NonStudentPersonalIdentificationDocument" schema="de"/>
+  </Aggregate>
+  <Aggregate root="NotificationMethodDescriptor">
+    <Entity table="NotificationMethodDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="ParticipationCodeDescriptor">
+    <Entity table="ParticipationCodeDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="Person">
+    <Entity table="Person" schema="de"/>
+  </Aggregate>
+  <Aggregate root="PersonCategoryDescriptor">
+    <Entity table="PersonCategoryDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="PersonDisciplineAction">
+    <Entity table="PersonDisciplineAction" schema="de"/>
+    <Entity table="PersonDisciplineActionDiscipline" schema="de" isRequiredCollection="true"/>
+    <Entity table="PersonDisciplineActionDisciplineDisposition" schema="de"/>
+  </Aggregate>
+  <Aggregate root="PersonDisciplineIncidentAssociation">
+    <Entity table="PersonDisciplineIncidentAssociation" schema="de"/>
+    <Entity table="PersonDisciplineIncidentAssociationOffenderBehavior" schema="de"/>
+    <Entity table="PersonDisciplineIncidentAssociationVictimInjury" schema="de"/>
+  </Aggregate>
+  <Aggregate root="PersonImmunization">
+    <Entity table="PersonImmunization" schema="de"/>
+  </Aggregate>
+  <Aggregate root="PersonMedicalAlert">
+    <Entity table="PersonMedicalAlert" schema="de"/>
+  </Aggregate>
+  <Aggregate root="PersonMedicationBoxAssociation">
+    <Entity table="PersonMedicationBoxAssociation" schema="de"/>
+    <Entity table="PersonMedicationBoxAssociationIssue" schema="de"/>
+  </Aggregate>
+  <Aggregate root="PostSecondaryDetail">
+    <Entity table="PostSecondaryDetail" schema="de"/>
+    <Entity table="PostSecondaryDetailInstitution" schema="de"/>
+  </Aggregate>
+  <Aggregate root="ReasonNotApplied4PlusCollegeDescriptor">
+    <Entity table="ReasonNotApplied4PlusCollegeDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="ReferralDescriptor">
+    <Entity table="ReferralDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="RestraintEventCategoryDescriptor">
+    <Entity table="RestraintEventCategoryDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="RestraintSeclusion">
+    <Entity table="RestraintSeclusion" schema="de"/>
+    <Entity table="RestraintSeclusionStaffProvidingRestraint" schema="de" isRequiredCollection="true"/>
+  </Aggregate>
+  <Aggregate root="ServiceStatusDescriptor">
+    <Entity table="ServiceStatusDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="StaffRoleDescriptor">
+    <Entity table="StaffRoleDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="Student504ProgramAssociation">
+    <Entity table="Student504ProgramAssociation" isA="GeneralStudentProgramAssociation" schema="de"/>
+  </Aggregate>
+  <Aggregate root="StudentEarlyChildhoodProgramAssociation">
+    <Entity table="StudentEarlyChildhoodProgramAssociation" isA="GeneralStudentProgramAssociation" schema="de"/>
+  </Aggregate>
+  <Aggregate root="StudentSectionClassPeriodAttendanceEvent">
+    <Entity table="StudentSectionClassPeriodAttendanceEvent" schema="de"/>
+  </Aggregate>
+  <Aggregate root="StudentTransportation">
+    <Entity table="StudentTransportation" schema="de"/>
+  </Aggregate>
+  <Aggregate root="SupportPlanChangeDescriptor">
+    <Entity table="SupportPlanChangeDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="TravelDayOfWeekDescriptor">
+    <Entity table="TravelDayOfWeekDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="TravelDirectionDescriptor">
+    <Entity table="TravelDirectionDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="TreatmentDescriptor">
+    <Entity table="TreatmentDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <Aggregate root="VictimCategoryDescriptor">
+    <Entity table="VictimCategoryDescriptor" isA="Descriptor" schema="de"/>
+  </Aggregate>
+  <AggregateExtension root="ClassPeriod">
+    <Entity table="ClassPeriodCycle" schema="de"/>
+  </AggregateExtension>
+  <AggregateExtension root="DisciplineIncident">
+    <Entity table="DisciplineIncidentReason" schema="de"/>
+    <Entity table="DisciplineIncidentReferral" schema="de"/>
+  </AggregateExtension>
+  <AggregateExtension root="Section">
+    <Entity table="SectionMarkingPeriod" schema="de"/>
+    <Entity table="SectionSubjectArea" schema="de"/>
+  </AggregateExtension>
+  <AggregateExtension root="StudentEducationOrganizationAssociation">
+    <Entity table="StudentEducationOrganizationAssociationEthnicity" schema="de"/>
+    <Entity table="StudentEducationOrganizationAssociationMultiliteracy" schema="de"/>
+    <Entity table="StudentEducationOrganizationAssociationScholarship" schema="de"/>
+  </AggregateExtension>
+  <AggregateExtension root="StudentEducationOrganizationResponsibilityAssociation">
+    <Entity table="StudentEducationOrganizationResponsibilityAssociationTransfer" schema="de"/>
+  </AggregateExtension>
+  <AggregateExtension root="StudentLanguageInstructionProgramAssociation">
+    <Entity table="StudentLanguageInstructionProgramAssociationLanguageImmersion" schema="de"/>
+  </AggregateExtension>
+</AggregateExtensions>
