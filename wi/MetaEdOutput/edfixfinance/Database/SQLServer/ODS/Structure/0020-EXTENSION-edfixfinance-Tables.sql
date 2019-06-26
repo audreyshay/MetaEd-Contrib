@@ -84,6 +84,7 @@ CREATE TABLE [edfixfinance].[ChartOfAccountReportingTag] (
     [EducationOrganizationId] [INT] NOT NULL,
     [FiscalYear] [SMALLINT] NOT NULL,
     [ReportingTagDescriptorId] [INT] NOT NULL,
+    [TagValue] [NVARCHAR](100) NULL,
     [CreateDate] [DATETIME] NOT NULL,
     CONSTRAINT [ChartOfAccountReportingTag_PK] PRIMARY KEY CLUSTERED (
         [AccountIdentifier] ASC,
@@ -187,6 +188,8 @@ CREATE TABLE [edfixfinance].[LocalAccount] (
     [EducationOrganizationId] [INT] NOT NULL,
     [FiscalYear] [SMALLINT] NOT NULL,
     [AccountName] [NVARCHAR](100) NULL,
+    [ChartOfAccountIdentifier] [NVARCHAR](50) NOT NULL,
+    [ChartOfAccountEducationOrganizationId] [INT] NOT NULL,
     [Discriminator] [NVARCHAR](128) NULL,
     [CreateDate] [DATETIME] NOT NULL,
     [LastModifiedDate] [DATETIME] NOT NULL,
@@ -211,6 +214,7 @@ CREATE TABLE [edfixfinance].[LocalAccountReportingTag] (
     [EducationOrganizationId] [INT] NOT NULL,
     [FiscalYear] [SMALLINT] NOT NULL,
     [ReportingTagDescriptorId] [INT] NOT NULL,
+    [TagValue] [NVARCHAR](100) NULL,
     [CreateDate] [DATETIME] NOT NULL,
     CONSTRAINT [LocalAccountReportingTag_PK] PRIMARY KEY CLUSTERED (
         [AccountIdentifier] ASC,

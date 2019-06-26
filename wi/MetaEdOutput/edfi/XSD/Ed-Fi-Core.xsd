@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- (c)2018 Ed-Fi Alliance, LLC. All Rights Reserved. -->
+<!-- (c)2019 Ed-Fi Alliance, LLC. All Rights Reserved. -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0310" xmlns:ann="http://ed-fi.org/annotation" targetNamespace="http://ed-fi.org/0310" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xs:import namespace="http://ed-fi.org/annotation" schemaLocation="SchemaAnnotation.xsd" />
   <xs:annotation>
@@ -410,7 +410,7 @@
               <xs:documentation>Relates the AssessmentItem to an existing assessment.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="AsessmentItemURI" type="URI" minOccurs="0">
+          <xs:element name="AssessmentItemURI" type="URI" minOccurs="0">
             <xs:annotation>
               <xs:documentation>The URI (typical a URL) pointing to the entry in an assessment item bank, which describes this content item.</xs:documentation>
             </xs:annotation>
@@ -1032,6 +1032,22 @@
           <xs:element name="CourseReference" type="CourseReferenceType">
             <xs:annotation>
               <xs:documentation>The course being offered by the school.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CourseLevelCharacteristic" type="CourseLevelCharacteristicDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The type of specific program or designation with which the course offering is associated (e.g., AP, IB, Dual Credit, CTE). This collection should only be populated if it differs from the Course Level Characteristics identified at the Course level.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>CourseLevelCharacteristicDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="OfferedGradeLevel" type="GradeLevelDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The grade levels in which the course is offered. This collection should only be populated if it differs from the Offered Grade Levels identified at the Course level.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>GradeLevelDescriptor</ann:Descriptor>
+              </xs:appinfo>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -2238,7 +2254,7 @@
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
-          <xs:element name="AcademicSubject" type="AcademicSubjectDescriptorReferenceType">
+          <xs:element name="AcademicSubject" type="AcademicSubjectDescriptorReferenceType" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>Subject area for the LearningStandard.</xs:documentation>
               <xs:appinfo>
@@ -3135,6 +3151,22 @@
           <xs:element name="ProgramReference" type="ProgramReferenceType" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>Optional reference to program (e.g., CTE) to which the Section is associated.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="CourseLevelCharacteristic" type="CourseLevelCharacteristicDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The type of specific program or designation with which the section is associated (e.g., AP, IB, Dual Credit, CTE). This collection should only be populated if it differs from the Course Level Characteristics identified at the Course Offering level.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>CourseLevelCharacteristicDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="OfferedGradeLevel" type="GradeLevelDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The grade levels in which the section is offered. This collection should only be populated if it differs from the Offered Grade Levels identified at the Course Offering level.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>GradeLevelDescriptor</ann:Descriptor>
+              </xs:appinfo>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -5071,6 +5103,17 @@
   <xs:complexType name="LimitedEnglishProficiencyDescriptor">
     <xs:annotation>
       <xs:documentation>This descriptor defines the indications that the student has been identified as limited English proficient by the Language Proficiency Assessment Committee (LPAC), or English proficient. The mapping of descriptor values to known Ed-Fi enumeration values is required.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LocaleDescriptor">
+    <xs:annotation>
+      <xs:documentation>A general geographic indicator that categorizes U.S. territory (e.g., City, Suburban).</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Descriptor</ann:TypeGroup>
       </xs:appinfo>
@@ -13004,6 +13047,15 @@
     </xs:annotation>
     <xs:restriction base="DescriptorReferenceType" />
   </xs:simpleType>
+  <xs:simpleType name="LocaleDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>A general geographic indicator that categorizes U.S. territory (e.g., City, Suburban).</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
   <xs:simpleType name="LocalEducationAgencyCategoryDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>The category of local education agency/district. For example: Independent or Charter.</xs:documentation>
@@ -13869,6 +13921,19 @@
       <xs:element name="DoNotPublishIndicator" type="xs:boolean" minOccurs="0">
         <xs:annotation>
           <xs:documentation>An indication that the address should not be published.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CongressionalDistrict" type="CongressionalDistrict" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The congressional district in which an address is located.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Locale" type="LocaleDescriptorReferenceType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>A general geographic indicator that categorizes U.S. territory (e.g., City, Suburban).</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>LocaleDescriptor</ann:Descriptor>
+          </xs:appinfo>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -16629,7 +16694,7 @@
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:minLength value="1" />
-      <xs:maxLength value="20" />
+      <xs:maxLength value="60" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="CodeValue">
@@ -16666,6 +16731,18 @@
     <xs:restriction base="xs:string">
       <xs:minLength value="1" />
       <xs:maxLength value="20" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CongressionalDistrict">
+    <xs:annotation>
+      <xs:documentation>The congressional district in which an address is located.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="30" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="ContactRestrictions">
@@ -16942,18 +17019,6 @@
     <xs:restriction base="xs:string">
       <xs:minLength value="1" />
       <xs:maxLength value="20" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="DisplacementStatus">
-    <xs:annotation>
-      <xs:documentation>Indicates a state health or weather related event that displaces a group of students, and may require additional funding, educational, or social services.</xs:documentation>
-      <xs:appinfo>
-        <ann:TypeGroup>Simple</ann:TypeGroup>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1" />
-      <xs:maxLength value="30" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="DocumentTitle">

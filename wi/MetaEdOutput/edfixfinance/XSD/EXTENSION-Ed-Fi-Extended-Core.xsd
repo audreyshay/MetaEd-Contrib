@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- (c)2018 Ed-Fi Alliance, LLC. All Rights Reserved. -->
+<!-- (c)2019 Ed-Fi Alliance, LLC. All Rights Reserved. -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0310" xmlns:ann="http://ed-fi.org/annotation" targetNamespace="http://ed-fi.org/0310" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xs:include schemaLocation="Ed-Fi-Core.xsd" />
   <xs:annotation>
@@ -123,12 +123,9 @@
               <xs:documentation>References the SourceDimension with which the ChartOfAccount is associated.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ReportingTag" type="EXTENSION-ReportingTagDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="ReportingTag" type="EXTENSION-ReportingTag" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>Optional tag for accountability reporting (e.g. ESSA).</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>EXTENSION-ReportingTagDescriptor</ann:Descriptor>
-              </xs:appinfo>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -244,12 +241,9 @@
               <xs:documentation>References the ChartOfAccount with which the LocalAccount is associated.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="ReportingTag" type="EXTENSION-ReportingTagDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="ReportingTag" type="EXTENSION-ReportingTag" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>Optional tag for accountability reporting (e.g. ESSA).</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>EXTENSION-ReportingTagDescriptor</ann:Descriptor>
-              </xs:appinfo>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -1068,6 +1062,29 @@
   <xs:annotation>
     <xs:documentation>===== Common Types =====</xs:documentation>
   </xs:annotation>
+  <xs:complexType name="EXTENSION-ReportingTag">
+    <xs:annotation>
+      <xs:documentation>ReportingTag</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="TagValue" type="EXTENSION-TagValue" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>TagValue</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportingTag" type="EXTENSION-ReportingTagDescriptorReferenceType">
+        <xs:annotation>
+          <xs:documentation>ReportinTag Descriptor</xs:documentation>
+          <xs:appinfo>
+            <ann:Descriptor>EXTENSION-ReportingTagDescriptor</ann:Descriptor>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
   <xs:annotation>
     <xs:documentation>===== Enumerations and Enumerated Collections =====</xs:documentation>
   </xs:annotation>
@@ -1089,6 +1106,18 @@
   <xs:simpleType name="EXTENSION-CodeName">
     <xs:annotation>
       <xs:documentation>Descriptive name for chart of account dimension.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="100" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EXTENSION-TagValue">
+    <xs:annotation>
+      <xs:documentation>Descriptive name for Tag Value.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Simple</ann:TypeGroup>
       </xs:appinfo>

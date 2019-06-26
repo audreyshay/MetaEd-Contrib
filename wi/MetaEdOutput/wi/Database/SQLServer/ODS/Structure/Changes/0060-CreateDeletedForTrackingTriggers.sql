@@ -70,6 +70,24 @@ ALTER TABLE [wi].[CteProgramAreaDescriptor] ENABLE TRIGGER [wi_CteProgramAreaDes
 GO
 
 
+CREATE TRIGGER [wi].[wi_EnrollmentTypeDescriptor_TR_DeleteTracking] ON [wi].[EnrollmentTypeDescriptor] AFTER DELETE AS
+BEGIN
+    IF @@rowcount = 0 
+        RETURN
+
+    SET NOCOUNT ON
+
+    INSERT INTO [changes].[wi_EnrollmentTypeDescriptor_TrackedDelete](EnrollmentTypeDescriptorId, Id, ChangeVersion)
+    SELECT  d.EnrollmentTypeDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    FROM    deleted d
+            INNER JOIN edfi.Descriptor b ON d.EnrollmentTypeDescriptorId = b.DescriptorId
+END
+GO
+
+ALTER TABLE [wi].[EnrollmentTypeDescriptor] ENABLE TRIGGER [wi_EnrollmentTypeDescriptor_TR_DeleteTracking]
+GO
+
+
 CREATE TRIGGER [wi].[wi_IacCodeDescriptor_TR_DeleteTracking] ON [wi].[IacCodeDescriptor] AFTER DELETE AS
 BEGIN
     IF @@rowcount = 0 

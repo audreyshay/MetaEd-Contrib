@@ -16,6 +16,20 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'CountDateReceivingServiceDescriptor', @level2type=N'COLUMN', @level2name=N'CountDateReceivingServiceDescriptorId'
 GO
 
+-- Extended Properties [wi].[CourseOfferingCareerPathway] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The career cluster or pathway representing the career path of the Vocational/Career Tech concentrator.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'CourseOfferingCareerPathway'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The career cluster or pathway representing the career path of the Vocational/Career Tech concentrator.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'CourseOfferingCareerPathway', @level2type=N'COLUMN', @level2name=N'CareerPathwayDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The local code assigned by the School that identifies the course offering provided for the instruction of students.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'CourseOfferingCareerPathway', @level2type=N'COLUMN', @level2name=N'LocalCourseCode'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'CourseOfferingCareerPathway', @level2type=N'COLUMN', @level2name=N'SchoolId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the school year.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'CourseOfferingCareerPathway', @level2type=N'COLUMN', @level2name=N'SchoolYear'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'CourseOfferingCareerPathway', @level2type=N'COLUMN', @level2name=N'SessionName'
+GO
+
 -- Extended Properties [wi].[CteProgramAreaDescriptor] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Wisconsin CTE program areas.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'CteProgramAreaDescriptor'
 GO
@@ -34,6 +48,40 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Identifies if the duration of the expulsion has been modified from the federally required one year of expulsion for a fire arms incident.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'DisciplineActionExtension', @level2type=N'COLUMN', @level2name=N'ModifiedTermDescriptorId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Following an expulsion, the student had early reinstatement condition to return to school prior to the end of the expulsion.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'DisciplineActionExtension', @level2type=N'COLUMN', @level2name=N'EarlyReinstatementCondition'
+GO
+
+-- Extended Properties [wi].[EnrollmentTypeDescriptor] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The enrollment type.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'EnrollmentTypeDescriptor'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'EnrollmentTypeDescriptor', @level2type=N'COLUMN', @level2name=N'EnrollmentTypeDescriptorId'
+GO
+
+-- Extended Properties [wi].[GradeExtension] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GradeExtension'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Month, day, and year of the Student''s entry or assignment to the Section.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GradeExtension', @level2type=N'COLUMN', @level2name=N'BeginDate'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The type of grade reported (e.g., Exam, Final, Grading Period).', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GradeExtension', @level2type=N'COLUMN', @level2name=N'GradeTypeDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The name of the period for which grades are reported.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GradeExtension', @level2type=N'COLUMN', @level2name=N'GradingPeriodDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the grading period school year.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GradeExtension', @level2type=N'COLUMN', @level2name=N'GradingPeriodSchoolYear'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The sequential order of this period relative to other periods.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GradeExtension', @level2type=N'COLUMN', @level2name=N'GradingPeriodSequence'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The local code assigned by the School that identifies the course offering provided for the instruction of students.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GradeExtension', @level2type=N'COLUMN', @level2name=N'LocalCourseCode'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GradeExtension', @level2type=N'COLUMN', @level2name=N'SchoolId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the school year.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GradeExtension', @level2type=N'COLUMN', @level2name=N'SchoolYear'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The local identifier assigned to a section.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GradeExtension', @level2type=N'COLUMN', @level2name=N'SectionIdentifier'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GradeExtension', @level2type=N'COLUMN', @level2name=N'SessionName'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GradeExtension', @level2type=N'COLUMN', @level2name=N'StudentUSI'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Indicator of Certificated Program Status', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GradeExtension', @level2type=N'COLUMN', @level2name=N'CertificatedProgramStatusDescriptorId'
 GO
 
 -- Extended Properties [wi].[IacCodeDescriptor] --
@@ -91,8 +139,6 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Indicator of C
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Indicator of StateEndorsedRegionalCareerPathwayStatus', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentCTEProgramAssociationExtension', @level2type=N'COLUMN', @level2name=N'StateEndorsedRegionalCareerPathwayStatusDescriptorId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'IacCode of concentration.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentCTEProgramAssociationExtension', @level2type=N'COLUMN', @level2name=N'CTEConcentrationIacCodeDescriptorId'
-GO
 
 -- Extended Properties [wi].[StudentDisciplineIncidentAssociationExtension] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentDisciplineIncidentAssociationExtension'
@@ -114,6 +160,18 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentEducationOrganizationAssociationExtension', @level2type=N'COLUMN', @level2name=N'StudentUSI'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a local education agency.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentEducationOrganizationAssociationExtension', @level2type=N'COLUMN', @level2name=N'ResidentLocalEducationAgencyId'
+GO
+
+-- Extended Properties [wi].[StudentSchoolAssociationEnrollmentType] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentSchoolAssociationEnrollmentType'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentSchoolAssociationEnrollmentType', @level2type=N'COLUMN', @level2name=N'EnrollmentTypeDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month, day, and year on which an individual enters and begins to receive instructional services in a school.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentSchoolAssociationEnrollmentType', @level2type=N'COLUMN', @level2name=N'EntryDate'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentSchoolAssociationEnrollmentType', @level2type=N'COLUMN', @level2name=N'SchoolId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentSchoolAssociationEnrollmentType', @level2type=N'COLUMN', @level2name=N'StudentUSI'
 GO
 
 -- Extended Properties [wi].[StudentSchoolAssociationExtension] --

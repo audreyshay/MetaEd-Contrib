@@ -12,6 +12,9 @@
   <Aggregate root="CteProgramAreaDescriptor">
     <Entity table="CteProgramAreaDescriptor" isA="Descriptor" schema="wi"/>
   </Aggregate>
+  <Aggregate root="EnrollmentTypeDescriptor">
+    <Entity table="EnrollmentTypeDescriptor" isA="Descriptor" schema="wi"/>
+  </Aggregate>
   <Aggregate root="IacCodeDescriptor">
     <Entity table="IacCodeDescriptor" isA="Descriptor" schema="wi"/>
   </Aggregate>
@@ -21,10 +24,14 @@
   <Aggregate root="StateEndorsedRegionalCareerPathwayStatusDescriptor">
     <Entity table="StateEndorsedRegionalCareerPathwayStatusDescriptor" isA="Descriptor" schema="wi"/>
   </Aggregate>
+  <AggregateExtension root="CourseOffering">
+    <Entity table="CourseOfferingCareerPathway" schema="wi"/>
+  </AggregateExtension>
   <AggregateExtension root="StudentCTEProgramAssociation">
     <Entity table="StudentCTEProgramAssociationCTEConcentrationCteProgramArea" schema="wi"/>
   </AggregateExtension>
   <AggregateExtension root="StudentSchoolAssociation">
+    <Entity table="StudentSchoolAssociationEnrollmentType" schema="wi"/>
     <Entity table="StudentSchoolAssociationReceivingService" schema="wi"/>
   </AggregateExtension>
 </AggregateExtensions>

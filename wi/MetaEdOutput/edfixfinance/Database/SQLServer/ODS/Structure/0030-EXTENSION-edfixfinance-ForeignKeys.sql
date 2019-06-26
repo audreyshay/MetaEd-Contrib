@@ -156,8 +156,12 @@ CREATE NONCLUSTERED INDEX [FK_FundDimensionReportingTag_ReportingTagDescriptor]
 ON [edfixfinance].[FundDimensionReportingTag] ([ReportingTagDescriptorId] ASC)
 GO
 
-ALTER TABLE [edfixfinance].[LocalAccount] WITH CHECK ADD CONSTRAINT [FK_LocalAccount_ChartOfAccount] FOREIGN KEY ([AccountIdentifier], [EducationOrganizationId], [FiscalYear])
+ALTER TABLE [edfixfinance].[LocalAccount] WITH CHECK ADD CONSTRAINT [FK_LocalAccount_ChartOfAccount] FOREIGN KEY ([ChartOfAccountIdentifier], [ChartOfAccountEducationOrganizationId], [FiscalYear])
 REFERENCES [edfixfinance].[ChartOfAccount] ([AccountIdentifier], [EducationOrganizationId], [FiscalYear])
+GO
+
+CREATE NONCLUSTERED INDEX [FK_LocalAccount_ChartOfAccount]
+ON [edfixfinance].[LocalAccount] ([ChartOfAccountIdentifier] ASC, [ChartOfAccountEducationOrganizationId] ASC, [FiscalYear] ASC)
 GO
 
 ALTER TABLE [edfixfinance].[LocalAccount] WITH CHECK ADD CONSTRAINT [FK_LocalAccount_EducationOrganization] FOREIGN KEY ([EducationOrganizationId])

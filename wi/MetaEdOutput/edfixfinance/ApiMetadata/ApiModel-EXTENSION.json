@@ -505,6 +505,19 @@
           "description": "",
           "isIdentifying": false,
           "isServerAssigned": false
+        },
+        {
+          "propertyName": "TagValue",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 100,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "TagValue",
+          "isIdentifying": false,
+          "isServerAssigned": false
         }
       ],
       "identifiers": [
@@ -821,6 +834,19 @@
       "name": "LocalAccount",
       "locallyDefinedProperties": [
         {
+          "propertyName": "AccountIdentifier",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 50,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Code value for the valid combination of account dimensions by LEA under which financials are reported. ",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
           "propertyName": "AccountName",
           "propertyType": {
             "dbType": "String",
@@ -923,6 +949,19 @@
             "isNullable": false
           },
           "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "TagValue",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 100,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "TagValue",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -2823,7 +2862,7 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "Optional tag for accountability reporting (e.g. ESSA).",
+          "description": "ReportinTag Descriptor",
           "isIdentifying": true,
           "isServerAssigned": false
         }
@@ -3123,7 +3162,7 @@
         "schema": "edfixfinance",
         "name": "FK_LocalAccount_ChartOfAccount"
       },
-      "cardinality": "OneToOne",
+      "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
         "schema": "edfixfinance",
         "name": "ChartOfAccount"
@@ -3139,7 +3178,7 @@
             "isNullable": false
           },
           "description": "SEA populated Code value for the valid combination of account dimensions under which financials are reported.",
-          "isIdentifying": true,
+          "isIdentifying": false,
           "isServerAssigned": false
         },
         {
@@ -3152,7 +3191,7 @@
             "isNullable": false
           },
           "description": "The identifier assigned to an education organization.",
-          "isIdentifying": true,
+          "isIdentifying": false,
           "isServerAssigned": false
         },
         {
@@ -3165,7 +3204,7 @@
             "isNullable": false
           },
           "description": "Fiscal year for the account",
-          "isIdentifying": true,
+          "isIdentifying": false,
           "isServerAssigned": false
         }
       ],
@@ -3175,7 +3214,7 @@
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "AccountIdentifier",
+          "propertyName": "ChartOfAccountIdentifier",
           "propertyType": {
             "dbType": "String",
             "maxLength": 50,
@@ -3183,12 +3222,12 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "Code value for the valid combination of account dimensions by LEA under which financials are reported. ",
-          "isIdentifying": true,
+          "description": "SEA populated Code value for the valid combination of account dimensions under which financials are reported.",
+          "isIdentifying": false,
           "isServerAssigned": false
         },
         {
-          "propertyName": "EducationOrganizationId",
+          "propertyName": "ChartOfAccountEducationOrganizationId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -3197,7 +3236,7 @@
             "isNullable": false
           },
           "description": "The identifier assigned to an education organization.",
-          "isIdentifying": true,
+          "isIdentifying": false,
           "isServerAssigned": false
         },
         {
@@ -3210,11 +3249,11 @@
             "isNullable": false
           },
           "description": "Fiscal year for the account",
-          "isIdentifying": true,
+          "isIdentifying": false,
           "isServerAssigned": false
         }
       ],
-      "isIdentifying": true,
+      "isIdentifying": false,
       "isRequired": true
     },
     {
@@ -3402,7 +3441,7 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "Optional tag for accountability reporting (e.g. ESSA).",
+          "description": "ReportinTag Descriptor",
           "isIdentifying": true,
           "isServerAssigned": false
         }

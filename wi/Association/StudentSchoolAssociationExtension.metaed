@@ -29,3 +29,6 @@ Association StudentSchoolAssociation additions
   common ReceivingService
     documentation "The status of a student during a specific count date"
     is optional collection
+  descriptor EnrollmentType
+      documentation ""
+      is optional collection

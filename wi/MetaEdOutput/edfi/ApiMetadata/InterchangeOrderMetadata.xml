@@ -20,6 +20,7 @@
     <Element name="ParticipationDescriptor" />
     <Element name="OtherNameTypeDescriptor" />
     <Element name="MonitoredDescriptor" />
+    <Element name="LocaleDescriptor" />
     <Element name="LanguageUseDescriptor" />
     <Element name="InterventionEffectivenessRatingDescriptor" />
     <Element name="InstitutionTelephoneNumberTypeDescriptor" />

@@ -63,7 +63,9 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Fiscal year for the account', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccountReportingTag', @level2type=N'COLUMN', @level2name=N'FiscalYear'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Optional tag for accountability reporting (e.g. ESSA).', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccountReportingTag', @level2type=N'COLUMN', @level2name=N'ReportingTagDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ReportinTag Descriptor', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccountReportingTag', @level2type=N'COLUMN', @level2name=N'ReportingTagDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'TagValue', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'ChartOfAccountReportingTag', @level2type=N'COLUMN', @level2name=N'TagValue'
 GO
 
 -- Extended Properties [edfixfinance].[FinancialCollectionDescriptor] --
@@ -123,6 +125,10 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Fiscal year fo
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A descriptive name for the account', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'LocalAccount', @level2type=N'COLUMN', @level2name=N'AccountName'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'SEA populated Code value for the valid combination of account dimensions under which financials are reported.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'LocalAccount', @level2type=N'COLUMN', @level2name=N'ChartOfAccountIdentifier'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'LocalAccount', @level2type=N'COLUMN', @level2name=N'ChartOfAccountEducationOrganizationId'
+GO
 
 -- Extended Properties [edfixfinance].[LocalAccountReportingTag] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Optional tag for accountability reporting (e.g. ESSA).', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'LocalAccountReportingTag'
@@ -133,7 +139,9 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Fiscal year for the account', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'LocalAccountReportingTag', @level2type=N'COLUMN', @level2name=N'FiscalYear'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Optional tag for accountability reporting (e.g. ESSA).', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'LocalAccountReportingTag', @level2type=N'COLUMN', @level2name=N'ReportingTagDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ReportinTag Descriptor', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'LocalAccountReportingTag', @level2type=N'COLUMN', @level2name=N'ReportingTagDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'TagValue', @level0type=N'SCHEMA', @level0name=N'edfixfinance', @level1type=N'TABLE', @level1name=N'LocalAccountReportingTag', @level2type=N'COLUMN', @level2name=N'TagValue'
 GO
 
 -- Extended Properties [edfixfinance].[LocalActual] --

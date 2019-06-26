@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- (c)2018 Ed-Fi Alliance, LLC. All Rights Reserved. -->
+<!-- (c)2019 Ed-Fi Alliance, LLC. All Rights Reserved. -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0310" xmlns:ann="http://ed-fi.org/annotation" targetNamespace="http://ed-fi.org/0310" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xs:include schemaLocation="Ed-Fi-Core.xsd" />
   <xs:annotation>
@@ -8,6 +8,28 @@
   <xs:annotation>
     <xs:documentation>===== Domain Entities =====</xs:documentation>
   </xs:annotation>
+  <xs:complexType name="EXTENSION-CourseOfferingExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="CourseOffering">
+        <xs:sequence>
+          <xs:element name="CareerPathway" type="CareerPathwayDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The career cluster or pathway representing the career path of the Vocational/Career Tech concentrator.</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>CareerPathwayDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="EXTENSION-DisciplineActionExtension">
     <xs:annotation>
       <xs:documentation></xs:documentation>
@@ -29,6 +51,28 @@
           <xs:element name="EarlyReinstatementCondition" type="xs:boolean" minOccurs="0">
             <xs:annotation>
               <xs:documentation>Following an expulsion, the student had early reinstatement condition to return to school prior to the end of the expulsion.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-GradeExtension">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Grade">
+        <xs:sequence>
+          <xs:element name="CertificatedProgramStatus" type="EXTENSION-CertificatedProgramStatusDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Indicator of Certificated Program Status</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-CertificatedProgramStatusDescriptor</ann:Descriptor>
+              </xs:appinfo>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -74,6 +118,17 @@
   <xs:complexType name="EXTENSION-CteProgramAreaDescriptor">
     <xs:annotation>
       <xs:documentation>Wisconsin CTE program areas.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Descriptor</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DescriptorType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-EnrollmentTypeDescriptor">
+    <xs:annotation>
+      <xs:documentation>The enrollment type.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Descriptor</ann:TypeGroup>
       </xs:appinfo>
@@ -141,14 +196,6 @@
               <xs:documentation>Indicator of StateEndorsedRegionalCareerPathwayStatus</xs:documentation>
               <xs:appinfo>
                 <ann:Descriptor>EXTENSION-StateEndorsedRegionalCareerPathwayStatusDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="CTEConcentrationIacCode" type="EXTENSION-IacCodeDescriptorReferenceType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>IacCode of concentration.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>EXTENSION-IacCodeDescriptor</ann:Descriptor>
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
@@ -252,6 +299,14 @@
               <xs:documentation>The status of a student during a specific count date</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="EnrollmentType" type="EXTENSION-EnrollmentTypeDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation></xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>EXTENSION-EnrollmentTypeDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -317,6 +372,15 @@
     </xs:annotation>
     <xs:restriction base="DescriptorReferenceType" />
   </xs:simpleType>
+  <xs:simpleType name="EXTENSION-EnrollmentTypeDescriptorReferenceType">
+    <xs:annotation>
+      <xs:documentation>The enrollment type.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Descriptor Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="DescriptorReferenceType" />
+  </xs:simpleType>
   <xs:simpleType name="EXTENSION-IacCodeDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>IAC - subset of federal CIP codes used in Wisconsin CTE programs.</xs:documentation>
@@ -357,14 +421,6 @@
     <xs:complexContent>
       <xs:extension base="CTEProgram">
         <xs:sequence>
-          <xs:element name="IacCode" type="EXTENSION-IacCodeDescriptorReferenceType" minOccurs="0">
-            <xs:annotation>
-              <xs:documentation>IacCode of concentration.</xs:documentation>
-              <xs:appinfo>
-                <ann:Descriptor>EXTENSION-IacCodeDescriptor</ann:Descriptor>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:element>
           <xs:element name="CteProgramArea" type="EXTENSION-CteProgramAreaDescriptorReferenceType" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>WI Program areas of concentration.</xs:documentation>

@@ -56,6 +56,18 @@
     {
       "aggregateRootEntityName": {
         "schema": "wi",
+        "name": "EnrollmentTypeDescriptor"
+      },
+      "aggregateEntityNames": [
+        {
+          "schema": "wi",
+          "name": "EnrollmentTypeDescriptor"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "wi",
         "name": "IacCodeDescriptor"
       },
       "aggregateEntityNames": [
@@ -94,6 +106,18 @@
     {
       "aggregateRootEntityName": {
         "schema": "edfi",
+        "name": "CourseOffering"
+      },
+      "extensionEntityNames": [
+        {
+          "schema": "wi",
+          "name": "CourseOfferingCareerPathway"
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "edfi",
         "name": "StudentCTEProgramAssociation"
       },
       "extensionEntityNames": [
@@ -109,6 +133,10 @@
         "name": "StudentSchoolAssociation"
       },
       "extensionEntityNames": [
+        {
+          "schema": "wi",
+          "name": "StudentSchoolAssociationEnrollmentType"
+        },
         {
           "schema": "wi",
           "name": "StudentSchoolAssociationReceivingService"
@@ -170,6 +198,41 @@
     },
     {
       "schema": "wi",
+      "name": "CourseOfferingCareerPathway",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "CourseOfferingCareerPathway_PK",
+          "identifyingPropertyNames": [
+            "CareerPathwayDescriptorId",
+            "LocalCourseCode",
+            "SchoolId",
+            "SchoolYear",
+            "SessionName"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "The career cluster or pathway representing the career path of the Vocational/Career Tech concentrator."
+    },
+    {
+      "schema": "wi",
       "name": "CteProgramAreaDescriptor",
       "locallyDefinedProperties": [],
       "identifiers": [
@@ -222,6 +285,64 @@
           "identifyingPropertyNames": [
             "DisciplineActionIdentifier",
             "DisciplineDate",
+            "StudentUSI"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": ""
+    },
+    {
+      "schema": "wi",
+      "name": "EnrollmentTypeDescriptor",
+      "locallyDefinedProperties": [],
+      "identifiers": [
+        {
+          "identifierName": "EnrollmentTypeDescriptor_PK",
+          "identifyingPropertyNames": [
+            "EnrollmentTypeDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "The enrollment type."
+    },
+    {
+      "schema": "wi",
+      "name": "GradeExtension",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "GradeExtension_PK",
+          "identifyingPropertyNames": [
+            "BeginDate",
+            "GradeTypeDescriptorId",
+            "GradingPeriodDescriptorId",
+            "GradingPeriodSchoolYear",
+            "GradingPeriodSequence",
+            "LocalCourseCode",
+            "SchoolId",
+            "SchoolYear",
+            "SectionIdentifier",
+            "SessionName",
             "StudentUSI"
           ],
           "isPrimary": true,
@@ -424,6 +545,40 @@
           "identifierName": "StudentEducationOrganizationAssociationExtension_PK",
           "identifyingPropertyNames": [
             "EducationOrganizationId",
+            "StudentUSI"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": ""
+    },
+    {
+      "schema": "wi",
+      "name": "StudentSchoolAssociationEnrollmentType",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "StudentSchoolAssociationEnrollmentType_PK",
+          "identifyingPropertyNames": [
+            "EnrollmentTypeDescriptorId",
+            "EntryDate",
+            "SchoolId",
             "StudentUSI"
           ],
           "isPrimary": true,
@@ -747,6 +902,178 @@
     {
       "fullName": {
         "schema": "wi",
+        "name": "FK_CourseOfferingCareerPathway_CareerPathwayDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "CareerPathwayDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "CareerPathwayDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "wi",
+        "name": "CourseOfferingCareerPathway"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "CareerPathwayDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The career cluster or pathway representing the career path of the Vocational/Career Tech concentrator.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "wi",
+        "name": "FK_CourseOfferingCareerPathway_CourseOffering"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "CourseOffering"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "LocalCourseCode",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The local code assigned by the School that identifies the course offering provided for the instruction of students.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SchoolId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a school.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SchoolYear",
+          "propertyType": {
+            "dbType": "Int16",
+            "maxLength": 0,
+            "precision": 5,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier for the school year.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SessionName",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "wi",
+        "name": "CourseOfferingCareerPathway"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "LocalCourseCode",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The local code assigned by the School that identifies the course offering provided for the instruction of students.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SchoolId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a school.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SchoolYear",
+          "propertyType": {
+            "dbType": "Int16",
+            "maxLength": 0,
+            "precision": 5,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier for the school year.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SessionName",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "wi",
         "name": "FK_CteProgramAreaDescriptor_Descriptor"
       },
       "cardinality": "OneToOneInheritance",
@@ -936,6 +1263,407 @@
       ],
       "isIdentifying": false,
       "isRequired": false
+    },
+    {
+      "fullName": {
+        "schema": "wi",
+        "name": "FK_EnrollmentTypeDescriptor_Descriptor"
+      },
+      "cardinality": "OneToOneInheritance",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Descriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "DescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "wi",
+        "name": "EnrollmentTypeDescriptor"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "EnrollmentTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": true
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "wi",
+        "name": "FK_GradeExtension_CertificatedProgramStatusDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "wi",
+        "name": "CertificatedProgramStatusDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "CertificatedProgramStatusDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "wi",
+        "name": "GradeExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "CertificatedProgramStatusDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "Indicator of Certificated Program Status",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": false,
+      "isRequired": false
+    },
+    {
+      "fullName": {
+        "schema": "wi",
+        "name": "FK_GradeExtension_Grade"
+      },
+      "cardinality": "OneToOneExtension",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "Grade"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "BeginDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Month, day, and year of the Student's entry or assignment to the Section.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "GradeTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The type of grade reported (e.g., Exam, Final, Grading Period).",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "GradingPeriodDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The name of the period for which grades are reported.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "GradingPeriodSchoolYear",
+          "propertyType": {
+            "dbType": "Int16",
+            "maxLength": 0,
+            "precision": 5,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier for the grading period school year.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "GradingPeriodSequence",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The sequential order of this period relative to other periods.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "LocalCourseCode",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The local code assigned by the School that identifies the course offering provided for the instruction of students.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SchoolId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a school.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SchoolYear",
+          "propertyType": {
+            "dbType": "Int16",
+            "maxLength": 0,
+            "precision": 5,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier for the school year.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SectionIdentifier",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 255,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The local identifier assigned to a section.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SessionName",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "wi",
+        "name": "GradeExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "BeginDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Month, day, and year of the Student's entry or assignment to the Section.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "GradeTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The type of grade reported (e.g., Exam, Final, Grading Period).",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "GradingPeriodDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The name of the period for which grades are reported.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "GradingPeriodSchoolYear",
+          "propertyType": {
+            "dbType": "Int16",
+            "maxLength": 0,
+            "precision": 5,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier for the grading period school year.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "GradingPeriodSequence",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The sequential order of this period relative to other periods.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "LocalCourseCode",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The local code assigned by the School that identifies the course offering provided for the instruction of students.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SchoolId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a school.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SchoolYear",
+          "propertyType": {
+            "dbType": "Int16",
+            "maxLength": 0,
+            "precision": 5,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier for the school year.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SectionIdentifier",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 255,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The local identifier assigned to a section.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SessionName",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
     },
     {
       "fullName": {
@@ -1342,53 +2070,6 @@
             "isNullable": true
           },
           "description": "Indicator of Certificated Program Status",
-          "isIdentifying": false,
-          "isServerAssigned": false
-        }
-      ],
-      "isIdentifying": false,
-      "isRequired": false
-    },
-    {
-      "fullName": {
-        "schema": "wi",
-        "name": "FK_StudentCTEProgramAssociationExtension_IacCodeDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "wi",
-        "name": "IacCodeDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "IacCodeDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": false,
-          "isServerAssigned": false
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "wi",
-        "name": "StudentCTEProgramAssociationExtension"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "CTEConcentrationIacCodeDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": true
-          },
-          "description": "IacCode of concentration.",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -1819,6 +2500,152 @@
             "isNullable": false
           },
           "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "wi",
+        "name": "FK_StudentSchoolAssociationEnrollmentType_EnrollmentTypeDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "wi",
+        "name": "EnrollmentTypeDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "EnrollmentTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "wi",
+        "name": "StudentSchoolAssociationEnrollmentType"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "EnrollmentTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "wi",
+        "name": "FK_StudentSchoolAssociationEnrollmentType_StudentSchoolAssociation"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "StudentSchoolAssociation"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "EntryDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The month, day, and year on which an individual enters and begins to receive instructional services in a school.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SchoolId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a school.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "wi",
+        "name": "StudentSchoolAssociationEnrollmentType"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "EntryDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The month, day, and year on which an individual enters and begins to receive instructional services in a school.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "SchoolId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to a school.",
           "isIdentifying": true,
           "isServerAssigned": false
         },

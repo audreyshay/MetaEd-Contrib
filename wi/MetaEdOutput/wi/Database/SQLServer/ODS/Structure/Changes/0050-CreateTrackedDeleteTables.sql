@@ -30,6 +30,14 @@ CREATE TABLE [changes].[wi_CteProgramAreaDescriptor_TrackedDelete]
        CONSTRAINT PK_wi_CteProgramAreaDescriptor_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
+CREATE TABLE [changes].[wi_EnrollmentTypeDescriptor_TrackedDelete]
+(
+       EnrollmentTypeDescriptorId [INT] NOT NULL,
+       Id uniqueidentifier NOT NULL,
+       ChangeVersion bigint NOT NULL,
+       CONSTRAINT PK_wi_EnrollmentTypeDescriptor_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+)
+
 CREATE TABLE [changes].[wi_IacCodeDescriptor_TrackedDelete]
 (
        IacCodeDescriptorId [INT] NOT NULL,

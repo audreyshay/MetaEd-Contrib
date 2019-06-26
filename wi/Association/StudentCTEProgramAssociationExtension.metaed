@@ -15,10 +15,6 @@ Association StudentCTEProgramAssociation additions
   //  documentation "The career cluster representing the career path of the Vocational/Career Tech concentrator."
   //  is optional collection
 
-    descriptor IacCode
-      documentation "IacCode of concentration."
-      is optional
-      with context CTEConcentration
     descriptor CteProgramArea
       documentation "WI Program areas of concentration."
       is optional collection

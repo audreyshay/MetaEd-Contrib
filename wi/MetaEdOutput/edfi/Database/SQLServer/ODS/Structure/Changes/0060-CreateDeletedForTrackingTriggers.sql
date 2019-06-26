@@ -2335,6 +2335,24 @@ ALTER TABLE [edfi].[LocalEducationAgency] ENABLE TRIGGER [edfi_LocalEducationAge
 GO
 
 
+CREATE TRIGGER [edfi].[edfi_LocaleDescriptor_TR_DeleteTracking] ON [edfi].[LocaleDescriptor] AFTER DELETE AS
+BEGIN
+    IF @@rowcount = 0 
+        RETURN
+
+    SET NOCOUNT ON
+
+    INSERT INTO [changes].[edfi_LocaleDescriptor_TrackedDelete](LocaleDescriptorId, Id, ChangeVersion)
+    SELECT  d.LocaleDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
+    FROM    deleted d
+            INNER JOIN edfi.Descriptor b ON d.LocaleDescriptorId = b.DescriptorId
+END
+GO
+
+ALTER TABLE [edfi].[LocaleDescriptor] ENABLE TRIGGER [edfi_LocaleDescriptor_TR_DeleteTracking]
+GO
+
+
 CREATE TRIGGER [edfi].[edfi_Location_TR_DeleteTracking] ON [edfi].[Location] AFTER DELETE AS
 BEGIN
     IF @@rowcount = 0 

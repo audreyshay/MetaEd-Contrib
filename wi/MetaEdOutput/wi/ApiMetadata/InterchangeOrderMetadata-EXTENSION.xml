@@ -9,6 +9,7 @@
     <Element name="StateEndorsedRegionalCareerPathwayStatusDescriptor" />
     <Element name="ModifiedTermDescriptor" />
     <Element name="IacCodeDescriptor" />
+    <Element name="EnrollmentTypeDescriptor" />
     <Element name="CteProgramAreaDescriptor" />
     <Element name="CountDateReceivingServiceDescriptor" />
     <Element name="CountDateNameDescriptor" />
@@ -85,6 +86,7 @@
     <Element name="MediumOfInstructionDescriptor" />
     <Element name="MagnetSpecialProgramEmphasisSchoolDescriptor" />
     <Element name="LocalEducationAgencyCategoryDescriptor" />
+    <Element name="LocaleDescriptor" />
     <Element name="LimitedEnglishProficiencyDescriptor" />
     <Element name="LicenseTypeDescriptor" />
     <Element name="LicenseStatusDescriptor" />
@@ -173,6 +175,9 @@
     <Element name="AcademicHonorCategoryDescriptor" />
     <Element name="AbsenceEventCategoryDescriptor" />
   </Interchange>
+  <Interchange name="Student" order="20">
+    <Element name="Student" />
+  </Interchange>
   <Interchange name="StudentProgram" order="20">
     <Element name="StudentSchoolFoodServiceProgramAssociation" />
     <Element name="StudentTitleIPartAProgramAssociation" />
@@ -185,28 +190,30 @@
     <Element name="StudentSpecialEducationProgramAssociation" />
     <Element name="StudentMigrantEducationProgramAssociation" />
   </Interchange>
-  <Interchange name="Student" order="20">
-    <Element name="Student" />
-  </Interchange>
-  <Interchange name="StudentEnrollment" order="30">
-    <Element name="StudentEducationOrganizationResponsibilityAssociation" />
-    <Element name="StudentEducationOrganizationAssociation" />
-    <Element name="GraduationPlan" />
-    <Element name="StudentSchoolAssociation" />
-    <Element name="StudentSectionAssociation" />
+  <Interchange name="StudentDiscipline" order="30">
+    <Element name="DisciplineIncident" />
+    <Element name="StudentDisciplineIncidentAssociation" />
+    <Element name="DisciplineAction" />
   </Interchange>
   <Interchange name="Standards" order="30">
     <Element name="LearningStandard" />
     <Element name="LearningObjective" />
   </Interchange>
-  <Interchange name="StudentDiscipline" order="40">
-    <Element name="DisciplineIncident" />
-    <Element name="StudentDisciplineIncidentAssociation" />
-    <Element name="DisciplineAction" />
-  </Interchange>
   <Interchange name="Parent" order="40">
     <Element name="Parent" />
     <Element name="StudentParentAssociation" />
+  </Interchange>
+  <Interchange name="MasterSchedule" order="40">
+    <Element name="BellSchedule" />
+    <Element name="CourseOffering" />
+    <Element name="Section" />
+  </Interchange>
+  <Interchange name="StudentEnrollment" order="50">
+    <Element name="StudentEducationOrganizationResponsibilityAssociation" />
+    <Element name="StudentEducationOrganizationAssociation" />
+    <Element name="GraduationPlan" />
+    <Element name="StudentSchoolAssociation" />
+    <Element name="StudentSectionAssociation" />
   </Interchange>
   <Interchange name="EducationOrganization" order="50">
     <Element name="PostSecondaryInstitution" />
@@ -227,6 +234,14 @@
     <Element name="Program" />
     <Element name="Course" />
   </Interchange>
+  <Interchange name="StudentGrade" order="60">
+    <Element name="CompetencyObjective" />
+    <Element name="StudentCompetencyObjective" />
+    <Element name="Grade" />
+    <Element name="LearningObjective" />
+    <Element name="StudentLearningObjective" />
+    <Element name="ReportCard" />
+  </Interchange>
   <Interchange name="PostSecondaryEvent" order="70">
     <Element name="PostSecondaryEvent" />
   </Interchange>
@@ -236,19 +251,6 @@
     <Element name="CalendarDate" />
     <Element name="GradingPeriod" />
     <Element name="Session" />
-  </Interchange>
-  <Interchange name="MasterSchedule" order="90">
-    <Element name="BellSchedule" />
-    <Element name="CourseOffering" />
-    <Element name="Section" />
-  </Interchange>
-  <Interchange name="StudentGrade" order="110">
-    <Element name="CompetencyObjective" />
-    <Element name="LearningObjective" />
-    <Element name="StudentLearningObjective" />
-    <Element name="StudentCompetencyObjective" />
-    <Element name="Grade" />
-    <Element name="ReportCard" />
   </Interchange>
   <Interchange name="StudentTranscript" order="120">
     <Element name="StudentAcademicRecord" />
