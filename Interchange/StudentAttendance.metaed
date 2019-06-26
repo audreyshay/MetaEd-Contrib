@@ -1,0 +1,2 @@
+Interchange StudentAttendance additions
+    domain entity StudentSectionClassPeriodAttendanceEvent

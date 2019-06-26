@@ -1,0 +1,3 @@
+Interchange StudentTransportation
+    documentation "This interchange defines the mode of transportation students use to travel to and from school."
+    domain entity StudentTransportation

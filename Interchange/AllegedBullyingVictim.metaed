@@ -1,0 +1,3 @@
+Interchange AllegedBullyingVictim
+    documentation "This interchange identifies alleged bullying victims."
+    domain entity AllegedBullyingVictim

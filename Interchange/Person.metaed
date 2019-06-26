@@ -1,0 +1,4 @@
+Interchange Person
+    documentation "This interchange identifies a person, who can be a student, staff or nonstudent."
+    use case documentation "This is primarily used to capture discipline and medical information."
+    domain entity Person
