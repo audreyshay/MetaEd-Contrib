@@ -1,0 +1,4 @@
+Shared String ShuttleStop
+    documentation "This represents the shuttle stop for students using the bus as a mode of transportion."
+    min length 1
+    max length 6

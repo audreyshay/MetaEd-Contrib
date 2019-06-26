@@ -1,0 +1,4 @@
+Shared String NonStudentLocalId
+    documentation "This is the local identifier for non-students."
+    min length 1
+    max length 60

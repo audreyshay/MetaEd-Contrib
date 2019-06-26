@@ -1,0 +1,4 @@
+Shared String Comment
+    documentation "Indicates the comment."
+    min length 1
+    max length 1024

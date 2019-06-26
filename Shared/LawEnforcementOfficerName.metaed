@@ -1,0 +1,4 @@
+Shared String LawEnforcementOfficerName
+    documentation "Name of officer who responded to the complaint."
+    min length 1
+    max length 100

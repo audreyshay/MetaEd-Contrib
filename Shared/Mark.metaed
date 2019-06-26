@@ -1,0 +1,4 @@
+Shared String Mark
+    documentation "Indicates the mark that can be achieved."
+    min length 1
+    max length 3
