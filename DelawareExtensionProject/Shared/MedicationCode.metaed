@@ -1,4 +1,0 @@
-Shared String MedicationCode
-    documentation "This represents the code for the medication."
-    min length 1
-    max length 10

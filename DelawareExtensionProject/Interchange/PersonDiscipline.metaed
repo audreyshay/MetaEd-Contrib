@@ -1,4 +1,0 @@
-Interchange StudentDiscipline additions
-    domain entity PersonDisciplineAction
-    domain entity DisciplineIncidentCode
-    association PersonDisciplineIncidentAssociation

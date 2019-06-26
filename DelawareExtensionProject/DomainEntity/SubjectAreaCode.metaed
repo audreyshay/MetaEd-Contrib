@@ -1,8 +1,0 @@
-Domain Entity SubjectAreaCode
-    documentation "This identifies additional attributes required for the academic subject."
-    descriptor AcademicSubject
-        documentation "The description of the content of the subject area."
-        is part of identity
-    shared string PerfPlusCode
-        documentation "Exact subject area code used in PerformancePLUS."
-        is optional

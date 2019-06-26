@@ -1,4 +1,0 @@
-Shared String Detail
-    documentation "Provides detail information."
-    min length 1
-    max length 255

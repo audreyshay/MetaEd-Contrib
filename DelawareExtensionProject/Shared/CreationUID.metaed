@@ -1,4 +1,0 @@
-Shared String CreationUID
-    documentation "Indicates the person who created the table row."
-    min length 1
-    max length 20

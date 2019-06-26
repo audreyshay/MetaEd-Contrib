@@ -1,4 +1,0 @@
-Domain TeachingAndLearning
-    documentation "This domain represents the additional detail required to capture the teaching and learning experience."
-    domain entity CIPCourse
-    domain entity SubjectAreaCode

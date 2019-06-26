@@ -1,4 +1,0 @@
-Shared String LawEnforcementDepartment
-    documentation "Indicates the police department to which the incident was reported."
-    min length 1
-    max length 255

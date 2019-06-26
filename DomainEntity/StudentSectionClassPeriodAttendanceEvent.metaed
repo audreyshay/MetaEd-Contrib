@@ -1,0 +1,14 @@
+Domain Entity StudentSectionClassPeriodAttendanceEvent
+    documentation "This event entity represents the recording of whether a student is in attendance for a section in a given Class Period."
+    inline common AttendanceEvent
+        documentation "Details of the AttendanceEvent."
+        is required
+    domain entity Student
+        documentation "Relates the Student associated with the AttendanceEvent."
+        is part of identity
+    domain entity Section
+        documentation "Relates the Section associated with the AttendanceEvent."
+        is part of identity
+    domain entity ClassPeriod
+    documentation "Relates the ClassPeriod associated with the AttendanceEvent."
+        is part of identity

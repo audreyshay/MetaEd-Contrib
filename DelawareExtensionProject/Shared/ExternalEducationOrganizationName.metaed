@@ -1,4 +1,0 @@
-Shared String ExternalEducationOrganizationName
-    documentation "This is documentation."
-    min length 1
-    max length 75

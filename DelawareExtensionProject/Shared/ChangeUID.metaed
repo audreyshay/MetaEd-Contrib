@@ -1,4 +1,0 @@
-Shared String ChangeUID
-    documentation "Indicates the person who last changed the table row."
-    min length 1
-    max length 20

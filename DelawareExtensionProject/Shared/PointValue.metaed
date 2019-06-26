@@ -1,4 +1,0 @@
-Shared Decimal PointValue
-    documentation "Indicates the point value for the mark."
-    total digits 7
-    decimal places 4

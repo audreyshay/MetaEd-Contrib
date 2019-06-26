@@ -1,8 +1,0 @@
-Domain Person
-    documentation "This domian represents the person."
-    domain entity Person
-    domain entity Staff
-    domain entity Student
-    domain entity NonStudent
-    domain entity LocalEducationAgency
-    domain entity School

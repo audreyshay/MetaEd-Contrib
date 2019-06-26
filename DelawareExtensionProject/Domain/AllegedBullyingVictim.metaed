@@ -1,5 +1,0 @@
-Domain AllegedBullyingVictim
-    documentation "This domain identifies the alleged bullying victim."
-    domain entity AllegedBullyingVictim
-    domain entity Student
-    domain entity SChool

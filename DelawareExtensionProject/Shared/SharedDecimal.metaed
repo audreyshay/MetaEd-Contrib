@@ -1,4 +1,0 @@
-Shared Decimal FractionOfYearOffered
-    documentation "The fraction of a year for the Coop or DO student (i.e. 1.0 for full year, .50 for half year)."
-    total digits 3
-    decimal places 2

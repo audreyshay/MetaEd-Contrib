@@ -1,4 +1,0 @@
-Shared String ReportedBy
-    documentation "Identifies the person who reported the incident."
-    min length 1
-    max length 50

@@ -1,7 +1,0 @@
-Domain Entity GradingPeriod additions
-    integer EndWeek
-        documentation "The end-week number for the marking period."
-        is optional
-    integer StartWeek
-        documentation "The start-week number for the marking period."
-        is optional

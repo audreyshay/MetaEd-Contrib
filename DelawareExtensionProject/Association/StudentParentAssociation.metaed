@@ -1,4 +1,0 @@
-Association StudentParentAssociation additions
-    descriptor ContactType
-        documentation "Indicates the type of contact it is for this student."
-        is optional

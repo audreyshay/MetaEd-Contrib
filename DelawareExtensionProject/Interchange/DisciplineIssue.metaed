@@ -1,7 +1,0 @@
-Interchange DisciplineIssue
-    documentation "This interchange defines discipline issues and the student, action and referral associated with the issue."
-    domain entity DisciplineIssue
-    domain entity DisciplineIssueRefer
-    domain entity DisciplineIssueAction
-    domain entity DisciplineIssueStudent
-    domain entity DisciplineIncident

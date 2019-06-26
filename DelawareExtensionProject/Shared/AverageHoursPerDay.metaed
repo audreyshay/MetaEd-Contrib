@@ -1,4 +1,0 @@
-Shared String AverageHoursPerDay
-    documentation "Indicates the average hours per day."
-    min length 1
-    max length 2

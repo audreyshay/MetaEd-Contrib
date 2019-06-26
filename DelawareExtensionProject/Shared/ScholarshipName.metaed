@@ -1,4 +1,0 @@
-Shared String ScholarshipName
-    documentation "Indicates the name of the scholarship."
-    min length 1
-    max length 60

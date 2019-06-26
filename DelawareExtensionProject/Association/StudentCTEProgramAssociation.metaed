@@ -1,4 +1,0 @@
-Association StudentCTEProgramAssociation additions
-    common extension CTEProgram
-        documentation "The career cluster representing the career path of the Vocational/Career Tech concentrator."
-        is optional collection

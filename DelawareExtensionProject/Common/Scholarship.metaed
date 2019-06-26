@@ -1,8 +1,0 @@
-Common Scholarship
-    documentation "Indicates the scholarship information for students receiving scholarships."
-    shared string ScholarshipName
-        documentation "The name of the scholarship."
-        is part of identity
-    integer ScholarshipAmount
-        documentation "The amount received for the scholarship"
-        is part of identity

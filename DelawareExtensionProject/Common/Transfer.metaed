@@ -1,8 +1,0 @@
-Common Transfer
-    documentation "The information associated with a student transfer."
-    shared string ExternalEducationOrganizationName
-        documentation "Indicates the name of the education organization student transferred from."
-        is part of identity
-    descriptor GradeLevel
-        documentation "Indicates the GradeLevel when student transferred."
-        is optional

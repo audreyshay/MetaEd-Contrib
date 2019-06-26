@@ -1,5 +1,0 @@
-Association StaffProgramAssociation additions
-    descriptor Language
-        documentation "Indicates the language taught by the staff participating in the language immersion program."
-        is optional
-        with context Immersion

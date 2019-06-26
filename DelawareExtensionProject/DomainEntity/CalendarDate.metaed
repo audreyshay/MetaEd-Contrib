@@ -1,7 +1,0 @@
-Domain Entity CalendarDate additions
-    descriptor Cycle
-        documentation "Indicates the code for specifying the cycle day."
-        is optional
-    shared decimal MembershipDayValue
-        documentation "Indicates the value of membership for the day."
-        is optional
