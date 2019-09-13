@@ -1,0 +1,25 @@
+﻿CREATE TABLE [edfiV3].[EducationOrganizationAddress] (
+	[ApiSchoolYear]	   SMALLINT NOT NULL, 
+    [AddressTypeDescriptorId]       INT            NOT NULL,
+    [EducationOrganizationId]       INT            NOT NULL,
+    [StreetNumberName]              NVARCHAR (150) NOT NULL,
+    [ApartmentRoomSuiteNumber]      NVARCHAR (50)  NULL,
+    [BuildingSiteNumber]            NVARCHAR (20)  NULL,
+    [City]                          NVARCHAR (30)  NOT NULL,
+    [StateAbbreviationDescriptorId] INT            NOT NULL,
+    [PostalCode]                    NVARCHAR (17)  NOT NULL,
+    [NameOfCounty]                  NVARCHAR (30)  NULL,
+    [CountyFIPSCode]                NVARCHAR (5)   NULL,
+    [Latitude]                      NVARCHAR (20)  NULL,
+    [Longitude]                     NVARCHAR (20)  NULL,
+    [DoNotPublishIndicator]         BIT            NULL,
+    [CongressionalDistrict]         NVARCHAR (30)  NULL,
+    [LocaleDescriptorId]            INT            NULL,
+	[CreateDate]                    DATETIME2 (7)       NOT NULL,
+    CONSTRAINT [V3_EducationOrganizationAddress_PK] PRIMARY KEY CLUSTERED ([ApiSchoolYear] ASC, [EducationOrganizationId] ASC, [AddressTypeDescriptorId] ASC),
+    CONSTRAINT [V3_FK_EducationOrganizationAddress_AddressTypeDescriptor] FOREIGN KEY ([AddressTypeDescriptorId]) REFERENCES [edfiV3].[AddressTypeDescriptor] ([AddressTypeDescriptorId]),
+    CONSTRAINT [V3_FK_EducationOrganizationAddress_EducationOrganization] FOREIGN KEY ([ApiSchoolYear], [EducationOrganizationId]) REFERENCES [edfiV3].[EducationOrganization] ([ApiSchoolYear], [EducationOrganizationId]) ON DELETE CASCADE,
+    --CONSTRAINT [V3_FK_EducationOrganizationAddress_LocaleDescriptor] FOREIGN KEY ([LocaleDescriptorId]) REFERENCES [edfiV3].[LocaleDescriptor] ([LocaleDescriptorId]),
+	CONSTRAINT [V3_FK_EducationOrganizationAddress_StateAbbreviationDescriptor] FOREIGN KEY ([StateAbbreviationDescriptorId]) REFERENCES [edfiV3].[StateAbbreviationDescriptor] ([StateAbbreviationDescriptorId])
+);
+

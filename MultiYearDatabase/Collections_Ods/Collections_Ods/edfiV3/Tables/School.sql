@@ -1,0 +1,26 @@
+﻿CREATE TABLE [edfiV3].[School] (
+	[ApiSchoolYear]	   SMALLINT NOT NULL, 
+    [SchoolId]                                       INT      NOT NULL,
+    [SchoolTypeDescriptorId]                         INT      NULL,
+    [CharterStatusDescriptorId]                      INT      NULL,
+    [TitleIPartASchoolDesignationDescriptorId]       INT      NULL,
+    [MagnetSpecialProgramEmphasisSchoolDescriptorId] INT      NULL,
+    [AdministrativeFundingControlDescriptorId]       INT      NULL,
+    [InternetAccessDescriptorId]                     INT      NULL,
+    [LocalEducationAgencyId]                         INT      NULL,
+    [CharterApprovalAgencyTypeDescriptorId]          INT      NULL,
+    [CharterApprovalSchoolYear]                      SMALLINT NULL,
+	[IsChoice] BIT  CONSTRAINT [V3_School_DF_IsChoice] DEFAULT (0) NOT NULL, 
+	CONSTRAINT [V3_School_PK] PRIMARY KEY CLUSTERED ([ApiSchoolYear] ASC, [SchoolId] ASC),
+    CONSTRAINT [V3_FK_School_AdministrativeFundingControlDescriptor] FOREIGN KEY ([AdministrativeFundingControlDescriptorId]) REFERENCES [edfiV3].[AdministrativeFundingControlDescriptor] ([AdministrativeFundingControlDescriptorId]),
+    CONSTRAINT [V3_FK_School_CharterApprovalAgencyTypeDescriptor] FOREIGN KEY ([CharterApprovalAgencyTypeDescriptorId]) REFERENCES [edfiV3].[CharterApprovalAgencyTypeDescriptor] ([CharterApprovalAgencyTypeDescriptorId]),
+    CONSTRAINT [V3_FK_School_CharterStatusDescriptor] FOREIGN KEY ([CharterStatusDescriptorId]) REFERENCES [edfiV3].[CharterStatusDescriptor] ([CharterStatusDescriptorId]),
+    CONSTRAINT [V3_FK_School_EducationOrganization] FOREIGN KEY ([ApiSchoolYear], [SchoolId]) REFERENCES [edfiV3].[EducationOrganization] ([ApiSchoolYear], [EducationOrganizationId]) ON DELETE CASCADE,
+    CONSTRAINT [V3_FK_School_InternetAccessDescriptor] FOREIGN KEY ([InternetAccessDescriptorId]) REFERENCES [edfiV3].[InternetAccessDescriptor] ([InternetAccessDescriptorId]),
+    CONSTRAINT [V3_FK_School_LocalEducationAgency] FOREIGN KEY ([ApiSchoolYear], [LocalEducationAgencyId]) REFERENCES [edfiV3].[LocalEducationAgency] ([ApiSchoolYear], [LocalEducationAgencyId]),
+    CONSTRAINT [V3_FK_School_MagnetSpecialProgramEmphasisSchoolDescriptor] FOREIGN KEY ([MagnetSpecialProgramEmphasisSchoolDescriptorId]) REFERENCES [edfiV3].[MagnetSpecialProgramEmphasisSchoolDescriptor] ([MagnetSpecialProgramEmphasisSchoolDescriptorId]),
+    CONSTRAINT [V3_FK_School_SchoolTypeDescriptor] FOREIGN KEY ([SchoolTypeDescriptorId]) REFERENCES [edfiV3].[SchoolTypeDescriptor] ([SchoolTypeDescriptorId]),
+    CONSTRAINT [V3_FK_School_SchoolYearType] FOREIGN KEY ([CharterApprovalSchoolYear]) REFERENCES [edfiV3].[SchoolYearType] ([SchoolYear]),
+    CONSTRAINT [V3_FK_School_TitleIPartASchoolDesignationDescriptor] FOREIGN KEY ([TitleIPartASchoolDesignationDescriptorId]) REFERENCES [edfiV3].[TitleIPartASchoolDesignationDescriptor] ([TitleIPartASchoolDesignationDescriptorId])
+);
+
