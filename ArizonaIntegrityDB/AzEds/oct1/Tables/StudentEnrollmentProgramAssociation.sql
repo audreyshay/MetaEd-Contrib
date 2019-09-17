@@ -1,0 +1,20 @@
+﻿   CREATE TABLE [oct1].[StudentEnrollmentProgramAssociation] (
+    [FiscalYear]                     INT           NOT NULL,
+	[StudentUSI]                     INT           NOT NULL,
+    [ProgramTypeId]                  INT           NOT NULL,
+    [ProgramName]                    NVARCHAR (60) NOT NULL,
+    [ProgramEducationOrganizationId] INT           NOT NULL,
+    [ProgramBeginDate]               DATE          NOT NULL,
+    [SchoolId]						 INT           NOT NULL,
+    [EnrollmentEntryDate]            DATE          NULL, 
+    [EnrollmentExitWithdrawDate]     DATE          NULL,
+    [EntryTypeDescriptorId]          INT           NULL,  
+    [ExitWithdrawTypeDescriptorId]   INT           NULL,
+    [TrackEducationOrganizationId]   INT           NULL,
+    [EntryGradeLevelDescriptorId]    INT           NULL,
+	[MembershipTypeDescriptorId]     INT           NULL,
+    [TrackNumber]                    INT           NULL,
+	[MainSPEDSchool]				 BIT 		   NULL,
+	[DOR]							 INT		   NULL,
+	[CreatedDate]					 DATETIME	   NOT NULL CONSTRAINT [StudentEnrollmentProgramAssociation_DF_CreatedDate]  DEFAULT (getutcdate())
+)

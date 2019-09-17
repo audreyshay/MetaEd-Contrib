@@ -1,0 +1,10 @@
+E:\TFS\AzEDS\Database\Main\AzEds\AzEds\bin\Debug\AzEds.dacpac
+E:\TFS\AzEDS\Database\Main\AzEds\AzEds\bin\Debug\AzEds.dll
+E:\TFS\AzEDS\Database\Main\AzEds\AzEds\bin\Debug\AzEds.pdb
+E:\TFS\AzEDS\Database\Main\AzEds\AzEds\obj\Debug\AzEds.sqlprojAssemblyReference.cache
+E:\TFS\AzEDS\Database\Main\AzEds\AzEds\obj\Debug\AzEds.dll
+E:\TFS\AzEDS\Database\Main\AzEds\AzEds\obj\Debug\AzEds.pdb
+E:\TFS\AzEDS\Database\Main\AzEds\AzEds\obj\Debug\Model.xml
+E:\TFS\AzEDS\Database\Main\AzEds\AzEds\obj\Debug\refactor.xml
+E:\TFS\AzEDS\Database\Main\AzEds\AzEds\obj\Debug\postdeploy.sql
+E:\TFS\AzEDS\Database\Main\AzEds\AzEds\obj\Debug\predeploy.sql

@@ -1,0 +1,2 @@
+﻿CREATE SCHEMA [oct1]
+    AUTHORIZATION [dbo];

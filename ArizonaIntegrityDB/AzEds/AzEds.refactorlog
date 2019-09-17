@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="4928d74c-1968-413b-8162-4fe7c4c15af3" ChangeDateTime="05/31/2015 20:04:02">
+    <Property Name="ElementName" Value="[leadata].[StudentSchoolAssociation].[ExitWithdrawReasonTypeId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[leadata].[StudentSchoolAssociation]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExitWithdrawReasonDescriptorId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ee16ebbc-5d8d-4de6-9d8f-0f4ea8e969d1" ChangeDateTime="06/11/2015 14:15:41">
+    <Property Name="ElementName" Value="[dbo].[FundingType].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[FundingType]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FundintTypeId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7ad93fe9-9b8f-4ef9-9f12-bc96c8d5a562" ChangeDateTime="06/11/2015 14:16:21">
+    <Property Name="ElementName" Value="[dbo].[FundingType].[FundintTypeId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[FundingType]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FundingTypeId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="629437b4-5bd2-4207-86af-b6d2c678e8a8" ChangeDateTime="06/11/2015 14:18:55">
+    <Property Name="ElementName" Value="[ace].[MembershipInterval].[NonFundableReasonTypeId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[ace].[MembershipInterval]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FundingTypeId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6d680444-39ad-4619-8535-bcd1050866c8" ChangeDateTime="06/11/2015 14:29:55">
+    <Property Name="ElementName" Value="[dbo].[IntegrityResultType].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[IntegrityResultType]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IntegrityResultTypeId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d7e82423-527e-4a8f-a157-fdb5a8e390d4" ChangeDateTime="06/11/2015 14:34:01">
+    <Property Name="ElementName" Value="[integrity].[IntegrityHistory].[IsIntegrityPassed]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[integrity].[IntegrityHistory]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IntegrityResultTypeId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="58285725-d3ba-4ef8-a1c9-2ebe662b1630" ChangeDateTime="06/11/2015 14:52:47">
+    <Property Name="ElementName" Value="[dbo].[RecordCountType].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RecordCountType]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RecordCountTypeId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1f541130-3e79-4159-92ce-3a3e45f771ca" ChangeDateTime="07/10/2015 00:19:36">
+    <Property Name="ElementName" Value="[process].[MessageLog].[SubmitedRecordCount]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[process].[MessageLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SubmittedRecordCount" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1a734617-8269-4b5d-b3fb-e338cd1bfb2a" ChangeDateTime="07/13/2015 21:09:08">
+    <Property Name="ElementName" Value="[process].[Execution].[Reference]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[process].[Execution]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ReferenceExecutionID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a723415f-0c2f-433f-9d74-182c67a75bf9" ChangeDateTime="06/23/2015 20:04:06">
+    <Property Name="ElementName" Value="[dbo].[SplitMergeData].[SplitMergeType]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SplitMergeData]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SplitMergeTypeId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a55ab6aa-cd37-4e03-ae61-86d21eae8ef7" ChangeDateTime="08/04/2015 00:10:19">
+    <Property Name="ElementName" Value="[integrity].[IntegrityNeed].[SchoolEntryDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[integrity].[IntegrityNeed]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="StudentSchoolEntryDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="197f945e-13b7-4500-a092-327fbe6d3333" ChangeDateTime="08/04/2015 00:11:13">
+    <Property Name="ElementName" Value="[integrity].[IntegrityNeed].[StudentSchoolEntryDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[integrity].[IntegrityNeed]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SchoolEntryDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c920fa1b-8575-47f5-9a0e-ea7ac16823fb" ChangeDateTime="08/27/2015 16:30:29">
+    <Property Name="ElementName" Value="[dbo].[ELLFunding].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ELLFunding]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FiscalYear" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ef593cc4-cb44-425f-a784-3d54447a1aec" ChangeDateTime="08/27/2015 16:32:21">
+    <Property Name="ElementName" Value="[dbo].[ELLFunding].[ServiceCdoeDescriptorId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ELLFunding]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ServiceCodeDescriptorId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="384434b6-7e55-42b3-9070-6663025b03ab" ChangeDateTime="08/27/2015 16:33:48">
+    <Property Name="ElementName" Value="[dbo].[SPEDNeedSupportLevelWeight].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SPEDNeedSupportLevelWeight]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FiscalYear" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8dd14190-38bc-46f1-960a-03c5de8b4638" ChangeDateTime="08/27/2015 16:53:07">
+    <Property Name="ElementName" Value="[dbo].[SPEDServiceCodeFundability].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SPEDServiceCodeFundability]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SPEDServiceCodeFundabilityId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c97af14c-3ba0-4f5c-89d2-eb6bf54afd64" ChangeDateTime="09/03/2015 20:44:47">
+    <Property Name="ElementName" Value="[ace].[MembershipInterval].[SpecialEnrollmentDescriptorId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[ace].[MembershipInterval]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProgramServiceDescriptorId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="51ce9ed0-d23f-44fc-b9ea-b99ea55237db" ChangeDateTime="10/07/2015 23:06:59">
+    <Property Name="ElementName" Value="[integrity].[IntegrityNeed].[IX_IntegrityNeed_Column]" />
+    <Property Name="ElementType" Value="SqlIndex" />
+    <Property Name="ParentElementName" Value="[integrity].[IntegrityNeed]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[IX_IntegrityNeed_StudentUSI_StudentUniqueId_SchoolId]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e227ad1c-de3c-43cc-bfc8-84835653a6ea" ChangeDateTime="10/06/2015 19:11:22">
+    <Property Name="ElementName" Value="[dashboard].[RecordCount].[EventDateTimeId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dashboard].[RecordCount]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EventDateTime" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="27a67ac4-35c2-4c5a-a05d-9a4f8be7c3e6" ChangeDateTime="10/07/2015 01:29:50">
+    <Property Name="ElementName" Value="[dashboard].[RecordCount].[EventDateTime]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dashboard].[RecordCount]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EventDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1406096e-ca10-44ef-8dfe-2a8088aa34c5" ChangeDateTime="01/12/2016 16:18:41">
+    <Property Name="ElementName" Value="[dbo].[Report].[      &lt;Report Id =&quot;TRANS10&quot; IsActive=&quot;true&quot;&gt;]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Report]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IsActive" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="968a23ba-f9ab-4e36-a1f0-c8f7e96e70c8" ChangeDateTime="01/12/2016 16:31:05">
+    <Property Name="ElementName" Value="[report].[Category].[ParentCatgoryID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[report].[Category]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ParentCatgoryId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9d60099d-a4c7-4e75-94c8-a10a59c2a7a7" ChangeDateTime="01/12/2016 18:05:21">
+    <Property Name="ElementName" Value="[report].[Permission].[Name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[report].[Permission]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ReportPermission" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0cb8847f-b850-412c-8709-0a330019452c" ChangeDateTime="01/12/2016 18:11:53">
+    <Property Name="ElementName" Value="[dbo].[CategorySubCategoryAssociation].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CategorySubCategoryAssociation]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CategoryId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bd7f2e0b-a3b0-4473-b549-2cb2e37a6cc8" ChangeDateTime="01/12/2016 18:41:13">
+    <Property Name="ElementName" Value="[dbo].[SubCategoryReportAssociation].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SubCategoryReportAssociation]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SubCategoryId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ba6d5768-f41e-4f5e-b50d-0199b1e3ad25" ChangeDateTime="01/12/2016 18:43:44">
+    <Property Name="ElementName" Value="[dbo].[ReportPermissionAssociation].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ReportPermissionAssociation]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ReportId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0d81d732-7229-4ec2-ba2f-f3f3cf79caf2" ChangeDateTime="01/12/2016 20:34:59">
+    <Property Name="ElementName" Value="[dbo].[AOIReportingPeriod].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[AOIReportingPeriod]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AOIReportingPeriodId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a63fb0c1-5f7a-4639-b862-2c8bd1ac3c28" ChangeDateTime="01/12/2016 20:35:35">
+    <Property Name="ElementName" Value="[dbo].[AOIReportingPeriod].[FiscalYearId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[AOIReportingPeriod]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FiscalYear" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="09f5ac1f-8fb7-4e2c-9029-5616b59beb17" ChangeDateTime="01/12/2016 20:44:22">
+    <Property Name="ElementName" Value="[dbo].[AOIReportingPeriod].[ReportingPeriodStartDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[AOIReportingPeriod]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="StartDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="033b554a-ce86-4164-bbf9-eef1d13fda28" ChangeDateTime="01/12/2016 20:44:27">
+    <Property Name="ElementName" Value="[dbo].[AOIReportingPeriod].[ReportingPeriodEndDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[AOIReportingPeriod]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EndDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="834da6b0-22f3-479c-9a8f-9fd6ea4f06c1" ChangeDateTime="04/19/2016 01:37:23">
+    <Property Name="ElementName" Value="[integrity].[FK_IntegrityRuleMapping_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[integrity].[IntegrityRuleMapping]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_IntegrityRuleMapping_ToTabl]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="40e3b8e6-a7fd-45a3-be5e-8ca8402a2d7f" ChangeDateTime="04/19/2016 18:12:58">
+    <Property Name="ElementName" Value="[integrity].[FK_IntegrityRuleMapping_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[integrity].[IntegrityRuleMapping]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_IntegrityRuleMapping_Resource]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6ad648af-73f2-4770-b669-29568de5b5ca" ChangeDateTime="08/17/2016 21:59:21">
+    <Property Name="ElementName" Value="[dashboard].[RecordCount].[SubmittedByLocalEducationAgencyId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dashboard].[RecordCount]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LocalEducationAgencyId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f6db3fc3-981f-4d8a-8223-9d0ac0efbdf1" ChangeDateTime="09/01/2016 15:26:41">
+    <Property Name="ElementName" Value="[dashboard].[FK_EventDate_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dashboard].[EventDate]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_EventDate_Execution]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d29d24a7-1130-4b25-919d-f6c51a6b58e4" ChangeDateTime="09/15/2016 17:45:18">
+    <Property Name="ElementName" Value="[dashboard].[AzEDSSubmissions].[LastModifiedDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dashboard].[AzEDSSubmissions]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CreateDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5be8e7c5-31a1-45f9-8746-544b62ef035a" ChangeDateTime="03/27/2017 22:00:40">
+    <Property Name="ElementName" Value="[entity].[CalendarDateCalendarEvent].[CalendarEventTypeId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[entity].[CalendarDateCalendarEvent]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TrackEventTypeId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1ca56d49-5772-4e38-9d9d-e5f6d7931209" ChangeDateTime="03/27/2017 22:02:07">
+    <Property Name="ElementName" Value="[entity].[CalendarDateCalendarEvent]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[entity]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[CalendarDateTrackEvent]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a7d2c89a-6632-4ecf-88ae-693317dd6061" ChangeDateTime="03/27/2017 22:23:13">
+    <Property Name="ElementName" Value="[entity].[CalendarDateCalendarEvent]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[entity]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[CalendarDateTrackEvent]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e70636fa-b54c-453c-9466-35c1c74f6bfc" ChangeDateTime="03/27/2017 22:23:35">
+    <Property Name="ElementName" Value="[entity].[CalendarDateTrackEvent].[CalendarEventTypeId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[entity].[CalendarDateTrackEvent]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[TrackEventTypeId]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6c75687a-ee0d-42d0-b065-0ac305f7410b" ChangeDateTime="03/27/2017 22:30:25">
+    <Property Name="ElementName" Value="[entity].[PK_CalendarDateCalendarEvent]" />
+    <Property Name="ElementType" Value="SqlPrimaryKeyConstraint" />
+    <Property Name="ParentElementName" Value="[entity].[CalendarDateTrackEvent]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[PK_CalendarDateTrackEvent]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bb4502f2-7f24-4342-9a24-447f9b24863d" ChangeDateTime="03/27/2017 22:31:06">
+    <Property Name="ElementName" Value="[entity].[FK_CalendarDateCalendarEvent_CalendarDate]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[entity].[CalendarDateTrackEvent]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_CalendarDateTrackEvent_CalendarDate]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8eded01b-3c58-4df7-9b6b-623f145a0871" ChangeDateTime="03/27/2017 22:31:28">
+    <Property Name="ElementName" Value="[entity].[FK_CalendarDateEventDate_Track]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[entity].[CalendarDateTrackEvent]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_CalendarDateTrackEvent_Track]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6f64a06f-6167-4d41-910c-190202515de4" ChangeDateTime="03/28/2017 22:27:17">
+    <Property Name="ElementName" Value="[entity].[CalendarEventType]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[entity]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[TrackEventType]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8dbcefcd-1c2e-4583-b3b3-2d33a9874fc2" ChangeDateTime="03/28/2017 22:29:02">
+    <Property Name="ElementName" Value="[entity].[TrackEventType].[CalendarEventTypeId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[entity].[TrackEventType]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[TrackEventTypeId]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ea7e78d1-9d2b-4393-bbd5-a43fed027006" ChangeDateTime="03/28/2017 22:33:58">
+    <Property Name="ElementName" Value="[entity].[PK_CalendarEventType]" />
+    <Property Name="ElementType" Value="SqlPrimaryKeyConstraint" />
+    <Property Name="ParentElementName" Value="[entity].[TrackEventType]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[PK_TrackEventType]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="aaa4cd00-ce50-457c-ab1b-2d39fe053bd6" ChangeDateTime="03/28/2017 22:37:01">
+    <Property Name="ElementName" Value="[entity].[CalendarDateTrackEvent].[TrackEventTypeId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[entity].[CalendarDateTrackEvent]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[TrackEventDescriptorId]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b2b2c8a0-7961-4a1d-8a97-125583da8f20" ChangeDateTime="03/29/2017 15:12:37">
+    <Property Name="ElementName" Value="[entity].[CalendarDateTrackEvent].[TrackEventDescriptorId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[entity].[CalendarDateTrackEvent]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[TrackEventTypeId]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3a475afd-6211-4bbf-ab02-20371af92aa5" ChangeDateTime="06/13/2017 21:20:18">
+    <Property Name="ElementName" Value="[dbo].[Schedule].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Schedule]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FiscalYear" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="62420693-bdbb-44f8-a9ef-2b3b2d33255c" ChangeDateTime="06/13/2017 21:21:22">
+    <Property Name="ElementName" Value="[dbo].[Schedule].[SchduleRunType]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Schedule]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SchduleRunTypeId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c3b52d56-dc40-4890-851c-69d13bf9de03" ChangeDateTime="06/13/2017 21:22:10">
+    <Property Name="ElementName" Value="[dbo].[Schedule].[SchduleRunTypeId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Schedule]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ScheduleRunTypeId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="660a66e5-a273-46e5-9149-9ef1f5586b86" ChangeDateTime="06/14/2017 21:31:04">
+    <Property Name="ElementName" Value="[process].[Schedule].[ProcessJobName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[process].[Schedule]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProcessTypeJobName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="532d2613-7b3c-4918-8d3a-d47b3f054194" ChangeDateTime="06/14/2017 21:37:52">
+    <Property Name="ElementName" Value="[process].[Schedule].[Abort]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[process].[Schedule]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="StopFurtherProcessingUponFailure" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9cc77eb6-8ad5-4350-8b35-8ad73bf345e1" ChangeDateTime="05/30/2018 18:12:06">
+    <Property Name="ElementName" Value="[leadata].[StudentProgramAttendanceEventTimeLog].[CreateDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[leadata].[StudentProgramAttendanceEventTimeLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SourceCreateDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b9fe6483-4cdd-4d32-af8e-51dfa15b07f8" ChangeDateTime="12/19/2018 00:12:31">
+    <Property Name="ElementName" Value="[leadata].[StudentEducationOrganizationAssociation]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[leadata]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[StudentSchoolAssociationLocalEducationAgency]" />
+  </Operation>
+</Operations>
