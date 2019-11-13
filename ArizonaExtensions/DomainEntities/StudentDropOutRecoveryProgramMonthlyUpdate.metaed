@@ -1,6 +1,6 @@
 Domain Entity StudentDropOutRecoveryProgramMonthlyUpdate
   documentation ""
-  association StudentDropOutRecoveryProgramAssociation
+  association AZ.StudentDropOutRecoveryProgramAssociation
     documentation "The drop out recovery program that the monthly update is reported"
     is part of identity
   date RevisedWrittenLearningPlanDate

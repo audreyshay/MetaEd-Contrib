@@ -13,7 +13,7 @@ Common SectionExternalProviderTeacher
     documentation "If the course is being provided by an external provider, the first
                   or given name of the provider's primary instructor."
     is part of identity
-  descriptor ClassroomPosition
+  descriptor EdFi.ClassroomPosition
     documentation "The type of position the Staff member holds in the specific class/section;
                     for example:
 

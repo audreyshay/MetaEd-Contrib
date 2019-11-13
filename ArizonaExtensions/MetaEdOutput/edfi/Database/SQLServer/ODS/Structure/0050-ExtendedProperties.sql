@@ -287,7 +287,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The duration o
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Reflects the specific nomenclature used for AssessmentItem.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItem', @level2type=N'COLUMN', @level2name=N'Nomenclature'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The URI (typical a URL) pointing to the entry in an assessment item bank, which describes this content item.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItem', @level2type=N'COLUMN', @level2name=N'AsessmentItemURI'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The URI (typical a URL) pointing to the entry in an assessment item bank, which describes this content item.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'AssessmentItem', @level2type=N'COLUMN', @level2name=N'AssessmentItemURI'
 GO
 
 -- Extended Properties [edfi].[AssessmentItemCategoryDescriptor] --
@@ -937,6 +937,20 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseOffering', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
 GO
 
+-- Extended Properties [edfi].[CourseOfferingCourseLevelCharacteristic] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The type of specific program or designation with which the course offering is associated (e.g., AP, IB, Dual Credit, CTE). This collection should only be populated if it differs from the Course Level Characteristics identified at the Course level.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseOfferingCourseLevelCharacteristic'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The type of specific program or designation with which the course offering is associated (e.g., AP, IB, Dual Credit, CTE). This collection should only be populated if it differs from the Course Level Characteristics identified at the Course level.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseOfferingCourseLevelCharacteristic', @level2type=N'COLUMN', @level2name=N'CourseLevelCharacteristicDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The local code assigned by the School that identifies the course offering provided for the instruction of students.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseOfferingCourseLevelCharacteristic', @level2type=N'COLUMN', @level2name=N'LocalCourseCode'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseOfferingCourseLevelCharacteristic', @level2type=N'COLUMN', @level2name=N'SchoolId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the school year.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseOfferingCourseLevelCharacteristic', @level2type=N'COLUMN', @level2name=N'SchoolYear'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseOfferingCourseLevelCharacteristic', @level2type=N'COLUMN', @level2name=N'SessionName'
+GO
+
 -- Extended Properties [edfi].[CourseOfferingCurriculumUsed] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The type of curriculum used in an early learning classroom or group.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseOfferingCurriculumUsed'
 GO
@@ -949,6 +963,20 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the school year.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseOfferingCurriculumUsed', @level2type=N'COLUMN', @level2name=N'SchoolYear'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseOfferingCurriculumUsed', @level2type=N'COLUMN', @level2name=N'SessionName'
+GO
+
+-- Extended Properties [edfi].[CourseOfferingOfferedGradeLevel] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade levels in which the course is offered. This collection should only be populated if it differs from the Offered Grade Levels identified at the Course level.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseOfferingOfferedGradeLevel'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade levels in which the course is offered. This collection should only be populated if it differs from the Offered Grade Levels identified at the Course level.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseOfferingOfferedGradeLevel', @level2type=N'COLUMN', @level2name=N'GradeLevelDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The local code assigned by the School that identifies the course offering provided for the instruction of students.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseOfferingOfferedGradeLevel', @level2type=N'COLUMN', @level2name=N'LocalCourseCode'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseOfferingOfferedGradeLevel', @level2type=N'COLUMN', @level2name=N'SchoolId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the school year.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseOfferingOfferedGradeLevel', @level2type=N'COLUMN', @level2name=N'SchoolYear'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'CourseOfferingOfferedGradeLevel', @level2type=N'COLUMN', @level2name=N'SessionName'
 GO
 
 -- Extended Properties [edfi].[CourseRepeatCodeDescriptor] --
@@ -1456,6 +1484,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The geographic longitude of the physical address.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'EducationOrganizationAddress', @level2type=N'COLUMN', @level2name=N'Longitude'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An indication that the address should not be published.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'EducationOrganizationAddress', @level2type=N'COLUMN', @level2name=N'DoNotPublishIndicator'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The congressional district in which an address is located.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'EducationOrganizationAddress', @level2type=N'COLUMN', @level2name=N'CongressionalDistrict'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A general geographic indicator that categorizes U.S. territory (e.g., City, Suburban).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'EducationOrganizationAddress', @level2type=N'COLUMN', @level2name=N'LocaleDescriptorId'
 GO
 
 -- Extended Properties [edfi].[EducationOrganizationAddressPeriod] --
@@ -2437,8 +2469,6 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A code designa
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An unambiguous reference to the statement using a network-resolvable URI.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningStandard', @level2type=N'COLUMN', @level2name=N'URI'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Subject area for the LearningStandard.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningStandard', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The official Course Title with which this learning standard is associated.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningStandard', @level2type=N'COLUMN', @level2name=N'CourseTitle'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'One or more statements that describes the criteria used by teachers and students to check for attainment of a learning standard. This criteria gives clear indications as to the degree to which learning is moving through the Zone or Proximal Development toward independent achievement of the LearningStandard.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningStandard', @level2type=N'COLUMN', @level2name=N'SuccessCriteria'
@@ -2448,6 +2478,14 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Namespace for the LearningStandard.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningStandard', @level2type=N'COLUMN', @level2name=N'Namespace'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An additional classification of the type of a specific learning standard.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningStandard', @level2type=N'COLUMN', @level2name=N'LearningStandardCategoryDescriptorId'
+GO
+
+-- Extended Properties [edfi].[LearningStandardAcademicSubject] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Subject area for the LearningStandard.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningStandardAcademicSubject'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Subject area for the LearningStandard.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningStandardAcademicSubject', @level2type=N'COLUMN', @level2name=N'AcademicSubjectDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the specific learning standard (e.g., 111.15.3.1.A).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LearningStandardAcademicSubject', @level2type=N'COLUMN', @level2name=N'LearningStandardId'
 GO
 
 -- Extended Properties [edfi].[LearningStandardCategoryDescriptor] --
@@ -2536,6 +2574,12 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This descriptor defines the indications that the student has been identified as limited English proficient by the Language Proficiency Assessment Committee (LPAC), or English proficient. The mapping of descriptor values to known Ed-Fi enumeration values is required.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LimitedEnglishProficiencyDescriptor'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LimitedEnglishProficiencyDescriptor', @level2type=N'COLUMN', @level2name=N'LimitedEnglishProficiencyDescriptorId'
+GO
+
+-- Extended Properties [edfi].[LocaleDescriptor] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A general geographic indicator that categorizes U.S. territory (e.g., City, Suburban).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LocaleDescriptor'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'LocaleDescriptor', @level2type=N'COLUMN', @level2name=N'LocaleDescriptorId'
 GO
 
 -- Extended Properties [edfi].[LocalEducationAgency] --
@@ -2879,6 +2923,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The geographic longitude of the physical address.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ParentAddress', @level2type=N'COLUMN', @level2name=N'Longitude'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An indication that the address should not be published.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ParentAddress', @level2type=N'COLUMN', @level2name=N'DoNotPublishIndicator'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The congressional district in which an address is located.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ParentAddress', @level2type=N'COLUMN', @level2name=N'CongressionalDistrict'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A general geographic indicator that categorizes U.S. territory (e.g., City, Suburban).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'ParentAddress', @level2type=N'COLUMN', @level2name=N'LocaleDescriptorId'
 GO
 
 -- Extended Properties [edfi].[ParentAddressPeriod] --
@@ -3595,6 +3643,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Conversion fac
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The primary language of instruction, if omitted English is assumed.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Section', @level2type=N'COLUMN', @level2name=N'InstructionLanguageDescriptorId'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Section', @level2type=N'COLUMN', @level2name=N'SiteLocationSchoolId'
+GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Section', @level2type=N'COLUMN', @level2name=N'LocationSchoolId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique number or alphanumeric code assigned to a room by a school, school system, state, or other agency or entity.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'Section', @level2type=N'COLUMN', @level2name=N'LocationClassroomIdentificationCode'
@@ -3658,6 +3708,38 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The local identifier assigned to a section.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'SectionClassPeriod', @level2type=N'COLUMN', @level2name=N'SectionIdentifier'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'SectionClassPeriod', @level2type=N'COLUMN', @level2name=N'SessionName'
+GO
+
+-- Extended Properties [edfi].[SectionCourseLevelCharacteristic] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The type of specific program or designation with which the section is associated (e.g., AP, IB, Dual Credit, CTE). This collection should only be populated if it differs from the Course Level Characteristics identified at the Course Offering level.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'SectionCourseLevelCharacteristic'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The type of specific program or designation with which the section is associated (e.g., AP, IB, Dual Credit, CTE). This collection should only be populated if it differs from the Course Level Characteristics identified at the Course Offering level.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'SectionCourseLevelCharacteristic', @level2type=N'COLUMN', @level2name=N'CourseLevelCharacteristicDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The local code assigned by the School that identifies the course offering provided for the instruction of students.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'SectionCourseLevelCharacteristic', @level2type=N'COLUMN', @level2name=N'LocalCourseCode'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'SectionCourseLevelCharacteristic', @level2type=N'COLUMN', @level2name=N'SchoolId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the school year.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'SectionCourseLevelCharacteristic', @level2type=N'COLUMN', @level2name=N'SchoolYear'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The local identifier assigned to a section.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'SectionCourseLevelCharacteristic', @level2type=N'COLUMN', @level2name=N'SectionIdentifier'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'SectionCourseLevelCharacteristic', @level2type=N'COLUMN', @level2name=N'SessionName'
+GO
+
+-- Extended Properties [edfi].[SectionOfferedGradeLevel] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade levels in which the section is offered. This collection should only be populated if it differs from the Offered Grade Levels identified at the Course Offering level.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'SectionOfferedGradeLevel'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade levels in which the section is offered. This collection should only be populated if it differs from the Offered Grade Levels identified at the Course Offering level.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'SectionOfferedGradeLevel', @level2type=N'COLUMN', @level2name=N'GradeLevelDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The local code assigned by the School that identifies the course offering provided for the instruction of students.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'SectionOfferedGradeLevel', @level2type=N'COLUMN', @level2name=N'LocalCourseCode'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'SectionOfferedGradeLevel', @level2type=N'COLUMN', @level2name=N'SchoolId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the school year.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'SectionOfferedGradeLevel', @level2type=N'COLUMN', @level2name=N'SchoolYear'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The local identifier assigned to a section.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'SectionOfferedGradeLevel', @level2type=N'COLUMN', @level2name=N'SectionIdentifier'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'SectionOfferedGradeLevel', @level2type=N'COLUMN', @level2name=N'SessionName'
 GO
 
 -- Extended Properties [edfi].[SectionProgram] --
@@ -3854,6 +3936,10 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The geographic
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An indication that the address should not be published.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StaffAddress', @level2type=N'COLUMN', @level2name=N'DoNotPublishIndicator'
 GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The congressional district in which an address is located.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StaffAddress', @level2type=N'COLUMN', @level2name=N'CongressionalDistrict'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A general geographic indicator that categorizes U.S. territory (e.g., City, Suburban).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StaffAddress', @level2type=N'COLUMN', @level2name=N'LocaleDescriptorId'
+GO
 
 -- Extended Properties [edfi].[StaffAddressPeriod] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The time periods for which the address is valid. For physical addresses, the periods in which the person lived at that address.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StaffAddressPeriod'
@@ -3980,6 +4066,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The type of address listed for an individual or organization.    For example:  Physical Address, Mailing Address, Home Address, etc.)', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StaffEducationOrganizationContactAssociationAddress', @level2type=N'COLUMN', @level2name=N'AddressTypeDescriptorId'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An indication that the address should not be published.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StaffEducationOrganizationContactAssociationAddress', @level2type=N'COLUMN', @level2name=N'DoNotPublishIndicator'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The congressional district in which an address is located.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StaffEducationOrganizationContactAssociationAddress', @level2type=N'COLUMN', @level2name=N'CongressionalDistrict'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A general geographic indicator that categorizes U.S. territory (e.g., City, Suburban).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StaffEducationOrganizationContactAssociationAddress', @level2type=N'COLUMN', @level2name=N'LocaleDescriptorId'
 GO
 
 -- Extended Properties [edfi].[StaffEducationOrganizationContactAssociationAddressPeriod] --
@@ -5158,6 +5248,10 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The geographic longitude of the physical address.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentEducationOrganizationAssociationAddress', @level2type=N'COLUMN', @level2name=N'Longitude'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An indication that the address should not be published.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentEducationOrganizationAssociationAddress', @level2type=N'COLUMN', @level2name=N'DoNotPublishIndicator'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The congressional district in which an address is located.', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentEducationOrganizationAssociationAddress', @level2type=N'COLUMN', @level2name=N'CongressionalDistrict'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A general geographic indicator that categorizes U.S. territory (e.g., City, Suburban).', @level0type=N'SCHEMA', @level0name=N'edfi', @level1type=N'TABLE', @level1name=N'StudentEducationOrganizationAssociationAddress', @level2type=N'COLUMN', @level2name=N'LocaleDescriptorId'
 GO
 
 -- Extended Properties [edfi].[StudentEducationOrganizationAssociationAddressPeriod] --

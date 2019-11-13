@@ -1,4 +1,4 @@
-Association StaffEducationOrganizationEmploymentAssociation additions
+Association EdFi.StaffEducationOrganizationEmploymentAssociation additions
     descriptor EducationLevel
       documentation "It defines the staff education level"
       is optional

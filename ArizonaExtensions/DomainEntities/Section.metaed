@@ -1,9 +1,6 @@
-Domain Entity Section additions
+Domain Entity EdFi.Section additions
 common SectionExternalProviderTeacher
   documentation "A collection fo external teachers assigned to a section"
-  is optional collection
-common SectionGradeLevel
-  documentation "The grade level associated with the section."
   is optional collection
 string TimetableDayIdentifier
 	documentation "Report the days on which the course/section meets. MTWRF if meets

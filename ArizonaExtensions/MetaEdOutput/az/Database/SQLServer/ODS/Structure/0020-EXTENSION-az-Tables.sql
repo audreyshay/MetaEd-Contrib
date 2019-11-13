@@ -12,8 +12,11 @@ CREATE TABLE [az].[CalendarExtension] (
     [CalendarCode] [NVARCHAR](60) NOT NULL,
     [SchoolId] [INT] NOT NULL,
     [SchoolYear] [SMALLINT] NOT NULL,
-    [CalendarLocalEducationAgencyId] [INT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [TrackLocalEducationAgencyId] [INT] NOT NULL,
+    [BeginDate] [DATE] NOT NULL,
+    [EndDate] [DATE] NOT NULL,
+    [TotalInstructionalDays] [INT] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [CalendarExtension_PK] PRIMARY KEY CLUSTERED (
         [CalendarCode] ASC,
         [SchoolId] ASC,
@@ -50,7 +53,7 @@ CREATE TABLE [az].[CourseOfferingCourseSchedule] (
     [SchoolYear] [SMALLINT] NOT NULL,
     [SessionName] [NVARCHAR](60) NOT NULL,
     [InstructionalMinutesPlanned] [INT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [CourseOfferingCourseSchedule_PK] PRIMARY KEY CLUSTERED (
         [LocalCourseCode] ASC,
         [ScheduleDate] ASC,
@@ -70,7 +73,7 @@ CREATE TABLE [az].[CourseOfferingExtension] (
     [SchoolYear] [SMALLINT] NOT NULL,
     [SessionName] [NVARCHAR](60) NOT NULL,
     [EndOfCourseAssessmentCodeDescriptorId] [INT] NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [CourseOfferingExtension_PK] PRIMARY KEY CLUSTERED (
         [LocalCourseCode] ASC,
         [SchoolId] ASC,
@@ -172,7 +175,7 @@ CREATE TABLE [az].[SectionExtension] (
     [SessionName] [NVARCHAR](60) NOT NULL,
     [TimetableDayIdentifier] [NVARCHAR](250) NULL,
     [Note] [NVARCHAR](250) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [SectionExtension_PK] PRIMARY KEY CLUSTERED (
         [LocalCourseCode] ASC,
         [SchoolId] ASC,
@@ -198,7 +201,7 @@ CREATE TABLE [az].[SectionExternalProviderTeacher] (
     [ClassroomPositionDescriptorId] [INT] NULL,
     [BeginDate] [DATE] NULL,
     [EndDate] [DATE] NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [SectionExternalProviderTeacher_PK] PRIMARY KEY CLUSTERED (
         [ExternalProviderName] ASC,
         [LocalCourseCode] ASC,
@@ -212,28 +215,6 @@ CREATE TABLE [az].[SectionExternalProviderTeacher] (
 ) ON [PRIMARY]
 GO
 ALTER TABLE [az].[SectionExternalProviderTeacher] ADD CONSTRAINT [SectionExternalProviderTeacher_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
-GO
-
--- Table [az].[SectionGradeLevel] --
-CREATE TABLE [az].[SectionGradeLevel] (
-    [GradeLevelDescriptorId] [INT] NOT NULL,
-    [LocalCourseCode] [NVARCHAR](60) NOT NULL,
-    [SchoolId] [INT] NOT NULL,
-    [SchoolYear] [SMALLINT] NOT NULL,
-    [SectionIdentifier] [NVARCHAR](255) NOT NULL,
-    [SessionName] [NVARCHAR](60) NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    CONSTRAINT [SectionGradeLevel_PK] PRIMARY KEY CLUSTERED (
-        [GradeLevelDescriptorId] ASC,
-        [LocalCourseCode] ASC,
-        [SchoolId] ASC,
-        [SchoolYear] ASC,
-        [SectionIdentifier] ASC,
-        [SessionName] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-ALTER TABLE [az].[SectionGradeLevel] ADD CONSTRAINT [SectionGradeLevel_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
 -- Table [az].[SpecialEnrollmentDescriptor] --
@@ -256,7 +237,7 @@ CREATE TABLE [az].[StaffEducationOrganizationEmploymentAssociationExtension] (
     [Salary] [MONEY] NOT NULL,
     [FullTimeEquivalencyOther] [DECIMAL](5, 4) NULL,
     [PSP] [BIT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StaffEducationOrganizationEmploymentAssociationExtension_PK] PRIMARY KEY CLUSTERED (
         [EducationOrganizationId] ASC,
         [EmploymentStatusDescriptorId] ASC,
@@ -300,8 +281,8 @@ CREATE TABLE [az].[StudentDropOutRecoveryProgramMonthlyUpdate] (
     [RevisedWrittenLearningPlanDate] [DATE] NULL,
     [SatisfactoryProgress] [BIT] NULL,
     [Discriminator] [NVARCHAR](128) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [StudentDropOutRecoveryProgramMonthlyUpdate_PK] PRIMARY KEY CLUSTERED (
         [BeginDate] ASC,
@@ -321,6 +302,23 @@ GO
 ALTER TABLE [az].[StudentDropOutRecoveryProgramMonthlyUpdate] ADD CONSTRAINT [StudentDropOutRecoveryProgramMonthlyUpdate_DF_LastModifiedDate] DEFAULT (getdate()) FOR [LastModifiedDate]
 GO
 
+-- Table [az].[StudentEducationOrganizationAssociationAZTribalAffiliation] --
+CREATE TABLE [az].[StudentEducationOrganizationAssociationAZTribalAffiliation] (
+    [EducationOrganizationId] [INT] NOT NULL,
+    [StudentUSI] [INT] NOT NULL,
+    [TribalAffiliationDescriptorId] [INT] NOT NULL,
+    [OtherAffiliation] [NVARCHAR](250) NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    CONSTRAINT [StudentEducationOrganizationAssociationAZTribalAffiliation_PK] PRIMARY KEY CLUSTERED (
+        [EducationOrganizationId] ASC,
+        [StudentUSI] ASC,
+        [TribalAffiliationDescriptorId] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [az].[StudentEducationOrganizationAssociationAZTribalAffiliation] ADD CONSTRAINT [StudentEducationOrganizationAssociationAZTribalAffiliation_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
+GO
+
 -- Table [az].[StudentNeed] --
 CREATE TABLE [az].[StudentNeed] (
     [EducationOrganizationId] [INT] NOT NULL,
@@ -331,8 +329,8 @@ CREATE TABLE [az].[StudentNeed] (
     [PrimaryStudentNeedIndicator] [BIT] NULL,
     [PrimaryNightTimeResidenceDescriptorId] [INT] NULL,
     [Discriminator] [NVARCHAR](128) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [StudentNeed_PK] PRIMARY KEY CLUSTERED (
         [EducationOrganizationId] ASC,
@@ -379,7 +377,7 @@ CREATE TABLE [az].[StudentProgramAttendanceEventTimeLog] (
     [ProgramTypeDescriptorId] [INT] NOT NULL,
     [StudentUSI] [INT] NOT NULL,
     [AttendanceEndTime] [TIME](7) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StudentProgramAttendanceEventTimeLog_PK] PRIMARY KEY CLUSTERED (
         [AttendanceBeginTime] ASC,
         [AttendanceEventCategoryDescriptorId] ASC,
@@ -402,7 +400,7 @@ CREATE TABLE [az].[StudentSchoolAssociationExtension] (
     [StudentUSI] [INT] NOT NULL,
     [ExitWithdrawReasonDescriptorId] [INT] NULL,
     [MembershipTypeDescriptorId] [INT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StudentSchoolAssociationExtension_PK] PRIMARY KEY CLUSTERED (
         [EntryDate] ASC,
         [SchoolId] ASC,
@@ -422,7 +420,7 @@ CREATE TABLE [az].[StudentSchoolAssociationLocalEducationAgency] (
     [StudentUSI] [INT] NOT NULL,
     [EndDate] [DATE] NULL,
     [LocalEducationAgencyId] [INT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StudentSchoolAssociationLocalEducationAgency_PK] PRIMARY KEY CLUSTERED (
         [EntryDate] ASC,
         [MembershipResponsibilityDescriptorId] ASC,
@@ -443,7 +441,7 @@ CREATE TABLE [az].[StudentSchoolAssociationMembershipFTE] (
     [StudentUSI] [INT] NOT NULL,
     [FTEEndDate] [DATE] NULL,
     [MembershipFTEDescriptorId] [INT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StudentSchoolAssociationMembershipFTE_PK] PRIMARY KEY CLUSTERED (
         [EntryDate] ASC,
         [FTEStartDate] ASC,
@@ -463,7 +461,7 @@ CREATE TABLE [az].[StudentSchoolAssociationSpecialEnrollment] (
     [StudentUSI] [INT] NOT NULL,
     [SpecialEnrollmentEndDate] [DATE] NULL,
     [SpecialEnrollmentDescriptorId] [INT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StudentSchoolAssociationSpecialEnrollment_PK] PRIMARY KEY CLUSTERED (
         [EntryDate] ASC,
         [SchoolId] ASC,
@@ -483,7 +481,7 @@ CREATE TABLE [az].[StudentSchoolAssociationTuitionPayer] (
     [StudentUSI] [INT] NOT NULL,
     [PayerEndDate] [DATE] NULL,
     [TuitionPayerDescriptorId] [INT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StudentSchoolAssociationTuitionPayer_PK] PRIMARY KEY CLUSTERED (
         [EntryDate] ASC,
         [PayerStartDate] ASC,
@@ -504,7 +502,7 @@ CREATE TABLE [az].[StudentSchoolAttendanceEventExtension] (
     [SessionName] [NVARCHAR](60) NOT NULL,
     [StudentUSI] [INT] NOT NULL,
     [InstructionalMinutes] [INT] NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StudentSchoolAttendanceEventExtension_PK] PRIMARY KEY CLUSTERED (
         [AttendanceEventCategoryDescriptorId] ASC,
         [EventDate] ASC,
@@ -532,7 +530,7 @@ CREATE TABLE [az].[StudentSectionAssociationExtension] (
     [CourseExitDescriptorId] [INT] NULL,
     [DualCredit] [BIT] NOT NULL,
     [ConcurrentEnrollment] [BIT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StudentSectionAssociationExtension_PK] PRIMARY KEY CLUSTERED (
         [BeginDate] ASC,
         [LocalCourseCode] ASC,
@@ -556,7 +554,7 @@ CREATE TABLE [az].[StudentSpecialEducationProgramAssociationExtension] (
     [ProgramTypeDescriptorId] [INT] NOT NULL,
     [StudentUSI] [INT] NOT NULL,
     [MainSPEDSchool] [BIT] NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [StudentSpecialEducationProgramAssociationExtension_PK] PRIMARY KEY CLUSTERED (
         [BeginDate] ASC,
         [EducationOrganizationId] ASC,

@@ -62,7 +62,9 @@
   </AggregateExtension>
   <AggregateExtension root="Section">
     <Entity table="SectionExternalProviderTeacher" schema="az"/>
-    <Entity table="SectionGradeLevel" schema="az"/>
+  </AggregateExtension>
+  <AggregateExtension root="StudentEducationOrganizationAssociation">
+    <Entity table="StudentEducationOrganizationAssociationAZTribalAffiliation" schema="az"/>
   </AggregateExtension>
   <AggregateExtension root="StudentProgramAttendanceEvent">
     <Entity table="StudentProgramAttendanceEventTimeLog" schema="az"/>

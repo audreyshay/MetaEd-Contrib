@@ -6,7 +6,7 @@ documentation "This association indicates any relationship between a student sch
   date EndDate
     documentation "The end date of the association"
     is optional
-  domain entity LocalEducationAgency
+  domain entity EdFi.LocalEducationAgency
     documentation "The reference to the LocalEducationAgency"
     is required
   descriptor MembershipResponsibility

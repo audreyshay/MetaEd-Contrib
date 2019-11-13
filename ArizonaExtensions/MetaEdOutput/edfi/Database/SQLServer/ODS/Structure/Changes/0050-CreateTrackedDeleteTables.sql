@@ -1137,9 +1137,17 @@ CREATE TABLE [changes].[edfi_LocalEducationAgency_TrackedDelete]
        CONSTRAINT PK_edfi_LocalEducationAgency_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
+CREATE TABLE [changes].[edfi_LocaleDescriptor_TrackedDelete]
+(
+       LocaleDescriptorId [INT] NOT NULL,
+       Id uniqueidentifier NOT NULL,
+       ChangeVersion bigint NOT NULL,
+       CONSTRAINT PK_edfi_LocaleDescriptor_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+)
+
 CREATE TABLE [changes].[edfi_Location_TrackedDelete]
 (
-       ClassroomIdentificationCode [NVARCHAR](20) NOT NULL,
+       ClassroomIdentificationCode [NVARCHAR](60) NOT NULL,
        SchoolId [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,

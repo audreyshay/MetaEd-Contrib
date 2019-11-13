@@ -1,9 +1,9 @@
 Domain Entity StudentNeed
   documentation "This entity represents a need for a student"
-  domain entity Student
+  domain entity EdFi.Student
     documentation "A unique alphanumeric code assigned to a student"
     is part of identity
-  domain entity EducationOrganization
+  domain entity EdFi.EducationOrganization
     documentation "The identifier assigned to an education agency reporting the need"
     is part of identity
   descriptor StudentNeed

@@ -1,4 +1,4 @@
-Domain Entity StudentSchoolAttendanceEvent additions
+Domain Entity EdFi.StudentSchoolAttendanceEvent additions
   integer InstructionalMinutes
     documentation "The amount of time, in minutes, that the student received instruction during the reported attendance period and the 'In Attendance' code is used"
     is optional

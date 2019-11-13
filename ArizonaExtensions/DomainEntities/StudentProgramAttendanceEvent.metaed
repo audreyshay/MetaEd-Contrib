@@ -1,4 +1,4 @@
-Domain Entity StudentProgramAttendanceEvent additions
+Domain Entity EdFi.StudentProgramAttendanceEvent additions
     common TimeLog
          documentation "This event entity adds the time component to a student program attendance participating"
          is optional collection

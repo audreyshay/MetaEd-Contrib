@@ -1,4 +1,4 @@
-Association StudentSchoolAssociation additions
+Association EdFi.StudentSchoolAssociation additions
   descriptor ExitWithdrawReason
     documentation "Withdrawal Reasons are a secondary reason for the withdrawal (the
                   primary reason being the Withdrawal Activity Code). Withdrawal Reasons

@@ -1,8 +1,9 @@
 {
-  "odsApiVersion": "3.1.0",
+  "odsApiVersion": "3.2.0",
   "schemaDefinition": {
     "logicalName": "AZ",
-    "physicalName": "az"
+    "physicalName": "az",
+    "version": "1.0.0"
   },
   "aggregateDefinitions": [
     {
@@ -256,10 +257,18 @@
         {
           "schema": "az",
           "name": "SectionExternalProviderTeacher"
-        },
+        }
+      ]
+    },
+    {
+      "aggregateRootEntityName": {
+        "schema": "edfi",
+        "name": "StudentEducationOrganizationAssociation"
+      },
+      "extensionEntityNames": [
         {
           "schema": "az",
-          "name": "SectionGradeLevel"
+          "name": "StudentEducationOrganizationAssociationAZTribalAffiliation"
         }
       ]
     },
@@ -323,15 +332,54 @@
       "name": "CalendarExtension",
       "locallyDefinedProperties": [
         {
+          "propertyName": "BeginDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The first date of the track",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
             "isNullable": false
           },
           "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "EndDate",
+          "propertyType": {
+            "dbType": "Date",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The last date of the track",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "TotalInstructionalDays",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The total number of instructional days in the school calendar.\n                National Education Data Model (NEDM): Total Days in Session",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -392,7 +440,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -453,7 +501,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -631,7 +679,7 @@
         }
       ],
       "isAbstract": false,
-      "description": "The Primary Nighttime residence is a field associated with students\r\n                who have been designated as Homeless."
+      "description": "The Primary Nighttime residence is a field associated with students\n                who have been designated as Homeless."
     },
     {
       "schema": "az",
@@ -640,7 +688,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -714,7 +762,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -799,42 +847,6 @@
     },
     {
       "schema": "az",
-      "name": "SectionGradeLevel",
-      "locallyDefinedProperties": [
-        {
-          "propertyName": "CreateDate",
-          "propertyType": {
-            "dbType": "DateTime",
-            "maxLength": 0,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "",
-          "isIdentifying": false,
-          "isServerAssigned": false
-        }
-      ],
-      "identifiers": [
-        {
-          "identifierName": "SectionGradeLevel_PK",
-          "identifyingPropertyNames": [
-            "GradeLevelDescriptorId",
-            "LocalCourseCode",
-            "SchoolId",
-            "SchoolYear",
-            "SectionIdentifier",
-            "SessionName"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false
-        }
-      ],
-      "isAbstract": false,
-      "description": "The grade level associated with the section."
-    },
-    {
-      "schema": "az",
       "name": "SpecialEnrollmentDescriptor",
       "locallyDefinedProperties": [],
       "identifiers": [
@@ -870,7 +882,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -979,7 +991,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1005,7 +1017,7 @@
         {
           "propertyName": "LastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1071,12 +1083,58 @@
     },
     {
       "schema": "az",
+      "name": "StudentEducationOrganizationAssociationAZTribalAffiliation",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "OtherAffiliation",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 250,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "Tribal affiliation(s) other than Arizona’s 22 federally recognized tribes.",
+          "isIdentifying": false,
+          "isServerAssigned": false
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "StudentEducationOrganizationAssociationAZTribalAffiliation_PK",
+          "identifyingPropertyNames": [
+            "EducationOrganizationId",
+            "StudentUSI",
+            "TribalAffiliationDescriptorId"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false
+        }
+      ],
+      "isAbstract": false,
+      "description": "An American Indian tribe with which an individual is affiliated."
+    },
+    {
+      "schema": "az",
       "name": "StudentNeed",
       "locallyDefinedProperties": [
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1102,7 +1160,7 @@
         {
           "propertyName": "LastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1191,7 +1249,7 @@
         }
       ],
       "isAbstract": false,
-      "description": "This descriptor defines a category of a student need."
+      "description": "This descriptor defines a student need category."
     },
     {
       "schema": "az",
@@ -1208,7 +1266,7 @@
         }
       ],
       "isAbstract": false,
-      "description": "This descriptor defines a characteristic of a student need"
+      "description": "This descriptor defines a characteristic of a student need."
     },
     {
       "schema": "az",
@@ -1243,7 +1301,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1281,7 +1339,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1314,7 +1372,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1375,7 +1433,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1435,7 +1493,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1495,7 +1553,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1555,7 +1613,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1617,7 +1675,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1680,7 +1738,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1918,7 +1976,7 @@
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "CalendarLocalEducationAgencyId",
+          "propertyName": "TrackLocalEducationAgencyId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -3100,204 +3158,6 @@
     {
       "fullName": {
         "schema": "az",
-        "name": "FK_SectionGradeLevel_GradeLevelDescriptor"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "GradeLevelDescriptor"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "GradeLevelDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
-          "isIdentifying": true,
-          "isServerAssigned": false
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "az",
-        "name": "SectionGradeLevel"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "GradeLevelDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The grade level associated with the current section",
-          "isIdentifying": true,
-          "isServerAssigned": false
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true
-    },
-    {
-      "fullName": {
-        "schema": "az",
-        "name": "FK_SectionGradeLevel_Section"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "Section"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "LocalCourseCode",
-          "propertyType": {
-            "dbType": "String",
-            "maxLength": 60,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The local code assigned by the School that identifies the course offering provided for the instruction of students.",
-          "isIdentifying": true,
-          "isServerAssigned": false
-        },
-        {
-          "propertyName": "SchoolId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to a school.",
-          "isIdentifying": true,
-          "isServerAssigned": false
-        },
-        {
-          "propertyName": "SchoolYear",
-          "propertyType": {
-            "dbType": "Int16",
-            "maxLength": 0,
-            "precision": 5,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier for the school year.",
-          "isIdentifying": true,
-          "isServerAssigned": false
-        },
-        {
-          "propertyName": "SectionIdentifier",
-          "propertyType": {
-            "dbType": "String",
-            "maxLength": 255,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The local identifier assigned to a section.",
-          "isIdentifying": true,
-          "isServerAssigned": false
-        },
-        {
-          "propertyName": "SessionName",
-          "propertyType": {
-            "dbType": "String",
-            "maxLength": 60,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).",
-          "isIdentifying": true,
-          "isServerAssigned": false
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "az",
-        "name": "SectionGradeLevel"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "LocalCourseCode",
-          "propertyType": {
-            "dbType": "String",
-            "maxLength": 60,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The local code assigned by the School that identifies the course offering provided for the instruction of students.",
-          "isIdentifying": true,
-          "isServerAssigned": false
-        },
-        {
-          "propertyName": "SchoolId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to a school.",
-          "isIdentifying": true,
-          "isServerAssigned": false
-        },
-        {
-          "propertyName": "SchoolYear",
-          "propertyType": {
-            "dbType": "Int16",
-            "maxLength": 0,
-            "precision": 5,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier for the school year.",
-          "isIdentifying": true,
-          "isServerAssigned": false
-        },
-        {
-          "propertyName": "SectionIdentifier",
-          "propertyType": {
-            "dbType": "String",
-            "maxLength": 255,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The local identifier assigned to a section.",
-          "isIdentifying": true,
-          "isServerAssigned": false
-        },
-        {
-          "propertyName": "SessionName",
-          "propertyType": {
-            "dbType": "String",
-            "maxLength": 60,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).",
-          "isIdentifying": true,
-          "isServerAssigned": false
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true
-    },
-    {
-      "fullName": {
-        "schema": "az",
         "name": "FK_SpecialEnrollmentDescriptor_Descriptor"
       },
       "cardinality": "OneToOneInheritance",
@@ -3918,6 +3778,126 @@
     {
       "fullName": {
         "schema": "az",
+        "name": "FK_StudentEducationOrganizationAssociationAZTribalAffiliation_StudentEducationOrganizationAssociation"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "StudentEducationOrganizationAssociation"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "az",
+        "name": "StudentEducationOrganizationAssociationAZTribalAffiliation"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "az",
+        "name": "FK_StudentEducationOrganizationAssociationAZTribalAffiliation_TribalAffiliationDescriptor"
+      },
+      "cardinality": "OneToZeroOrMore",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "TribalAffiliationDescriptor"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "TribalAffiliationDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "az",
+        "name": "StudentEducationOrganizationAssociationAZTribalAffiliation"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "TribalAffiliationDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "An American Indian tribe with which an individual is affiliated.",
+          "isIdentifying": true,
+          "isServerAssigned": false
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true
+    },
+    {
+      "fullName": {
+        "schema": "az",
         "name": "FK_StudentNeed_EducationOrganization"
       },
       "cardinality": "OneToZeroOrMore",
@@ -4001,7 +3981,7 @@
             "scale": 0,
             "isNullable": true
           },
-          "description": "The Primary Night time residence descriptor associated with student\r\n                  who have been designated as Homeless.",
+          "description": "The Primary Night time residence descriptor associated with student\n                  who have been designated as Homeless.",
           "isIdentifying": false,
           "isServerAssigned": false
         }
@@ -4236,7 +4216,7 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "",
+          "description": "This descriptor defines a category of a student need.",
           "isIdentifying": false,
           "isServerAssigned": false
         }

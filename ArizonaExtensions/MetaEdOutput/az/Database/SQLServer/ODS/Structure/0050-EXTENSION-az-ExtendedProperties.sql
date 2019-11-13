@@ -14,7 +14,14 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the school year associated with the Calendar.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'CalendarExtension', @level2type=N'COLUMN', @level2name=N'SchoolYear'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a local education agency.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'CalendarExtension', @level2type=N'COLUMN', @level2name=N'CalendarLocalEducationAgencyId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a local education agency.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'CalendarExtension', @level2type=N'COLUMN', @level2name=N'TrackLocalEducationAgencyId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The first date of the track', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'CalendarExtension', @level2type=N'COLUMN', @level2name=N'BeginDate'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The last date of the track', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'CalendarExtension', @level2type=N'COLUMN', @level2name=N'EndDate'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The total number of instructional days in the school calendar.
+                National Education Data Model (NEDM): Total Days in Session', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'CalendarExtension', @level2type=N'COLUMN', @level2name=N'TotalInstructionalDays'
 GO
 
 -- Extended Properties [az].[CourseEntryDescriptor] --
@@ -176,22 +183,6 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The last date the teacher was associated with the section.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'SectionExternalProviderTeacher', @level2type=N'COLUMN', @level2name=N'EndDate'
 GO
 
--- Extended Properties [az].[SectionGradeLevel] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level associated with the section.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'SectionGradeLevel'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The grade level associated with the current section', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'SectionGradeLevel', @level2type=N'COLUMN', @level2name=N'GradeLevelDescriptorId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The local code assigned by the School that identifies the course offering provided for the instruction of students.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'SectionGradeLevel', @level2type=N'COLUMN', @level2name=N'LocalCourseCode'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a school.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'SectionGradeLevel', @level2type=N'COLUMN', @level2name=N'SchoolId'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the school year.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'SectionGradeLevel', @level2type=N'COLUMN', @level2name=N'SchoolYear'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The local identifier assigned to a section.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'SectionGradeLevel', @level2type=N'COLUMN', @level2name=N'SectionIdentifier'
-GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'SectionGradeLevel', @level2type=N'COLUMN', @level2name=N'SessionName'
-GO
-
 -- Extended Properties [az].[SpecialEnrollmentDescriptor] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This descriptor describes special enrollment codes', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'SpecialEnrollmentDescriptor'
 GO
@@ -274,6 +265,18 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Indicates whet
                   0 or a 1 where 0 = Unsatisfactory and 1 = Satisfactory', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'StudentDropOutRecoveryProgramMonthlyUpdate', @level2type=N'COLUMN', @level2name=N'SatisfactoryProgress'
 GO
 
+-- Extended Properties [az].[StudentEducationOrganizationAssociationAZTribalAffiliation] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An American Indian tribe with which an individual is affiliated.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'StudentEducationOrganizationAssociationAZTribalAffiliation'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'StudentEducationOrganizationAssociationAZTribalAffiliation', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'StudentEducationOrganizationAssociationAZTribalAffiliation', @level2type=N'COLUMN', @level2name=N'StudentUSI'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'An American Indian tribe with which an individual is affiliated.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'StudentEducationOrganizationAssociationAZTribalAffiliation', @level2type=N'COLUMN', @level2name=N'TribalAffiliationDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Tribal affiliation(s) other than Arizona’s 22 federally recognized tribes.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'StudentEducationOrganizationAssociationAZTribalAffiliation', @level2type=N'COLUMN', @level2name=N'OtherAffiliation'
+GO
+
 -- Extended Properties [az].[StudentNeed] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This entity represents a need for a student', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'StudentNeed'
 GO
@@ -294,17 +297,17 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The Primary Ni
 GO
 
 -- Extended Properties [az].[StudentNeedCategoryDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This descriptor defines a category of a student need.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'StudentNeedCategoryDescriptor'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This descriptor defines a student need category.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'StudentNeedCategoryDescriptor'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'StudentNeedCategoryDescriptor', @level2type=N'COLUMN', @level2name=N'StudentNeedCategoryDescriptorId'
 GO
 
 -- Extended Properties [az].[StudentNeedDescriptor] --
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This descriptor defines a characteristic of a student need', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'StudentNeedDescriptor'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This descriptor defines a characteristic of a student need.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'StudentNeedDescriptor'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'StudentNeedDescriptor', @level2type=N'COLUMN', @level2name=N'StudentNeedDescriptorId'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'StudentNeedDescriptor', @level2type=N'COLUMN', @level2name=N'StudentNeedCategoryDescriptorId'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'This descriptor defines a category of a student need.', @level0type=N'SCHEMA', @level0name=N'az', @level1type=N'TABLE', @level1name=N'StudentNeedDescriptor', @level2type=N'COLUMN', @level2name=N'StudentNeedCategoryDescriptorId'
 GO
 
 -- Extended Properties [az].[StudentProgramAttendanceEventTimeLog] --
