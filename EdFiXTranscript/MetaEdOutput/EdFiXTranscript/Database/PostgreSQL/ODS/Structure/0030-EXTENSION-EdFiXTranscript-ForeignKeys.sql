@@ -1,0 +1,299 @@
+ALTER TABLE edfixtranscript.CourseTranscript ADD CONSTRAINT FK_6acf2b_CourseAttemptResultDescriptor FOREIGN KEY (CourseAttemptResultDescriptorId)
+REFERENCES edfi.CourseAttemptResultDescriptor (CourseAttemptResultDescriptorId)
+;
+
+CREATE INDEX FK_6acf2b_CourseAttemptResultDescriptor
+ON edfixtranscript.CourseTranscript (CourseAttemptResultDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscript ADD CONSTRAINT FK_6acf2b_CourseIdentificationSystemDescriptor FOREIGN KEY (CourseIdentificationSystemDescriptorId)
+REFERENCES edfi.CourseIdentificationSystemDescriptor (CourseIdentificationSystemDescriptorId)
+;
+
+CREATE INDEX FK_6acf2b_CourseIdentificationSystemDescriptor
+ON edfixtranscript.CourseTranscript (CourseIdentificationSystemDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscript ADD CONSTRAINT FK_6acf2b_CourseRepeatCodeDescriptor FOREIGN KEY (CourseRepeatCodeDescriptorId)
+REFERENCES edfi.CourseRepeatCodeDescriptor (CourseRepeatCodeDescriptorId)
+;
+
+CREATE INDEX FK_6acf2b_CourseRepeatCodeDescriptor
+ON edfixtranscript.CourseTranscript (CourseRepeatCodeDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscript ADD CONSTRAINT FK_6acf2b_CreditTypeDescriptor FOREIGN KEY (AttemptedCreditTypeDescriptorId)
+REFERENCES edfi.CreditTypeDescriptor (CreditTypeDescriptorId)
+;
+
+CREATE INDEX FK_6acf2b_CreditTypeDescriptor
+ON edfixtranscript.CourseTranscript (AttemptedCreditTypeDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscript ADD CONSTRAINT FK_6acf2b_CreditTypeDescriptor1 FOREIGN KEY (EarnedCreditTypeDescriptorId)
+REFERENCES edfi.CreditTypeDescriptor (CreditTypeDescriptorId)
+;
+
+CREATE INDEX FK_6acf2b_CreditTypeDescriptor1
+ON edfixtranscript.CourseTranscript (EarnedCreditTypeDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscript ADD CONSTRAINT FK_6acf2b_EducationOrganization FOREIGN KEY (ExternalEducationOrganizationId)
+REFERENCES edfi.EducationOrganization (EducationOrganizationId)
+;
+
+CREATE INDEX FK_6acf2b_EducationOrganization
+ON edfixtranscript.CourseTranscript (ExternalEducationOrganizationId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscript ADD CONSTRAINT FK_6acf2b_GradeLevelDescriptor FOREIGN KEY (WhenTakenGradeLevelDescriptorId)
+REFERENCES edfi.GradeLevelDescriptor (GradeLevelDescriptorId)
+;
+
+CREATE INDEX FK_6acf2b_GradeLevelDescriptor
+ON edfixtranscript.CourseTranscript (WhenTakenGradeLevelDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscript ADD CONSTRAINT FK_6acf2b_MethodCreditEarnedDescriptor FOREIGN KEY (MethodCreditEarnedDescriptorId)
+REFERENCES edfi.MethodCreditEarnedDescriptor (MethodCreditEarnedDescriptorId)
+;
+
+CREATE INDEX FK_6acf2b_MethodCreditEarnedDescriptor
+ON edfixtranscript.CourseTranscript (MethodCreditEarnedDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscript ADD CONSTRAINT FK_6acf2b_StudentAcademicRecord FOREIGN KEY (EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+REFERENCES edfixtranscript.StudentAcademicRecord (EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+;
+
+CREATE INDEX FK_6acf2b_StudentAcademicRecord
+ON edfixtranscript.CourseTranscript (EducationOrganizationId ASC, SchoolYear ASC, StudentUSI ASC, TermDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscriptAcademicSubject ADD CONSTRAINT FK_354642_AcademicSubjectDescriptor FOREIGN KEY (AcademicSubjectDescriptorId)
+REFERENCES edfi.AcademicSubjectDescriptor (AcademicSubjectDescriptorId)
+;
+
+CREATE INDEX FK_354642_AcademicSubjectDescriptor
+ON edfixtranscript.CourseTranscriptAcademicSubject (AcademicSubjectDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscriptAcademicSubject ADD CONSTRAINT FK_354642_CourseTranscript FOREIGN KEY (CourseAttemptResultDescriptorId, CourseIdentificationCode, CourseIdentificationSystemDescriptorId, EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+REFERENCES edfixtranscript.CourseTranscript (CourseAttemptResultDescriptorId, CourseIdentificationCode, CourseIdentificationSystemDescriptorId, EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+ON DELETE CASCADE
+;
+
+CREATE INDEX FK_354642_CourseTranscript
+ON edfixtranscript.CourseTranscriptAcademicSubject (CourseAttemptResultDescriptorId ASC, CourseIdentificationCode ASC, CourseIdentificationSystemDescriptorId ASC, EducationOrganizationId ASC, SchoolYear ASC, StudentUSI ASC, TermDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode ADD CONSTRAINT FK_6621ee_CourseIdentificationSystemDescriptor FOREIGN KEY (CourseIdentificationSystemDescriptorId)
+REFERENCES edfi.CourseIdentificationSystemDescriptor (CourseIdentificationSystemDescriptorId)
+;
+
+CREATE INDEX FK_6621ee_CourseIdentificationSystemDescriptor
+ON edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode (CourseIdentificationSystemDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode ADD CONSTRAINT FK_6621ee_CourseTranscript FOREIGN KEY (CourseAttemptResultDescriptorId, CourseIdentificationCode, CourseIdentificationSystemDescriptorId, EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+REFERENCES edfixtranscript.CourseTranscript (CourseAttemptResultDescriptorId, CourseIdentificationCode, CourseIdentificationSystemDescriptorId, EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+ON DELETE CASCADE
+;
+
+ALTER TABLE edfixtranscript.CourseTranscriptCourse ADD CONSTRAINT FK_43f076_Course FOREIGN KEY (CourseCode, CourseEducationOrganizationId)
+REFERENCES edfi.Course (CourseCode, EducationOrganizationId)
+;
+
+CREATE INDEX FK_43f076_Course
+ON edfixtranscript.CourseTranscriptCourse (CourseCode ASC, CourseEducationOrganizationId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscriptCourse ADD CONSTRAINT FK_43f076_CourseTranscript FOREIGN KEY (CourseAttemptResultDescriptorId, CourseIdentificationCode, CourseIdentificationSystemDescriptorId, EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+REFERENCES edfixtranscript.CourseTranscript (CourseAttemptResultDescriptorId, CourseIdentificationCode, CourseIdentificationSystemDescriptorId, EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+ON DELETE CASCADE
+;
+
+CREATE INDEX FK_43f076_CourseTranscript
+ON edfixtranscript.CourseTranscriptCourse (CourseAttemptResultDescriptorId ASC, CourseIdentificationCode ASC, CourseIdentificationSystemDescriptorId ASC, EducationOrganizationId ASC, SchoolYear ASC, StudentUSI ASC, TermDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscriptCreditCategory ADD CONSTRAINT FK_ab7096_CourseTranscript FOREIGN KEY (CourseAttemptResultDescriptorId, CourseIdentificationCode, CourseIdentificationSystemDescriptorId, EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+REFERENCES edfixtranscript.CourseTranscript (CourseAttemptResultDescriptorId, CourseIdentificationCode, CourseIdentificationSystemDescriptorId, EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+ON DELETE CASCADE
+;
+
+CREATE INDEX FK_ab7096_CourseTranscript
+ON edfixtranscript.CourseTranscriptCreditCategory (CourseAttemptResultDescriptorId ASC, CourseIdentificationCode ASC, CourseIdentificationSystemDescriptorId ASC, EducationOrganizationId ASC, SchoolYear ASC, StudentUSI ASC, TermDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscriptCreditCategory ADD CONSTRAINT FK_ab7096_CreditCategoryDescriptor FOREIGN KEY (CreditCategoryDescriptorId)
+REFERENCES edfi.CreditCategoryDescriptor (CreditCategoryDescriptorId)
+;
+
+CREATE INDEX FK_ab7096_CreditCategoryDescriptor
+ON edfixtranscript.CourseTranscriptCreditCategory (CreditCategoryDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscriptEarnedAdditionalCredits ADD CONSTRAINT FK_b50e36_AdditionalCreditTypeDescriptor FOREIGN KEY (AdditionalCreditTypeDescriptorId)
+REFERENCES edfi.AdditionalCreditTypeDescriptor (AdditionalCreditTypeDescriptorId)
+;
+
+CREATE INDEX FK_b50e36_AdditionalCreditTypeDescriptor
+ON edfixtranscript.CourseTranscriptEarnedAdditionalCredits (AdditionalCreditTypeDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.CourseTranscriptEarnedAdditionalCredits ADD CONSTRAINT FK_b50e36_CourseTranscript FOREIGN KEY (CourseAttemptResultDescriptorId, CourseIdentificationCode, CourseIdentificationSystemDescriptorId, EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+REFERENCES edfixtranscript.CourseTranscript (CourseAttemptResultDescriptorId, CourseIdentificationCode, CourseIdentificationSystemDescriptorId, EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+ON DELETE CASCADE
+;
+
+CREATE INDEX FK_b50e36_CourseTranscript
+ON edfixtranscript.CourseTranscriptEarnedAdditionalCredits (CourseAttemptResultDescriptorId ASC, CourseIdentificationCode ASC, CourseIdentificationSystemDescriptorId ASC, EducationOrganizationId ASC, SchoolYear ASC, StudentUSI ASC, TermDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecord ADD CONSTRAINT FK_0ff8d6_CreditTypeDescriptor FOREIGN KEY (CumulativeEarnedCreditTypeDescriptorId)
+REFERENCES edfi.CreditTypeDescriptor (CreditTypeDescriptorId)
+;
+
+CREATE INDEX FK_0ff8d6_CreditTypeDescriptor
+ON edfixtranscript.StudentAcademicRecord (CumulativeEarnedCreditTypeDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecord ADD CONSTRAINT FK_0ff8d6_CreditTypeDescriptor1 FOREIGN KEY (CumulativeAttemptedCreditTypeDescriptorId)
+REFERENCES edfi.CreditTypeDescriptor (CreditTypeDescriptorId)
+;
+
+CREATE INDEX FK_0ff8d6_CreditTypeDescriptor1
+ON edfixtranscript.StudentAcademicRecord (CumulativeAttemptedCreditTypeDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecord ADD CONSTRAINT FK_0ff8d6_CreditTypeDescriptor2 FOREIGN KEY (SessionEarnedCreditTypeDescriptorId)
+REFERENCES edfi.CreditTypeDescriptor (CreditTypeDescriptorId)
+;
+
+CREATE INDEX FK_0ff8d6_CreditTypeDescriptor2
+ON edfixtranscript.StudentAcademicRecord (SessionEarnedCreditTypeDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecord ADD CONSTRAINT FK_0ff8d6_CreditTypeDescriptor3 FOREIGN KEY (SessionAttemptedCreditTypeDescriptorId)
+REFERENCES edfi.CreditTypeDescriptor (CreditTypeDescriptorId)
+;
+
+CREATE INDEX FK_0ff8d6_CreditTypeDescriptor3
+ON edfixtranscript.StudentAcademicRecord (SessionAttemptedCreditTypeDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecord ADD CONSTRAINT FK_0ff8d6_EducationOrganization FOREIGN KEY (EducationOrganizationId)
+REFERENCES edfi.EducationOrganization (EducationOrganizationId)
+;
+
+CREATE INDEX FK_0ff8d6_EducationOrganization
+ON edfixtranscript.StudentAcademicRecord (EducationOrganizationId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecord ADD CONSTRAINT FK_0ff8d6_SchoolYearType FOREIGN KEY (SchoolYear)
+REFERENCES edfi.SchoolYearType (SchoolYear)
+;
+
+CREATE INDEX FK_0ff8d6_SchoolYearType
+ON edfixtranscript.StudentAcademicRecord (SchoolYear ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecord ADD CONSTRAINT FK_0ff8d6_Student FOREIGN KEY (StudentUSI)
+REFERENCES edfi.Student (StudentUSI)
+;
+
+CREATE INDEX FK_0ff8d6_Student
+ON edfixtranscript.StudentAcademicRecord (StudentUSI ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecord ADD CONSTRAINT FK_0ff8d6_TermDescriptor FOREIGN KEY (TermDescriptorId)
+REFERENCES edfi.TermDescriptor (TermDescriptorId)
+;
+
+CREATE INDEX FK_0ff8d6_TermDescriptor
+ON edfixtranscript.StudentAcademicRecord (TermDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecordAcademicHonor ADD CONSTRAINT FK_2b286a_AcademicHonorCategoryDescriptor FOREIGN KEY (AcademicHonorCategoryDescriptorId)
+REFERENCES edfi.AcademicHonorCategoryDescriptor (AcademicHonorCategoryDescriptorId)
+;
+
+CREATE INDEX FK_2b286a_AcademicHonorCategoryDescriptor
+ON edfixtranscript.StudentAcademicRecordAcademicHonor (AcademicHonorCategoryDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecordAcademicHonor ADD CONSTRAINT FK_2b286a_AchievementCategoryDescriptor FOREIGN KEY (AchievementCategoryDescriptorId)
+REFERENCES edfi.AchievementCategoryDescriptor (AchievementCategoryDescriptorId)
+;
+
+CREATE INDEX FK_2b286a_AchievementCategoryDescriptor
+ON edfixtranscript.StudentAcademicRecordAcademicHonor (AchievementCategoryDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecordAcademicHonor ADD CONSTRAINT FK_2b286a_StudentAcademicRecord FOREIGN KEY (EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+REFERENCES edfixtranscript.StudentAcademicRecord (EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+ON DELETE CASCADE
+;
+
+CREATE INDEX FK_2b286a_StudentAcademicRecord
+ON edfixtranscript.StudentAcademicRecordAcademicHonor (EducationOrganizationId ASC, SchoolYear ASC, StudentUSI ASC, TermDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecordClassRanking ADD CONSTRAINT FK_8299aa_StudentAcademicRecord FOREIGN KEY (EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+REFERENCES edfixtranscript.StudentAcademicRecord (EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+ON DELETE CASCADE
+;
+
+ALTER TABLE edfixtranscript.StudentAcademicRecordDiploma ADD CONSTRAINT FK_a3f725_AchievementCategoryDescriptor FOREIGN KEY (AchievementCategoryDescriptorId)
+REFERENCES edfi.AchievementCategoryDescriptor (AchievementCategoryDescriptorId)
+;
+
+CREATE INDEX FK_a3f725_AchievementCategoryDescriptor
+ON edfixtranscript.StudentAcademicRecordDiploma (AchievementCategoryDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecordDiploma ADD CONSTRAINT FK_a3f725_DiplomaLevelDescriptor FOREIGN KEY (DiplomaLevelDescriptorId)
+REFERENCES edfi.DiplomaLevelDescriptor (DiplomaLevelDescriptorId)
+;
+
+CREATE INDEX FK_a3f725_DiplomaLevelDescriptor
+ON edfixtranscript.StudentAcademicRecordDiploma (DiplomaLevelDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecordDiploma ADD CONSTRAINT FK_a3f725_DiplomaTypeDescriptor FOREIGN KEY (DiplomaTypeDescriptorId)
+REFERENCES edfi.DiplomaTypeDescriptor (DiplomaTypeDescriptorId)
+;
+
+CREATE INDEX FK_a3f725_DiplomaTypeDescriptor
+ON edfixtranscript.StudentAcademicRecordDiploma (DiplomaTypeDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecordDiploma ADD CONSTRAINT FK_a3f725_StudentAcademicRecord FOREIGN KEY (EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+REFERENCES edfixtranscript.StudentAcademicRecord (EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+ON DELETE CASCADE
+;
+
+CREATE INDEX FK_a3f725_StudentAcademicRecord
+ON edfixtranscript.StudentAcademicRecordDiploma (EducationOrganizationId ASC, SchoolYear ASC, StudentUSI ASC, TermDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecordGradePointAverage ADD CONSTRAINT FK_af7be7_GradePointAverageTypeDescriptor FOREIGN KEY (GradePointAverageTypeDescriptorId)
+REFERENCES edfi.GradePointAverageTypeDescriptor (GradePointAverageTypeDescriptorId)
+;
+
+CREATE INDEX FK_af7be7_GradePointAverageTypeDescriptor
+ON edfixtranscript.StudentAcademicRecordGradePointAverage (GradePointAverageTypeDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecordGradePointAverage ADD CONSTRAINT FK_af7be7_StudentAcademicRecord FOREIGN KEY (EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+REFERENCES edfixtranscript.StudentAcademicRecord (EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+ON DELETE CASCADE
+;
+
+CREATE INDEX FK_af7be7_StudentAcademicRecord
+ON edfixtranscript.StudentAcademicRecordGradePointAverage (EducationOrganizationId ASC, SchoolYear ASC, StudentUSI ASC, TermDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecordRecognition ADD CONSTRAINT FK_5e049e_AchievementCategoryDescriptor FOREIGN KEY (AchievementCategoryDescriptorId)
+REFERENCES edfi.AchievementCategoryDescriptor (AchievementCategoryDescriptorId)
+;
+
+CREATE INDEX FK_5e049e_AchievementCategoryDescriptor
+ON edfixtranscript.StudentAcademicRecordRecognition (AchievementCategoryDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecordRecognition ADD CONSTRAINT FK_5e049e_RecognitionTypeDescriptor FOREIGN KEY (RecognitionTypeDescriptorId)
+REFERENCES edfi.RecognitionTypeDescriptor (RecognitionTypeDescriptorId)
+;
+
+CREATE INDEX FK_5e049e_RecognitionTypeDescriptor
+ON edfixtranscript.StudentAcademicRecordRecognition (RecognitionTypeDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecordRecognition ADD CONSTRAINT FK_5e049e_StudentAcademicRecord FOREIGN KEY (EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+REFERENCES edfixtranscript.StudentAcademicRecord (EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+ON DELETE CASCADE
+;
+
+CREATE INDEX FK_5e049e_StudentAcademicRecord
+ON edfixtranscript.StudentAcademicRecordRecognition (EducationOrganizationId ASC, SchoolYear ASC, StudentUSI ASC, TermDescriptorId ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecordReportCard ADD CONSTRAINT FK_84e5e0_ReportCard FOREIGN KEY (EducationOrganizationId, GradingPeriodDescriptorId, GradingPeriodSchoolId, GradingPeriodSchoolYear, GradingPeriodSequence, StudentUSI)
+REFERENCES edfi.ReportCard (EducationOrganizationId, GradingPeriodDescriptorId, GradingPeriodSchoolId, GradingPeriodSchoolYear, GradingPeriodSequence, StudentUSI)
+;
+
+CREATE INDEX FK_84e5e0_ReportCard
+ON edfixtranscript.StudentAcademicRecordReportCard (EducationOrganizationId ASC, GradingPeriodDescriptorId ASC, GradingPeriodSchoolId ASC, GradingPeriodSchoolYear ASC, GradingPeriodSequence ASC, StudentUSI ASC);
+
+ALTER TABLE edfixtranscript.StudentAcademicRecordReportCard ADD CONSTRAINT FK_84e5e0_StudentAcademicRecord FOREIGN KEY (EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+REFERENCES edfixtranscript.StudentAcademicRecord (EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+ON DELETE CASCADE
+;
+
+CREATE INDEX FK_84e5e0_StudentAcademicRecord
+ON edfixtranscript.StudentAcademicRecordReportCard (EducationOrganizationId ASC, SchoolYear ASC, StudentUSI ASC, TermDescriptorId ASC);
+

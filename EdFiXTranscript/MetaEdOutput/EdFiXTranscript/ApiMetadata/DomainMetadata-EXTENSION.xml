@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AggregateExtensions logicalSchema="EdFiXTranscript" schema="edfixtranscript">
+  <Aggregate root="CourseTranscript">
+    <Entity table="CourseTranscript" schema="edfixtranscript"/>
+    <Entity table="CourseTranscriptAcademicSubject" schema="edfixtranscript"/>
+    <Entity table="CourseTranscriptAlternativeCourseIdentificationCode" schema="edfixtranscript"/>
+    <Entity table="CourseTranscriptCourse" schema="edfixtranscript"/>
+    <Entity table="CourseTranscriptCreditCategory" schema="edfixtranscript"/>
+    <Entity table="CourseTranscriptEarnedAdditionalCredits" schema="edfixtranscript"/>
+  </Aggregate>
+  <Aggregate root="StudentAcademicRecord">
+    <Entity table="StudentAcademicRecord" schema="edfixtranscript"/>
+    <Entity table="StudentAcademicRecordAcademicHonor" schema="edfixtranscript"/>
+    <Entity table="StudentAcademicRecordClassRanking" schema="edfixtranscript"/>
+    <Entity table="StudentAcademicRecordDiploma" schema="edfixtranscript"/>
+    <Entity table="StudentAcademicRecordGradePointAverage" schema="edfixtranscript"/>
+    <Entity table="StudentAcademicRecordRecognition" schema="edfixtranscript"/>
+    <Entity table="StudentAcademicRecordReportCard" schema="edfixtranscript"/>
+  </Aggregate>
+</AggregateExtensions>
