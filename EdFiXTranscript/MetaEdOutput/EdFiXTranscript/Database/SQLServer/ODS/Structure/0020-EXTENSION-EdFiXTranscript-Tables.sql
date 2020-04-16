@@ -82,8 +82,8 @@ CREATE TABLE [edfixtranscript].[CourseTranscriptAlternativeCourseIdentificationC
     [StudentUSI] [INT] NOT NULL,
     [TermDescriptorId] [INT] NOT NULL,
     [AlternativeIdentificationCode] [NVARCHAR](60) NOT NULL,
-    [AlternativeAssigningOrganizationIdentificationCode] [NVARCHAR](60) NULL,
-    [AlternativeCourseCatalogURL] [NVARCHAR](255) NULL,
+    [AssigningOrganizationIdentificationCode] [NVARCHAR](60) NULL,
+    [CourseCatalogURL] [NVARCHAR](255) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [CourseTranscriptAlternativeCourseIdentificationCode_PK] PRIMARY KEY CLUSTERED (
         [AlternativeCourseIdentificationSystemDescriptorId] ASC,

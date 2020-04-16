@@ -58,8 +58,8 @@ COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificatio
 COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
 COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.TermDescriptorId IS 'The term for the session during the school year.';
 COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.AlternativeIdentificationCode IS 'A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a "/". For example, consider the following SCED code-    subject = 20 Math    course = 272 Geometry    level = G General    credits = 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1.';
-COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.AlternativeAssigningOrganizationIdentificationCode IS 'The organization code or name assigning the Identification Code.';
-COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.AlternativeCourseCatalogURL IS 'The URL for the course catalog that defines the course identification code.';
+COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.AssigningOrganizationIdentificationCode IS 'The organization code or name assigning the Identification Code.';
+COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.CourseCatalogURL IS 'The URL for the course catalog that defines the course identification code.';
 
 -- Extended Properties [edfixtranscript].[CourseTranscriptCourse] --
 COMMENT ON TABLE edfixtranscript.CourseTranscriptCourse IS 'The course recorded in the course transcript entry.';

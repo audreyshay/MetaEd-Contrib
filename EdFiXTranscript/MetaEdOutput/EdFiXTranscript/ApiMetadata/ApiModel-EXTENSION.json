@@ -410,40 +410,6 @@
       "name": "CourseTranscriptAlternativeCourseIdentificationCode",
       "locallyDefinedProperties": [
         {
-          "propertyName": "AlternativeAssigningOrganizationIdentificationCode",
-          "propertyType": {
-            "dbType": "String",
-            "maxLength": 60,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": true
-          },
-          "description": "The organization code or name assigning the Identification Code.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "AlternativeAssigningOrganizationIdentificationCode",
-            "postgreSql": "AlternativeAssigningOrganizationIdentificationCode"
-          }
-        },
-        {
-          "propertyName": "AlternativeCourseCatalogURL",
-          "propertyType": {
-            "dbType": "String",
-            "maxLength": 255,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": true
-          },
-          "description": "The URL for the course catalog that defines the course identification code.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "AlternativeCourseCatalogURL",
-            "postgreSql": "AlternativeCourseCatalogURL"
-          }
-        },
-        {
           "propertyName": "AlternativeIdentificationCode",
           "propertyType": {
             "dbType": "String",
@@ -458,6 +424,40 @@
           "columnNames": {
             "sqlServer": "AlternativeIdentificationCode",
             "postgreSql": "AlternativeIdentificationCode"
+          }
+        },
+        {
+          "propertyName": "AssigningOrganizationIdentificationCode",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The organization code or name assigning the Identification Code.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AssigningOrganizationIdentificationCode",
+            "postgreSql": "AssigningOrganizationIdentificationCode"
+          }
+        },
+        {
+          "propertyName": "CourseCatalogURL",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 255,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The URL for the course catalog that defines the course identification code.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CourseCatalogURL",
+            "postgreSql": "CourseCatalogURL"
           }
         },
         {

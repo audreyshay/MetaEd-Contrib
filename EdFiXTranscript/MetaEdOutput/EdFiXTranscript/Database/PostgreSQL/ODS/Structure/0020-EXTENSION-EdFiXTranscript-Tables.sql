@@ -59,8 +59,8 @@ CREATE TABLE edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode
     StudentUSI INT NOT NULL,
     TermDescriptorId INT NOT NULL,
     AlternativeIdentificationCode VARCHAR(60) NOT NULL,
-    AlternativeAssigningOrganizationIdentificationCode VARCHAR(60) NULL,
-    AlternativeCourseCatalogURL VARCHAR(255) NULL,
+    AssigningOrganizationIdentificationCode VARCHAR(60) NULL,
+    CourseCatalogURL VARCHAR(255) NULL,
     CreateDate TIMESTAMP NOT NULL,
     CONSTRAINT CourseTranscriptAlternativeCourseIdentificationCode_PK PRIMARY KEY (AlternativeCourseIdentificationSystemDescriptorId, CourseAttemptResultDescriptorId, CourseIdentificationCode, CourseIdentificationSystemDescriptorId, EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
 ); 

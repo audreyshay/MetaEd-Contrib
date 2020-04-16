@@ -11,8 +11,7 @@ Common AlternativeCourseIdentificationCode
     shared string EdFi.IdentificationCode
         documentation "The organization code or name assigning the Identification Code."
         is optional
-        role name AlternativeAssigningOrganization
+        role name AssigningOrganization
     shared string EdFi.CourseCatalogURL
         documentation "The URL for the course catalog that defines the course identification code."
         is optional
-        role name Alternative
