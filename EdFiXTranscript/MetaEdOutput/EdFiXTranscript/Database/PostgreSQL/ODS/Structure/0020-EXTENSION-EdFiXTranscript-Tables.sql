@@ -50,6 +50,7 @@ ALTER TABLE edfixtranscript.CourseTranscriptAcademicSubject ALTER COLUMN CreateD
 
 -- Table edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode --
 CREATE TABLE edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode (
+    AlternativeCourseIdentificationSystemDescriptorId INT NOT NULL,
     CourseAttemptResultDescriptorId INT NOT NULL,
     CourseIdentificationCode VARCHAR(60) NOT NULL,
     CourseIdentificationSystemDescriptorId INT NOT NULL,
@@ -57,11 +58,11 @@ CREATE TABLE edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode
     SchoolYear SMALLINT NOT NULL,
     StudentUSI INT NOT NULL,
     TermDescriptorId INT NOT NULL,
-    IdentificationCode VARCHAR(60) NOT NULL,
-    AssigningOrganizationIdentificationCode VARCHAR(60) NULL,
-    CourseCatalogURL VARCHAR(255) NULL,
+    AlternativeIdentificationCode VARCHAR(60) NOT NULL,
+    AlternativeAssigningOrganizationIdentificationCode VARCHAR(60) NULL,
+    AlternativeCourseCatalogURL VARCHAR(255) NULL,
     CreateDate TIMESTAMP NOT NULL,
-    CONSTRAINT CourseTranscriptAlternativeCourseIdentificationCode_PK PRIMARY KEY (CourseAttemptResultDescriptorId, CourseIdentificationCode, CourseIdentificationSystemDescriptorId, EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
+    CONSTRAINT CourseTranscriptAlternativeCourseIdentificationCode_PK PRIMARY KEY (AlternativeCourseIdentificationSystemDescriptorId, CourseAttemptResultDescriptorId, CourseIdentificationCode, CourseIdentificationSystemDescriptorId, EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
 ); 
 ALTER TABLE edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode ALTER COLUMN CreateDate SET DEFAULT current_timestamp;
 
@@ -244,19 +245,4 @@ CREATE TABLE edfixtranscript.StudentAcademicRecordRecognition (
     CONSTRAINT StudentAcademicRecordRecognition_PK PRIMARY KEY (EducationOrganizationId, RecognitionTypeDescriptorId, SchoolYear, StudentUSI, TermDescriptorId)
 ); 
 ALTER TABLE edfixtranscript.StudentAcademicRecordRecognition ALTER COLUMN CreateDate SET DEFAULT current_timestamp;
-
--- Table edfixtranscript.StudentAcademicRecordReportCard --
-CREATE TABLE edfixtranscript.StudentAcademicRecordReportCard (
-    EducationOrganizationId INT NOT NULL,
-    GradingPeriodDescriptorId INT NOT NULL,
-    GradingPeriodSchoolId INT NOT NULL,
-    GradingPeriodSchoolYear SMALLINT NOT NULL,
-    GradingPeriodSequence INT NOT NULL,
-    SchoolYear SMALLINT NOT NULL,
-    StudentUSI INT NOT NULL,
-    TermDescriptorId INT NOT NULL,
-    CreateDate TIMESTAMP NOT NULL,
-    CONSTRAINT StudentAcademicRecordReportCard_PK PRIMARY KEY (EducationOrganizationId, GradingPeriodDescriptorId, GradingPeriodSchoolId, GradingPeriodSchoolYear, GradingPeriodSequence, SchoolYear, StudentUSI, TermDescriptorId)
-); 
-ALTER TABLE edfixtranscript.StudentAcademicRecordReportCard ALTER COLUMN CreateDate SET DEFAULT current_timestamp;
 

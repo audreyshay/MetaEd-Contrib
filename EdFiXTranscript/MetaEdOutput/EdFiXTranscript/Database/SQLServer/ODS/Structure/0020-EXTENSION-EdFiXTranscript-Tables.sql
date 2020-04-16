@@ -73,6 +73,7 @@ GO
 
 -- Table [edfixtranscript].[CourseTranscriptAlternativeCourseIdentificationCode] --
 CREATE TABLE [edfixtranscript].[CourseTranscriptAlternativeCourseIdentificationCode] (
+    [AlternativeCourseIdentificationSystemDescriptorId] [INT] NOT NULL,
     [CourseAttemptResultDescriptorId] [INT] NOT NULL,
     [CourseIdentificationCode] [NVARCHAR](60) NOT NULL,
     [CourseIdentificationSystemDescriptorId] [INT] NOT NULL,
@@ -80,11 +81,12 @@ CREATE TABLE [edfixtranscript].[CourseTranscriptAlternativeCourseIdentificationC
     [SchoolYear] [SMALLINT] NOT NULL,
     [StudentUSI] [INT] NOT NULL,
     [TermDescriptorId] [INT] NOT NULL,
-    [IdentificationCode] [NVARCHAR](60) NOT NULL,
-    [AssigningOrganizationIdentificationCode] [NVARCHAR](60) NULL,
-    [CourseCatalogURL] [NVARCHAR](255) NULL,
+    [AlternativeIdentificationCode] [NVARCHAR](60) NOT NULL,
+    [AlternativeAssigningOrganizationIdentificationCode] [NVARCHAR](60) NULL,
+    [AlternativeCourseCatalogURL] [NVARCHAR](255) NULL,
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [CourseTranscriptAlternativeCourseIdentificationCode_PK] PRIMARY KEY CLUSTERED (
+        [AlternativeCourseIdentificationSystemDescriptorId] ASC,
         [CourseAttemptResultDescriptorId] ASC,
         [CourseIdentificationCode] ASC,
         [CourseIdentificationSystemDescriptorId] ASC,
@@ -360,31 +362,5 @@ CREATE TABLE [edfixtranscript].[StudentAcademicRecordRecognition] (
 ) ON [PRIMARY]
 GO
 ALTER TABLE [edfixtranscript].[StudentAcademicRecordRecognition] ADD CONSTRAINT [StudentAcademicRecordRecognition_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
-GO
-
--- Table [edfixtranscript].[StudentAcademicRecordReportCard] --
-CREATE TABLE [edfixtranscript].[StudentAcademicRecordReportCard] (
-    [EducationOrganizationId] [INT] NOT NULL,
-    [GradingPeriodDescriptorId] [INT] NOT NULL,
-    [GradingPeriodSchoolId] [INT] NOT NULL,
-    [GradingPeriodSchoolYear] [SMALLINT] NOT NULL,
-    [GradingPeriodSequence] [INT] NOT NULL,
-    [SchoolYear] [SMALLINT] NOT NULL,
-    [StudentUSI] [INT] NOT NULL,
-    [TermDescriptorId] [INT] NOT NULL,
-    [CreateDate] [DATETIME2] NOT NULL,
-    CONSTRAINT [StudentAcademicRecordReportCard_PK] PRIMARY KEY CLUSTERED (
-        [EducationOrganizationId] ASC,
-        [GradingPeriodDescriptorId] ASC,
-        [GradingPeriodSchoolId] ASC,
-        [GradingPeriodSchoolYear] ASC,
-        [GradingPeriodSequence] ASC,
-        [SchoolYear] ASC,
-        [StudentUSI] ASC,
-        [TermDescriptorId] ASC
-    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-ALTER TABLE [edfixtranscript].[StudentAcademicRecordReportCard] ADD CONSTRAINT [StudentAcademicRecordReportCard_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 

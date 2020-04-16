@@ -15,6 +15,5 @@
     <Entity table="StudentAcademicRecordDiploma" schema="edfixtranscript"/>
     <Entity table="StudentAcademicRecordGradePointAverage" schema="edfixtranscript"/>
     <Entity table="StudentAcademicRecordRecognition" schema="edfixtranscript"/>
-    <Entity table="StudentAcademicRecordReportCard" schema="edfixtranscript"/>
   </Aggregate>
 </AggregateExtensions>

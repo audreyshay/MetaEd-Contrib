@@ -59,10 +59,9 @@ Domain Entity CourseTranscript
         documentation "Optional association between CourseTranscript and ExternalEdOrg is designed to capture cases in which the student takes a course via an ExternalEducationOrganization (like an enrolled student taking a Khan Academy course)."
         is optional
         role name External
-    common EdFi.CourseIdentificationCode
+    common AlternativeCourseIdentificationCode
         documentation "The code that identifies the course, course offering, the code from an external educational organization, or other alternate course code."
         is optional collection
-        role name Alternative
     shared string EdFi.IdentificationCode
         documentation "The organization code or name assigning the course identification code."
         is optional

@@ -76,17 +76,20 @@ ON DELETE CASCADE
 CREATE INDEX FK_354642_CourseTranscript
 ON edfixtranscript.CourseTranscriptAcademicSubject (CourseAttemptResultDescriptorId ASC, CourseIdentificationCode ASC, CourseIdentificationSystemDescriptorId ASC, EducationOrganizationId ASC, SchoolYear ASC, StudentUSI ASC, TermDescriptorId ASC);
 
-ALTER TABLE edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode ADD CONSTRAINT FK_6621ee_CourseIdentificationSystemDescriptor FOREIGN KEY (CourseIdentificationSystemDescriptorId)
+ALTER TABLE edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode ADD CONSTRAINT FK_6621ee_CourseIdentificationSystemDescriptor FOREIGN KEY (AlternativeCourseIdentificationSystemDescriptorId)
 REFERENCES edfi.CourseIdentificationSystemDescriptor (CourseIdentificationSystemDescriptorId)
 ;
 
 CREATE INDEX FK_6621ee_CourseIdentificationSystemDescriptor
-ON edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode (CourseIdentificationSystemDescriptorId ASC);
+ON edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode (AlternativeCourseIdentificationSystemDescriptorId ASC);
 
 ALTER TABLE edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode ADD CONSTRAINT FK_6621ee_CourseTranscript FOREIGN KEY (CourseAttemptResultDescriptorId, CourseIdentificationCode, CourseIdentificationSystemDescriptorId, EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
 REFERENCES edfixtranscript.CourseTranscript (CourseAttemptResultDescriptorId, CourseIdentificationCode, CourseIdentificationSystemDescriptorId, EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
 ON DELETE CASCADE
 ;
+
+CREATE INDEX FK_6621ee_CourseTranscript
+ON edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode (CourseAttemptResultDescriptorId ASC, CourseIdentificationCode ASC, CourseIdentificationSystemDescriptorId ASC, EducationOrganizationId ASC, SchoolYear ASC, StudentUSI ASC, TermDescriptorId ASC);
 
 ALTER TABLE edfixtranscript.CourseTranscriptCourse ADD CONSTRAINT FK_43f076_Course FOREIGN KEY (CourseCode, CourseEducationOrganizationId)
 REFERENCES edfi.Course (CourseCode, EducationOrganizationId)
@@ -281,19 +284,4 @@ ON DELETE CASCADE
 
 CREATE INDEX FK_5e049e_StudentAcademicRecord
 ON edfixtranscript.StudentAcademicRecordRecognition (EducationOrganizationId ASC, SchoolYear ASC, StudentUSI ASC, TermDescriptorId ASC);
-
-ALTER TABLE edfixtranscript.StudentAcademicRecordReportCard ADD CONSTRAINT FK_84e5e0_ReportCard FOREIGN KEY (EducationOrganizationId, GradingPeriodDescriptorId, GradingPeriodSchoolId, GradingPeriodSchoolYear, GradingPeriodSequence, StudentUSI)
-REFERENCES edfi.ReportCard (EducationOrganizationId, GradingPeriodDescriptorId, GradingPeriodSchoolId, GradingPeriodSchoolYear, GradingPeriodSequence, StudentUSI)
-;
-
-CREATE INDEX FK_84e5e0_ReportCard
-ON edfixtranscript.StudentAcademicRecordReportCard (EducationOrganizationId ASC, GradingPeriodDescriptorId ASC, GradingPeriodSchoolId ASC, GradingPeriodSchoolYear ASC, GradingPeriodSequence ASC, StudentUSI ASC);
-
-ALTER TABLE edfixtranscript.StudentAcademicRecordReportCard ADD CONSTRAINT FK_84e5e0_StudentAcademicRecord FOREIGN KEY (EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
-REFERENCES edfixtranscript.StudentAcademicRecord (EducationOrganizationId, SchoolYear, StudentUSI, TermDescriptorId)
-ON DELETE CASCADE
-;
-
-CREATE INDEX FK_84e5e0_StudentAcademicRecord
-ON edfixtranscript.StudentAcademicRecordReportCard (EducationOrganizationId ASC, SchoolYear ASC, StudentUSI ASC, TermDescriptorId ASC);
 

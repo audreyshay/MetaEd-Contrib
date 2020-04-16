@@ -67,10 +67,6 @@
         {
           "schema": "edfixtranscript",
           "name": "StudentAcademicRecordRecognition"
-        },
-        {
-          "schema": "edfixtranscript",
-          "name": "StudentAcademicRecordReportCard"
         }
       ]
     }
@@ -414,7 +410,7 @@
       "name": "CourseTranscriptAlternativeCourseIdentificationCode",
       "locallyDefinedProperties": [
         {
-          "propertyName": "AssigningOrganizationIdentificationCode",
+          "propertyName": "AlternativeAssigningOrganizationIdentificationCode",
           "propertyType": {
             "dbType": "String",
             "maxLength": 60,
@@ -426,12 +422,12 @@
           "isIdentifying": false,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "AssigningOrganizationIdentificationCode",
-            "postgreSql": "AssigningOrganizationIdentificationCode"
+            "sqlServer": "AlternativeAssigningOrganizationIdentificationCode",
+            "postgreSql": "AlternativeAssigningOrganizationIdentificationCode"
           }
         },
         {
-          "propertyName": "CourseCatalogURL",
+          "propertyName": "AlternativeCourseCatalogURL",
           "propertyType": {
             "dbType": "String",
             "maxLength": 255,
@@ -443,8 +439,25 @@
           "isIdentifying": false,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "CourseCatalogURL",
-            "postgreSql": "CourseCatalogURL"
+            "sqlServer": "AlternativeCourseCatalogURL",
+            "postgreSql": "AlternativeCourseCatalogURL"
+          }
+        },
+        {
+          "propertyName": "AlternativeIdentificationCode",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a \"/\". For example, consider the following SCED code-    subject = 20 Math    course = 272 Geometry    level = G General    credits = 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1.",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AlternativeIdentificationCode",
+            "postgreSql": "AlternativeIdentificationCode"
           }
         },
         {
@@ -463,29 +476,13 @@
             "sqlServer": "CreateDate",
             "postgreSql": "CreateDate"
           }
-        },
-        {
-          "propertyName": "IdentificationCode",
-          "propertyType": {
-            "dbType": "String",
-            "maxLength": 60,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a \"/\". For example, consider the following SCED code-    subject = 20 Math    course = 272 Geometry    level = G General    credits = 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1.",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "IdentificationCode",
-            "postgreSql": "IdentificationCode"
-          }
         }
       ],
       "identifiers": [
         {
           "identifierName": "CourseTranscriptAlternativeCourseIdentificationCode_PK",
           "identifyingPropertyNames": [
+            "AlternativeCourseIdentificationSystemDescriptorId",
             "CourseAttemptResultDescriptorId",
             "CourseIdentificationCode",
             "CourseIdentificationSystemDescriptorId",
@@ -1854,56 +1851,6 @@
         "sqlServer": "StudentAcademicRecordRecognition",
         "postgreSql": "StudentAcademicRecordRecognition"
       }
-    },
-    {
-      "schema": "edfixtranscript",
-      "name": "StudentAcademicRecordReportCard",
-      "locallyDefinedProperties": [
-        {
-          "propertyName": "CreateDate",
-          "propertyType": {
-            "dbType": "DateTime2",
-            "maxLength": 0,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "",
-          "isIdentifying": false,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "CreateDate",
-            "postgreSql": "CreateDate"
-          }
-        }
-      ],
-      "identifiers": [
-        {
-          "identifierName": "StudentAcademicRecordReportCard_PK",
-          "identifyingPropertyNames": [
-            "EducationOrganizationId",
-            "GradingPeriodDescriptorId",
-            "GradingPeriodSchoolId",
-            "GradingPeriodSchoolYear",
-            "GradingPeriodSequence",
-            "SchoolYear",
-            "StudentUSI",
-            "TermDescriptorId"
-          ],
-          "isPrimary": true,
-          "isUpdatable": false,
-          "constraintNames": {
-            "sqlServer": "StudentAcademicRecordReportCard_PK",
-            "postgreSql": "StudentAcademicRecordReportCard_PK"
-          }
-        }
-      ],
-      "isAbstract": false,
-      "description": "Report cards for the student.",
-      "tableNames": {
-        "sqlServer": "StudentAcademicRecordReportCard",
-        "postgreSql": "StudentAcademicRecordReportCard"
-      }
     }
   ],
   "associationDefinitions": [
@@ -2897,7 +2844,7 @@
       },
       "secondaryEntityProperties": [
         {
-          "propertyName": "CourseIdentificationSystemDescriptorId",
+          "propertyName": "AlternativeCourseIdentificationSystemDescriptorId",
           "propertyType": {
             "dbType": "Int32",
             "maxLength": 0,
@@ -2909,8 +2856,8 @@
           "isIdentifying": true,
           "isServerAssigned": false,
           "columnNames": {
-            "sqlServer": "CourseIdentificationSystemDescriptorId",
-            "postgreSql": "CourseIdentificationSystemDescriptorId"
+            "sqlServer": "AlternativeCourseIdentificationSystemDescriptorId",
+            "postgreSql": "AlternativeCourseIdentificationSystemDescriptorId"
           }
         }
       ],
@@ -2926,7 +2873,7 @@
         "schema": "edfixtranscript",
         "name": "FK_CourseTranscriptAlternativeCourseIdentificationCode_CourseTranscript"
       },
-      "cardinality": "OneToOne",
+      "cardinality": "OneToZeroOrMore",
       "primaryEntityFullName": {
         "schema": "edfixtranscript",
         "name": "CourseTranscript"
@@ -5931,396 +5878,6 @@
       "constraintNames": {
         "sqlServer": "FK_StudentAcademicRecordRecognition_StudentAcademicRecord",
         "postgreSql": "FK_5e049e_StudentAcademicRecord"
-      }
-    },
-    {
-      "fullName": {
-        "schema": "edfixtranscript",
-        "name": "FK_StudentAcademicRecordReportCard_ReportCard"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "edfi",
-        "name": "ReportCard"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "EducationOrganizationId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to an education organization.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
-          }
-        },
-        {
-          "propertyName": "GradingPeriodDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The name of the period for which grades are reported.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "GradingPeriodDescriptorId",
-            "postgreSql": "GradingPeriodDescriptorId"
-          }
-        },
-        {
-          "propertyName": "GradingPeriodSchoolId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to a school.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "GradingPeriodSchoolId",
-            "postgreSql": "GradingPeriodSchoolId"
-          }
-        },
-        {
-          "propertyName": "GradingPeriodSchoolYear",
-          "propertyType": {
-            "dbType": "Int16",
-            "maxLength": 0,
-            "precision": 5,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier for the grading period school year.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "GradingPeriodSchoolYear",
-            "postgreSql": "GradingPeriodSchoolYear"
-          }
-        },
-        {
-          "propertyName": "GradingPeriodSequence",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The sequential order of this period relative to other periods.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "GradingPeriodSequence",
-            "postgreSql": "GradingPeriodSequence"
-          }
-        },
-        {
-          "propertyName": "StudentUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "StudentUSI",
-            "postgreSql": "StudentUSI"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "edfixtranscript",
-        "name": "StudentAcademicRecordReportCard"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "EducationOrganizationId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to an education organization.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
-          }
-        },
-        {
-          "propertyName": "GradingPeriodDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The name of the period for which grades are reported.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "GradingPeriodDescriptorId",
-            "postgreSql": "GradingPeriodDescriptorId"
-          }
-        },
-        {
-          "propertyName": "GradingPeriodSchoolId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to a school.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "GradingPeriodSchoolId",
-            "postgreSql": "GradingPeriodSchoolId"
-          }
-        },
-        {
-          "propertyName": "GradingPeriodSchoolYear",
-          "propertyType": {
-            "dbType": "Int16",
-            "maxLength": 0,
-            "precision": 5,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier for the grading period school year.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "GradingPeriodSchoolYear",
-            "postgreSql": "GradingPeriodSchoolYear"
-          }
-        },
-        {
-          "propertyName": "GradingPeriodSequence",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The sequential order of this period relative to other periods.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "GradingPeriodSequence",
-            "postgreSql": "GradingPeriodSequence"
-          }
-        },
-        {
-          "propertyName": "StudentUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "StudentUSI",
-            "postgreSql": "StudentUSI"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_StudentAcademicRecordReportCard_ReportCard",
-        "postgreSql": "FK_84e5e0_ReportCard"
-      }
-    },
-    {
-      "fullName": {
-        "schema": "edfixtranscript",
-        "name": "FK_StudentAcademicRecordReportCard_StudentAcademicRecord"
-      },
-      "cardinality": "OneToZeroOrMore",
-      "primaryEntityFullName": {
-        "schema": "edfixtranscript",
-        "name": "StudentAcademicRecord"
-      },
-      "primaryEntityProperties": [
-        {
-          "propertyName": "EducationOrganizationId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to an education organization.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
-          }
-        },
-        {
-          "propertyName": "SchoolYear",
-          "propertyType": {
-            "dbType": "Int16",
-            "maxLength": 0,
-            "precision": 5,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier for the school year.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "SchoolYear",
-            "postgreSql": "SchoolYear"
-          }
-        },
-        {
-          "propertyName": "StudentUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "StudentUSI",
-            "postgreSql": "StudentUSI"
-          }
-        },
-        {
-          "propertyName": "TermDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The term for the session during the school year.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "TermDescriptorId",
-            "postgreSql": "TermDescriptorId"
-          }
-        }
-      ],
-      "secondaryEntityFullName": {
-        "schema": "edfixtranscript",
-        "name": "StudentAcademicRecordReportCard"
-      },
-      "secondaryEntityProperties": [
-        {
-          "propertyName": "EducationOrganizationId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier assigned to an education organization.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "EducationOrganizationId",
-            "postgreSql": "EducationOrganizationId"
-          }
-        },
-        {
-          "propertyName": "SchoolYear",
-          "propertyType": {
-            "dbType": "Int16",
-            "maxLength": 0,
-            "precision": 5,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The identifier for the school year.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "SchoolYear",
-            "postgreSql": "SchoolYear"
-          }
-        },
-        {
-          "propertyName": "StudentUSI",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "A unique alphanumeric code assigned to a student.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "StudentUSI",
-            "postgreSql": "StudentUSI"
-          }
-        },
-        {
-          "propertyName": "TermDescriptorId",
-          "propertyType": {
-            "dbType": "Int32",
-            "maxLength": 0,
-            "precision": 10,
-            "scale": 0,
-            "isNullable": false
-          },
-          "description": "The term for the session during the school year.",
-          "isIdentifying": true,
-          "isServerAssigned": false,
-          "columnNames": {
-            "sqlServer": "TermDescriptorId",
-            "postgreSql": "TermDescriptorId"
-          }
-        }
-      ],
-      "isIdentifying": true,
-      "isRequired": true,
-      "constraintNames": {
-        "sqlServer": "FK_StudentAcademicRecordReportCard_StudentAcademicRecord",
-        "postgreSql": "FK_84e5e0_StudentAcademicRecord"
       }
     }
   ]

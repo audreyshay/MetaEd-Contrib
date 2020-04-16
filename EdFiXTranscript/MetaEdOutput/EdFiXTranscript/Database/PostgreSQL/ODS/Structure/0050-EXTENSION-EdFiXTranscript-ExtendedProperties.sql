@@ -45,6 +45,7 @@ COMMENT ON COLUMN edfixtranscript.CourseTranscriptAcademicSubject.TermDescriptor
 
 -- Extended Properties [edfixtranscript].[CourseTranscriptAlternativeCourseIdentificationCode] --
 COMMENT ON TABLE edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode IS 'The code that identifies the course, course offering, the code from an external educational organization, or other alternate course code.';
+COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.AlternativeCourseIdentificationSystemDescriptorId IS 'A system that is used to identify the organization of subject matter and related learning experiences provided for the instruction of students.';
 COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.CourseAttemptResultDescriptorId IS 'The result from the student''s attempt to take the course, for example:
         Pass
         Fail
@@ -56,9 +57,9 @@ COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificatio
 COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.SchoolYear IS 'The identifier for the school year.';
 COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
 COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.TermDescriptorId IS 'The term for the session during the school year.';
-COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.IdentificationCode IS 'A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a "/". For example, consider the following SCED code-    subject = 20 Math    course = 272 Geometry    level = G General    credits = 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1.';
-COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.AssigningOrganizationIdentificationCode IS 'The organization code or name assigning the Identification Code.';
-COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.CourseCatalogURL IS 'The URL for the course catalog that defines the course identification code.';
+COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.AlternativeIdentificationCode IS 'A unique number or alphanumeric code assigned to a course by a school, school system, state, or other agency or entity. For multi-part course codes, concatenate the parts separated by a "/". For example, consider the following SCED code-    subject = 20 Math    course = 272 Geometry    level = G General    credits = 1.00   course sequence 1 of 1- would be entered as 20/272/G/1.00/1 of 1.';
+COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.AlternativeAssigningOrganizationIdentificationCode IS 'The organization code or name assigning the Identification Code.';
+COMMENT ON COLUMN edfixtranscript.CourseTranscriptAlternativeCourseIdentificationCode.AlternativeCourseCatalogURL IS 'The URL for the course catalog that defines the course identification code.';
 
 -- Extended Properties [edfixtranscript].[CourseTranscriptCourse] --
 COMMENT ON TABLE edfixtranscript.CourseTranscriptCourse IS 'The course recorded in the course transcript entry.';
@@ -213,15 +214,4 @@ COMMENT ON COLUMN edfixtranscript.StudentAcademicRecordRecognition.ImageURL IS '
 COMMENT ON COLUMN edfixtranscript.StudentAcademicRecordRecognition.RecognitionDescription IS 'A description of the type of academic distinctions earned by or awarded to the individual.';
 COMMENT ON COLUMN edfixtranscript.StudentAcademicRecordRecognition.RecognitionAwardDate IS 'The date the recognition was awarded or earned.';
 COMMENT ON COLUMN edfixtranscript.StudentAcademicRecordRecognition.RecognitionAwardExpiresDate IS 'Date on which the award expires.';
-
--- Extended Properties [edfixtranscript].[StudentAcademicRecordReportCard] --
-COMMENT ON TABLE edfixtranscript.StudentAcademicRecordReportCard IS 'Report cards for the student.';
-COMMENT ON COLUMN edfixtranscript.StudentAcademicRecordReportCard.EducationOrganizationId IS 'The identifier assigned to an education organization.';
-COMMENT ON COLUMN edfixtranscript.StudentAcademicRecordReportCard.GradingPeriodDescriptorId IS 'The name of the period for which grades are reported.';
-COMMENT ON COLUMN edfixtranscript.StudentAcademicRecordReportCard.GradingPeriodSchoolId IS 'The identifier assigned to a school.';
-COMMENT ON COLUMN edfixtranscript.StudentAcademicRecordReportCard.GradingPeriodSchoolYear IS 'The identifier for the grading period school year.';
-COMMENT ON COLUMN edfixtranscript.StudentAcademicRecordReportCard.GradingPeriodSequence IS 'The sequential order of this period relative to other periods.';
-COMMENT ON COLUMN edfixtranscript.StudentAcademicRecordReportCard.SchoolYear IS 'The identifier for the school year.';
-COMMENT ON COLUMN edfixtranscript.StudentAcademicRecordReportCard.StudentUSI IS 'A unique alphanumeric code assigned to a student.';
-COMMENT ON COLUMN edfixtranscript.StudentAcademicRecordReportCard.TermDescriptorId IS 'The term for the session during the school year.';
 

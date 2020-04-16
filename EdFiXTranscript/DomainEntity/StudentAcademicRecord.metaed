@@ -46,8 +46,3 @@ Domain Entity StudentAcademicRecord
     descriptor EdFi.Term
         documentation "The term for the session during the school year."
         is part of identity
-    domain entity EdFi.ReportCard
-        documentation "Report cards for the student."
-        is optional collection
-        merge ReportCard.EducationOrganization with EducationOrganization
-        merge ReportCard.Student with Student
