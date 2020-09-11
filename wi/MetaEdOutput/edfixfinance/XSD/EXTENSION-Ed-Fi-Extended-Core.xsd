@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- (c)2019 Ed-Fi Alliance, LLC. All Rights Reserved. -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0310" xmlns:ann="http://ed-fi.org/annotation" targetNamespace="http://ed-fi.org/0310" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<!-- (c)2020 Ed-Fi Alliance, LLC. All Rights Reserved. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0320b" xmlns:ann="http://ed-fi.org/annotation" targetNamespace="http://ed-fi.org/0320b" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xs:include schemaLocation="Ed-Fi-Core.xsd" />
   <xs:annotation>
-    <xs:documentation>===== Ed-Fi 3.1.0 Extensions =====</xs:documentation>
+    <xs:documentation>===== Ed-Fi 3.2.0-b Extensions =====</xs:documentation>
   </xs:annotation>
   <xs:annotation>
     <xs:documentation>===== Domain Entities =====</xs:documentation>
@@ -592,7 +592,7 @@
   </xs:complexType>
   <xs:complexType name="EXTENSION-ChartOfAccountIdentityType">
     <xs:annotation>
-      <xs:documentation>Encapsulates primary attributes that can be used to look up the identity of a ChartOfAccount.</xs:documentation>
+      <xs:documentation>Identity of a ChartOfAccount.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Identity</ann:TypeGroup>
       </xs:appinfo>
@@ -627,7 +627,7 @@
         <xs:sequence>
           <xs:element name="ChartOfAccountIdentity" type="EXTENSION-ChartOfAccountIdentityType" minOccurs="0">
             <xs:annotation>
-              <xs:documentation>Encapsulates primary attributes that can be used to look up the identity of a ChartOfAccount.</xs:documentation>
+              <xs:documentation>Identity of a ChartOfAccount.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -714,7 +714,7 @@
   </xs:complexType>
   <xs:complexType name="EXTENSION-LocalAccountIdentityType">
     <xs:annotation>
-      <xs:documentation>Encapsulates primary attributes that can be used to look up the identity of a LocalAccount.</xs:documentation>
+      <xs:documentation>Identity of a LocalAccount.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Identity</ann:TypeGroup>
       </xs:appinfo>
@@ -749,7 +749,7 @@
         <xs:sequence>
           <xs:element name="LocalAccountIdentity" type="EXTENSION-LocalAccountIdentityType" minOccurs="0">
             <xs:annotation>
-              <xs:documentation>Encapsulates primary attributes that can be used to look up the identity of a LocalAccount.</xs:documentation>
+              <xs:documentation>Identity of a LocalAccount.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -758,7 +758,7 @@
   </xs:complexType>
   <xs:complexType name="EXTENSION-LocalActualIdentityType">
     <xs:annotation>
-      <xs:documentation>Encapsulates primary attributes that can be used to look up the identity of a LocalActual.</xs:documentation>
+      <xs:documentation>Identity of a LocalActual.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Identity</ann:TypeGroup>
       </xs:appinfo>
@@ -788,7 +788,7 @@
         <xs:sequence>
           <xs:element name="LocalActualIdentity" type="EXTENSION-LocalActualIdentityType" minOccurs="0">
             <xs:annotation>
-              <xs:documentation>Encapsulates primary attributes that can be used to look up the identity of a LocalActual.</xs:documentation>
+              <xs:documentation>Identity of a LocalActual.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -797,7 +797,7 @@
   </xs:complexType>
   <xs:complexType name="EXTENSION-LocalBudgetIdentityType">
     <xs:annotation>
-      <xs:documentation>Encapsulates primary attributes that can be used to look up the identity of a LocalBudget.</xs:documentation>
+      <xs:documentation>Identity of a LocalBudget.</xs:documentation>
       <xs:appinfo>
         <ann:TypeGroup>Identity</ann:TypeGroup>
       </xs:appinfo>
@@ -827,7 +827,7 @@
         <xs:sequence>
           <xs:element name="LocalBudgetIdentity" type="EXTENSION-LocalBudgetIdentityType" minOccurs="0">
             <xs:annotation>
-              <xs:documentation>Encapsulates primary attributes that can be used to look up the identity of a LocalBudget.</xs:documentation>
+              <xs:documentation>Identity of a LocalBudget.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -1137,7 +1137,7 @@
         <ann:TypeGroup>Simple</ann:TypeGroup>
       </xs:appinfo>
     </xs:annotation>
-    <xs:restriction base="xs:short">
+    <xs:restriction base="xs:int">
       <xs:minInclusive value="2020" />
       <xs:maxInclusive value="2040" />
     </xs:restriction>

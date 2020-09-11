@@ -1,0 +1,18 @@
+Domain Entity EdFi.GraduationPlan additions
+    decimal CommunityService
+        documentation "Total hours of community service required for graduation"
+        is required
+        total digits 5
+        decimal places 2
+        min value 0
+    bool CivicsExam
+        documentation "A civics exam is required- Yes -1 or No - 0"
+        is required
+    string MiscellaneousRequiredCredits
+        documentation "Clarification of requirements for Miscellaneous Required Credits"
+        is optional
+        min length 0
+        max length 900
+    shared decimal EdFi.CreditsValue named NonHsHealthEducationCredits
+        documentation "Credits of Health Education Fulfilled in Grade 7 and/or Grade 8"
+        is required

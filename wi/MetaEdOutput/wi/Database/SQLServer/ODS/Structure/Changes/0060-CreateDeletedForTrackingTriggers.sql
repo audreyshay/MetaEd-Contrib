@@ -5,7 +5,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[wi_CertificatedProgramStatusDescriptor_TrackedDelete](CertificatedProgramStatusDescriptorId, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_wi].[CertificatedProgramStatusDescriptor](CertificatedProgramStatusDescriptorId, Id, ChangeVersion)
     SELECT  d.CertificatedProgramStatusDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
             INNER JOIN edfi.Descriptor b ON d.CertificatedProgramStatusDescriptorId = b.DescriptorId
@@ -23,7 +23,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[wi_CountDateNameDescriptor_TrackedDelete](CountDateNameDescriptorId, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_wi].[CountDateNameDescriptor](CountDateNameDescriptorId, Id, ChangeVersion)
     SELECT  d.CountDateNameDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
             INNER JOIN edfi.Descriptor b ON d.CountDateNameDescriptorId = b.DescriptorId
@@ -41,7 +41,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[wi_CountDateReceivingServiceDescriptor_TrackedDelete](CountDateReceivingServiceDescriptorId, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_wi].[CountDateReceivingServiceDescriptor](CountDateReceivingServiceDescriptorId, Id, ChangeVersion)
     SELECT  d.CountDateReceivingServiceDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
             INNER JOIN edfi.Descriptor b ON d.CountDateReceivingServiceDescriptorId = b.DescriptorId
@@ -59,7 +59,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[wi_CteProgramAreaDescriptor_TrackedDelete](CteProgramAreaDescriptorId, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_wi].[CteProgramAreaDescriptor](CteProgramAreaDescriptorId, Id, ChangeVersion)
     SELECT  d.CteProgramAreaDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
             INNER JOIN edfi.Descriptor b ON d.CteProgramAreaDescriptorId = b.DescriptorId
@@ -77,7 +77,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[wi_EnrollmentTypeDescriptor_TrackedDelete](EnrollmentTypeDescriptorId, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_wi].[EnrollmentTypeDescriptor](EnrollmentTypeDescriptorId, Id, ChangeVersion)
     SELECT  d.EnrollmentTypeDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
             INNER JOIN edfi.Descriptor b ON d.EnrollmentTypeDescriptorId = b.DescriptorId
@@ -95,7 +95,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[wi_IacCodeDescriptor_TrackedDelete](IacCodeDescriptorId, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_wi].[IacCodeDescriptor](IacCodeDescriptorId, Id, ChangeVersion)
     SELECT  d.IacCodeDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
             INNER JOIN edfi.Descriptor b ON d.IacCodeDescriptorId = b.DescriptorId
@@ -113,7 +113,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[wi_ModifiedTermDescriptor_TrackedDelete](ModifiedTermDescriptorId, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_wi].[ModifiedTermDescriptor](ModifiedTermDescriptorId, Id, ChangeVersion)
     SELECT  d.ModifiedTermDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
             INNER JOIN edfi.Descriptor b ON d.ModifiedTermDescriptorId = b.DescriptorId
@@ -131,7 +131,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[wi_StateEndorsedRegionalCareerPathwayStatusDescriptor_TrackedDelete](StateEndorsedRegionalCareerPathwayStatusDescriptorId, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_wi].[StateEndorsedRegionalCareerPathwayStatusDescriptor](StateEndorsedRegionalCareerPathwayStatusDescriptorId, Id, ChangeVersion)
     SELECT  d.StateEndorsedRegionalCareerPathwayStatusDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
             INNER JOIN edfi.Descriptor b ON d.StateEndorsedRegionalCareerPathwayStatusDescriptorId = b.DescriptorId

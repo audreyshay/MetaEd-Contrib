@@ -13,6 +13,7 @@
     <Element name="VisaDescriptor" />
     <Element name="TribalAffiliationDescriptor" />
     <Element name="TitleIPartASchoolDesignationDescriptor" />
+    <Element name="TitleIPartAProgramServiceDescriptor" />
     <Element name="TitleIPartAParticipantDescriptor" />
     <Element name="TermDescriptor" />
     <Element name="TelephoneNumberTypeDescriptor" />
@@ -65,9 +66,11 @@
     <Element name="PostSecondaryEventCategoryDescriptor" />
     <Element name="PostingResultDescriptor" />
     <Element name="PopulationServedDescriptor" />
+    <Element name="PlatformTypeDescriptor" />
     <Element name="PersonalInformationVerificationDescriptor" />
     <Element name="PerformanceLevelDescriptor" />
     <Element name="PerformanceBaseConversionDescriptor" />
+    <Element name="ParticipationStatusDescriptor" />
     <Element name="ParticipationDescriptor" />
     <Element name="OtherNameTypeDescriptor" />
     <Element name="OperationalStatusDescriptor" />
@@ -86,6 +89,8 @@
     <Element name="LicenseTypeDescriptor" />
     <Element name="LicenseStatusDescriptor" />
     <Element name="LevelOfEducationDescriptor" />
+    <Element name="LearningStandardScopeDescriptor" />
+    <Element name="LearningStandardEquivalenceStrengthDescriptor" />
     <Element name="LearningStandardCategoryDescriptor" />
     <Element name="LanguageUseDescriptor" />
     <Element name="LanguageInstructionProgramServiceDescriptor" />
@@ -103,6 +108,7 @@
     <Element name="GraduationPlanTypeDescriptor" />
     <Element name="GradingPeriodDescriptor" />
     <Element name="GradeTypeDescriptor" />
+    <Element name="GradePointAverageTypeDescriptor" />
     <Element name="GradeLevelDescriptor" />
     <Element name="GradebookEntryTypeDescriptor" />
     <Element name="ExitWithdrawTypeDescriptor" />
@@ -115,6 +121,7 @@
     <Element name="EducationOrganizationIdentificationSystemDescriptor" />
     <Element name="EducationOrganizationCategoryDescriptor" />
     <Element name="EducationalEnvironmentDescriptor" />
+    <Element name="DisciplineIncidentParticipationCodeDescriptor" />
     <Element name="DisciplineActionLengthDifferenceReasonDescriptor" />
     <Element name="DisciplineDescriptor" />
     <Element name="DisabilityDeterminationSourceTypeDescriptor" />
@@ -125,7 +132,9 @@
     <Element name="DiagnosisDescriptor" />
     <Element name="DeliveryMethodDescriptor" />
     <Element name="CurriculumUsedDescriptor" />
+    <Element name="CTEProgramServiceDescriptor" />
     <Element name="CreditTypeDescriptor" />
+    <Element name="CreditCategoryDescriptor" />
     <Element name="CredentialTypeDescriptor" />
     <Element name="CredentialFieldDescriptor" />
     <Element name="CourseRepeatCodeDescriptor" />
@@ -175,6 +184,7 @@
   </Interchange>
   <Interchange name="Standards" order="30">
     <Element name="LearningStandard" />
+    <Element name="LearningStandardEquivalenceAssociation" />
     <Element name="LearningObjective" />
   </Interchange>
   <Interchange name="Parent" order="40">
@@ -265,6 +275,7 @@
   </Interchange>
   <Interchange name="StudentDiscipline" order="150">
     <Element name="DisciplineIncident" />
+    <Element name="StaffDisciplineIncidentAssociation" />
     <Element name="StudentDisciplineIncidentAssociation" />
     <Element name="DisciplineAction" />
   </Interchange>

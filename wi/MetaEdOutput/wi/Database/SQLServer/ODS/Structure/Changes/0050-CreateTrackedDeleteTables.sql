@@ -1,64 +1,64 @@
-CREATE TABLE [changes].[wi_CertificatedProgramStatusDescriptor_TrackedDelete]
+CREATE TABLE [tracked_deletes_wi].[CertificatedProgramStatusDescriptor]
 (
        CertificatedProgramStatusDescriptorId [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_wi_CertificatedProgramStatusDescriptor_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_CertificatedProgramStatusDescriptor PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[wi_CountDateNameDescriptor_TrackedDelete]
+CREATE TABLE [tracked_deletes_wi].[CountDateNameDescriptor]
 (
        CountDateNameDescriptorId [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_wi_CountDateNameDescriptor_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_CountDateNameDescriptor PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[wi_CountDateReceivingServiceDescriptor_TrackedDelete]
+CREATE TABLE [tracked_deletes_wi].[CountDateReceivingServiceDescriptor]
 (
        CountDateReceivingServiceDescriptorId [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_wi_CountDateReceivingServiceDescriptor_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_CountDateReceivingServiceDescriptor PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[wi_CteProgramAreaDescriptor_TrackedDelete]
+CREATE TABLE [tracked_deletes_wi].[CteProgramAreaDescriptor]
 (
        CteProgramAreaDescriptorId [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_wi_CteProgramAreaDescriptor_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_CteProgramAreaDescriptor PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[wi_EnrollmentTypeDescriptor_TrackedDelete]
+CREATE TABLE [tracked_deletes_wi].[EnrollmentTypeDescriptor]
 (
        EnrollmentTypeDescriptorId [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_wi_EnrollmentTypeDescriptor_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_EnrollmentTypeDescriptor PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[wi_IacCodeDescriptor_TrackedDelete]
+CREATE TABLE [tracked_deletes_wi].[IacCodeDescriptor]
 (
        IacCodeDescriptorId [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_wi_IacCodeDescriptor_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_IacCodeDescriptor PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[wi_ModifiedTermDescriptor_TrackedDelete]
+CREATE TABLE [tracked_deletes_wi].[ModifiedTermDescriptor]
 (
        ModifiedTermDescriptorId [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_wi_ModifiedTermDescriptor_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_ModifiedTermDescriptor PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[wi_StateEndorsedRegionalCareerPathwayStatusDescriptor_TrackedDelete]
+CREATE TABLE [tracked_deletes_wi].[StateEndorsedRegionalCareerPathwayStatusDescriptor]
 (
        StateEndorsedRegionalCareerPathwayStatusDescriptorId [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_wi_StateEndorsedRegionalCareerPathwayStatusDescriptor_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_StateEndorsedRegionalCareerPathwayStatusDescriptor PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 

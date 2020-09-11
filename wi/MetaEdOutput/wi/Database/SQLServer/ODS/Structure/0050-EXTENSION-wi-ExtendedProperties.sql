@@ -84,6 +84,24 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Indicator of Certificated Program Status', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GradeExtension', @level2type=N'COLUMN', @level2name=N'CertificatedProgramStatusDescriptorId'
 GO
 
+-- Extended Properties [wi].[GraduationPlanExtension] --
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GraduationPlanExtension'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GraduationPlanExtension', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The type of academic plan the student is following for graduation: for example, Minimum, Recommended, Distinguished, or Standard.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GraduationPlanExtension', @level2type=N'COLUMN', @level2name=N'GraduationPlanTypeDescriptorId'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The school year the student is expected to graduate.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GraduationPlanExtension', @level2type=N'COLUMN', @level2name=N'GraduationSchoolYear'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Total hours of community service required for graduation', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GraduationPlanExtension', @level2type=N'COLUMN', @level2name=N'CommunityService'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A civics exam is required- Yes -1 or No - 0', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GraduationPlanExtension', @level2type=N'COLUMN', @level2name=N'CivicsExam'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Clarification of requirements for Miscellaneous Required Credits', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GraduationPlanExtension', @level2type=N'COLUMN', @level2name=N'MiscellaneousRequiredCredits'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Credits of Health Education Fulfilled in Grade 7 and/or Grade 8', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'GraduationPlanExtension', @level2type=N'COLUMN', @level2name=N'NonHsHealthEducationCredits'
+GO
+
 -- Extended Properties [wi].[IacCodeDescriptor] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'IAC - subset of federal CIP codes used in Wisconsin CTE programs.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'IacCodeDescriptor'
 GO
@@ -105,7 +123,7 @@ GO
 -- Extended Properties [wi].[StudentCTEProgramAssociationCTEConcentrationCteProgramArea] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'WI Program areas of concentration.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentCTEProgramAssociationCTEConcentrationCteProgramArea'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month, day, and year on which the Student first received services.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentCTEProgramAssociationCTEConcentrationCteProgramArea', @level2type=N'COLUMN', @level2name=N'BeginDate'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentCTEProgramAssociationCTEConcentrationCteProgramArea', @level2type=N'COLUMN', @level2name=N'BeginDate'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'WI Program areas of concentration.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentCTEProgramAssociationCTEConcentrationCteProgramArea', @level2type=N'COLUMN', @level2name=N'CteProgramAreaDescriptorId'
 GO
@@ -123,7 +141,7 @@ GO
 -- Extended Properties [wi].[StudentCTEProgramAssociationExtension] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentCTEProgramAssociationExtension'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month, day, and year on which the Student first received services.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentCTEProgramAssociationExtension', @level2type=N'COLUMN', @level2name=N'BeginDate'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentCTEProgramAssociationExtension', @level2type=N'COLUMN', @level2name=N'BeginDate'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentCTEProgramAssociationExtension', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
 GO
@@ -183,8 +201,6 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique alphanumeric code assigned to a student.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentSchoolAssociationExtension', @level2type=N'COLUMN', @level2name=N'StudentUSI'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Identifies if a student is receiving Primary education services from a Private school and Special education services from a public schoolIndication of a student placed by a parent or guardian in private school, Parentally Placed Private, who receives special education or related services from the submitting district that meet state standards under a service plan (34 CFR 300.452--300.462).', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentSchoolAssociationExtension', @level2type=N'COLUMN', @level2name=N'ParentPlacedPrivate'
-GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentSchoolAssociationExtension', @level2type=N'COLUMN', @level2name=N'CompletedSchoolTerm'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to a local education agency.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentSchoolAssociationExtension', @level2type=N'COLUMN', @level2name=N'ExpectedTransferLocalEducationAgencyId'
@@ -215,7 +231,7 @@ GO
 -- Extended Properties [wi].[StudentSpecialEducationProgramAssociationExtension] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentSpecialEducationProgramAssociationExtension'
 GO
-EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The month, day, and year on which the Student first received services.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentSpecialEducationProgramAssociationExtension', @level2type=N'COLUMN', @level2name=N'BeginDate'
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentSpecialEducationProgramAssociationExtension', @level2type=N'COLUMN', @level2name=N'BeginDate'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'The identifier assigned to an education organization.', @level0type=N'SCHEMA', @level0name=N'wi', @level1type=N'TABLE', @level1name=N'StudentSpecialEducationProgramAssociationExtension', @level2type=N'COLUMN', @level2name=N'EducationOrganizationId'
 GO

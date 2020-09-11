@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!-- (c)2019 Ed-Fi Alliance, LLC. All Rights Reserved. -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0310" targetNamespace="http://ed-fi.org/0310" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<!-- (c)2020 Ed-Fi Alliance, LLC. All Rights Reserved. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0320b" targetNamespace="http://ed-fi.org/0320b" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xs:include schemaLocation="Ed-Fi-Core.xsd" />
   <xs:annotation>
     <xs:documentation>===== Student Discipline Interchange Model =====</xs:documentation>
@@ -14,6 +14,7 @@
         <xs:element name="DisciplineIncident" type="DisciplineIncident" />
         <xs:element name="StudentDisciplineIncidentAssociation" type="StudentDisciplineIncidentAssociation" />
         <xs:element name="DisciplineAction" type="DisciplineAction" />
+        <xs:element name="StaffDisciplineIncidentAssociation" type="StaffDisciplineIncidentAssociation" />
       </xs:choice>
     </xs:complexType>
   </xs:element>

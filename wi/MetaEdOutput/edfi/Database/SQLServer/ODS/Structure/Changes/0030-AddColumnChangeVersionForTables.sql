@@ -76,6 +76,8 @@ ALTER TABLE [edfi].[LearningObjective] ADD [ChangeVersion] [BIGINT] DEFAULT (NEX
 
 ALTER TABLE [edfi].[LearningStandard] ADD [ChangeVersion] [BIGINT] DEFAULT (NEXT VALUE FOR [changes].[ChangeVersionSequence]) NOT NULL;
 
+ALTER TABLE [edfi].[LearningStandardEquivalenceAssociation] ADD [ChangeVersion] [BIGINT] DEFAULT (NEXT VALUE FOR [changes].[ChangeVersionSequence]) NOT NULL;
+
 ALTER TABLE [edfi].[Location] ADD [ChangeVersion] [BIGINT] DEFAULT (NEXT VALUE FOR [changes].[ChangeVersionSequence]) NOT NULL;
 
 ALTER TABLE [edfi].[ObjectiveAssessment] ADD [ChangeVersion] [BIGINT] DEFAULT (NEXT VALUE FOR [changes].[ChangeVersionSequence]) NOT NULL;
@@ -107,6 +109,8 @@ ALTER TABLE [edfi].[Staff] ADD [ChangeVersion] [BIGINT] DEFAULT (NEXT VALUE FOR 
 ALTER TABLE [edfi].[StaffAbsenceEvent] ADD [ChangeVersion] [BIGINT] DEFAULT (NEXT VALUE FOR [changes].[ChangeVersionSequence]) NOT NULL;
 
 ALTER TABLE [edfi].[StaffCohortAssociation] ADD [ChangeVersion] [BIGINT] DEFAULT (NEXT VALUE FOR [changes].[ChangeVersionSequence]) NOT NULL;
+
+ALTER TABLE [edfi].[StaffDisciplineIncidentAssociation] ADD [ChangeVersion] [BIGINT] DEFAULT (NEXT VALUE FOR [changes].[ChangeVersionSequence]) NOT NULL;
 
 ALTER TABLE [edfi].[StaffEducationOrganizationAssignmentAssociation] ADD [ChangeVersion] [BIGINT] DEFAULT (NEXT VALUE FOR [changes].[ChangeVersionSequence]) NOT NULL;
 

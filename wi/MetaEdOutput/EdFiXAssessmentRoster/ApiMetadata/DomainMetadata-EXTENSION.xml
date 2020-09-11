@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AggregateExtensions logicalSchema="EdFiXAssessmentRoster" schema="edfixassessmentroster">
+  <Aggregate root="AssessmentAdministration">
+    <Entity table="AssessmentAdministration" schema="edfixassessmentroster"/>
+    <Entity table="AssessmentAdministrationContact" schema="edfixassessmentroster"/>
+    <Entity table="AssessmentAdministrationPeriod" schema="edfixassessmentroster"/>
+  </Aggregate>
+  <Aggregate root="StudentAssessmentRegistration">
+    <Entity table="StudentAssessmentRegistration" schema="edfixassessmentroster"/>
+    <Entity table="StudentAssessmentRegistrationAssessmentCustomization" schema="edfixassessmentroster"/>
+  </Aggregate>
+</AggregateExtensions>

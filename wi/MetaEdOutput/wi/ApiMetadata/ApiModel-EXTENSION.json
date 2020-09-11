@@ -1,8 +1,9 @@
 {
-  "odsApiVersion": "3.1.0",
+  "odsApiVersion": "3.4.0",
   "schemaDefinition": {
-    "logicalName": "wi",
-    "physicalName": "wi"
+    "logicalName": "Wi",
+    "physicalName": "wi",
+    "version": "1.0.0"
   },
   "aggregateDefinitions": [
     {
@@ -156,11 +157,19 @@
             "CertificatedProgramStatusDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "CertificatedProgramStatusDescriptor_PK",
+            "postgreSql": "CertificatedProgramStatusDescriptor_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Status in a certificated program"
+      "description": "Status in a certificated program",
+      "tableNames": {
+        "sqlServer": "CertificatedProgramStatusDescriptor",
+        "postgreSql": "CertificatedProgramStatusDescriptor"
+      }
     },
     {
       "schema": "wi",
@@ -173,11 +182,19 @@
             "CountDateNameDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "CountDateNameDescriptor_PK",
+            "postgreSql": "CountDateNameDescriptor_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "This descriptor describes the name of a count date for which services are recorded"
+      "description": "This descriptor describes the name of a count date for which services are recorded",
+      "tableNames": {
+        "sqlServer": "CountDateNameDescriptor",
+        "postgreSql": "CountDateNameDescriptor"
+      }
     },
     {
       "schema": "wi",
@@ -190,11 +207,19 @@
             "CountDateReceivingServiceDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "CountDateReceivingServiceDescriptor_PK",
+            "postgreSql": "CountDateReceivingServiceDescriptor_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "This descriptor describes the state of services on a count date"
+      "description": "This descriptor describes the state of services on a count date",
+      "tableNames": {
+        "sqlServer": "CountDateReceivingServiceDescriptor",
+        "postgreSql": "CountDateReceivingServiceDescriptor"
+      }
     },
     {
       "schema": "wi",
@@ -203,7 +228,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -211,7 +236,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         }
       ],
       "identifiers": [
@@ -225,11 +254,19 @@
             "SessionName"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "CourseOfferingCareerPathway_PK",
+            "postgreSql": "CourseOfferingCareerPathway_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "The career cluster or pathway representing the career path of the Vocational/Career Tech concentrator."
+      "description": "The career cluster or pathway representing the career path of the Vocational/Career Tech concentrator.",
+      "tableNames": {
+        "sqlServer": "CourseOfferingCareerPathway",
+        "postgreSql": "CourseOfferingCareerPathway"
+      }
     },
     {
       "schema": "wi",
@@ -242,11 +279,19 @@
             "CteProgramAreaDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "CteProgramAreaDescriptor_PK",
+            "postgreSql": "CteProgramAreaDescriptor_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Wisconsin CTE program areas."
+      "description": "Wisconsin CTE program areas.",
+      "tableNames": {
+        "sqlServer": "CteProgramAreaDescriptor",
+        "postgreSql": "CteProgramAreaDescriptor"
+      }
     },
     {
       "schema": "wi",
@@ -255,7 +300,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -263,7 +308,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "EarlyReinstatementCondition",
@@ -276,7 +325,11 @@
           },
           "description": "Following an expulsion, the student had early reinstatement condition to return to school prior to the end of the expulsion.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EarlyReinstatementCondition",
+            "postgreSql": "EarlyReinstatementCondition"
+          }
         }
       ],
       "identifiers": [
@@ -288,11 +341,19 @@
             "StudentUSI"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "DisciplineActionExtension_PK",
+            "postgreSql": "DisciplineActionExtension_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": ""
+      "description": "",
+      "tableNames": {
+        "sqlServer": "DisciplineActionExtension",
+        "postgreSql": "DisciplineActionExtension"
+      }
     },
     {
       "schema": "wi",
@@ -305,11 +366,19 @@
             "EnrollmentTypeDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "EnrollmentTypeDescriptor_PK",
+            "postgreSql": "EnrollmentTypeDescriptor_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "The enrollment type."
+      "description": "The enrollment type.",
+      "tableNames": {
+        "sqlServer": "EnrollmentTypeDescriptor",
+        "postgreSql": "EnrollmentTypeDescriptor"
+      }
     },
     {
       "schema": "wi",
@@ -318,7 +387,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -326,7 +395,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         }
       ],
       "identifiers": [
@@ -346,11 +419,132 @@
             "StudentUSI"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "GradeExtension_PK",
+            "postgreSql": "GradeExtension_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": ""
+      "description": "",
+      "tableNames": {
+        "sqlServer": "GradeExtension",
+        "postgreSql": "GradeExtension"
+      }
+    },
+    {
+      "schema": "wi",
+      "name": "GraduationPlanExtension",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CivicsExam",
+          "propertyType": {
+            "dbType": "Boolean",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A civics exam is required- Yes -1 or No - 0",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CivicsExam",
+            "postgreSql": "CivicsExam"
+          }
+        },
+        {
+          "propertyName": "CommunityService",
+          "propertyType": {
+            "dbType": "Decimal",
+            "maxLength": 0,
+            "precision": 5,
+            "scale": 2,
+            "isNullable": false
+          },
+          "description": "Total hours of community service required for graduation",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CommunityService",
+            "postgreSql": "CommunityService"
+          }
+        },
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
+        },
+        {
+          "propertyName": "MiscellaneousRequiredCredits",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 900,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "Clarification of requirements for Miscellaneous Required Credits",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "MiscellaneousRequiredCredits",
+            "postgreSql": "MiscellaneousRequiredCredits"
+          }
+        },
+        {
+          "propertyName": "NonHsHealthEducationCredits",
+          "propertyType": {
+            "dbType": "Decimal",
+            "maxLength": 0,
+            "precision": 9,
+            "scale": 3,
+            "isNullable": false
+          },
+          "description": "Credits of Health Education Fulfilled in Grade 7 and/or Grade 8",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "NonHsHealthEducationCredits",
+            "postgreSql": "NonHsHealthEducationCredits"
+          }
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "GraduationPlanExtension_PK",
+          "identifyingPropertyNames": [
+            "EducationOrganizationId",
+            "GraduationPlanTypeDescriptorId",
+            "GraduationSchoolYear"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "GraduationPlanExtension_PK",
+            "postgreSql": "GraduationPlanExtension_PK"
+          }
+        }
+      ],
+      "isAbstract": false,
+      "description": "",
+      "tableNames": {
+        "sqlServer": "GraduationPlanExtension",
+        "postgreSql": "GraduationPlanExtension"
+      }
     },
     {
       "schema": "wi",
@@ -363,11 +557,19 @@
             "IacCodeDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "IacCodeDescriptor_PK",
+            "postgreSql": "IacCodeDescriptor_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "IAC - subset of federal CIP codes used in Wisconsin CTE programs."
+      "description": "IAC - subset of federal CIP codes used in Wisconsin CTE programs.",
+      "tableNames": {
+        "sqlServer": "IacCodeDescriptor",
+        "postgreSql": "IacCodeDescriptor"
+      }
     },
     {
       "schema": "wi",
@@ -380,11 +582,19 @@
             "ModifiedTermDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "ModifiedTermDescriptor_PK",
+            "postgreSql": "ModifiedTermDescriptor_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Identifies if the duration of the expulsion has been modified from the federally required one year of expulsion for a fire arms incident."
+      "description": "Identifies if the duration of the expulsion has been modified from the federally required one year of expulsion for a fire arms incident.",
+      "tableNames": {
+        "sqlServer": "ModifiedTermDescriptor",
+        "postgreSql": "ModifiedTermDescriptor"
+      }
     },
     {
       "schema": "wi",
@@ -397,11 +607,19 @@
             "StateEndorsedRegionalCareerPathwayStatusDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "StateEndorsedRegionalCareerPathwayStatusDescriptor_PK",
+            "postgreSql": "StateEndorsedRegionalCareerPathwayStatusDescriptor_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Status in a State Endorsed Regional Career Pathway."
+      "description": "Status in a State Endorsed Regional Career Pathway.",
+      "tableNames": {
+        "sqlServer": "StateEndorsedRegionalCareerPathwayStatusDescriptor",
+        "postgreSql": "StateEndorsedRegionalCareerPathwayStatusDescriptor"
+      }
     },
     {
       "schema": "wi",
@@ -410,7 +628,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -418,7 +636,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         }
       ],
       "identifiers": [
@@ -434,11 +656,19 @@
             "StudentUSI"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "StudentCTEProgramAssociationCTEConcentrationCteProgramArea_PK",
+            "postgreSql": "StudentCTEProgramAssociationCTEConcentrationCteProgramArea_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "WI Program areas of concentration."
+      "description": "WI Program areas of concentration.",
+      "tableNames": {
+        "sqlServer": "StudentCTEProgramAssociationCTEConcentrationCteProgramArea",
+        "postgreSql": "StudentCTEProgramAssociationCTEConcentrationCteProgramArea"
+      }
     },
     {
       "schema": "wi",
@@ -447,7 +677,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -455,7 +685,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         }
       ],
       "identifiers": [
@@ -470,11 +704,19 @@
             "StudentUSI"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "StudentCTEProgramAssociationExtension_PK",
+            "postgreSql": "StudentCTEProgramAssociationExtension_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": ""
+      "description": "",
+      "tableNames": {
+        "sqlServer": "StudentCTEProgramAssociationExtension",
+        "postgreSql": "StudentCTEProgramAssociationExtension"
+      }
     },
     {
       "schema": "wi",
@@ -483,7 +725,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -491,7 +733,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "SeriousBodilyInjury",
@@ -504,7 +750,11 @@
           },
           "description": "Incident resulted in serious bodily injury. Serious Bodily Injury involves a substantial risk of death; extreme physical pain; protracted and obvious disfigurement; or protracted loss or impairment of the function of a bodily member, organ, or faculty (18 USC Section 1365 (3)(h)).",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SeriousBodilyInjury",
+            "postgreSql": "SeriousBodilyInjury"
+          }
         }
       ],
       "identifiers": [
@@ -516,11 +766,19 @@
             "StudentUSI"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "StudentDisciplineIncidentAssociationExtension_PK",
+            "postgreSql": "StudentDisciplineIncidentAssociationExtension_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": ""
+      "description": "",
+      "tableNames": {
+        "sqlServer": "StudentDisciplineIncidentAssociationExtension",
+        "postgreSql": "StudentDisciplineIncidentAssociationExtension"
+      }
     },
     {
       "schema": "wi",
@@ -529,7 +787,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -537,7 +795,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         }
       ],
       "identifiers": [
@@ -548,11 +810,19 @@
             "StudentUSI"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "StudentEducationOrganizationAssociationExtension_PK",
+            "postgreSql": "StudentEducationOrganizationAssociationExtension_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": ""
+      "description": "",
+      "tableNames": {
+        "sqlServer": "StudentEducationOrganizationAssociationExtension",
+        "postgreSql": "StudentEducationOrganizationAssociationExtension"
+      }
     },
     {
       "schema": "wi",
@@ -561,7 +831,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -569,7 +839,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         }
       ],
       "identifiers": [
@@ -582,11 +856,19 @@
             "StudentUSI"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "StudentSchoolAssociationEnrollmentType_PK",
+            "postgreSql": "StudentSchoolAssociationEnrollmentType_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": ""
+      "description": "",
+      "tableNames": {
+        "sqlServer": "StudentSchoolAssociationEnrollmentType",
+        "postgreSql": "StudentSchoolAssociationEnrollmentType"
+      }
     },
     {
       "schema": "wi",
@@ -603,7 +885,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ActualDaysAttendance",
+            "postgreSql": "ActualDaysAttendance"
+          }
         },
         {
           "propertyName": "CompletedSchoolTerm",
@@ -616,12 +902,16 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CompletedSchoolTerm",
+            "postgreSql": "CompletedSchoolTerm"
+          }
         },
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -629,20 +919,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
-        },
-        {
-          "propertyName": "ParentPlacedPrivate",
-          "propertyType": {
-            "dbType": "Boolean",
-            "maxLength": 0,
-            "precision": 0,
-            "scale": 0,
-            "isNullable": true
-          },
-          "description": "Identifies if a student is receiving Primary education services from a Private school and Special education services from a public schoolIndication of a student placed by a parent or guardian in private school, Parentally Placed Private, who receives special education or related services from the submitting district that meet state standards under a service plan (34 CFR 300.452--300.462).",
-          "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "PossibleDaysAttendance",
@@ -655,7 +936,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "PossibleDaysAttendance",
+            "postgreSql": "PossibleDaysAttendance"
+          }
         },
         {
           "propertyName": "PrivateSchoolChoiceProgramParticipant",
@@ -668,7 +953,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "PrivateSchoolChoiceProgramParticipant",
+            "postgreSql": "PrivateSchoolChoiceProgramParticipant"
+          }
         }
       ],
       "identifiers": [
@@ -680,11 +969,19 @@
             "StudentUSI"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "StudentSchoolAssociationExtension_PK",
+            "postgreSql": "StudentSchoolAssociationExtension_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": ""
+      "description": "",
+      "tableNames": {
+        "sqlServer": "StudentSchoolAssociationExtension",
+        "postgreSql": "StudentSchoolAssociationExtension"
+      }
     },
     {
       "schema": "wi",
@@ -693,7 +990,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -701,7 +998,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         }
       ],
       "identifiers": [
@@ -714,11 +1015,19 @@
             "StudentUSI"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "StudentSchoolAssociationReceivingService_PK",
+            "postgreSql": "StudentSchoolAssociationReceivingService_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "The status of a student during a specific count date"
+      "description": "The status of a student during a specific count date",
+      "tableNames": {
+        "sqlServer": "StudentSchoolAssociationReceivingService",
+        "postgreSql": "StudentSchoolAssociationReceivingService"
+      }
     },
     {
       "schema": "wi",
@@ -727,7 +1036,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -735,7 +1044,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         }
       ],
       "identifiers": [
@@ -750,11 +1063,19 @@
             "StudentUSI"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "StudentSpecialEducationProgramAssociationExtension_PK",
+            "postgreSql": "StudentSpecialEducationProgramAssociationExtension_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": ""
+      "description": "",
+      "tableNames": {
+        "sqlServer": "StudentSpecialEducationProgramAssociationExtension",
+        "postgreSql": "StudentSpecialEducationProgramAssociationExtension"
+      }
     }
   ],
   "associationDefinitions": [
@@ -780,7 +1101,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "DescriptorId",
+            "postgreSql": "DescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -799,11 +1124,19 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "CertificatedProgramStatusDescriptorId",
+            "postgreSql": "CertificatedProgramStatusDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_CertificatedProgramStatusDescriptor_Descriptor",
+        "postgreSql": "FK_47db03_Descriptor"
+      }
     },
     {
       "fullName": {
@@ -827,7 +1160,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "DescriptorId",
+            "postgreSql": "DescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -846,11 +1183,19 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "CountDateNameDescriptorId",
+            "postgreSql": "CountDateNameDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_CountDateNameDescriptor_Descriptor",
+        "postgreSql": "FK_db3f44_Descriptor"
+      }
     },
     {
       "fullName": {
@@ -874,7 +1219,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "DescriptorId",
+            "postgreSql": "DescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -893,11 +1242,19 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "CountDateReceivingServiceDescriptorId",
+            "postgreSql": "CountDateReceivingServiceDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_CountDateReceivingServiceDescriptor_Descriptor",
+        "postgreSql": "FK_b2b802_Descriptor"
+      }
     },
     {
       "fullName": {
@@ -921,7 +1278,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CareerPathwayDescriptorId",
+            "postgreSql": "CareerPathwayDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -940,11 +1301,19 @@
           },
           "description": "The career cluster or pathway representing the career path of the Vocational/Career Tech concentrator.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CareerPathwayDescriptorId",
+            "postgreSql": "CareerPathwayDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_CourseOfferingCareerPathway_CareerPathwayDescriptor",
+        "postgreSql": "FK_49d43f_CareerPathwayDescriptor"
+      }
     },
     {
       "fullName": {
@@ -968,7 +1337,11 @@
           },
           "description": "The local code assigned by the School that identifies the course offering provided for the instruction of students.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LocalCourseCode",
+            "postgreSql": "LocalCourseCode"
+          }
         },
         {
           "propertyName": "SchoolId",
@@ -981,7 +1354,11 @@
           },
           "description": "The identifier assigned to a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolId",
+            "postgreSql": "SchoolId"
+          }
         },
         {
           "propertyName": "SchoolYear",
@@ -994,7 +1371,11 @@
           },
           "description": "The identifier for the school year.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolYear",
+            "postgreSql": "SchoolYear"
+          }
         },
         {
           "propertyName": "SessionName",
@@ -1007,7 +1388,11 @@
           },
           "description": "The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SessionName",
+            "postgreSql": "SessionName"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -1026,7 +1411,11 @@
           },
           "description": "The local code assigned by the School that identifies the course offering provided for the instruction of students.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LocalCourseCode",
+            "postgreSql": "LocalCourseCode"
+          }
         },
         {
           "propertyName": "SchoolId",
@@ -1039,7 +1428,11 @@
           },
           "description": "The identifier assigned to a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolId",
+            "postgreSql": "SchoolId"
+          }
         },
         {
           "propertyName": "SchoolYear",
@@ -1052,7 +1445,11 @@
           },
           "description": "The identifier for the school year.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolYear",
+            "postgreSql": "SchoolYear"
+          }
         },
         {
           "propertyName": "SessionName",
@@ -1065,11 +1462,19 @@
           },
           "description": "The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SessionName",
+            "postgreSql": "SessionName"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_CourseOfferingCareerPathway_CourseOffering",
+        "postgreSql": "FK_49d43f_CourseOffering"
+      }
     },
     {
       "fullName": {
@@ -1093,7 +1498,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "DescriptorId",
+            "postgreSql": "DescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -1112,11 +1521,19 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "CteProgramAreaDescriptorId",
+            "postgreSql": "CteProgramAreaDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_CteProgramAreaDescriptor_Descriptor",
+        "postgreSql": "FK_3c541d_Descriptor"
+      }
     },
     {
       "fullName": {
@@ -1140,7 +1557,11 @@
           },
           "description": "Identifier assigned by the education organization to the DisciplineAction.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "DisciplineActionIdentifier",
+            "postgreSql": "DisciplineActionIdentifier"
+          }
         },
         {
           "propertyName": "DisciplineDate",
@@ -1153,7 +1574,11 @@
           },
           "description": "The date of the DisciplineAction.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "DisciplineDate",
+            "postgreSql": "DisciplineDate"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -1166,7 +1591,11 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -1185,7 +1614,11 @@
           },
           "description": "Identifier assigned by the education organization to the DisciplineAction.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "DisciplineActionIdentifier",
+            "postgreSql": "DisciplineActionIdentifier"
+          }
         },
         {
           "propertyName": "DisciplineDate",
@@ -1198,7 +1631,11 @@
           },
           "description": "The date of the DisciplineAction.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "DisciplineDate",
+            "postgreSql": "DisciplineDate"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -1211,11 +1648,19 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_DisciplineActionExtension_DisciplineAction",
+        "postgreSql": "FK_699fda_DisciplineAction"
+      }
     },
     {
       "fullName": {
@@ -1239,7 +1684,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ModifiedTermDescriptorId",
+            "postgreSql": "ModifiedTermDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -1258,11 +1707,19 @@
           },
           "description": "Identifies if the duration of the expulsion has been modified from the federally required one year of expulsion for a fire arms incident.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ModifiedTermDescriptorId",
+            "postgreSql": "ModifiedTermDescriptorId"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_DisciplineActionExtension_ModifiedTermDescriptor",
+        "postgreSql": "FK_699fda_ModifiedTermDescriptor"
+      }
     },
     {
       "fullName": {
@@ -1286,7 +1743,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "DescriptorId",
+            "postgreSql": "DescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -1305,11 +1766,19 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "EnrollmentTypeDescriptorId",
+            "postgreSql": "EnrollmentTypeDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_EnrollmentTypeDescriptor_Descriptor",
+        "postgreSql": "FK_d3c777_Descriptor"
+      }
     },
     {
       "fullName": {
@@ -1333,7 +1802,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CertificatedProgramStatusDescriptorId",
+            "postgreSql": "CertificatedProgramStatusDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -1352,11 +1825,19 @@
           },
           "description": "Indicator of Certificated Program Status",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CertificatedProgramStatusDescriptorId",
+            "postgreSql": "CertificatedProgramStatusDescriptorId"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_GradeExtension_CertificatedProgramStatusDescriptor",
+        "postgreSql": "FK_537a84_CertificatedProgramStatusDescriptor"
+      }
     },
     {
       "fullName": {
@@ -1380,7 +1861,11 @@
           },
           "description": "Month, day, and year of the Student's entry or assignment to the Section.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
         },
         {
           "propertyName": "GradeTypeDescriptorId",
@@ -1393,7 +1878,11 @@
           },
           "description": "The type of grade reported (e.g., Exam, Final, Grading Period).",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GradeTypeDescriptorId",
+            "postgreSql": "GradeTypeDescriptorId"
+          }
         },
         {
           "propertyName": "GradingPeriodDescriptorId",
@@ -1406,7 +1895,11 @@
           },
           "description": "The name of the period for which grades are reported.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GradingPeriodDescriptorId",
+            "postgreSql": "GradingPeriodDescriptorId"
+          }
         },
         {
           "propertyName": "GradingPeriodSchoolYear",
@@ -1419,7 +1912,11 @@
           },
           "description": "The identifier for the grading period school year.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GradingPeriodSchoolYear",
+            "postgreSql": "GradingPeriodSchoolYear"
+          }
         },
         {
           "propertyName": "GradingPeriodSequence",
@@ -1432,7 +1929,11 @@
           },
           "description": "The sequential order of this period relative to other periods.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GradingPeriodSequence",
+            "postgreSql": "GradingPeriodSequence"
+          }
         },
         {
           "propertyName": "LocalCourseCode",
@@ -1445,7 +1946,11 @@
           },
           "description": "The local code assigned by the School that identifies the course offering provided for the instruction of students.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LocalCourseCode",
+            "postgreSql": "LocalCourseCode"
+          }
         },
         {
           "propertyName": "SchoolId",
@@ -1458,7 +1963,11 @@
           },
           "description": "The identifier assigned to a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolId",
+            "postgreSql": "SchoolId"
+          }
         },
         {
           "propertyName": "SchoolYear",
@@ -1471,7 +1980,11 @@
           },
           "description": "The identifier for the school year.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolYear",
+            "postgreSql": "SchoolYear"
+          }
         },
         {
           "propertyName": "SectionIdentifier",
@@ -1484,7 +1997,11 @@
           },
           "description": "The local identifier assigned to a section.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SectionIdentifier",
+            "postgreSql": "SectionIdentifier"
+          }
         },
         {
           "propertyName": "SessionName",
@@ -1497,7 +2014,11 @@
           },
           "description": "The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SessionName",
+            "postgreSql": "SessionName"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -1510,7 +2031,11 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -1529,7 +2054,11 @@
           },
           "description": "Month, day, and year of the Student's entry or assignment to the Section.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
         },
         {
           "propertyName": "GradeTypeDescriptorId",
@@ -1542,7 +2071,11 @@
           },
           "description": "The type of grade reported (e.g., Exam, Final, Grading Period).",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GradeTypeDescriptorId",
+            "postgreSql": "GradeTypeDescriptorId"
+          }
         },
         {
           "propertyName": "GradingPeriodDescriptorId",
@@ -1555,7 +2088,11 @@
           },
           "description": "The name of the period for which grades are reported.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GradingPeriodDescriptorId",
+            "postgreSql": "GradingPeriodDescriptorId"
+          }
         },
         {
           "propertyName": "GradingPeriodSchoolYear",
@@ -1568,7 +2105,11 @@
           },
           "description": "The identifier for the grading period school year.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GradingPeriodSchoolYear",
+            "postgreSql": "GradingPeriodSchoolYear"
+          }
         },
         {
           "propertyName": "GradingPeriodSequence",
@@ -1581,7 +2122,11 @@
           },
           "description": "The sequential order of this period relative to other periods.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GradingPeriodSequence",
+            "postgreSql": "GradingPeriodSequence"
+          }
         },
         {
           "propertyName": "LocalCourseCode",
@@ -1594,7 +2139,11 @@
           },
           "description": "The local code assigned by the School that identifies the course offering provided for the instruction of students.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LocalCourseCode",
+            "postgreSql": "LocalCourseCode"
+          }
         },
         {
           "propertyName": "SchoolId",
@@ -1607,7 +2156,11 @@
           },
           "description": "The identifier assigned to a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolId",
+            "postgreSql": "SchoolId"
+          }
         },
         {
           "propertyName": "SchoolYear",
@@ -1620,7 +2173,11 @@
           },
           "description": "The identifier for the school year.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolYear",
+            "postgreSql": "SchoolYear"
+          }
         },
         {
           "propertyName": "SectionIdentifier",
@@ -1633,7 +2190,11 @@
           },
           "description": "The local identifier assigned to a section.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SectionIdentifier",
+            "postgreSql": "SectionIdentifier"
+          }
         },
         {
           "propertyName": "SessionName",
@@ -1646,7 +2207,11 @@
           },
           "description": "The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer).",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SessionName",
+            "postgreSql": "SessionName"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -1659,11 +2224,146 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_GradeExtension_Grade",
+        "postgreSql": "FK_537a84_Grade"
+      }
+    },
+    {
+      "fullName": {
+        "schema": "wi",
+        "name": "FK_GraduationPlanExtension_GraduationPlan"
+      },
+      "cardinality": "OneToOneExtension",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "GraduationPlan"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
+        },
+        {
+          "propertyName": "GraduationPlanTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The type of academic plan the student is following for graduation: for example, Minimum, Recommended, Distinguished, or Standard.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GraduationPlanTypeDescriptorId",
+            "postgreSql": "GraduationPlanTypeDescriptorId"
+          }
+        },
+        {
+          "propertyName": "GraduationSchoolYear",
+          "propertyType": {
+            "dbType": "Int16",
+            "maxLength": 0,
+            "precision": 5,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The school year the student is expected to graduate.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GraduationSchoolYear",
+            "postgreSql": "GraduationSchoolYear"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "wi",
+        "name": "GraduationPlanExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "EducationOrganizationId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The identifier assigned to an education organization.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
+        },
+        {
+          "propertyName": "GraduationPlanTypeDescriptorId",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The type of academic plan the student is following for graduation: for example, Minimum, Recommended, Distinguished, or Standard.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GraduationPlanTypeDescriptorId",
+            "postgreSql": "GraduationPlanTypeDescriptorId"
+          }
+        },
+        {
+          "propertyName": "GraduationSchoolYear",
+          "propertyType": {
+            "dbType": "Int16",
+            "maxLength": 0,
+            "precision": 5,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "The school year the student is expected to graduate.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GraduationSchoolYear",
+            "postgreSql": "GraduationSchoolYear"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_GraduationPlanExtension_GraduationPlan",
+        "postgreSql": "FK_208ea5_GraduationPlan"
+      }
     },
     {
       "fullName": {
@@ -1687,7 +2387,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "DescriptorId",
+            "postgreSql": "DescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -1706,11 +2410,19 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "IacCodeDescriptorId",
+            "postgreSql": "IacCodeDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_IacCodeDescriptor_Descriptor",
+        "postgreSql": "FK_accc03_Descriptor"
+      }
     },
     {
       "fullName": {
@@ -1734,7 +2446,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "DescriptorId",
+            "postgreSql": "DescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -1753,11 +2469,19 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "ModifiedTermDescriptorId",
+            "postgreSql": "ModifiedTermDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_ModifiedTermDescriptor_Descriptor",
+        "postgreSql": "FK_f8bd5c_Descriptor"
+      }
     },
     {
       "fullName": {
@@ -1781,7 +2505,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "DescriptorId",
+            "postgreSql": "DescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -1800,11 +2528,19 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "StateEndorsedRegionalCareerPathwayStatusDescriptorId",
+            "postgreSql": "StateEndorsedRegionalCareerPathwayStatusDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StateEndorsedRegionalCareerPathwayStatusDescriptor_Descriptor",
+        "postgreSql": "FK_1559fd_Descriptor"
+      }
     },
     {
       "fullName": {
@@ -1828,7 +2564,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CteProgramAreaDescriptorId",
+            "postgreSql": "CteProgramAreaDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -1847,11 +2587,19 @@
           },
           "description": "WI Program areas of concentration.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CteProgramAreaDescriptorId",
+            "postgreSql": "CteProgramAreaDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentCTEProgramAssociationCTEConcentrationCteProgramArea_CteProgramAreaDescriptor",
+        "postgreSql": "FK_9acc13_CteProgramAreaDescriptor"
+      }
     },
     {
       "fullName": {
@@ -1873,9 +2621,13 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "The month, day, and year on which the Student first received services.",
+          "description": "The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
         },
         {
           "propertyName": "EducationOrganizationId",
@@ -1888,7 +2640,11 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "ProgramEducationOrganizationId",
@@ -1901,7 +2657,11 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramEducationOrganizationId",
+            "postgreSql": "ProgramEducationOrganizationId"
+          }
         },
         {
           "propertyName": "ProgramName",
@@ -1914,7 +2674,11 @@
           },
           "description": "The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramName",
+            "postgreSql": "ProgramName"
+          }
         },
         {
           "propertyName": "ProgramTypeDescriptorId",
@@ -1927,7 +2691,11 @@
           },
           "description": "The type of program.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramTypeDescriptorId",
+            "postgreSql": "ProgramTypeDescriptorId"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -1940,7 +2708,11 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -1957,9 +2729,13 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "The month, day, and year on which the Student first received services.",
+          "description": "The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
         },
         {
           "propertyName": "EducationOrganizationId",
@@ -1972,7 +2748,11 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "ProgramEducationOrganizationId",
@@ -1985,7 +2765,11 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramEducationOrganizationId",
+            "postgreSql": "ProgramEducationOrganizationId"
+          }
         },
         {
           "propertyName": "ProgramName",
@@ -1998,7 +2782,11 @@
           },
           "description": "The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramName",
+            "postgreSql": "ProgramName"
+          }
         },
         {
           "propertyName": "ProgramTypeDescriptorId",
@@ -2011,7 +2799,11 @@
           },
           "description": "The type of program.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramTypeDescriptorId",
+            "postgreSql": "ProgramTypeDescriptorId"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -2024,11 +2816,19 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentCTEProgramAssociationCTEConcentrationCteProgramArea_StudentCTEProgramAssociation",
+        "postgreSql": "FK_9acc13_StudentCTEProgramAssociation"
+      }
     },
     {
       "fullName": {
@@ -2052,7 +2852,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CertificatedProgramStatusDescriptorId",
+            "postgreSql": "CertificatedProgramStatusDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2071,11 +2875,19 @@
           },
           "description": "Indicator of Certificated Program Status",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CertificatedProgramStatusDescriptorId",
+            "postgreSql": "CertificatedProgramStatusDescriptorId"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentCTEProgramAssociationExtension_CertificatedProgramStatusDescriptor",
+        "postgreSql": "FK_1020a1_CertificatedProgramStatusDescriptor"
+      }
     },
     {
       "fullName": {
@@ -2099,7 +2911,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StateEndorsedRegionalCareerPathwayStatusDescriptorId",
+            "postgreSql": "StateEndorsedRegionalCareerPathwayStatusDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2118,11 +2934,19 @@
           },
           "description": "Indicator of StateEndorsedRegionalCareerPathwayStatus",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StateEndorsedRegionalCareerPathwayStatusDescriptorId",
+            "postgreSql": "StateEndorsedRegionalCareerPathwayStatusDescriptorId"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentCTEProgramAssociationExtension_StateEndorsedRegionalCareerPathwayStatusDescriptor",
+        "postgreSql": "FK_1020a1_StateEndorsedRegionalCareerPathwayStatusDescriptor"
+      }
     },
     {
       "fullName": {
@@ -2144,9 +2968,13 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "The month, day, and year on which the Student first received services.",
+          "description": "The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
         },
         {
           "propertyName": "EducationOrganizationId",
@@ -2159,7 +2987,11 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "ProgramEducationOrganizationId",
@@ -2172,7 +3004,11 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramEducationOrganizationId",
+            "postgreSql": "ProgramEducationOrganizationId"
+          }
         },
         {
           "propertyName": "ProgramName",
@@ -2185,7 +3021,11 @@
           },
           "description": "The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramName",
+            "postgreSql": "ProgramName"
+          }
         },
         {
           "propertyName": "ProgramTypeDescriptorId",
@@ -2198,7 +3038,11 @@
           },
           "description": "The type of program.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramTypeDescriptorId",
+            "postgreSql": "ProgramTypeDescriptorId"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -2211,7 +3055,11 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2228,9 +3076,13 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "The month, day, and year on which the Student first received services.",
+          "description": "The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
         },
         {
           "propertyName": "EducationOrganizationId",
@@ -2243,7 +3095,11 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "ProgramEducationOrganizationId",
@@ -2256,7 +3112,11 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramEducationOrganizationId",
+            "postgreSql": "ProgramEducationOrganizationId"
+          }
         },
         {
           "propertyName": "ProgramName",
@@ -2269,7 +3129,11 @@
           },
           "description": "The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramName",
+            "postgreSql": "ProgramName"
+          }
         },
         {
           "propertyName": "ProgramTypeDescriptorId",
@@ -2282,7 +3146,11 @@
           },
           "description": "The type of program.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramTypeDescriptorId",
+            "postgreSql": "ProgramTypeDescriptorId"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -2295,11 +3163,19 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentCTEProgramAssociationExtension_StudentCTEProgramAssociation",
+        "postgreSql": "FK_1020a1_StudentCTEProgramAssociation"
+      }
     },
     {
       "fullName": {
@@ -2323,7 +3199,11 @@
           },
           "description": "A locally assigned unique identifier (within the school or school district) to identify each specific DisciplineIncident or occurrence. The same identifier should be used to document the entire DisciplineIncident even if it included multiple offenses and multiple offenders.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IncidentIdentifier",
+            "postgreSql": "IncidentIdentifier"
+          }
         },
         {
           "propertyName": "SchoolId",
@@ -2336,7 +3216,11 @@
           },
           "description": "The identifier assigned to a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolId",
+            "postgreSql": "SchoolId"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -2349,7 +3233,11 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2368,7 +3256,11 @@
           },
           "description": "A locally assigned unique identifier (within the school or school district) to identify each specific DisciplineIncident or occurrence. The same identifier should be used to document the entire DisciplineIncident even if it included multiple offenses and multiple offenders.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "IncidentIdentifier",
+            "postgreSql": "IncidentIdentifier"
+          }
         },
         {
           "propertyName": "SchoolId",
@@ -2381,7 +3273,11 @@
           },
           "description": "The identifier assigned to a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolId",
+            "postgreSql": "SchoolId"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -2394,11 +3290,19 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentDisciplineIncidentAssociationExtension_StudentDisciplineIncidentAssociation",
+        "postgreSql": "FK_e9afec_StudentDisciplineIncidentAssociation"
+      }
     },
     {
       "fullName": {
@@ -2422,7 +3326,11 @@
           },
           "description": "The identifier assigned to a local education agency.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LocalEducationAgencyId",
+            "postgreSql": "LocalEducationAgencyId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2441,11 +3349,19 @@
           },
           "description": "The identifier assigned to a local education agency.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ResidentLocalEducationAgencyId",
+            "postgreSql": "ResidentLocalEducationAgencyId"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationAssociationExtension_LocalEducationAgency",
+        "postgreSql": "FK_2c2930_LocalEducationAgency"
+      }
     },
     {
       "fullName": {
@@ -2469,7 +3385,11 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -2482,7 +3402,11 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2501,7 +3425,11 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -2514,11 +3442,19 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentEducationOrganizationAssociationExtension_StudentEducationOrganizationAssociation",
+        "postgreSql": "FK_2c2930_StudentEducationOrganizationAssociation"
+      }
     },
     {
       "fullName": {
@@ -2542,7 +3478,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EnrollmentTypeDescriptorId",
+            "postgreSql": "EnrollmentTypeDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2561,11 +3501,19 @@
           },
           "description": "",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EnrollmentTypeDescriptorId",
+            "postgreSql": "EnrollmentTypeDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentSchoolAssociationEnrollmentType_EnrollmentTypeDescriptor",
+        "postgreSql": "FK_bba0bc_EnrollmentTypeDescriptor"
+      }
     },
     {
       "fullName": {
@@ -2589,7 +3537,11 @@
           },
           "description": "The month, day, and year on which an individual enters and begins to receive instructional services in a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EntryDate",
+            "postgreSql": "EntryDate"
+          }
         },
         {
           "propertyName": "SchoolId",
@@ -2602,7 +3554,11 @@
           },
           "description": "The identifier assigned to a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolId",
+            "postgreSql": "SchoolId"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -2615,7 +3571,11 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2634,7 +3594,11 @@
           },
           "description": "The month, day, and year on which an individual enters and begins to receive instructional services in a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EntryDate",
+            "postgreSql": "EntryDate"
+          }
         },
         {
           "propertyName": "SchoolId",
@@ -2647,7 +3611,11 @@
           },
           "description": "The identifier assigned to a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolId",
+            "postgreSql": "SchoolId"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -2660,11 +3628,19 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentSchoolAssociationEnrollmentType_StudentSchoolAssociation",
+        "postgreSql": "FK_bba0bc_StudentSchoolAssociation"
+      }
     },
     {
       "fullName": {
@@ -2688,7 +3664,11 @@
           },
           "description": "The identifier assigned to a local education agency.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LocalEducationAgencyId",
+            "postgreSql": "LocalEducationAgencyId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2707,11 +3687,19 @@
           },
           "description": "The identifier assigned to a local education agency.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ExpectedTransferLocalEducationAgencyId",
+            "postgreSql": "ExpectedTransferLocalEducationAgencyId"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentSchoolAssociationExtension_LocalEducationAgency",
+        "postgreSql": "FK_880cb1_LocalEducationAgency"
+      }
     },
     {
       "fullName": {
@@ -2735,7 +3723,11 @@
           },
           "description": "The identifier assigned to a school.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolId",
+            "postgreSql": "SchoolId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2754,11 +3746,19 @@
           },
           "description": "The identifier assigned to a school.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ExpectedTransferSchoolId",
+            "postgreSql": "ExpectedTransferSchoolId"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentSchoolAssociationExtension_School",
+        "postgreSql": "FK_880cb1_School"
+      }
     },
     {
       "fullName": {
@@ -2782,7 +3782,11 @@
           },
           "description": "The month, day, and year on which an individual enters and begins to receive instructional services in a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EntryDate",
+            "postgreSql": "EntryDate"
+          }
         },
         {
           "propertyName": "SchoolId",
@@ -2795,7 +3799,11 @@
           },
           "description": "The identifier assigned to a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolId",
+            "postgreSql": "SchoolId"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -2808,7 +3816,11 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2827,7 +3839,11 @@
           },
           "description": "The month, day, and year on which an individual enters and begins to receive instructional services in a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EntryDate",
+            "postgreSql": "EntryDate"
+          }
         },
         {
           "propertyName": "SchoolId",
@@ -2840,7 +3856,11 @@
           },
           "description": "The identifier assigned to a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolId",
+            "postgreSql": "SchoolId"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -2853,11 +3873,19 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentSchoolAssociationExtension_StudentSchoolAssociation",
+        "postgreSql": "FK_880cb1_StudentSchoolAssociation"
+      }
     },
     {
       "fullName": {
@@ -2881,7 +3909,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CountDateNameDescriptorId",
+            "postgreSql": "CountDateNameDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2900,11 +3932,19 @@
           },
           "description": "The count date name for the student status (e.g 3rd Fri Sept)",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CountDateNameDescriptorId",
+            "postgreSql": "CountDateNameDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentSchoolAssociationReceivingService_CountDateNameDescriptor",
+        "postgreSql": "FK_a2bfb7_CountDateNameDescriptor"
+      }
     },
     {
       "fullName": {
@@ -2928,7 +3968,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CountDateReceivingServiceDescriptorId",
+            "postgreSql": "CountDateReceivingServiceDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2947,11 +3991,19 @@
           },
           "description": "The status of the student during the specific count date (e.g. Present)",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CountDateReceivingServiceDescriptorId",
+            "postgreSql": "CountDateReceivingServiceDescriptorId"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentSchoolAssociationReceivingService_CountDateReceivingServiceDescriptor",
+        "postgreSql": "FK_a2bfb7_CountDateReceivingServiceDescriptor"
+      }
     },
     {
       "fullName": {
@@ -2975,7 +4027,11 @@
           },
           "description": "The month, day, and year on which an individual enters and begins to receive instructional services in a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EntryDate",
+            "postgreSql": "EntryDate"
+          }
         },
         {
           "propertyName": "SchoolId",
@@ -2988,7 +4044,11 @@
           },
           "description": "The identifier assigned to a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolId",
+            "postgreSql": "SchoolId"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -3001,7 +4061,11 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3020,7 +4084,11 @@
           },
           "description": "The month, day, and year on which an individual enters and begins to receive instructional services in a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EntryDate",
+            "postgreSql": "EntryDate"
+          }
         },
         {
           "propertyName": "SchoolId",
@@ -3033,7 +4101,11 @@
           },
           "description": "The identifier assigned to a school.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolId",
+            "postgreSql": "SchoolId"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -3046,11 +4118,19 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentSchoolAssociationReceivingService_StudentSchoolAssociation",
+        "postgreSql": "FK_a2bfb7_StudentSchoolAssociation"
+      }
     },
     {
       "fullName": {
@@ -3074,7 +4154,11 @@
           },
           "description": "The identifier assigned to a school.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SchoolId",
+            "postgreSql": "SchoolId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3093,11 +4177,19 @@
           },
           "description": "The identifier assigned to a school.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FapeResponsibleSchoolId",
+            "postgreSql": "FapeResponsibleSchoolId"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_StudentSpecialEducationProgramAssociationExtension_School",
+        "postgreSql": "FK_3da84f_School"
+      }
     },
     {
       "fullName": {
@@ -3119,9 +4211,13 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "The month, day, and year on which the Student first received services.",
+          "description": "The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
         },
         {
           "propertyName": "EducationOrganizationId",
@@ -3134,7 +4230,11 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "ProgramEducationOrganizationId",
@@ -3147,7 +4247,11 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramEducationOrganizationId",
+            "postgreSql": "ProgramEducationOrganizationId"
+          }
         },
         {
           "propertyName": "ProgramName",
@@ -3160,7 +4264,11 @@
           },
           "description": "The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramName",
+            "postgreSql": "ProgramName"
+          }
         },
         {
           "propertyName": "ProgramTypeDescriptorId",
@@ -3173,7 +4281,11 @@
           },
           "description": "The type of program.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramTypeDescriptorId",
+            "postgreSql": "ProgramTypeDescriptorId"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -3186,7 +4298,11 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3203,9 +4319,13 @@
             "scale": 0,
             "isNullable": false
           },
-          "description": "The month, day, and year on which the Student first received services.",
+          "description": "The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BeginDate",
+            "postgreSql": "BeginDate"
+          }
         },
         {
           "propertyName": "EducationOrganizationId",
@@ -3218,7 +4338,11 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "ProgramEducationOrganizationId",
@@ -3231,7 +4355,11 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramEducationOrganizationId",
+            "postgreSql": "ProgramEducationOrganizationId"
+          }
         },
         {
           "propertyName": "ProgramName",
@@ -3244,7 +4372,11 @@
           },
           "description": "The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramName",
+            "postgreSql": "ProgramName"
+          }
         },
         {
           "propertyName": "ProgramTypeDescriptorId",
@@ -3257,7 +4389,11 @@
           },
           "description": "The type of program.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramTypeDescriptorId",
+            "postgreSql": "ProgramTypeDescriptorId"
+          }
         },
         {
           "propertyName": "StudentUSI",
@@ -3270,11 +4406,19 @@
           },
           "description": "A unique alphanumeric code assigned to a student.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentSpecialEducationProgramAssociationExtension_StudentSpecialEducationProgramAssociation",
+        "postgreSql": "FK_3da84f_StudentSpecialEducationProgramAssociation"
+      }
     }
   ]
 }

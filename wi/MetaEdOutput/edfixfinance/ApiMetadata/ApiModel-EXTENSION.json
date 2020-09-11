@@ -1,8 +1,9 @@
 {
-  "odsApiVersion": "3.1.0",
+  "odsApiVersion": "3.4.0",
   "schemaDefinition": {
     "logicalName": "EdFiXFinance",
-    "physicalName": "edfixfinance"
+    "physicalName": "edfixfinance",
+    "version": "1.0.0"
   },
   "aggregateDefinitions": [
     {
@@ -239,11 +240,19 @@
             "AccountTypeDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "AccountTypeDescriptor_PK",
+            "postgreSql": "AccountTypeDescriptor_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Type of Account such as Revenue, Expenditure, or Balance Sheet."
+      "description": "Type of Account such as Revenue, Expenditure, or Balance Sheet.",
+      "tableNames": {
+        "sqlServer": "AccountTypeDescriptor",
+        "postgreSql": "AccountTypeDescriptor"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -260,7 +269,11 @@
           },
           "description": "The code representation of the account Balance Sheet dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "CodeName",
@@ -273,12 +286,16 @@
           },
           "description": "A description of the account Balance Sheet dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CodeName",
+            "postgreSql": "CodeName"
+          }
         },
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -286,20 +303,28 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Balance Sheet dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         },
         {
           "propertyName": "Id",
@@ -312,12 +337,16 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Id",
+            "postgreSql": "Id"
+          }
         },
         {
           "propertyName": "LastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -325,7 +354,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LastModifiedDate",
+            "postgreSql": "LastModifiedDate"
+          }
         }
       ],
       "identifiers": [
@@ -336,7 +369,11 @@
             "FiscalYear"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "BalanceSheetDimension_PK",
+            "postgreSql": "BalanceSheetDimension_PK"
+          }
         },
         {
           "identifierName": "UX_BalanceSheetDimension_Id",
@@ -344,11 +381,19 @@
             "Id"
           ],
           "isPrimary": false,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "UX_BalanceSheetDimension_Id",
+            "postgreSql": "UX_e52c9c_Id"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "NCES Balance Sheet Dimension"
+      "description": "NCES Balance Sheet Dimension",
+      "tableNames": {
+        "sqlServer": "BalanceSheetDimension",
+        "postgreSql": "BalanceSheetDimension"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -357,7 +402,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -365,7 +410,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         }
       ],
       "identifiers": [
@@ -377,11 +426,19 @@
             "ReportingTagDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "BalanceSheetDimensionReportingTag_PK",
+            "postgreSql": "BalanceSheetDimensionReportingTag_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Optional tag for accountability reporting (e.g. ESSA)."
+      "description": "Optional tag for accountability reporting (e.g. ESSA).",
+      "tableNames": {
+        "sqlServer": "BalanceSheetDimensionReportingTag",
+        "postgreSql": "BalanceSheetDimensionReportingTag"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -398,7 +455,11 @@
           },
           "description": "SEA populated Code value for the valid combination of account dimensions under which financials are reported.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AccountIdentifier",
+            "postgreSql": "AccountIdentifier"
+          }
         },
         {
           "propertyName": "AccountName",
@@ -411,12 +472,16 @@
           },
           "description": "A descriptive name for the account",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AccountName",
+            "postgreSql": "AccountName"
+          }
         },
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -424,20 +489,28 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         },
         {
           "propertyName": "Id",
@@ -450,12 +523,16 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Id",
+            "postgreSql": "Id"
+          }
         },
         {
           "propertyName": "LastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -463,7 +540,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LastModifiedDate",
+            "postgreSql": "LastModifiedDate"
+          }
         }
       ],
       "identifiers": [
@@ -475,7 +556,11 @@
             "FiscalYear"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "ChartOfAccount_PK",
+            "postgreSql": "ChartOfAccount_PK"
+          }
         },
         {
           "identifierName": "UX_ChartOfAccount_Id",
@@ -483,11 +568,19 @@
             "Id"
           ],
           "isPrimary": false,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "UX_ChartOfAccount_Id",
+            "postgreSql": "UX_131e2b_Id"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "A valid combination of account dimensions under which financials are reported. This financial entity represents a funding source combined with its purpose and type of transaction. It provides a formal record of the debits and credits relating to the specific account."
+      "description": "A valid combination of account dimensions under which financials are reported. This financial entity represents a funding source combined with its purpose and type of transaction. It provides a formal record of the debits and credits relating to the specific account.",
+      "tableNames": {
+        "sqlServer": "ChartOfAccount",
+        "postgreSql": "ChartOfAccount"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -496,7 +589,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -504,7 +597,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "TagValue",
@@ -517,7 +614,11 @@
           },
           "description": "TagValue",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "TagValue",
+            "postgreSql": "TagValue"
+          }
         }
       ],
       "identifiers": [
@@ -530,11 +631,19 @@
             "ReportingTagDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "ChartOfAccountReportingTag_PK",
+            "postgreSql": "ChartOfAccountReportingTag_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Optional tag for accountability reporting (e.g. ESSA)."
+      "description": "Optional tag for accountability reporting (e.g. ESSA).",
+      "tableNames": {
+        "sqlServer": "ChartOfAccountReportingTag",
+        "postgreSql": "ChartOfAccountReportingTag"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -547,11 +656,19 @@
             "FinancialCollectionDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "FinancialCollectionDescriptor_PK",
+            "postgreSql": "FinancialCollectionDescriptor_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "The accounting period or grouping for which financial information is collected."
+      "description": "The accounting period or grouping for which financial information is collected.",
+      "tableNames": {
+        "sqlServer": "FinancialCollectionDescriptor",
+        "postgreSql": "FinancialCollectionDescriptor"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -568,7 +685,11 @@
           },
           "description": "The code representation of the account Function dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "CodeName",
@@ -581,12 +702,16 @@
           },
           "description": "A description of the account Function dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CodeName",
+            "postgreSql": "CodeName"
+          }
         },
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -594,20 +719,28 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Function dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         },
         {
           "propertyName": "Id",
@@ -620,12 +753,16 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Id",
+            "postgreSql": "Id"
+          }
         },
         {
           "propertyName": "LastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -633,7 +770,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LastModifiedDate",
+            "postgreSql": "LastModifiedDate"
+          }
         }
       ],
       "identifiers": [
@@ -644,7 +785,11 @@
             "FiscalYear"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "FunctionDimension_PK",
+            "postgreSql": "FunctionDimension_PK"
+          }
         },
         {
           "identifierName": "UX_FunctionDimension_Id",
@@ -652,11 +797,19 @@
             "Id"
           ],
           "isPrimary": false,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "UX_FunctionDimension_Id",
+            "postgreSql": "UX_c4d12e_Id"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "NCES Function Dimension"
+      "description": "NCES Function Dimension",
+      "tableNames": {
+        "sqlServer": "FunctionDimension",
+        "postgreSql": "FunctionDimension"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -665,7 +818,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -673,7 +826,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         }
       ],
       "identifiers": [
@@ -685,11 +842,19 @@
             "ReportingTagDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "FunctionDimensionReportingTag_PK",
+            "postgreSql": "FunctionDimensionReportingTag_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Optional tag for accountability reporting (e.g. ESSA)."
+      "description": "Optional tag for accountability reporting (e.g. ESSA).",
+      "tableNames": {
+        "sqlServer": "FunctionDimensionReportingTag",
+        "postgreSql": "FunctionDimensionReportingTag"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -706,7 +871,11 @@
           },
           "description": "The code representation of the account Fund dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "CodeName",
@@ -719,12 +888,16 @@
           },
           "description": "A description of the account Fund dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CodeName",
+            "postgreSql": "CodeName"
+          }
         },
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -732,20 +905,28 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Fund dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         },
         {
           "propertyName": "Id",
@@ -758,12 +939,16 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Id",
+            "postgreSql": "Id"
+          }
         },
         {
           "propertyName": "LastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -771,7 +956,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LastModifiedDate",
+            "postgreSql": "LastModifiedDate"
+          }
         }
       ],
       "identifiers": [
@@ -782,7 +971,11 @@
             "FiscalYear"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "FundDimension_PK",
+            "postgreSql": "FundDimension_PK"
+          }
         },
         {
           "identifierName": "UX_FundDimension_Id",
@@ -790,11 +983,19 @@
             "Id"
           ],
           "isPrimary": false,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "UX_FundDimension_Id",
+            "postgreSql": "UX_937af8_Id"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "NCES Fund Dimension"
+      "description": "NCES Fund Dimension",
+      "tableNames": {
+        "sqlServer": "FundDimension",
+        "postgreSql": "FundDimension"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -803,7 +1004,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -811,7 +1012,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         }
       ],
       "identifiers": [
@@ -823,11 +1028,19 @@
             "ReportingTagDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "FundDimensionReportingTag_PK",
+            "postgreSql": "FundDimensionReportingTag_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Optional tag for accountability reporting (e.g. ESSA)."
+      "description": "Optional tag for accountability reporting (e.g. ESSA).",
+      "tableNames": {
+        "sqlServer": "FundDimensionReportingTag",
+        "postgreSql": "FundDimensionReportingTag"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -844,7 +1057,11 @@
           },
           "description": "Code value for the valid combination of account dimensions by LEA under which financials are reported. ",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AccountIdentifier",
+            "postgreSql": "AccountIdentifier"
+          }
         },
         {
           "propertyName": "AccountName",
@@ -857,12 +1074,16 @@
           },
           "description": "A descriptive name for the account",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AccountName",
+            "postgreSql": "AccountName"
+          }
         },
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -870,20 +1091,28 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         },
         {
           "propertyName": "Id",
@@ -896,12 +1125,16 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Id",
+            "postgreSql": "Id"
+          }
         },
         {
           "propertyName": "LastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -909,7 +1142,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LastModifiedDate",
+            "postgreSql": "LastModifiedDate"
+          }
         }
       ],
       "identifiers": [
@@ -921,7 +1158,11 @@
             "FiscalYear"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "LocalAccount_PK",
+            "postgreSql": "LocalAccount_PK"
+          }
         },
         {
           "identifierName": "UX_LocalAccount_Id",
@@ -929,11 +1170,19 @@
             "Id"
           ],
           "isPrimary": false,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "UX_LocalAccount_Id",
+            "postgreSql": "UX_32eddb_Id"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "The set of account codes defined by an education organization for a fiscal year.It provides a formal record of the debits and credits relating to the specific account."
+      "description": "The set of account codes defined by an education organization for a fiscal year.It provides a formal record of the debits and credits relating to the specific account.",
+      "tableNames": {
+        "sqlServer": "LocalAccount",
+        "postgreSql": "LocalAccount"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -942,7 +1191,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -950,7 +1199,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "TagValue",
@@ -963,7 +1216,11 @@
           },
           "description": "TagValue",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "TagValue",
+            "postgreSql": "TagValue"
+          }
         }
       ],
       "identifiers": [
@@ -976,11 +1233,19 @@
             "ReportingTagDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "LocalAccountReportingTag_PK",
+            "postgreSql": "LocalAccountReportingTag_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Optional tag for accountability reporting (e.g. ESSA)."
+      "description": "Optional tag for accountability reporting (e.g. ESSA).",
+      "tableNames": {
+        "sqlServer": "LocalAccountReportingTag",
+        "postgreSql": "LocalAccountReportingTag"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -997,7 +1262,11 @@
           },
           "description": "Current balance for the account.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Amount",
+            "postgreSql": "Amount"
+          }
         },
         {
           "propertyName": "AsOfDate",
@@ -1010,12 +1279,16 @@
           },
           "description": "The date of the reported amount for Account.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AsOfDate",
+            "postgreSql": "AsOfDate"
+          }
         },
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1023,7 +1296,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "Id",
@@ -1036,12 +1313,16 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Id",
+            "postgreSql": "Id"
+          }
         },
         {
           "propertyName": "LastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1049,7 +1330,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LastModifiedDate",
+            "postgreSql": "LastModifiedDate"
+          }
         }
       ],
       "identifiers": [
@@ -1062,7 +1347,11 @@
             "FiscalYear"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "LocalActual_PK",
+            "postgreSql": "LocalActual_PK"
+          }
         },
         {
           "identifierName": "UX_LocalActual_Id",
@@ -1070,11 +1359,19 @@
             "Id"
           ],
           "isPrimary": false,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "UX_LocalActual_Id",
+            "postgreSql": "UX_b6310e_Id"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Expense/Revenue amounts"
+      "description": "Expense/Revenue amounts",
+      "tableNames": {
+        "sqlServer": "LocalActual",
+        "postgreSql": "LocalActual"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -1091,7 +1388,11 @@
           },
           "description": "Currency value applied to the account.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Amount",
+            "postgreSql": "Amount"
+          }
         },
         {
           "propertyName": "AsOfDate",
@@ -1104,12 +1405,16 @@
           },
           "description": "The date that the amount is applied to.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AsOfDate",
+            "postgreSql": "AsOfDate"
+          }
         },
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1117,7 +1422,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "Id",
@@ -1130,12 +1439,16 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Id",
+            "postgreSql": "Id"
+          }
         },
         {
           "propertyName": "LastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1143,7 +1456,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LastModifiedDate",
+            "postgreSql": "LastModifiedDate"
+          }
         }
       ],
       "identifiers": [
@@ -1156,7 +1473,11 @@
             "FiscalYear"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "LocalBudget_PK",
+            "postgreSql": "LocalBudget_PK"
+          }
         },
         {
           "identifierName": "UX_LocalBudget_Id",
@@ -1164,11 +1485,19 @@
             "Id"
           ],
           "isPrimary": false,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "UX_LocalBudget_Id",
+            "postgreSql": "UX_000683_Id"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Budget amounts"
+      "description": "Budget amounts",
+      "tableNames": {
+        "sqlServer": "LocalBudget",
+        "postgreSql": "LocalBudget"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -1185,7 +1514,11 @@
           },
           "description": "The code representation of the account Object dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "CodeName",
@@ -1198,12 +1531,16 @@
           },
           "description": "A description of the account Object dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CodeName",
+            "postgreSql": "CodeName"
+          }
         },
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1211,20 +1548,28 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Object dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         },
         {
           "propertyName": "Id",
@@ -1237,12 +1582,16 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Id",
+            "postgreSql": "Id"
+          }
         },
         {
           "propertyName": "LastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1250,7 +1599,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LastModifiedDate",
+            "postgreSql": "LastModifiedDate"
+          }
         }
       ],
       "identifiers": [
@@ -1261,7 +1614,11 @@
             "FiscalYear"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "ObjectDimension_PK",
+            "postgreSql": "ObjectDimension_PK"
+          }
         },
         {
           "identifierName": "UX_ObjectDimension_Id",
@@ -1269,11 +1626,19 @@
             "Id"
           ],
           "isPrimary": false,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "UX_ObjectDimension_Id",
+            "postgreSql": "UX_4100ee_Id"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "NCES Object Dimension"
+      "description": "NCES Object Dimension",
+      "tableNames": {
+        "sqlServer": "ObjectDimension",
+        "postgreSql": "ObjectDimension"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -1282,7 +1647,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1290,7 +1655,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         }
       ],
       "identifiers": [
@@ -1302,11 +1671,19 @@
             "ReportingTagDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "ObjectDimensionReportingTag_PK",
+            "postgreSql": "ObjectDimensionReportingTag_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Optional tag for accountability reporting (e.g. ESSA)."
+      "description": "Optional tag for accountability reporting (e.g. ESSA).",
+      "tableNames": {
+        "sqlServer": "ObjectDimensionReportingTag",
+        "postgreSql": "ObjectDimensionReportingTag"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -1323,7 +1700,11 @@
           },
           "description": "The code representation of the account Operational Unit dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "CodeName",
@@ -1336,12 +1717,16 @@
           },
           "description": "A description of the account Operational Unit dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CodeName",
+            "postgreSql": "CodeName"
+          }
         },
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1349,20 +1734,28 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Operational Unit dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         },
         {
           "propertyName": "Id",
@@ -1375,12 +1768,16 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Id",
+            "postgreSql": "Id"
+          }
         },
         {
           "propertyName": "LastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1388,7 +1785,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LastModifiedDate",
+            "postgreSql": "LastModifiedDate"
+          }
         }
       ],
       "identifiers": [
@@ -1399,7 +1800,11 @@
             "FiscalYear"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "OperationalUnitDimension_PK",
+            "postgreSql": "OperationalUnitDimension_PK"
+          }
         },
         {
           "identifierName": "UX_OperationalUnitDimension_Id",
@@ -1407,11 +1812,19 @@
             "Id"
           ],
           "isPrimary": false,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "UX_OperationalUnitDimension_Id",
+            "postgreSql": "UX_28b7c4_Id"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "NCES Operational Unit Dimension"
+      "description": "NCES Operational Unit Dimension",
+      "tableNames": {
+        "sqlServer": "OperationalUnitDimension",
+        "postgreSql": "OperationalUnitDimension"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -1420,7 +1833,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1428,7 +1841,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         }
       ],
       "identifiers": [
@@ -1440,11 +1857,19 @@
             "ReportingTagDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "OperationalUnitDimensionReportingTag_PK",
+            "postgreSql": "OperationalUnitDimensionReportingTag_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Optional tag for accountability reporting (e.g. ESSA)."
+      "description": "Optional tag for accountability reporting (e.g. ESSA).",
+      "tableNames": {
+        "sqlServer": "OperationalUnitDimensionReportingTag",
+        "postgreSql": "OperationalUnitDimensionReportingTag"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -1461,7 +1886,11 @@
           },
           "description": "The code representation of the account Program dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "CodeName",
@@ -1474,12 +1903,16 @@
           },
           "description": "A description of the account Program dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CodeName",
+            "postgreSql": "CodeName"
+          }
         },
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1487,20 +1920,28 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Program dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         },
         {
           "propertyName": "Id",
@@ -1513,12 +1954,16 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Id",
+            "postgreSql": "Id"
+          }
         },
         {
           "propertyName": "LastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1526,7 +1971,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LastModifiedDate",
+            "postgreSql": "LastModifiedDate"
+          }
         }
       ],
       "identifiers": [
@@ -1537,7 +1986,11 @@
             "FiscalYear"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "ProgramDimension_PK",
+            "postgreSql": "ProgramDimension_PK"
+          }
         },
         {
           "identifierName": "UX_ProgramDimension_Id",
@@ -1545,11 +1998,19 @@
             "Id"
           ],
           "isPrimary": false,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "UX_ProgramDimension_Id",
+            "postgreSql": "UX_a9a613_Id"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "NCES Program Dimension"
+      "description": "NCES Program Dimension",
+      "tableNames": {
+        "sqlServer": "ProgramDimension",
+        "postgreSql": "ProgramDimension"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -1558,7 +2019,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1566,7 +2027,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         }
       ],
       "identifiers": [
@@ -1578,11 +2043,19 @@
             "ReportingTagDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "ProgramDimensionReportingTag_PK",
+            "postgreSql": "ProgramDimensionReportingTag_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Optional tag for accountability reporting (e.g. ESSA)."
+      "description": "Optional tag for accountability reporting (e.g. ESSA).",
+      "tableNames": {
+        "sqlServer": "ProgramDimensionReportingTag",
+        "postgreSql": "ProgramDimensionReportingTag"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -1599,7 +2072,11 @@
           },
           "description": "The code representation of the account Project dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "CodeName",
@@ -1612,12 +2089,16 @@
           },
           "description": "A description of the account Project dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CodeName",
+            "postgreSql": "CodeName"
+          }
         },
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1625,20 +2106,28 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Project dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         },
         {
           "propertyName": "Id",
@@ -1651,12 +2140,16 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Id",
+            "postgreSql": "Id"
+          }
         },
         {
           "propertyName": "LastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1664,7 +2157,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LastModifiedDate",
+            "postgreSql": "LastModifiedDate"
+          }
         }
       ],
       "identifiers": [
@@ -1675,7 +2172,11 @@
             "FiscalYear"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "ProjectDimension_PK",
+            "postgreSql": "ProjectDimension_PK"
+          }
         },
         {
           "identifierName": "UX_ProjectDimension_Id",
@@ -1683,11 +2184,19 @@
             "Id"
           ],
           "isPrimary": false,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "UX_ProjectDimension_Id",
+            "postgreSql": "UX_d16e19_Id"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "NCES Project Dimension"
+      "description": "NCES Project Dimension",
+      "tableNames": {
+        "sqlServer": "ProjectDimension",
+        "postgreSql": "ProjectDimension"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -1696,7 +2205,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1704,7 +2213,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         }
       ],
       "identifiers": [
@@ -1716,11 +2229,19 @@
             "ReportingTagDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "ProjectDimensionReportingTag_PK",
+            "postgreSql": "ProjectDimensionReportingTag_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Optional tag for accountability reporting (e.g. ESSA)."
+      "description": "Optional tag for accountability reporting (e.g. ESSA).",
+      "tableNames": {
+        "sqlServer": "ProjectDimensionReportingTag",
+        "postgreSql": "ProjectDimensionReportingTag"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -1733,11 +2254,19 @@
             "ReportingTagDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "ReportingTagDescriptor_PK",
+            "postgreSql": "ReportingTagDescriptor_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "A descriptor used at the dimension and/or chart of account levels to demote specific State needs for ESSA reporting. e.g., Federal, State and Local funding"
+      "description": "A descriptor used at the dimension and/or chart of account levels to demote specific State needs for ESSA reporting. e.g., Federal, State and Local funding",
+      "tableNames": {
+        "sqlServer": "ReportingTagDescriptor",
+        "postgreSql": "ReportingTagDescriptor"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -1754,7 +2283,11 @@
           },
           "description": "The code representation of the account Source dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "CodeName",
@@ -1767,12 +2300,16 @@
           },
           "description": "A description of the account Source dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CodeName",
+            "postgreSql": "CodeName"
+          }
         },
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1780,20 +2317,28 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Source dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         },
         {
           "propertyName": "Id",
@@ -1806,12 +2351,16 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Id",
+            "postgreSql": "Id"
+          }
         },
         {
           "propertyName": "LastModifiedDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1819,7 +2368,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "LastModifiedDate",
+            "postgreSql": "LastModifiedDate"
+          }
         }
       ],
       "identifiers": [
@@ -1830,7 +2383,11 @@
             "FiscalYear"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "SourceDimension_PK",
+            "postgreSql": "SourceDimension_PK"
+          }
         },
         {
           "identifierName": "UX_SourceDimension_Id",
@@ -1838,11 +2395,19 @@
             "Id"
           ],
           "isPrimary": false,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "UX_SourceDimension_Id",
+            "postgreSql": "UX_e91a4d_Id"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "NCES Source Dimension"
+      "description": "NCES Source Dimension",
+      "tableNames": {
+        "sqlServer": "SourceDimension",
+        "postgreSql": "SourceDimension"
+      }
     },
     {
       "schema": "edfixfinance",
@@ -1851,7 +2416,7 @@
         {
           "propertyName": "CreateDate",
           "propertyType": {
-            "dbType": "DateTime",
+            "dbType": "DateTime2",
             "maxLength": 0,
             "precision": 0,
             "scale": 0,
@@ -1859,7 +2424,11 @@
           },
           "description": "",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
         }
       ],
       "identifiers": [
@@ -1871,11 +2440,19 @@
             "ReportingTagDescriptorId"
           ],
           "isPrimary": true,
-          "isUpdatable": false
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "SourceDimensionReportingTag_PK",
+            "postgreSql": "SourceDimensionReportingTag_PK"
+          }
         }
       ],
       "isAbstract": false,
-      "description": "Optional tag for accountability reporting (e.g. ESSA)."
+      "description": "Optional tag for accountability reporting (e.g. ESSA).",
+      "tableNames": {
+        "sqlServer": "SourceDimensionReportingTag",
+        "postgreSql": "SourceDimensionReportingTag"
+      }
     }
   ],
   "associationDefinitions": [
@@ -1901,7 +2478,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "DescriptorId",
+            "postgreSql": "DescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -1920,11 +2501,19 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "AccountTypeDescriptorId",
+            "postgreSql": "AccountTypeDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_AccountTypeDescriptor_Descriptor",
+        "postgreSql": "FK_8f249f_Descriptor"
+      }
     },
     {
       "fullName": {
@@ -1948,20 +2537,28 @@
           },
           "description": "The code representation of the account Balance Sheet dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Balance Sheet dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -1980,24 +2577,36 @@
           },
           "description": "The code representation of the account Balance Sheet dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Balance Sheet dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_BalanceSheetDimensionReportingTag_BalanceSheetDimension",
+        "postgreSql": "FK_bcbd82_BalanceSheetDimension"
+      }
     },
     {
       "fullName": {
@@ -2021,7 +2630,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2040,11 +2653,19 @@
           },
           "description": "Optional tag for accountability reporting (e.g. ESSA).",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_BalanceSheetDimensionReportingTag_ReportingTagDescriptor",
+        "postgreSql": "FK_bcbd82_ReportingTagDescriptor"
+      }
     },
     {
       "fullName": {
@@ -2068,7 +2689,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AccountTypeDescriptorId",
+            "postgreSql": "AccountTypeDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2087,11 +2712,19 @@
           },
           "description": "Type of Account such as Revenue, Expenditure, or Balance Sheet.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AccountTypeDescriptorId",
+            "postgreSql": "AccountTypeDescriptorId"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_ChartOfAccount_AccountTypeDescriptor",
+        "postgreSql": "FK_131e2b_AccountTypeDescriptor"
+      }
     },
     {
       "fullName": {
@@ -2115,20 +2748,28 @@
           },
           "description": "The code representation of the account Balance Sheet dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Balance Sheet dimension is valid.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2147,24 +2788,36 @@
           },
           "description": "The code representation of the account Balance Sheet dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "BalanceSheetCode",
+            "postgreSql": "BalanceSheetCode"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_ChartOfAccount_BalanceSheetDimension",
+        "postgreSql": "FK_131e2b_BalanceSheetDimension"
+      }
     },
     {
       "fullName": {
@@ -2188,7 +2841,11 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2207,11 +2864,19 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_ChartOfAccount_EducationOrganization",
+        "postgreSql": "FK_131e2b_EducationOrganization"
+      }
     },
     {
       "fullName": {
@@ -2235,20 +2900,28 @@
           },
           "description": "The code representation of the account Function dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Function dimension is valid.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2267,24 +2940,36 @@
           },
           "description": "The code representation of the account Function dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FunctionCode",
+            "postgreSql": "FunctionCode"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_ChartOfAccount_FunctionDimension",
+        "postgreSql": "FK_131e2b_FunctionDimension"
+      }
     },
     {
       "fullName": {
@@ -2308,20 +2993,28 @@
           },
           "description": "The code representation of the account Fund dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Fund dimension is valid.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2340,24 +3033,36 @@
           },
           "description": "The code representation of the account Fund dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FundCode",
+            "postgreSql": "FundCode"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_ChartOfAccount_FundDimension",
+        "postgreSql": "FK_131e2b_FundDimension"
+      }
     },
     {
       "fullName": {
@@ -2381,20 +3086,28 @@
           },
           "description": "The code representation of the account Object dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Object dimension is valid.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2413,24 +3126,36 @@
           },
           "description": "The code representation of the account Object dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ObjectCode",
+            "postgreSql": "ObjectCode"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_ChartOfAccount_ObjectDimension",
+        "postgreSql": "FK_131e2b_ObjectDimension"
+      }
     },
     {
       "fullName": {
@@ -2454,20 +3179,28 @@
           },
           "description": "The code representation of the account Operational Unit dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Operational Unit dimension is valid.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2486,24 +3219,36 @@
           },
           "description": "The code representation of the account Operational Unit dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "OperationalUnitCode",
+            "postgreSql": "OperationalUnitCode"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_ChartOfAccount_OperationalUnitDimension",
+        "postgreSql": "FK_131e2b_OperationalUnitDimension"
+      }
     },
     {
       "fullName": {
@@ -2527,20 +3272,28 @@
           },
           "description": "The code representation of the account Program dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Program dimension is valid.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2559,24 +3312,36 @@
           },
           "description": "The code representation of the account Program dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProgramCode",
+            "postgreSql": "ProgramCode"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_ChartOfAccount_ProgramDimension",
+        "postgreSql": "FK_131e2b_ProgramDimension"
+      }
     },
     {
       "fullName": {
@@ -2600,20 +3365,28 @@
           },
           "description": "The code representation of the account Project dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Project dimension is valid.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2632,24 +3405,36 @@
           },
           "description": "The code representation of the account Project dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ProjectCode",
+            "postgreSql": "ProjectCode"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_ChartOfAccount_ProjectDimension",
+        "postgreSql": "FK_131e2b_ProjectDimension"
+      }
     },
     {
       "fullName": {
@@ -2673,20 +3458,28 @@
           },
           "description": "The code representation of the account Source dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Source dimension is valid.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2705,24 +3498,36 @@
           },
           "description": "The code representation of the account Source dimension.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "SourceCode",
+            "postgreSql": "SourceCode"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_ChartOfAccount_SourceDimension",
+        "postgreSql": "FK_131e2b_SourceDimension"
+      }
     },
     {
       "fullName": {
@@ -2746,7 +3551,11 @@
           },
           "description": "SEA populated Code value for the valid combination of account dimensions under which financials are reported.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AccountIdentifier",
+            "postgreSql": "AccountIdentifier"
+          }
         },
         {
           "propertyName": "EducationOrganizationId",
@@ -2759,20 +3568,28 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2791,7 +3608,11 @@
           },
           "description": "SEA populated Code value for the valid combination of account dimensions under which financials are reported.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AccountIdentifier",
+            "postgreSql": "AccountIdentifier"
+          }
         },
         {
           "propertyName": "EducationOrganizationId",
@@ -2804,24 +3625,36 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_ChartOfAccountReportingTag_ChartOfAccount",
+        "postgreSql": "FK_8422f4_ChartOfAccount"
+      }
     },
     {
       "fullName": {
@@ -2845,7 +3678,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2864,11 +3701,19 @@
           },
           "description": "ReportinTag Descriptor",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_ChartOfAccountReportingTag_ReportingTagDescriptor",
+        "postgreSql": "FK_8422f4_ReportingTagDescriptor"
+      }
     },
     {
       "fullName": {
@@ -2892,7 +3737,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "DescriptorId",
+            "postgreSql": "DescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2911,11 +3760,19 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "FinancialCollectionDescriptorId",
+            "postgreSql": "FinancialCollectionDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_FinancialCollectionDescriptor_Descriptor",
+        "postgreSql": "FK_6dc716_Descriptor"
+      }
     },
     {
       "fullName": {
@@ -2939,20 +3796,28 @@
           },
           "description": "The code representation of the account Function dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Function dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -2971,24 +3836,36 @@
           },
           "description": "The code representation of the account Function dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Function dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_FunctionDimensionReportingTag_FunctionDimension",
+        "postgreSql": "FK_8d455d_FunctionDimension"
+      }
     },
     {
       "fullName": {
@@ -3012,7 +3889,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3031,11 +3912,19 @@
           },
           "description": "Optional tag for accountability reporting (e.g. ESSA).",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_FunctionDimensionReportingTag_ReportingTagDescriptor",
+        "postgreSql": "FK_8d455d_ReportingTagDescriptor"
+      }
     },
     {
       "fullName": {
@@ -3059,20 +3948,28 @@
           },
           "description": "The code representation of the account Fund dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Fund dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3091,24 +3988,36 @@
           },
           "description": "The code representation of the account Fund dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Fund dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_FundDimensionReportingTag_FundDimension",
+        "postgreSql": "FK_7062bd_FundDimension"
+      }
     },
     {
       "fullName": {
@@ -3132,7 +4041,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3151,11 +4064,19 @@
           },
           "description": "Optional tag for accountability reporting (e.g. ESSA).",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_FundDimensionReportingTag_ReportingTagDescriptor",
+        "postgreSql": "FK_7062bd_ReportingTagDescriptor"
+      }
     },
     {
       "fullName": {
@@ -3179,7 +4100,11 @@
           },
           "description": "SEA populated Code value for the valid combination of account dimensions under which financials are reported.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AccountIdentifier",
+            "postgreSql": "AccountIdentifier"
+          }
         },
         {
           "propertyName": "EducationOrganizationId",
@@ -3192,20 +4117,28 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3224,7 +4157,11 @@
           },
           "description": "SEA populated Code value for the valid combination of account dimensions under which financials are reported.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ChartOfAccountIdentifier",
+            "postgreSql": "ChartOfAccountIdentifier"
+          }
         },
         {
           "propertyName": "ChartOfAccountEducationOrganizationId",
@@ -3237,24 +4174,36 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ChartOfAccountEducationOrganizationId",
+            "postgreSql": "ChartOfAccountEducationOrganizationId"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_LocalAccount_ChartOfAccount",
+        "postgreSql": "FK_32eddb_ChartOfAccount"
+      }
     },
     {
       "fullName": {
@@ -3278,7 +4227,11 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3297,11 +4250,19 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_LocalAccount_EducationOrganization",
+        "postgreSql": "FK_32eddb_EducationOrganization"
+      }
     },
     {
       "fullName": {
@@ -3325,7 +4286,11 @@
           },
           "description": "Code value for the valid combination of account dimensions by LEA under which financials are reported. ",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AccountIdentifier",
+            "postgreSql": "AccountIdentifier"
+          }
         },
         {
           "propertyName": "EducationOrganizationId",
@@ -3338,20 +4303,28 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3370,7 +4343,11 @@
           },
           "description": "Code value for the valid combination of account dimensions by LEA under which financials are reported. ",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AccountIdentifier",
+            "postgreSql": "AccountIdentifier"
+          }
         },
         {
           "propertyName": "EducationOrganizationId",
@@ -3383,24 +4360,36 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_LocalAccountReportingTag_LocalAccount",
+        "postgreSql": "FK_c38935_LocalAccount"
+      }
     },
     {
       "fullName": {
@@ -3424,7 +4413,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3443,11 +4436,19 @@
           },
           "description": "ReportinTag Descriptor",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_LocalAccountReportingTag_ReportingTagDescriptor",
+        "postgreSql": "FK_c38935_ReportingTagDescriptor"
+      }
     },
     {
       "fullName": {
@@ -3471,7 +4472,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FinancialCollectionDescriptorId",
+            "postgreSql": "FinancialCollectionDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3490,11 +4495,19 @@
           },
           "description": "The accounting period or grouping for which the amount is collected.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FinancialCollectionDescriptorId",
+            "postgreSql": "FinancialCollectionDescriptorId"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_LocalActual_FinancialCollectionDescriptor",
+        "postgreSql": "FK_b6310e_FinancialCollectionDescriptor"
+      }
     },
     {
       "fullName": {
@@ -3518,7 +4531,11 @@
           },
           "description": "Code value for the valid combination of account dimensions by LEA under which financials are reported. ",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AccountIdentifier",
+            "postgreSql": "AccountIdentifier"
+          }
         },
         {
           "propertyName": "EducationOrganizationId",
@@ -3531,20 +4548,28 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3563,7 +4588,11 @@
           },
           "description": "Code value for the valid combination of account dimensions by LEA under which financials are reported. ",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AccountIdentifier",
+            "postgreSql": "AccountIdentifier"
+          }
         },
         {
           "propertyName": "EducationOrganizationId",
@@ -3576,24 +4605,36 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_LocalActual_LocalAccount",
+        "postgreSql": "FK_b6310e_LocalAccount"
+      }
     },
     {
       "fullName": {
@@ -3617,7 +4658,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FinancialCollectionDescriptorId",
+            "postgreSql": "FinancialCollectionDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3636,11 +4681,19 @@
           },
           "description": "The accounting period or grouping for which the amount is collected.",
           "isIdentifying": false,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FinancialCollectionDescriptorId",
+            "postgreSql": "FinancialCollectionDescriptorId"
+          }
         }
       ],
       "isIdentifying": false,
-      "isRequired": false
+      "isRequired": false,
+      "constraintNames": {
+        "sqlServer": "FK_LocalBudget_FinancialCollectionDescriptor",
+        "postgreSql": "FK_000683_FinancialCollectionDescriptor"
+      }
     },
     {
       "fullName": {
@@ -3664,7 +4717,11 @@
           },
           "description": "Code value for the valid combination of account dimensions by LEA under which financials are reported. ",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AccountIdentifier",
+            "postgreSql": "AccountIdentifier"
+          }
         },
         {
           "propertyName": "EducationOrganizationId",
@@ -3677,20 +4734,28 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3709,7 +4774,11 @@
           },
           "description": "Code value for the valid combination of account dimensions by LEA under which financials are reported. ",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "AccountIdentifier",
+            "postgreSql": "AccountIdentifier"
+          }
         },
         {
           "propertyName": "EducationOrganizationId",
@@ -3722,24 +4791,36 @@
           },
           "description": "The identifier assigned to an education organization.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "EducationOrganizationId",
+            "postgreSql": "EducationOrganizationId"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "Fiscal year for the account",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_LocalBudget_LocalAccount",
+        "postgreSql": "FK_000683_LocalAccount"
+      }
     },
     {
       "fullName": {
@@ -3763,20 +4844,28 @@
           },
           "description": "The code representation of the account Object dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Object dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3795,24 +4884,36 @@
           },
           "description": "The code representation of the account Object dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Object dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_ObjectDimensionReportingTag_ObjectDimension",
+        "postgreSql": "FK_fda3b7_ObjectDimension"
+      }
     },
     {
       "fullName": {
@@ -3836,7 +4937,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3855,11 +4960,19 @@
           },
           "description": "Optional tag for accountability reporting (e.g. ESSA).",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_ObjectDimensionReportingTag_ReportingTagDescriptor",
+        "postgreSql": "FK_fda3b7_ReportingTagDescriptor"
+      }
     },
     {
       "fullName": {
@@ -3883,20 +4996,28 @@
           },
           "description": "The code representation of the account Operational Unit dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Operational Unit dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3915,24 +5036,36 @@
           },
           "description": "The code representation of the account Operational Unit dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Operational Unit dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_OperationalUnitDimensionReportingTag_OperationalUnitDimension",
+        "postgreSql": "FK_3b06c7_OperationalUnitDimension"
+      }
     },
     {
       "fullName": {
@@ -3956,7 +5089,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -3975,11 +5112,19 @@
           },
           "description": "Optional tag for accountability reporting (e.g. ESSA).",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_OperationalUnitDimensionReportingTag_ReportingTagDescriptor",
+        "postgreSql": "FK_3b06c7_ReportingTagDescriptor"
+      }
     },
     {
       "fullName": {
@@ -4003,20 +5148,28 @@
           },
           "description": "The code representation of the account Program dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Program dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -4035,24 +5188,36 @@
           },
           "description": "The code representation of the account Program dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Program dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_ProgramDimensionReportingTag_ProgramDimension",
+        "postgreSql": "FK_3e04ae_ProgramDimension"
+      }
     },
     {
       "fullName": {
@@ -4076,7 +5241,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -4095,11 +5264,19 @@
           },
           "description": "Optional tag for accountability reporting (e.g. ESSA).",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_ProgramDimensionReportingTag_ReportingTagDescriptor",
+        "postgreSql": "FK_3e04ae_ReportingTagDescriptor"
+      }
     },
     {
       "fullName": {
@@ -4123,20 +5300,28 @@
           },
           "description": "The code representation of the account Project dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Project dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -4155,24 +5340,36 @@
           },
           "description": "The code representation of the account Project dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Project dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_ProjectDimensionReportingTag_ProjectDimension",
+        "postgreSql": "FK_b5314a_ProjectDimension"
+      }
     },
     {
       "fullName": {
@@ -4196,7 +5393,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -4215,11 +5416,19 @@
           },
           "description": "Optional tag for accountability reporting (e.g. ESSA).",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_ProjectDimensionReportingTag_ReportingTagDescriptor",
+        "postgreSql": "FK_b5314a_ReportingTagDescriptor"
+      }
     },
     {
       "fullName": {
@@ -4243,7 +5452,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "DescriptorId",
+            "postgreSql": "DescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -4262,11 +5475,19 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": true
+          "isServerAssigned": true,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_ReportingTagDescriptor_Descriptor",
+        "postgreSql": "FK_b173f4_Descriptor"
+      }
     },
     {
       "fullName": {
@@ -4290,7 +5511,11 @@
           },
           "description": "A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -4309,11 +5534,19 @@
           },
           "description": "Optional tag for accountability reporting (e.g. ESSA).",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ReportingTagDescriptorId",
+            "postgreSql": "ReportingTagDescriptorId"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_SourceDimensionReportingTag_ReportingTagDescriptor",
+        "postgreSql": "FK_0c6eff_ReportingTagDescriptor"
+      }
     },
     {
       "fullName": {
@@ -4337,20 +5570,28 @@
           },
           "description": "The code representation of the account Source dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Source dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "secondaryEntityFullName": {
@@ -4369,24 +5610,36 @@
           },
           "description": "The code representation of the account Source dimension.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Code",
+            "postgreSql": "Code"
+          }
         },
         {
           "propertyName": "FiscalYear",
           "propertyType": {
-            "dbType": "Int16",
+            "dbType": "Int32",
             "maxLength": 0,
-            "precision": 5,
+            "precision": 10,
             "scale": 0,
             "isNullable": false
           },
           "description": "The fiscal year for which the account Source dimension is valid.",
           "isIdentifying": true,
-          "isServerAssigned": false
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "FiscalYear",
+            "postgreSql": "FiscalYear"
+          }
         }
       ],
       "isIdentifying": true,
-      "isRequired": true
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_SourceDimensionReportingTag_SourceDimension",
+        "postgreSql": "FK_0c6eff_SourceDimension"
+      }
     }
   ]
 }

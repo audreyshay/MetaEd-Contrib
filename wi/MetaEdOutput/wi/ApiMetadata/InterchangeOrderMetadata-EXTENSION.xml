@@ -18,6 +18,7 @@
     <Element name="VisaDescriptor" />
     <Element name="TribalAffiliationDescriptor" />
     <Element name="TitleIPartASchoolDesignationDescriptor" />
+    <Element name="TitleIPartAProgramServiceDescriptor" />
     <Element name="TitleIPartAParticipantDescriptor" />
     <Element name="TermDescriptor" />
     <Element name="TelephoneNumberTypeDescriptor" />
@@ -70,9 +71,11 @@
     <Element name="PostSecondaryEventCategoryDescriptor" />
     <Element name="PostingResultDescriptor" />
     <Element name="PopulationServedDescriptor" />
+    <Element name="PlatformTypeDescriptor" />
     <Element name="PersonalInformationVerificationDescriptor" />
     <Element name="PerformanceLevelDescriptor" />
     <Element name="PerformanceBaseConversionDescriptor" />
+    <Element name="ParticipationStatusDescriptor" />
     <Element name="ParticipationDescriptor" />
     <Element name="OtherNameTypeDescriptor" />
     <Element name="OperationalStatusDescriptor" />
@@ -91,6 +94,8 @@
     <Element name="LicenseTypeDescriptor" />
     <Element name="LicenseStatusDescriptor" />
     <Element name="LevelOfEducationDescriptor" />
+    <Element name="LearningStandardScopeDescriptor" />
+    <Element name="LearningStandardEquivalenceStrengthDescriptor" />
     <Element name="LearningStandardCategoryDescriptor" />
     <Element name="LanguageUseDescriptor" />
     <Element name="LanguageInstructionProgramServiceDescriptor" />
@@ -108,6 +113,7 @@
     <Element name="GraduationPlanTypeDescriptor" />
     <Element name="GradingPeriodDescriptor" />
     <Element name="GradeTypeDescriptor" />
+    <Element name="GradePointAverageTypeDescriptor" />
     <Element name="GradeLevelDescriptor" />
     <Element name="GradebookEntryTypeDescriptor" />
     <Element name="ExitWithdrawTypeDescriptor" />
@@ -120,6 +126,7 @@
     <Element name="EducationOrganizationIdentificationSystemDescriptor" />
     <Element name="EducationOrganizationCategoryDescriptor" />
     <Element name="EducationalEnvironmentDescriptor" />
+    <Element name="DisciplineIncidentParticipationCodeDescriptor" />
     <Element name="DisciplineActionLengthDifferenceReasonDescriptor" />
     <Element name="DisciplineDescriptor" />
     <Element name="DisabilityDeterminationSourceTypeDescriptor" />
@@ -130,7 +137,9 @@
     <Element name="DiagnosisDescriptor" />
     <Element name="DeliveryMethodDescriptor" />
     <Element name="CurriculumUsedDescriptor" />
+    <Element name="CTEProgramServiceDescriptor" />
     <Element name="CreditTypeDescriptor" />
+    <Element name="CreditCategoryDescriptor" />
     <Element name="CredentialTypeDescriptor" />
     <Element name="CredentialFieldDescriptor" />
     <Element name="CourseRepeatCodeDescriptor" />
@@ -175,38 +184,40 @@
     <Element name="AcademicHonorCategoryDescriptor" />
     <Element name="AbsenceEventCategoryDescriptor" />
   </Interchange>
-  <Interchange name="Student" order="20">
-    <Element name="Student" />
-  </Interchange>
   <Interchange name="StudentProgram" order="20">
     <Element name="StudentSchoolFoodServiceProgramAssociation" />
     <Element name="StudentTitleIPartAProgramAssociation" />
-    <Element name="StudentCTEProgramAssociation" />
     <Element name="StudentProgramAssociation" />
     <Element name="StudentNeglectedOrDelinquentProgramAssociation" />
     <Element name="StudentLanguageInstructionProgramAssociation" />
     <Element name="StudentHomelessProgramAssociation" />
     <Element name="RestraintEvent" />
     <Element name="StudentSpecialEducationProgramAssociation" />
+    <Element name="StudentCTEProgramAssociation" />
     <Element name="StudentMigrantEducationProgramAssociation" />
+  </Interchange>
+  <Interchange name="Student" order="20">
+    <Element name="Student" />
   </Interchange>
   <Interchange name="StudentDiscipline" order="30">
     <Element name="DisciplineIncident" />
+    <Element name="StaffDisciplineIncidentAssociation" />
     <Element name="StudentDisciplineIncidentAssociation" />
     <Element name="DisciplineAction" />
   </Interchange>
   <Interchange name="Standards" order="30">
     <Element name="LearningStandard" />
+    <Element name="LearningStandardEquivalenceAssociation" />
     <Element name="LearningObjective" />
-  </Interchange>
-  <Interchange name="Parent" order="40">
-    <Element name="Parent" />
-    <Element name="StudentParentAssociation" />
   </Interchange>
   <Interchange name="MasterSchedule" order="40">
     <Element name="BellSchedule" />
     <Element name="CourseOffering" />
     <Element name="Section" />
+  </Interchange>
+  <Interchange name="Parent" order="40">
+    <Element name="Parent" />
+    <Element name="StudentParentAssociation" />
   </Interchange>
   <Interchange name="StudentEnrollment" order="50">
     <Element name="StudentEducationOrganizationResponsibilityAssociation" />

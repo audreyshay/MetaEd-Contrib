@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- (c)2020 Ed-Fi Alliance, LLC. All Rights Reserved. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ed-fi.org/0320b" xmlns:ann="http://ed-fi.org/annotation" targetNamespace="http://ed-fi.org/0320b" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="Ed-Fi-Core.xsd" />
+  <xs:annotation>
+    <xs:documentation>===== Ed-Fi 3.2.0-b Extensions =====</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>===== Domain Entities =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-AssessmentAdministration">
+    <xs:annotation>
+      <xs:documentation>The anticipated administration of an assessment under the purview of an EducationOrganization.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ComplexObjectType">
+        <xs:sequence>
+          <xs:element name="AssigningEducationOrganizationReference" type="EducationOrganizationReferenceType">
+            <xs:annotation>
+              <xs:documentation>A reference to the education organization which contracts for or administers an assessment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AssessmentReference" type="AssessmentReferenceType">
+            <xs:annotation>
+              <xs:documentation>A reference to the assessment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AdministrationIdentifier" type="AssessmentTitle">
+            <xs:annotation>
+              <xs:documentation>The title or name of the assessment in the context of it's administration.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="Period" type="Period" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>The anticipated dates or administration window</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AdministrationContact" type="EXTENSION-AdministrationContact" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Pre-identified contacts for education organizations administering the assessment</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentAssessmentRegistration">
+    <xs:annotation>
+      <xs:documentation>Identifies a student who is expected to participate in particular assessment.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Domain Entity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ComplexObjectType">
+        <xs:sequence>
+          <xs:element name="AssessmentAdministrationReference" type="EXTENSION-AssessmentAdministrationReferenceType">
+            <xs:annotation>
+              <xs:documentation>A reference to the expected administration of an assessment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="StudentEducationOrganizationAssociationReference" type="StudentEducationOrganizationAssociationReferenceType">
+            <xs:annotation>
+              <xs:documentation>A reference to the attending student education organization association.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="TestingEducationOrganizationReference" type="EducationOrganizationReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A reference to the education organization expected to administer the assessment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ReportingEducationOrganizationReference" type="EducationOrganizationReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>A reference to the education organization which should receive the reults of the assessment.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="PlatformType" type="PlatformTypeDescriptorReferenceType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>The environment or format in which the assessment is expected to be administred</xs:documentation>
+              <xs:appinfo>
+                <ann:Descriptor>PlatformTypeDescriptor</ann:Descriptor>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AssessmentCustomization" type="EXTENSION-AssessmentCustomization" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Key/value pairs which may be used to facilitate customization of an assessment or to support vendor reporting/analysis</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Descriptors =====</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>===== Associations =====</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>===== Extended Reference Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-AssessmentAdministrationIdentityType">
+    <xs:annotation>
+      <xs:documentation>Identity of an AssessmentAdministration.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Identity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AssigningEducationOrganizationReference" type="EducationOrganizationReferenceType">
+        <xs:annotation>
+          <xs:documentation>A reference to the education organization which contracts for or administers an assessment.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AssessmentReference" type="AssessmentReferenceType">
+        <xs:annotation>
+          <xs:documentation>A reference to the assessment.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AdministrationIdentifier" type="AssessmentTitle">
+        <xs:annotation>
+          <xs:documentation>The title or name of the assessment in the context of it's administration.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-AssessmentAdministrationReferenceType">
+    <xs:annotation>
+      <xs:documentation>Provides alternative references for an AssessmentAdministration. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ReferenceType">
+        <xs:sequence>
+          <xs:element name="AssessmentAdministrationIdentity" type="EXTENSION-AssessmentAdministrationIdentityType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identity of an AssessmentAdministration.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentAssessmentRegistrationIdentityType">
+    <xs:annotation>
+      <xs:documentation>Identity of a StudentAssessmentRegistration.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Identity</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="AssessmentAdministrationReference" type="EXTENSION-AssessmentAdministrationReferenceType">
+        <xs:annotation>
+          <xs:documentation>A reference to the expected administration of an assessment.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="StudentEducationOrganizationAssociationReference" type="StudentEducationOrganizationAssociationReferenceType">
+        <xs:annotation>
+          <xs:documentation>A reference to the attending student education organization association.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-StudentAssessmentRegistrationReferenceType">
+    <xs:annotation>
+      <xs:documentation>Provides alternative references for a StudentAssessmentRegistration. Use XML IDREF to reference a record that is included in the interchange. Use the identity type to look up a record that was loaded previously.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Extended Reference</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ReferenceType">
+        <xs:sequence>
+          <xs:element name="StudentAssessmentRegistrationIdentity" type="EXTENSION-StudentAssessmentRegistrationIdentityType" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identity of a StudentAssessmentRegistration.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Extended Descriptor Reference Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>===== Common Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="EXTENSION-AdministrationContact">
+    <xs:annotation>
+      <xs:documentation>A lightweight contact which identifies a user that will serve as point of contact for the administration of an assessment within an Education Organization.</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="EducationOrganizationReference" type="EducationOrganizationReferenceType">
+        <xs:annotation>
+          <xs:documentation>A reference to the education organization.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ElectronicMailAddress" type="ElectronicMailAddress">
+        <xs:annotation>
+          <xs:documentation>The email address for the contact.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FirstName" type="FirstName">
+        <xs:annotation>
+          <xs:documentation>The conatcts's first name</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LastSurname" type="LastSurname">
+        <xs:annotation>
+          <xs:documentation>The contact's last name</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LoginId" type="IdentificationCode" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The login ID for the user; used for security access control interface.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EXTENSION-AssessmentCustomization">
+    <xs:annotation>
+      <xs:documentation>An un-typed key/value pair used to customize an assessment or provide additional information needed for vendor reporting</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Common</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="IdentificationCode" type="IdentificationCode">
+        <xs:annotation>
+          <xs:documentation>An agreed upon code identifying the value for customization or reporting</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CustomizationValue" type="EXTENSION-CustomizationValue">
+        <xs:annotation>
+          <xs:documentation>The value indicated for customization or reporting</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:annotation>
+    <xs:documentation>===== Enumerations and Enumerated Collections =====</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>===== String Simple Types =====</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="EXTENSION-CustomizationValue">
+    <xs:annotation>
+      <xs:documentation>The value indicated for customization or reporting</xs:documentation>
+      <xs:appinfo>
+        <ann:TypeGroup>Simple</ann:TypeGroup>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="1024" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:annotation>
+    <xs:documentation>===== Numeric Simple Types =====</xs:documentation>
+  </xs:annotation>
+</xs:schema>

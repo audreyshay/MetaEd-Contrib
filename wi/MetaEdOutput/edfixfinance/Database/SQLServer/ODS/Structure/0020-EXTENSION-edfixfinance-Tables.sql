@@ -10,11 +10,11 @@ GO
 -- Table [edfixfinance].[BalanceSheetDimension] --
 CREATE TABLE [edfixfinance].[BalanceSheetDimension] (
     [Code] [NVARCHAR](16) NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [CodeName] [NVARCHAR](100) NULL,
     [Discriminator] [NVARCHAR](128) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [BalanceSheetDimension_PK] PRIMARY KEY CLUSTERED (
         [Code] ASC,
@@ -32,9 +32,9 @@ GO
 -- Table [edfixfinance].[BalanceSheetDimensionReportingTag] --
 CREATE TABLE [edfixfinance].[BalanceSheetDimensionReportingTag] (
     [Code] [NVARCHAR](16) NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [ReportingTagDescriptorId] [INT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [BalanceSheetDimensionReportingTag_PK] PRIMARY KEY CLUSTERED (
         [Code] ASC,
         [FiscalYear] ASC,
@@ -49,7 +49,7 @@ GO
 CREATE TABLE [edfixfinance].[ChartOfAccount] (
     [AccountIdentifier] [NVARCHAR](50) NOT NULL,
     [EducationOrganizationId] [INT] NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [AccountTypeDescriptorId] [INT] NOT NULL,
     [AccountName] [NVARCHAR](100) NULL,
     [BalanceSheetCode] [NVARCHAR](16) NULL,
@@ -61,8 +61,8 @@ CREATE TABLE [edfixfinance].[ChartOfAccount] (
     [ProjectCode] [NVARCHAR](16) NULL,
     [SourceCode] [NVARCHAR](16) NULL,
     [Discriminator] [NVARCHAR](128) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [ChartOfAccount_PK] PRIMARY KEY CLUSTERED (
         [AccountIdentifier] ASC,
@@ -82,10 +82,10 @@ GO
 CREATE TABLE [edfixfinance].[ChartOfAccountReportingTag] (
     [AccountIdentifier] [NVARCHAR](50) NOT NULL,
     [EducationOrganizationId] [INT] NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [ReportingTagDescriptorId] [INT] NOT NULL,
     [TagValue] [NVARCHAR](100) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [ChartOfAccountReportingTag_PK] PRIMARY KEY CLUSTERED (
         [AccountIdentifier] ASC,
         [EducationOrganizationId] ASC,
@@ -109,11 +109,11 @@ GO
 -- Table [edfixfinance].[FunctionDimension] --
 CREATE TABLE [edfixfinance].[FunctionDimension] (
     [Code] [NVARCHAR](16) NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [CodeName] [NVARCHAR](100) NULL,
     [Discriminator] [NVARCHAR](128) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [FunctionDimension_PK] PRIMARY KEY CLUSTERED (
         [Code] ASC,
@@ -131,9 +131,9 @@ GO
 -- Table [edfixfinance].[FunctionDimensionReportingTag] --
 CREATE TABLE [edfixfinance].[FunctionDimensionReportingTag] (
     [Code] [NVARCHAR](16) NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [ReportingTagDescriptorId] [INT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [FunctionDimensionReportingTag_PK] PRIMARY KEY CLUSTERED (
         [Code] ASC,
         [FiscalYear] ASC,
@@ -147,11 +147,11 @@ GO
 -- Table [edfixfinance].[FundDimension] --
 CREATE TABLE [edfixfinance].[FundDimension] (
     [Code] [NVARCHAR](16) NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [CodeName] [NVARCHAR](100) NULL,
     [Discriminator] [NVARCHAR](128) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [FundDimension_PK] PRIMARY KEY CLUSTERED (
         [Code] ASC,
@@ -169,9 +169,9 @@ GO
 -- Table [edfixfinance].[FundDimensionReportingTag] --
 CREATE TABLE [edfixfinance].[FundDimensionReportingTag] (
     [Code] [NVARCHAR](16) NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [ReportingTagDescriptorId] [INT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [FundDimensionReportingTag_PK] PRIMARY KEY CLUSTERED (
         [Code] ASC,
         [FiscalYear] ASC,
@@ -186,13 +186,13 @@ GO
 CREATE TABLE [edfixfinance].[LocalAccount] (
     [AccountIdentifier] [NVARCHAR](50) NOT NULL,
     [EducationOrganizationId] [INT] NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [AccountName] [NVARCHAR](100) NULL,
     [ChartOfAccountIdentifier] [NVARCHAR](50) NOT NULL,
     [ChartOfAccountEducationOrganizationId] [INT] NOT NULL,
     [Discriminator] [NVARCHAR](128) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [LocalAccount_PK] PRIMARY KEY CLUSTERED (
         [AccountIdentifier] ASC,
@@ -212,10 +212,10 @@ GO
 CREATE TABLE [edfixfinance].[LocalAccountReportingTag] (
     [AccountIdentifier] [NVARCHAR](50) NOT NULL,
     [EducationOrganizationId] [INT] NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [ReportingTagDescriptorId] [INT] NOT NULL,
     [TagValue] [NVARCHAR](100) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [LocalAccountReportingTag_PK] PRIMARY KEY CLUSTERED (
         [AccountIdentifier] ASC,
         [EducationOrganizationId] ASC,
@@ -232,12 +232,12 @@ CREATE TABLE [edfixfinance].[LocalActual] (
     [AccountIdentifier] [NVARCHAR](50) NOT NULL,
     [AsOfDate] [DATE] NOT NULL,
     [EducationOrganizationId] [INT] NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [Amount] [MONEY] NOT NULL,
     [FinancialCollectionDescriptorId] [INT] NULL,
     [Discriminator] [NVARCHAR](128) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [LocalActual_PK] PRIMARY KEY CLUSTERED (
         [AccountIdentifier] ASC,
@@ -259,12 +259,12 @@ CREATE TABLE [edfixfinance].[LocalBudget] (
     [AccountIdentifier] [NVARCHAR](50) NOT NULL,
     [AsOfDate] [DATE] NOT NULL,
     [EducationOrganizationId] [INT] NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [Amount] [MONEY] NOT NULL,
     [FinancialCollectionDescriptorId] [INT] NULL,
     [Discriminator] [NVARCHAR](128) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [LocalBudget_PK] PRIMARY KEY CLUSTERED (
         [AccountIdentifier] ASC,
@@ -284,11 +284,11 @@ GO
 -- Table [edfixfinance].[ObjectDimension] --
 CREATE TABLE [edfixfinance].[ObjectDimension] (
     [Code] [NVARCHAR](16) NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [CodeName] [NVARCHAR](100) NULL,
     [Discriminator] [NVARCHAR](128) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [ObjectDimension_PK] PRIMARY KEY CLUSTERED (
         [Code] ASC,
@@ -306,9 +306,9 @@ GO
 -- Table [edfixfinance].[ObjectDimensionReportingTag] --
 CREATE TABLE [edfixfinance].[ObjectDimensionReportingTag] (
     [Code] [NVARCHAR](16) NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [ReportingTagDescriptorId] [INT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [ObjectDimensionReportingTag_PK] PRIMARY KEY CLUSTERED (
         [Code] ASC,
         [FiscalYear] ASC,
@@ -322,11 +322,11 @@ GO
 -- Table [edfixfinance].[OperationalUnitDimension] --
 CREATE TABLE [edfixfinance].[OperationalUnitDimension] (
     [Code] [NVARCHAR](16) NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [CodeName] [NVARCHAR](100) NULL,
     [Discriminator] [NVARCHAR](128) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [OperationalUnitDimension_PK] PRIMARY KEY CLUSTERED (
         [Code] ASC,
@@ -344,9 +344,9 @@ GO
 -- Table [edfixfinance].[OperationalUnitDimensionReportingTag] --
 CREATE TABLE [edfixfinance].[OperationalUnitDimensionReportingTag] (
     [Code] [NVARCHAR](16) NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [ReportingTagDescriptorId] [INT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [OperationalUnitDimensionReportingTag_PK] PRIMARY KEY CLUSTERED (
         [Code] ASC,
         [FiscalYear] ASC,
@@ -360,11 +360,11 @@ GO
 -- Table [edfixfinance].[ProgramDimension] --
 CREATE TABLE [edfixfinance].[ProgramDimension] (
     [Code] [NVARCHAR](16) NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [CodeName] [NVARCHAR](100) NULL,
     [Discriminator] [NVARCHAR](128) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [ProgramDimension_PK] PRIMARY KEY CLUSTERED (
         [Code] ASC,
@@ -382,9 +382,9 @@ GO
 -- Table [edfixfinance].[ProgramDimensionReportingTag] --
 CREATE TABLE [edfixfinance].[ProgramDimensionReportingTag] (
     [Code] [NVARCHAR](16) NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [ReportingTagDescriptorId] [INT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [ProgramDimensionReportingTag_PK] PRIMARY KEY CLUSTERED (
         [Code] ASC,
         [FiscalYear] ASC,
@@ -398,11 +398,11 @@ GO
 -- Table [edfixfinance].[ProjectDimension] --
 CREATE TABLE [edfixfinance].[ProjectDimension] (
     [Code] [NVARCHAR](16) NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [CodeName] [NVARCHAR](100) NULL,
     [Discriminator] [NVARCHAR](128) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [ProjectDimension_PK] PRIMARY KEY CLUSTERED (
         [Code] ASC,
@@ -420,9 +420,9 @@ GO
 -- Table [edfixfinance].[ProjectDimensionReportingTag] --
 CREATE TABLE [edfixfinance].[ProjectDimensionReportingTag] (
     [Code] [NVARCHAR](16) NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [ReportingTagDescriptorId] [INT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [ProjectDimensionReportingTag_PK] PRIMARY KEY CLUSTERED (
         [Code] ASC,
         [FiscalYear] ASC,
@@ -445,11 +445,11 @@ GO
 -- Table [edfixfinance].[SourceDimension] --
 CREATE TABLE [edfixfinance].[SourceDimension] (
     [Code] [NVARCHAR](16) NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [CodeName] [NVARCHAR](100) NULL,
     [Discriminator] [NVARCHAR](128) NULL,
-    [CreateDate] [DATETIME] NOT NULL,
-    [LastModifiedDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
+    [LastModifiedDate] [DATETIME2] NOT NULL,
     [Id] [UNIQUEIDENTIFIER] NOT NULL,
     CONSTRAINT [SourceDimension_PK] PRIMARY KEY CLUSTERED (
         [Code] ASC,
@@ -467,9 +467,9 @@ GO
 -- Table [edfixfinance].[SourceDimensionReportingTag] --
 CREATE TABLE [edfixfinance].[SourceDimensionReportingTag] (
     [Code] [NVARCHAR](16) NOT NULL,
-    [FiscalYear] [SMALLINT] NOT NULL,
+    [FiscalYear] [INT] NOT NULL,
     [ReportingTagDescriptorId] [INT] NOT NULL,
-    [CreateDate] [DATETIME] NOT NULL,
+    [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [SourceDimensionReportingTag_PK] PRIMARY KEY CLUSTERED (
         [Code] ASC,
         [FiscalYear] ASC,

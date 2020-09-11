@@ -5,7 +5,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[edfixfinance_AccountTypeDescriptor_TrackedDelete](AccountTypeDescriptorId, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_edfixfinance].[AccountTypeDescriptor](AccountTypeDescriptorId, Id, ChangeVersion)
     SELECT  d.AccountTypeDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
             INNER JOIN edfi.Descriptor b ON d.AccountTypeDescriptorId = b.DescriptorId
@@ -23,7 +23,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[edfixfinance_BalanceSheetDimension_TrackedDelete](Code, FiscalYear, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_edfixfinance].[BalanceSheetDimension](Code, FiscalYear, Id, ChangeVersion)
     SELECT  Code, FiscalYear, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
 END
@@ -40,7 +40,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[edfixfinance_ChartOfAccount_TrackedDelete](AccountIdentifier, EducationOrganizationId, FiscalYear, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_edfixfinance].[ChartOfAccount](AccountIdentifier, EducationOrganizationId, FiscalYear, Id, ChangeVersion)
     SELECT  AccountIdentifier, EducationOrganizationId, FiscalYear, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
 END
@@ -57,7 +57,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[edfixfinance_FinancialCollectionDescriptor_TrackedDelete](FinancialCollectionDescriptorId, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_edfixfinance].[FinancialCollectionDescriptor](FinancialCollectionDescriptorId, Id, ChangeVersion)
     SELECT  d.FinancialCollectionDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
             INNER JOIN edfi.Descriptor b ON d.FinancialCollectionDescriptorId = b.DescriptorId
@@ -75,7 +75,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[edfixfinance_FunctionDimension_TrackedDelete](Code, FiscalYear, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_edfixfinance].[FunctionDimension](Code, FiscalYear, Id, ChangeVersion)
     SELECT  Code, FiscalYear, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
 END
@@ -92,7 +92,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[edfixfinance_FundDimension_TrackedDelete](Code, FiscalYear, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_edfixfinance].[FundDimension](Code, FiscalYear, Id, ChangeVersion)
     SELECT  Code, FiscalYear, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
 END
@@ -109,7 +109,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[edfixfinance_LocalAccount_TrackedDelete](AccountIdentifier, EducationOrganizationId, FiscalYear, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_edfixfinance].[LocalAccount](AccountIdentifier, EducationOrganizationId, FiscalYear, Id, ChangeVersion)
     SELECT  AccountIdentifier, EducationOrganizationId, FiscalYear, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
 END
@@ -126,7 +126,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[edfixfinance_LocalActual_TrackedDelete](AccountIdentifier, AsOfDate, EducationOrganizationId, FiscalYear, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_edfixfinance].[LocalActual](AccountIdentifier, AsOfDate, EducationOrganizationId, FiscalYear, Id, ChangeVersion)
     SELECT  AccountIdentifier, AsOfDate, EducationOrganizationId, FiscalYear, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
 END
@@ -143,7 +143,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[edfixfinance_LocalBudget_TrackedDelete](AccountIdentifier, AsOfDate, EducationOrganizationId, FiscalYear, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_edfixfinance].[LocalBudget](AccountIdentifier, AsOfDate, EducationOrganizationId, FiscalYear, Id, ChangeVersion)
     SELECT  AccountIdentifier, AsOfDate, EducationOrganizationId, FiscalYear, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
 END
@@ -160,7 +160,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[edfixfinance_ObjectDimension_TrackedDelete](Code, FiscalYear, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_edfixfinance].[ObjectDimension](Code, FiscalYear, Id, ChangeVersion)
     SELECT  Code, FiscalYear, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
 END
@@ -177,7 +177,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[edfixfinance_OperationalUnitDimension_TrackedDelete](Code, FiscalYear, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_edfixfinance].[OperationalUnitDimension](Code, FiscalYear, Id, ChangeVersion)
     SELECT  Code, FiscalYear, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
 END
@@ -194,7 +194,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[edfixfinance_ProgramDimension_TrackedDelete](Code, FiscalYear, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_edfixfinance].[ProgramDimension](Code, FiscalYear, Id, ChangeVersion)
     SELECT  Code, FiscalYear, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
 END
@@ -211,7 +211,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[edfixfinance_ProjectDimension_TrackedDelete](Code, FiscalYear, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_edfixfinance].[ProjectDimension](Code, FiscalYear, Id, ChangeVersion)
     SELECT  Code, FiscalYear, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
 END
@@ -228,7 +228,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[edfixfinance_ReportingTagDescriptor_TrackedDelete](ReportingTagDescriptorId, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_edfixfinance].[ReportingTagDescriptor](ReportingTagDescriptorId, Id, ChangeVersion)
     SELECT  d.ReportingTagDescriptorId, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
             INNER JOIN edfi.Descriptor b ON d.ReportingTagDescriptorId = b.DescriptorId
@@ -246,7 +246,7 @@ BEGIN
 
     SET NOCOUNT ON
 
-    INSERT INTO [changes].[edfixfinance_SourceDimension_TrackedDelete](Code, FiscalYear, Id, ChangeVersion)
+    INSERT INTO [tracked_deletes_edfixfinance].[SourceDimension](Code, FiscalYear, Id, ChangeVersion)
     SELECT  Code, FiscalYear, Id, (NEXT VALUE FOR [changes].[ChangeVersionSequence])
     FROM    deleted d
 END

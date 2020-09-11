@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<AggregateExtensions logicalSchema="wi" schema="wi">
+<AggregateExtensions logicalSchema="Wi" schema="wi">
   <Aggregate root="CertificatedProgramStatusDescriptor">
     <Entity table="CertificatedProgramStatusDescriptor" isA="Descriptor" schema="wi"/>
   </Aggregate>

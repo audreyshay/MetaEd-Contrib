@@ -1,0 +1,80 @@
+ALTER TABLE edfixassessmentroster.AssessmentAdministration ADD CONSTRAINT FK_c64558_Assessment FOREIGN KEY (AssessmentIdentifier, Namespace)
+REFERENCES edfi.Assessment (AssessmentIdentifier, Namespace)
+;
+
+CREATE INDEX FK_c64558_Assessment
+ON edfixassessmentroster.AssessmentAdministration (AssessmentIdentifier ASC, Namespace ASC);
+
+ALTER TABLE edfixassessmentroster.AssessmentAdministration ADD CONSTRAINT FK_c64558_EducationOrganization FOREIGN KEY (AssigningEducationOrganizationId)
+REFERENCES edfi.EducationOrganization (EducationOrganizationId)
+;
+
+CREATE INDEX FK_c64558_EducationOrganization
+ON edfixassessmentroster.AssessmentAdministration (AssigningEducationOrganizationId ASC);
+
+ALTER TABLE edfixassessmentroster.AssessmentAdministrationContact ADD CONSTRAINT FK_0614bd_AssessmentAdministration FOREIGN KEY (AdministrationIdentifier, AssessmentIdentifier, AssigningEducationOrganizationId, Namespace)
+REFERENCES edfixassessmentroster.AssessmentAdministration (AdministrationIdentifier, AssessmentIdentifier, AssigningEducationOrganizationId, Namespace)
+ON DELETE CASCADE
+;
+
+CREATE INDEX FK_0614bd_AssessmentAdministration
+ON edfixassessmentroster.AssessmentAdministrationContact (AdministrationIdentifier ASC, AssessmentIdentifier ASC, AssigningEducationOrganizationId ASC, Namespace ASC);
+
+ALTER TABLE edfixassessmentroster.AssessmentAdministrationContact ADD CONSTRAINT FK_0614bd_EducationOrganization FOREIGN KEY (EducationOrganizationId)
+REFERENCES edfi.EducationOrganization (EducationOrganizationId)
+;
+
+CREATE INDEX FK_0614bd_EducationOrganization
+ON edfixassessmentroster.AssessmentAdministrationContact (EducationOrganizationId ASC);
+
+ALTER TABLE edfixassessmentroster.AssessmentAdministrationPeriod ADD CONSTRAINT FK_cf3215_AssessmentAdministration FOREIGN KEY (AdministrationIdentifier, AssessmentIdentifier, AssigningEducationOrganizationId, Namespace)
+REFERENCES edfixassessmentroster.AssessmentAdministration (AdministrationIdentifier, AssessmentIdentifier, AssigningEducationOrganizationId, Namespace)
+ON DELETE CASCADE
+;
+
+CREATE INDEX FK_cf3215_AssessmentAdministration
+ON edfixassessmentroster.AssessmentAdministrationPeriod (AdministrationIdentifier ASC, AssessmentIdentifier ASC, AssigningEducationOrganizationId ASC, Namespace ASC);
+
+ALTER TABLE edfixassessmentroster.StudentAssessmentRegistration ADD CONSTRAINT FK_79fd6b_AssessmentAdministration FOREIGN KEY (AdministrationIdentifier, AssessmentIdentifier, AssigningEducationOrganizationId, Namespace)
+REFERENCES edfixassessmentroster.AssessmentAdministration (AdministrationIdentifier, AssessmentIdentifier, AssigningEducationOrganizationId, Namespace)
+;
+
+CREATE INDEX FK_79fd6b_AssessmentAdministration
+ON edfixassessmentroster.StudentAssessmentRegistration (AdministrationIdentifier ASC, AssessmentIdentifier ASC, AssigningEducationOrganizationId ASC, Namespace ASC);
+
+ALTER TABLE edfixassessmentroster.StudentAssessmentRegistration ADD CONSTRAINT FK_79fd6b_EducationOrganization FOREIGN KEY (TestingEducationOrganizationId)
+REFERENCES edfi.EducationOrganization (EducationOrganizationId)
+;
+
+CREATE INDEX FK_79fd6b_EducationOrganization
+ON edfixassessmentroster.StudentAssessmentRegistration (TestingEducationOrganizationId ASC);
+
+ALTER TABLE edfixassessmentroster.StudentAssessmentRegistration ADD CONSTRAINT FK_79fd6b_EducationOrganization1 FOREIGN KEY (ReportingEducationOrganizationId)
+REFERENCES edfi.EducationOrganization (EducationOrganizationId)
+;
+
+CREATE INDEX FK_79fd6b_EducationOrganization1
+ON edfixassessmentroster.StudentAssessmentRegistration (ReportingEducationOrganizationId ASC);
+
+ALTER TABLE edfixassessmentroster.StudentAssessmentRegistration ADD CONSTRAINT FK_79fd6b_PlatformTypeDescriptor FOREIGN KEY (PlatformTypeDescriptorId)
+REFERENCES edfi.PlatformTypeDescriptor (PlatformTypeDescriptorId)
+;
+
+CREATE INDEX FK_79fd6b_PlatformTypeDescriptor
+ON edfixassessmentroster.StudentAssessmentRegistration (PlatformTypeDescriptorId ASC);
+
+ALTER TABLE edfixassessmentroster.StudentAssessmentRegistration ADD CONSTRAINT FK_79fd6b_StudentEducationOrganizationAssociation FOREIGN KEY (EducationOrganizationId, StudentUSI)
+REFERENCES edfi.StudentEducationOrganizationAssociation (EducationOrganizationId, StudentUSI)
+;
+
+CREATE INDEX FK_79fd6b_StudentEducationOrganizationAssociation
+ON edfixassessmentroster.StudentAssessmentRegistration (EducationOrganizationId ASC, StudentUSI ASC);
+
+ALTER TABLE edfixassessmentroster.StudentAssessmentRegistrationAssessmentCustomization ADD CONSTRAINT FK_869535_StudentAssessmentRegistration FOREIGN KEY (AdministrationIdentifier, AssessmentIdentifier, AssigningEducationOrganizationId, EducationOrganizationId, Namespace, StudentUSI)
+REFERENCES edfixassessmentroster.StudentAssessmentRegistration (AdministrationIdentifier, AssessmentIdentifier, AssigningEducationOrganizationId, EducationOrganizationId, Namespace, StudentUSI)
+ON DELETE CASCADE
+;
+
+CREATE INDEX FK_869535_StudentAssessmentRegistration
+ON edfixassessmentroster.StudentAssessmentRegistrationAssessmentCustomization (AdministrationIdentifier ASC, AssessmentIdentifier ASC, AssigningEducationOrganizationId ASC, EducationOrganizationId ASC, Namespace ASC, StudentUSI ASC);
+

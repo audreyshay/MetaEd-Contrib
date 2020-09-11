@@ -1,138 +1,138 @@
-CREATE TABLE [changes].[edfixfinance_AccountTypeDescriptor_TrackedDelete]
+CREATE TABLE [tracked_deletes_edfixfinance].[AccountTypeDescriptor]
 (
        AccountTypeDescriptorId [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_edfixfinance_AccountTypeDescriptor_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_AccountTypeDescriptor PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[edfixfinance_BalanceSheetDimension_TrackedDelete]
+CREATE TABLE [tracked_deletes_edfixfinance].[BalanceSheetDimension]
 (
        Code [NVARCHAR](16) NOT NULL,
-       FiscalYear [SMALLINT] NOT NULL,
+       FiscalYear [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_edfixfinance_BalanceSheetDimension_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_BalanceSheetDimension PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[edfixfinance_ChartOfAccount_TrackedDelete]
+CREATE TABLE [tracked_deletes_edfixfinance].[ChartOfAccount]
 (
        AccountIdentifier [NVARCHAR](50) NOT NULL,
        EducationOrganizationId [INT] NOT NULL,
-       FiscalYear [SMALLINT] NOT NULL,
+       FiscalYear [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_edfixfinance_ChartOfAccount_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_ChartOfAccount PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[edfixfinance_FinancialCollectionDescriptor_TrackedDelete]
+CREATE TABLE [tracked_deletes_edfixfinance].[FinancialCollectionDescriptor]
 (
        FinancialCollectionDescriptorId [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_edfixfinance_FinancialCollectionDescriptor_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_FinancialCollectionDescriptor PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[edfixfinance_FunctionDimension_TrackedDelete]
+CREATE TABLE [tracked_deletes_edfixfinance].[FunctionDimension]
 (
        Code [NVARCHAR](16) NOT NULL,
-       FiscalYear [SMALLINT] NOT NULL,
+       FiscalYear [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_edfixfinance_FunctionDimension_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_FunctionDimension PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[edfixfinance_FundDimension_TrackedDelete]
+CREATE TABLE [tracked_deletes_edfixfinance].[FundDimension]
 (
        Code [NVARCHAR](16) NOT NULL,
-       FiscalYear [SMALLINT] NOT NULL,
+       FiscalYear [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_edfixfinance_FundDimension_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_FundDimension PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[edfixfinance_LocalAccount_TrackedDelete]
+CREATE TABLE [tracked_deletes_edfixfinance].[LocalAccount]
 (
        AccountIdentifier [NVARCHAR](50) NOT NULL,
        EducationOrganizationId [INT] NOT NULL,
-       FiscalYear [SMALLINT] NOT NULL,
+       FiscalYear [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_edfixfinance_LocalAccount_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_LocalAccount PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[edfixfinance_LocalActual_TrackedDelete]
-(
-       AccountIdentifier [NVARCHAR](50) NOT NULL,
-       AsOfDate [DATE] NOT NULL,
-       EducationOrganizationId [INT] NOT NULL,
-       FiscalYear [SMALLINT] NOT NULL,
-       Id uniqueidentifier NOT NULL,
-       ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_edfixfinance_LocalActual_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
-)
-
-CREATE TABLE [changes].[edfixfinance_LocalBudget_TrackedDelete]
+CREATE TABLE [tracked_deletes_edfixfinance].[LocalActual]
 (
        AccountIdentifier [NVARCHAR](50) NOT NULL,
        AsOfDate [DATE] NOT NULL,
        EducationOrganizationId [INT] NOT NULL,
-       FiscalYear [SMALLINT] NOT NULL,
+       FiscalYear [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_edfixfinance_LocalBudget_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_LocalActual PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[edfixfinance_ObjectDimension_TrackedDelete]
+CREATE TABLE [tracked_deletes_edfixfinance].[LocalBudget]
+(
+       AccountIdentifier [NVARCHAR](50) NOT NULL,
+       AsOfDate [DATE] NOT NULL,
+       EducationOrganizationId [INT] NOT NULL,
+       FiscalYear [INT] NOT NULL,
+       Id uniqueidentifier NOT NULL,
+       ChangeVersion bigint NOT NULL,
+       CONSTRAINT PK_LocalBudget PRIMARY KEY CLUSTERED (ChangeVersion)
+)
+
+CREATE TABLE [tracked_deletes_edfixfinance].[ObjectDimension]
 (
        Code [NVARCHAR](16) NOT NULL,
-       FiscalYear [SMALLINT] NOT NULL,
+       FiscalYear [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_edfixfinance_ObjectDimension_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_ObjectDimension PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[edfixfinance_OperationalUnitDimension_TrackedDelete]
+CREATE TABLE [tracked_deletes_edfixfinance].[OperationalUnitDimension]
 (
        Code [NVARCHAR](16) NOT NULL,
-       FiscalYear [SMALLINT] NOT NULL,
+       FiscalYear [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_edfixfinance_OperationalUnitDimension_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_OperationalUnitDimension PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[edfixfinance_ProgramDimension_TrackedDelete]
+CREATE TABLE [tracked_deletes_edfixfinance].[ProgramDimension]
 (
        Code [NVARCHAR](16) NOT NULL,
-       FiscalYear [SMALLINT] NOT NULL,
+       FiscalYear [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_edfixfinance_ProgramDimension_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_ProgramDimension PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[edfixfinance_ProjectDimension_TrackedDelete]
+CREATE TABLE [tracked_deletes_edfixfinance].[ProjectDimension]
 (
        Code [NVARCHAR](16) NOT NULL,
-       FiscalYear [SMALLINT] NOT NULL,
+       FiscalYear [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_edfixfinance_ProjectDimension_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_ProjectDimension PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[edfixfinance_ReportingTagDescriptor_TrackedDelete]
+CREATE TABLE [tracked_deletes_edfixfinance].[ReportingTagDescriptor]
 (
        ReportingTagDescriptorId [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_edfixfinance_ReportingTagDescriptor_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_ReportingTagDescriptor PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 
-CREATE TABLE [changes].[edfixfinance_SourceDimension_TrackedDelete]
+CREATE TABLE [tracked_deletes_edfixfinance].[SourceDimension]
 (
        Code [NVARCHAR](16) NOT NULL,
-       FiscalYear [SMALLINT] NOT NULL,
+       FiscalYear [INT] NOT NULL,
        Id uniqueidentifier NOT NULL,
        ChangeVersion bigint NOT NULL,
-       CONSTRAINT PK_edfixfinance_SourceDimension_TrackedDelete PRIMARY KEY CLUSTERED (ChangeVersion)
+       CONSTRAINT PK_SourceDimension PRIMARY KEY CLUSTERED (ChangeVersion)
 )
 

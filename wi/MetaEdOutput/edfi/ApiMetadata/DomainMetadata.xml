@@ -56,6 +56,7 @@
     <Entity table="AssessmentLanguage"/>
     <Entity table="AssessmentPerformanceLevel"/>
     <Entity table="AssessmentPeriod"/>
+    <Entity table="AssessmentPlatformType"/>
     <Entity table="AssessmentProgram"/>
     <Entity table="AssessmentScore"/>
     <Entity table="AssessmentSection"/>
@@ -69,6 +70,7 @@
   <Aggregate root="AssessmentItem">
     <Entity table="AssessmentItem"/>
     <Entity table="AssessmentItemLearningStandard"/>
+    <Entity table="AssessmentItemPossibleResponse"/>
   </Aggregate>
   <Aggregate root="AssessmentItemCategoryDescriptor">
     <Entity table="AssessmentItemCategoryDescriptor" isA="Descriptor"/>
@@ -99,6 +101,9 @@
   </Aggregate>
   <Aggregate root="Budget">
     <Entity table="Budget"/>
+  </Aggregate>
+  <Aggregate root="CTEProgramServiceDescriptor">
+    <Entity table="CTEProgramServiceDescriptor" isA="Descriptor"/>
   </Aggregate>
   <Aggregate root="Calendar">
     <Entity table="Calendar"/>
@@ -214,6 +219,9 @@
   </Aggregate>
   <Aggregate root="CourseTranscript">
     <Entity table="CourseTranscript"/>
+    <Entity table="CourseTranscriptAcademicSubject"/>
+    <Entity table="CourseTranscriptAlternativeCourseIdentificationCode"/>
+    <Entity table="CourseTranscriptCreditCategory"/>
     <Entity table="CourseTranscriptEarnedAdditionalCredits"/>
   </Aggregate>
   <Aggregate root="Credential">
@@ -227,6 +235,9 @@
   </Aggregate>
   <Aggregate root="CredentialTypeDescriptor">
     <Entity table="CredentialTypeDescriptor" isA="Descriptor"/>
+  </Aggregate>
+  <Aggregate root="CreditCategoryDescriptor">
+    <Entity table="CreditCategoryDescriptor" isA="Descriptor"/>
   </Aggregate>
   <Aggregate root="CreditTypeDescriptor">
     <Entity table="CreditTypeDescriptor" isA="Descriptor"/>
@@ -273,7 +284,11 @@
   <Aggregate root="DisciplineIncident">
     <Entity table="DisciplineIncident"/>
     <Entity table="DisciplineIncidentBehavior"/>
+    <Entity table="DisciplineIncidentExternalParticipant"/>
     <Entity table="DisciplineIncidentWeapon"/>
+  </Aggregate>
+  <Aggregate root="DisciplineIncidentParticipationCodeDescriptor">
+    <Entity table="DisciplineIncidentParticipationCodeDescriptor" isA="Descriptor"/>
   </Aggregate>
   <Aggregate root="EducationContent">
     <Entity table="EducationContent"/>
@@ -287,7 +302,7 @@
   </Aggregate>
   <Aggregate root="EducationOrganization">
     <Entity table="EducationOrganization" isAbstract="true"/>
-    <Entity table="EducationOrganizationAddress" isRequiredCollection="true"/>
+    <Entity table="EducationOrganizationAddress"/>
     <Entity table="EducationOrganizationAddressPeriod"/>
     <Entity table="EducationOrganizationCategory" isRequiredCollection="true"/>
     <Entity table="EducationOrganizationIdentificationCode"/>
@@ -344,12 +359,17 @@
   </Aggregate>
   <Aggregate root="GeneralStudentProgramAssociation">
     <Entity table="GeneralStudentProgramAssociation" isAbstract="true"/>
+    <Entity table="GeneralStudentProgramAssociationParticipationStatus"/>
   </Aggregate>
   <Aggregate root="Grade" allowPrimaryKeyUpdates="true">
     <Entity table="Grade"/>
+    <Entity table="GradeLearningStandardGrade"/>
   </Aggregate>
   <Aggregate root="GradeLevelDescriptor">
     <Entity table="GradeLevelDescriptor" isA="Descriptor"/>
+  </Aggregate>
+  <Aggregate root="GradePointAverageTypeDescriptor">
+    <Entity table="GradePointAverageTypeDescriptor" isA="Descriptor"/>
   </Aggregate>
   <Aggregate root="GradeTypeDescriptor">
     <Entity table="GradeTypeDescriptor" isA="Descriptor"/>
@@ -372,6 +392,7 @@
     <Entity table="GraduationPlan"/>
     <Entity table="GraduationPlanCreditsByCourse"/>
     <Entity table="GraduationPlanCreditsByCourseCourse" isRequiredCollection="true"/>
+    <Entity table="GraduationPlanCreditsByCreditCategory"/>
     <Entity table="GraduationPlanCreditsBySubject"/>
     <Entity table="GraduationPlanRequiredAssessment"/>
     <Entity table="GraduationPlanRequiredAssessmentPerformanceLevel"/>
@@ -473,6 +494,15 @@
   <Aggregate root="LearningStandardCategoryDescriptor">
     <Entity table="LearningStandardCategoryDescriptor" isA="Descriptor"/>
   </Aggregate>
+  <Aggregate root="LearningStandardEquivalenceAssociation">
+    <Entity table="LearningStandardEquivalenceAssociation"/>
+  </Aggregate>
+  <Aggregate root="LearningStandardEquivalenceStrengthDescriptor">
+    <Entity table="LearningStandardEquivalenceStrengthDescriptor" isA="Descriptor"/>
+  </Aggregate>
+  <Aggregate root="LearningStandardScopeDescriptor">
+    <Entity table="LearningStandardScopeDescriptor" isA="Descriptor"/>
+  </Aggregate>
   <Aggregate root="LevelOfEducationDescriptor">
     <Entity table="LevelOfEducationDescriptor" isA="Descriptor"/>
   </Aggregate>
@@ -560,6 +590,9 @@
   <Aggregate root="ParticipationDescriptor">
     <Entity table="ParticipationDescriptor" isA="Descriptor"/>
   </Aggregate>
+  <Aggregate root="ParticipationStatusDescriptor">
+    <Entity table="ParticipationStatusDescriptor" isA="Descriptor"/>
+  </Aggregate>
   <Aggregate root="Payroll">
     <Entity table="Payroll"/>
   </Aggregate>
@@ -571,6 +604,9 @@
   </Aggregate>
   <Aggregate root="PersonalInformationVerificationDescriptor">
     <Entity table="PersonalInformationVerificationDescriptor" isA="Descriptor"/>
+  </Aggregate>
+  <Aggregate root="PlatformTypeDescriptor">
+    <Entity table="PlatformTypeDescriptor" isA="Descriptor"/>
   </Aggregate>
   <Aggregate root="PopulationServedDescriptor">
     <Entity table="PopulationServedDescriptor" isA="Descriptor"/>
@@ -653,6 +689,7 @@
   <Aggregate root="ReportCard">
     <Entity table="ReportCard"/>
     <Entity table="ReportCardGrade"/>
+    <Entity table="ReportCardGradePointAverage"/>
     <Entity table="ReportCardStudentCompetencyObjective"/>
     <Entity table="ReportCardStudentLearningObjective"/>
   </Aggregate>
@@ -725,7 +762,7 @@
   <Aggregate root="ServiceDescriptor">
     <Entity table="ServiceDescriptor" isA="Descriptor"/>
   </Aggregate>
-  <Aggregate root="Session">
+  <Aggregate root="Session" allowPrimaryKeyUpdates="true">
     <Entity table="Session"/>
     <Entity table="SessionAcademicWeek"/>
     <Entity table="SessionGradingPeriod"/>
@@ -766,6 +803,10 @@
   </Aggregate>
   <Aggregate root="StaffCohortAssociation">
     <Entity table="StaffCohortAssociation"/>
+  </Aggregate>
+  <Aggregate root="StaffDisciplineIncidentAssociation">
+    <Entity table="StaffDisciplineIncidentAssociation"/>
+    <Entity table="StaffDisciplineIncidentAssociationDisciplineIncidentParticipationCode" isRequiredCollection="true"/>
   </Aggregate>
   <Aggregate root="StaffEducationOrganizationAssignmentAssociation">
     <Entity table="StaffEducationOrganizationAssignmentAssociation"/>
@@ -819,6 +860,7 @@
     <Entity table="StudentAcademicRecordAcademicHonor"/>
     <Entity table="StudentAcademicRecordClassRanking"/>
     <Entity table="StudentAcademicRecordDiploma"/>
+    <Entity table="StudentAcademicRecordGradePointAverage"/>
     <Entity table="StudentAcademicRecordRecognition"/>
     <Entity table="StudentAcademicRecordReportCard"/>
   </Aggregate>
@@ -835,6 +877,7 @@
   <Aggregate root="StudentCTEProgramAssociation">
     <Entity table="StudentCTEProgramAssociation" isA="GeneralStudentProgramAssociation"/>
     <Entity table="StudentCTEProgramAssociationCTEProgram"/>
+    <Entity table="StudentCTEProgramAssociationCTEProgramService"/>
     <Entity table="StudentCTEProgramAssociationService"/>
   </Aggregate>
   <Aggregate root="StudentCharacteristicDescriptor">
@@ -928,6 +971,7 @@
   </Aggregate>
   <Aggregate root="StudentSchoolAssociation" allowPrimaryKeyUpdates="true">
     <Entity table="StudentSchoolAssociation"/>
+    <Entity table="StudentSchoolAssociationAlternativeGraduationPlan"/>
     <Entity table="StudentSchoolAssociationEducationPlan"/>
   </Aggregate>
   <Aggregate root="StudentSchoolAttendanceEvent">
@@ -949,10 +993,12 @@
     <Entity table="StudentSpecialEducationProgramAssociationDisabilityDesignation"/>
     <Entity table="StudentSpecialEducationProgramAssociationServiceProvider"/>
     <Entity table="StudentSpecialEducationProgramAssociationSpecialEducationProgramService"/>
+    <Entity table="StudentSpecialEducationProgramAssociationSpecialEducationProgramServiceProvider"/>
   </Aggregate>
   <Aggregate root="StudentTitleIPartAProgramAssociation">
     <Entity table="StudentTitleIPartAProgramAssociation" isA="GeneralStudentProgramAssociation"/>
     <Entity table="StudentTitleIPartAProgramAssociationService"/>
+    <Entity table="StudentTitleIPartAProgramAssociationTitleIPartAProgramService"/>
   </Aggregate>
   <Aggregate root="TeachingCredentialBasisDescriptor">
     <Entity table="TeachingCredentialBasisDescriptor" isA="Descriptor"/>
@@ -971,6 +1017,9 @@
   </Aggregate>
   <Aggregate root="TitleIPartAParticipantDescriptor">
     <Entity table="TitleIPartAParticipantDescriptor" isA="Descriptor"/>
+  </Aggregate>
+  <Aggregate root="TitleIPartAProgramServiceDescriptor">
+    <Entity table="TitleIPartAProgramServiceDescriptor" isA="Descriptor"/>
   </Aggregate>
   <Aggregate root="TitleIPartASchoolDesignationDescriptor">
     <Entity table="TitleIPartASchoolDesignationDescriptor" isA="Descriptor"/>

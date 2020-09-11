@@ -26,6 +26,7 @@
     <Element name="InstitutionTelephoneNumberTypeDescriptor" />
     <Element name="IdentificationDocumentUseDescriptor" />
     <Element name="GunFreeSchoolsActReportingStatusDescriptor" />
+    <Element name="GradePointAverageTypeDescriptor" />
     <Element name="ElectronicMailTypeDescriptor" />
     <Element name="EducationOrganizationIdentificationSystemDescriptor" />
     <Element name="DisabilityDeterminationSourceTypeDescriptor" />
@@ -41,6 +42,7 @@
     <Element name="AdditionalCreditTypeDescriptor" />
     <Element name="AchievementCategoryDescriptor" />
     <Element name="AcademicHonorCategoryDescriptor" />
+    <Element name="CreditCategoryDescriptor" />
     <Element name="CourseRepeatCodeDescriptor" />
     <Element name="MethodCreditEarnedDescriptor" />
     <Element name="CourseAttemptResultDescriptor" />
@@ -53,11 +55,14 @@
     <Element name="LanguageInstructionProgramServiceDescriptor" />
     <Element name="MigrantEducationProgramServiceDescriptor" />
     <Element name="ContinuationOfServicesReasonDescriptor" />
+    <Element name="TitleIPartAProgramServiceDescriptor" />
     <Element name="TitleIPartAParticipantDescriptor" />
+    <Element name="CTEProgramServiceDescriptor" />
     <Element name="TechnicalSkillsAssessmentDescriptor" />
     <Element name="RestraintEventReasonDescriptor" />
     <Element name="SpecialEducationProgramServiceDescriptor" />
     <Element name="SpecialEducationSettingDescriptor" />
+    <Element name="ParticipationStatusDescriptor" />
     <Element name="ReasonExitedDescriptor" />
     <Element name="DeliveryMethodDescriptor" />
     <Element name="DiagnosisDescriptor" />
@@ -80,6 +85,7 @@
     <Element name="ExitWithdrawTypeDescriptor" />
     <Element name="EntryTypeDescriptor" />
     <Element name="EntryGradeLevelReasonDescriptor" />
+    <Element name="DisciplineIncidentParticipationCodeDescriptor" />
     <Element name="DisciplineActionLengthDifferenceReasonDescriptor" />
     <Element name="DisciplineDescriptor" />
     <Element name="StudentParticipationCodeDescriptor" />
@@ -90,13 +96,15 @@
     <Element name="CohortScopeDescriptor" />
     <Element name="CohortTypeDescriptor" />
     <Element name="AttendanceEventCategoryDescriptor" />
-    <Element name="PerformanceLevelDescriptor" />
     <Element name="EventCircumstanceDescriptor" />
-    <Element name="AdministrationEnvironmentDescriptor" />
+    <Element name="PerformanceLevelDescriptor" />
     <Element name="ReasonNotTestedDescriptor" />
     <Element name="RetestIndicatorDescriptor" />
     <Element name="AccommodationDescriptor" />
+    <Element name="AdministrationEnvironmentDescriptor" />
     <Element name="CountryDescriptor" />
+    <Element name="LearningStandardEquivalenceStrengthDescriptor" />
+    <Element name="LearningStandardScopeDescriptor" />
     <Element name="LearningStandardCategoryDescriptor" />
     <Element name="TeachingCredentialBasisDescriptor" />
     <Element name="TeachingCredentialDescriptor" />
@@ -134,44 +142,46 @@
     <Element name="MediumOfInstructionDescriptor" />
     <Element name="LicenseTypeDescriptor" />
     <Element name="LicenseStatusDescriptor" />
+    <Element name="ProviderCategoryDescriptor" />
     <Element name="ProviderStatusDescriptor" />
     <Element name="ProviderProfitabilityDescriptor" />
-    <Element name="ProviderCategoryDescriptor" />
     <Element name="NetworkPurposeDescriptor" />
     <Element name="ServiceDescriptor" />
     <Element name="ProgramSponsorDescriptor" />
     <Element name="ProgramCharacteristicDescriptor" />
     <Element name="ProgramTypeDescriptor" />
-    <Element name="CareerPathwayDescriptor" />
+    <Element name="CreditTypeDescriptor" />
     <Element name="CompetencyLevelDescriptor" />
-    <Element name="CourseLevelCharacteristicDescriptor" />
+    <Element name="CareerPathwayDescriptor" />
     <Element name="CourseDefinedByDescriptor" />
     <Element name="CourseGPAApplicabilityDescriptor" />
-    <Element name="CreditTypeDescriptor" />
-    <Element name="SchoolTypeDescriptor" />
+    <Element name="CourseLevelCharacteristicDescriptor" />
     <Element name="CharterApprovalAgencyTypeDescriptor" />
     <Element name="InternetAccessDescriptor" />
     <Element name="AdministrativeFundingControlDescriptor" />
     <Element name="MagnetSpecialProgramEmphasisSchoolDescriptor" />
     <Element name="TitleIPartASchoolDesignationDescriptor" />
+    <Element name="SchoolTypeDescriptor" />
     <Element name="SchoolCategoryDescriptor" />
-    <Element name="LocalEducationAgencyCategoryDescriptor" />
     <Element name="CharterStatusDescriptor" />
+    <Element name="LocalEducationAgencyCategoryDescriptor" />
     <Element name="OperationalStatusDescriptor" />
     <Element name="EducationOrganizationCategoryDescriptor" />
     <Element name="AssessmentItemCategoryDescriptor" />
+    <Element name="PlatformTypeDescriptor" />
     <Element name="AssessmentPeriodDescriptor" />
     <Element name="LanguageDescriptor" />
-    <Element name="AssessmentCategoryDescriptor" />
     <Element name="GradeLevelDescriptor" />
     <Element name="GradingPeriodDescriptor" />
     <Element name="AcademicSubjectDescriptor" />
+    <Element name="AssessmentCategoryDescriptor" />
   </Interchange>
   <Interchange name="Student" order="20">
     <Element name="Student" />
   </Interchange>
   <Interchange name="Standards" order="30">
     <Element name="LearningStandard" />
+    <Element name="LearningStandardEquivalenceAssociation" />
     <Element name="LearningObjective" />
   </Interchange>
   <Interchange name="Parent" order="40">
@@ -262,6 +272,7 @@
   </Interchange>
   <Interchange name="StudentDiscipline" order="150">
     <Element name="DisciplineIncident" />
+    <Element name="StaffDisciplineIncidentAssociation" />
     <Element name="StudentDisciplineIncidentAssociation" />
     <Element name="DisciplineAction" />
   </Interchange>

@@ -24,6 +24,7 @@ GO
 ALTER TABLE [wi].[CourseOfferingCareerPathway] WITH CHECK ADD CONSTRAINT [FK_CourseOfferingCareerPathway_CourseOffering] FOREIGN KEY ([LocalCourseCode], [SchoolId], [SchoolYear], [SessionName])
 REFERENCES [edfi].[CourseOffering] ([LocalCourseCode], [SchoolId], [SchoolYear], [SessionName])
 ON DELETE CASCADE
+ON UPDATE CASCADE
 GO
 
 CREATE NONCLUSTERED INDEX [FK_CourseOfferingCareerPathway_CourseOffering]
@@ -65,6 +66,11 @@ ALTER TABLE [wi].[GradeExtension] WITH CHECK ADD CONSTRAINT [FK_GradeExtension_G
 REFERENCES [edfi].[Grade] ([BeginDate], [GradeTypeDescriptorId], [GradingPeriodDescriptorId], [GradingPeriodSchoolYear], [GradingPeriodSequence], [LocalCourseCode], [SchoolId], [SchoolYear], [SectionIdentifier], [SessionName], [StudentUSI])
 ON DELETE CASCADE
 ON UPDATE CASCADE
+GO
+
+ALTER TABLE [wi].[GraduationPlanExtension] WITH CHECK ADD CONSTRAINT [FK_GraduationPlanExtension_GraduationPlan] FOREIGN KEY ([EducationOrganizationId], [GraduationPlanTypeDescriptorId], [GraduationSchoolYear])
+REFERENCES [edfi].[GraduationPlan] ([EducationOrganizationId], [GraduationPlanTypeDescriptorId], [GraduationSchoolYear])
+ON DELETE CASCADE
 GO
 
 ALTER TABLE [wi].[IacCodeDescriptor] WITH CHECK ADD CONSTRAINT [FK_IacCodeDescriptor_Descriptor] FOREIGN KEY ([IacCodeDescriptorId])
