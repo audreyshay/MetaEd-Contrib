@@ -1,0 +1,8 @@
+Domain Entity ProgramCalendar
+    documentation "Program Calendar"
+    shared string EdFi.IdentificationCode named ProgramCalendarCode
+        documentation "The identifier for the ProgramCalendar."
+        is part of identity
+    enumeration EdFi.SchoolYear
+        documentation "The identifier for the school year associated with the ProgramCalendar."
+        is part of identity

@@ -1,0 +1,4 @@
+Domain Entity EdFi.CalendarDate additions
+    common ProgramLearningModality
+        documentation "Program Learning Modality"
+        is optional collection

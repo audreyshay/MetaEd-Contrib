@@ -1,0 +1,8 @@
+Common ProgramLearningModality
+    documentation "Program Learning Modality"
+    shared string EdFi.ProgramName
+        documentation "Program Name"
+        is part of identity
+    common LearningModality
+        documentation "Learning Modality"
+        is optional collection

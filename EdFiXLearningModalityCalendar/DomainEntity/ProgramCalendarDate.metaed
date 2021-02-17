@@ -1,0 +1,11 @@
+Domain Entity ProgramCalendarDate
+    documentation "Program Calendar Date"
+    date Date
+        documentation "The month, day, and year of the ProgramCalendarEvent."
+        is part of identity
+    descriptor EdFi.CalendarEvent
+        documentation "Calendar Event"
+        is required collection
+    common LearningModality
+        documentation "Learning Modality"
+        is optional collection
