@@ -6,3 +6,9 @@ Domain Entity ProgramCalendar
     enumeration EdFi.SchoolYear
         documentation "The identifier for the school year associated with the ProgramCalendar."
         is part of identity
+    domain entity EdFi.School
+        documentation "School"
+        is required
+    domain entity EdFi.Program
+        documentation "Optional reference to Program to which the ProgramCalendar is associated."
+        is optional

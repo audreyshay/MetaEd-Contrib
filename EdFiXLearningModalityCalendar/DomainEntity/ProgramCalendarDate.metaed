@@ -3,6 +3,9 @@ Domain Entity ProgramCalendarDate
     date Date
         documentation "The month, day, and year of the ProgramCalendarEvent."
         is part of identity
+    domain entity ProgramCalendar
+        documentation "Reference to the ProgramCalendar associated to the Program CalendarEvent."
+        is part of identity
     descriptor EdFi.CalendarEvent
         documentation "Calendar Event"
         is required collection
