@@ -1,11 +1,11 @@
 Common LearningModality
     documentation "Learning Modality"
     descriptor ModalityType
-        documentation "Modality Type"
+        documentation "The method by which the student is engaging in instruction."
         is part of identity
     shared decimal ModalityTime
-        documentation "Modality Time"
+        documentation "The duration the student engaged via the modality."
         is required
     descriptor ModalityTimeType
-        documentation "Modality Time Type"
+        documentation "The units or time dimension for hte duration."
         is required
