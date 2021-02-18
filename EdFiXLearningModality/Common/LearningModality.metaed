@@ -1,5 +1,5 @@
 Common LearningModality
-    documentation "Learning Modality"
+    documentation "Captures key aspects of the student learning modality."
     descriptor ModalityType
         documentation "The method by which the student is engaging in instruction."
         is part of identity
