@@ -1,0 +1,4 @@
+Domain Entity EdFi.Program additions
+    common LearningModality
+        documentation "The learning modalities associated with the Program."
+        is optional collection

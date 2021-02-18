@@ -1,5 +1,5 @@
 Domain Entity ProgramCalendar
-    documentation "Program Calendar"
+    documentation "A set of dates associated with a Program. Not yet recommended for use - under investigation."
     shared string EdFi.IdentificationCode named ProgramCalendarCode
         documentation "The identifier for the ProgramCalendar."
         is part of identity
@@ -7,8 +7,8 @@ Domain Entity ProgramCalendar
         documentation "The identifier for the school year associated with the ProgramCalendar."
         is part of identity
     domain entity EdFi.School
-        documentation "School"
-        is required
+        documentation "Reference to the School associated with the ProgramCalendar."
+        is part of identity
     domain entity EdFi.Program
         documentation "Optional reference to Program to which the ProgramCalendar is associated."
         is optional

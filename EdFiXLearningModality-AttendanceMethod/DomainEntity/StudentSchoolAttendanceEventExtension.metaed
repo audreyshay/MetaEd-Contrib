@@ -1,0 +1,4 @@
+Domain Entity EdFi.StudentSchoolAttendanceEvent additions
+    common LearningModality
+        documentation "The learning modalities associated with the StudentSchoolAttendanceEvent."
+        is optional collection

@@ -1,5 +1,5 @@
 Domain Entity ProgramCalendarDate
-    documentation "Program Calendar Date"
+    documentation "The type of scheduled or unscheduled program-specific event for the day. Not yet recommended for use - under investigation."
     date Date
         documentation "The month, day, and year of the ProgramCalendarEvent."
         is part of identity
@@ -7,8 +7,8 @@ Domain Entity ProgramCalendarDate
         documentation "Reference to the ProgramCalendar associated to the Program CalendarEvent."
         is part of identity
     descriptor EdFi.CalendarEvent
-        documentation "Calendar Event"
+        documentation "The type of scheduled or unscheduled program-specific event for the day."
         is required collection
     common LearningModality
-        documentation "Learning Modality"
+        documentation "The learning modalities associated with the ProgramCalendarDate."
         is optional collection

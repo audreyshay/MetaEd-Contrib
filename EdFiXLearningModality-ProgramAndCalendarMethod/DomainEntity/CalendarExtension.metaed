@@ -1,0 +1,4 @@
+Domain Entity EdFi.Calendar additions
+    domain entity EdFi.Program
+        documentation "An optional reference to a Program associated with the Calendar."
+        is optional
