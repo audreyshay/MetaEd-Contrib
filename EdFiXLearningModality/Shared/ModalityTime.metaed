@@ -1,5 +1,0 @@
-Shared Decimal ModalityTime
-    documentation "Modality Time"
-    total digits 8
-    decimal places 2
-    min value 0
