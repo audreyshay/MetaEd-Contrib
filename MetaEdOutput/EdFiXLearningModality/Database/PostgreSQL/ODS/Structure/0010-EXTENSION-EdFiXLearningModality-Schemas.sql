@@ -1,0 +1,1 @@
+CREATE SCHEMA edfixlearningmodality AUTHORIZATION postgres;

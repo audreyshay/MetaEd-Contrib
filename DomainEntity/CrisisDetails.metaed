@@ -1,0 +1,15 @@
+Domain Entity CrisisDetails
+    documentation "Information about the specific crisis that occurred."
+    descriptor CrisisEvent
+      documentation "The specific event that occurred"
+      is part of identity
+    descriptor CrisisType
+      documentation "The type of crisis event that occurred"
+      is required
+    date CrisisStartDate
+      documentation "First date that the crisis occurred"
+      is required
+    string CrisisDesription
+      documentation "Description of the event"
+      is optional
+      max length 1024

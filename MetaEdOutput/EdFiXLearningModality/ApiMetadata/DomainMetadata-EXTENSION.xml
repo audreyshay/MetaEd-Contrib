@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AggregateExtensions logicalSchema="EdFiXLearningModality" schema="edfixlearningmodality">
+  <Aggregate root="ModalityTimeTypeDescriptor">
+    <Entity table="ModalityTimeTypeDescriptor" isA="Descriptor" schema="edfixlearningmodality"/>
+  </Aggregate>
+  <Aggregate root="ModalityTypeDescriptor">
+    <Entity table="ModalityTypeDescriptor" isA="Descriptor" schema="edfixlearningmodality"/>
+  </Aggregate>
+  <AggregateExtension root="Program">
+    <Entity table="ProgramLearningModality" schema="edfixlearningmodality"/>
+  </AggregateExtension>
+</AggregateExtensions>

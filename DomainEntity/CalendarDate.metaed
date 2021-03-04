@@ -1,0 +1,4 @@
+Domain Entity EdFi.CalendarDate additions
+  shared decimal EdFi.EventDuration named InstructionalDuration
+    documentation "The portion of the day that instruction occurred."
+    is required

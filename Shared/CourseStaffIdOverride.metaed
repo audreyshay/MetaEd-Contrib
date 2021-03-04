@@ -1,0 +1,4 @@
+Shared String CourseStaffIdOverride
+    documentation "Staff Id of non district employee correspoinding to the teacher of the course."
+    min length 10
+    max length 10
