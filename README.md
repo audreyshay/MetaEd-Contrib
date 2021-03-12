@@ -33,7 +33,13 @@ Your pull request will be reviewed by a repository manager. So long as your pull
 * [GitHub for Atom](https://github.atom.io/) (from GitHub - use Git commands right from the MetaEd-IDE!)
 * [Resources to learn Git](https://try.github.io/) (from GitHub)
 
-## License
-Copyright &copy; Ed-Fi Alliance. All rights reserved.
+## Legal Information
 
-Licensed under the [Ed-Fi License](https://www.ed-fi.org/getting-started/license-ed-fi-technology/).
+Copyright (c) 2021 Ed-Fi Alliance, LLC and contributors.
+
+Licensed under the [Apache License, Version 2.0](LICENSE) (the "License").
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
