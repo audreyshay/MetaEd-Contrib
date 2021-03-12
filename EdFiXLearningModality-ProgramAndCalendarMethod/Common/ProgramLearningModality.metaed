@@ -1,0 +1,8 @@
+Common ProgramLearningModality
+    documentation "A collection of Learning Modalities associated with a Program that may be tied to Calendar Dates."
+    domain entity EdFi.Program
+        documentation "A reference to the Program associated with the Learning Modalities."
+        is part of identity
+    common LearningModality
+        documentation "The learning modalities associated with the Program."
+        is optional collection

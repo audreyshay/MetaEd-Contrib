@@ -1,5 +1,0 @@
-Shared Decimal ModalityTime
-    documentation "The duration the student engaged via the modality."
-    total digits 8
-    decimal places 2
-    min value 0
