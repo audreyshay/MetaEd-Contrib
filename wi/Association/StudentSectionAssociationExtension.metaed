@@ -1,0 +1,4 @@
+Association EdFi.StudentSectionAssociation additions
+    domain entity EdFi.Program
+      documentation "Programs that the student is participating for this section"
+      is optional collection
