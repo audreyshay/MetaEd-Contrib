@@ -1,0 +1,8 @@
+Association EdFi.StudentEducationOrganizationAssociation additions
+domain entity EdFi.LocalEducationAgency
+  documentation ""
+  is optional
+  role name Resident
+//descriptor Wi.AncestryEthnicOrigin
+//  documentation "The ancestry ethnic origins that pertain to the general racial categories with which the individual identifies."
+//  is optional collection

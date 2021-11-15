@@ -1,0 +1,20 @@
+Domain Entity StudentTransportation
+    documentation "Student transported to/from a school by a participating organization."
+    enumeration EdFi.SchoolYear
+        documentation "Identifier for the school year."
+        is part of identity
+    domain entity EdFi.Student
+        documentation "Student reference"
+        is part of identity
+    domain entity EdFi.EducationOrganization
+        documentation "Education Organization reference- typically an LEA, but may be a school"
+        is part of identity
+    descriptor TransportationType
+        documentation "Type of transportation aid"
+        is part of identity
+    integer MileageCategory
+        documentation "Miles student transported. Ex: 1 miles, 15 miles, etc"
+        is required
+    bool PrivateSchoolIndicator
+        documentation "Flag to indicate if student's primary school is a non-public school"
+        is required

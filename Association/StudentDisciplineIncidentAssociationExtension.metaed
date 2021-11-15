@@ -1,0 +1,4 @@
+Association EdFi.StudentDisciplineIncidentAssociation additions
+  bool SeriousBodilyInjury
+    documentation "Incident resulted in serious bodily injury. Serious Bodily Injury involves a substantial risk of death; extreme physical pain; protracted and obvious disfigurement; or protracted loss or impairment of the function of a bodily member, organ, or faculty (18 USC Section 1365 (3)(h))."
+    is optional

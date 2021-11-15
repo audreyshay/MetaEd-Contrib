@@ -1,0 +1,4 @@
+Domain Entity EdFi.CourseOffering additions
+    descriptor EdFi.CareerPathway
+      documentation "The career cluster or pathway representing the career path of the Vocational/Career Tech concentrator."
+      is optional collection
