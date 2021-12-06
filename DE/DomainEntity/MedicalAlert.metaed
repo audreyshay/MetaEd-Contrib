@@ -1,0 +1,8 @@
+Domain Entity MedicalAlert
+    documentation "Defines the codes that describe a person's known medical conditions."
+    descriptor MedicalAlertCategory
+        documentation "Identifies the medical alert code."
+        is part of identity
+    bool Sensitive
+        documentation "Indicates if the code represents a sensitive medical alert and should only be displayed for users with the proper security."
+        is optional
