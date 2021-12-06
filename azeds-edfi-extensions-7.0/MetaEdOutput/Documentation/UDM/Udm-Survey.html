@@ -1,0 +1,69 @@
+<!DOCTYPE html><html><head><title>MetaEd Generated Interchange Brief</title><link rel="stylesheet" href="confluence-like.css"></head><body><h1 id="survey">Survey</h1>
+<hr>
+<p>This domain defines a model that can be used for surveys and survey respones from identified or anonymous respondents. This domain contains:</p>
+<pre><code>* Survey, SurveySection, and SurveyQuestion that describe the survey.
+* Survey responses that follow a parallel structure of SurveyResponse, SurveySectionResponse, and SurveyQuestionResponse.
+* Associations to tie Survey and SurveyResponse domain entities to Course, Section, Program, Target EducationOrganization, and Target Staff.</code></pre><h4 id="survey-model-entities">Survey Model Entities</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Survey</td>
+<td>A survey to identified or anonymous respondents.</td>
+</tr>
+<tr>
+<td>SurveyQuestion</td>
+<td>The questions for the survey.</td>
+</tr>
+<tr>
+<td>SurveyQuestionResponse</td>
+<td>The response to a survey question.</td>
+</tr>
+<tr>
+<td>SurveyResponse</td>
+<td>Responses to a Survey for named or anonymous persons.</td>
+</tr>
+<tr>
+<td>SurveySection</td>
+<td>The section of questions for the survey.</td>
+</tr>
+<tr>
+<td>SurveySectionResponse</td>
+<td>Optional information about the responses provided for a section of a survey.</td>
+</tr>
+<tr>
+<td>SurveyCourseAssociation</td>
+<td>The course associated with the survey.</td>
+</tr>
+<tr>
+<td>SurveySectionAssociation</td>
+<td>The section associated with the survey.</td>
+</tr>
+<tr>
+<td>SurveyProgramAssociation</td>
+<td>The program associated with the survey.</td>
+</tr>
+<tr>
+<td>SurveyResponseEducationOrganizationTargetAssociation</td>
+<td>This association provides information about the survey being taken and the education organization the survey is about.</td>
+</tr>
+<tr>
+<td>SurveyResponseStaffTargetAssociation</td>
+<td>The association provides information about the survey being taken and who the survey is about.</td>
+</tr>
+<tr>
+<td>SurveySectionResponseEducationOrganizationTargetAssociation</td>
+<td>This association provides information about the survey section and the Education Organization the survey section is about.</td>
+</tr>
+<tr>
+<td>SurveySectionResponseStaffTargetAssociation</td>
+<td>This association provides information about the survey section and the staff the survey section is about.</td>
+</tr>
+</tbody></table>
+<p><img src="/path/to/domain-model.png" alt="Survey Model Diagram"></p>
+<h4 id="survey-model">Survey Model</h4>
+</body><html>

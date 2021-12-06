@@ -1,0 +1,6 @@
+Descriptor ExitWithdrawReason
+  documentation "Withdrawal Reasons are a secondary reason for the withdrawal (the
+                primary reason being the Withdrawal Activity Code). Withdrawal
+                Reasons are optional, and will not apply to the great majority
+                of students who withdraw from school prior to the last scheduled
+                day of session."

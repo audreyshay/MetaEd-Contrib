@@ -1,0 +1,1 @@
+CREATE SCHEMA az AUTHORIZATION postgres;

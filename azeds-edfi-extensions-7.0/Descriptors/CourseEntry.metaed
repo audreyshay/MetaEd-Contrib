@@ -1,0 +1,4 @@
+Descriptor CourseEntry
+    documentation "The way the student entered this course, either as a
+                  new enrollee or as a transfer from another section at the same
+                  school"

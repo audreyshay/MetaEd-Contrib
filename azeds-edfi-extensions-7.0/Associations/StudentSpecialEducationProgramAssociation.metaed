@@ -1,0 +1,7 @@
+Association EdFi.StudentSpecialEducationProgramAssociation additions
+  common AssessmentOutcome
+    documentation "This entity collection represents the SPED outcomes of students at an education organization."
+  is optional collection
+  bool MainSPEDSchool
+    documentation "A flag indicating if this is Primary school for SPED concurrency or not"
+    is optional

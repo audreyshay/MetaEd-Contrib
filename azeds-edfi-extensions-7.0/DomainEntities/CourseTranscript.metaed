@@ -1,0 +1,4 @@
+Domain Entity EdFi.CourseTranscript additions
+    descriptor FinalLetterGrade
+    documentation "The final indicator of student performance in a class as submitted by the instructor"
+    is optional

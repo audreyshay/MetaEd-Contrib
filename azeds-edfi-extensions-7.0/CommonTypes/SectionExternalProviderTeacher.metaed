@@ -1,0 +1,27 @@
+Common SectionExternalProviderTeacher
+  documentation "A collection fo external teachers assigned to a section"
+  shared string ExternalProviderName named ExternalProviderName
+    documentation "If the course is being provided by an external organization, e.g.
+                  a distance education or virtual course, the name of that providing
+                  organization."
+    is part of identity
+  shared string ProviderTeacherLastName named ProviderTeacherLastName
+    documentation "If the course is being provided by an external provider, the last,
+                  family, or surname of the provider's primary instructor."
+    is part of identity
+  shared string ProviderTeacherFirstName named ProviderTeacherFirstName
+    documentation "If the course is being provided by an external provider, the first
+                  or given name of the provider's primary instructor."
+    is part of identity
+  descriptor EdFi.ClassroomPosition
+    documentation "The type of position the Staff member holds in the specific class/section;
+                    for example:
+
+                    Teacher of Record, Assistant Teacher, Support Teacher, Substitute Teacher..."
+    is optional
+  date BeginDate
+    documentation "The first date the teacher was associated with the section."
+    is optional
+  date EndDate
+    documentation "The last date the teacher was associated with the section."
+    is optional

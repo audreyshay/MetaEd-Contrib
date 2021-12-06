@@ -1,0 +1,14 @@
+Common StudentSchoolAssociationLocalEducationAgency
+documentation "This association indicates any relationship between a student school association and a Local Education Agency"
+  date StartDate
+    documentation "The start date of the association"
+    is part of identity
+  date EndDate
+    documentation "The end date of the association"
+    is optional
+  domain entity EdFi.LocalEducationAgency
+    documentation "The reference to the LocalEducationAgency"
+    is required
+  descriptor MembershipResponsibility
+    documentation "The membership responsibility descriptor"
+    is part of identity

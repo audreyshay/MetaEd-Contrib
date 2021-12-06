@@ -1,0 +1,16 @@
+Association EdFi.StaffEducationOrganizationEmploymentAssociation additions
+    descriptor EducationLevel
+      documentation "It defines the staff education level"
+      is optional
+    shared decimal Benefits
+      documentation "It is benefit percentage."
+      is optional
+    currency Salary
+      documentation "Salary defined for a staff."
+      is required
+    percent FullTimeEquivalencyOther
+      documentation "The ratio between the hours of work expected in a position and the hours of work normally expected in a full-time position in the same setting."
+      is optional
+    bool PSP
+      documentation "Purchased Services Personnel (PSP) employees."
+      is required

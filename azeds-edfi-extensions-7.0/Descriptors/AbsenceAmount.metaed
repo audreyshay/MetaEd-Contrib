@@ -1,0 +1,3 @@
+Descriptor AbsenceAmount
+  documentation "Absence Amounts must be less than or equal to the  Student Membership
+                FTE, since absences are measured in quarter day increments."

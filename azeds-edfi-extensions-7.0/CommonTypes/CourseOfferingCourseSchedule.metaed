@@ -1,0 +1,8 @@
+Common CourseOfferingCourseSchedule
+    documentation "Course Schedule associated with CourseOffering"
+    date ScheduleDate
+      documentation "The Schedule date for the course."
+    is part of identity
+    integer InstructionalMinutesPlanned
+      documentation "Number of Instructional minutes planned for given ScheduledDate"
+    is required

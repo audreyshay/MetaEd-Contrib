@@ -1,0 +1,2 @@
+Descriptor NumberOfInstructionalDaysInWeek
+    documentation "This descriptor defines the number of instructional days for a week in calendar track (e.g., three days per week, fours days per week, five days per week)."

@@ -1,0 +1,10 @@
+Common AZTribalAffiliation
+documentation "This entity represents Tribal Affiliation for Arionza."
+ descriptor EdFi.TribalAffiliation
+    documentation "An American Indian tribe with which an individual is affiliated."
+    is part of identity
+  string OtherAffiliation
+      documentation "Tribal affiliation(s) other than Arizona’s 22 federally recognized tribes."
+      is optional
+      min length 1
+      max length 250

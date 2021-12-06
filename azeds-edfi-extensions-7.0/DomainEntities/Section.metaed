@@ -1,0 +1,19 @@
+Domain Entity EdFi.Section additions
+common SectionExternalProviderTeacher
+  documentation "A collection fo external teachers assigned to a section"
+  is optional collection
+string TimetableDayIdentifier
+	documentation "Report the days on which the course/section meets. MTWRF if meets
+                every day, MWF if the course/section meets every other day. If
+                the course is on a block schedule, use AB."
+	is optional
+	min length 1
+	max length 250
+string Note
+	documentation "This is a free field that may contain up to 250 characters."
+	is optional
+	min length 1
+	max length 250
+integer MinutesPerWeek
+documentation "Minutes reported per week"
+is optional

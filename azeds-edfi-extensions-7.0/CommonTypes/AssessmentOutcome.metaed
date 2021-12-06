@@ -1,0 +1,11 @@
+Common AssessmentOutcome
+    documentation "This entity represents the SPED outcomes of students at an education organization."
+    descriptor EdFi.AssessmentPeriod
+    documentation "This descriptor holds the period of time window in which an assessment is supposed to be administered (e.g., Beginning of Year, Middle of Year, End of Year)."
+    is part of identity
+    descriptor EdFi.AssessmentCategory
+      documentation "This descriptor holds the category of an assessment based on format and content."
+    is part of identity
+    descriptor AssessmentOutcomesSummary
+    documentation "This descriptor holds the outcome of an Assesment based on the Assessment Category"
+    is optional

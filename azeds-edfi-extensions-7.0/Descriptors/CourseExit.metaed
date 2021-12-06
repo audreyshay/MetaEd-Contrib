@@ -1,0 +1,2 @@
+Descriptor CourseExit
+  documentation "The type of exit the student had from this course section."

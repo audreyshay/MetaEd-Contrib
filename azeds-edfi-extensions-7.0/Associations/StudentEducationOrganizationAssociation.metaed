@@ -1,0 +1,4 @@
+Association EdFi.StudentEducationOrganizationAssociation additions
+  common AZTribalAffiliation
+    documentation "An American Indian tribe with which an individual is affiliated."
+    is optional collection

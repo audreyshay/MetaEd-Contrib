@@ -1,0 +1,8 @@
+Common TimeLog
+   documentation "This event entity adds the time component to a student program attendance participating"
+ time AttendanceBeginTime
+   documentation "The time the student began attending this program service."
+   is part of identity
+ time AttendanceEndTime
+   documentation "The time the student stopped attending this program service."
+   is optional
