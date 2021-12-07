@@ -1,0 +1,10 @@
+Domain Entity EdFi.CourseOffering additions
+    common InstructionalApproach
+        documentation "Instructional approach as implemented for the course offering. General purpose but intially implemented for Early Education."
+        is optional collection
+    integer InstructionMinutesPerTerm
+        documentation "Instruction minutes per term."
+        is optional
+    common SiteBasedInitiative
+        documentation "Site-based initiative as implemented for the course offering. General purpose but intially implemented for Early Education."
+        is optional collection

@@ -1,0 +1,4 @@
+Domain Entity EdFi.Section additions
+    descriptor InstructionalDeliveryMode
+        documentation "The delivery mode of instuction. E.g, On-ground, Online, etc"
+        is optional

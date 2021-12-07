@@ -1,0 +1,21 @@
+Domain Entity EdFi.Calendar additions
+    string CalendarDescription
+        documentation "Calendar description."
+        is optional
+        max length 100
+    decimal DaysInSession
+        documentation "Days in session."
+        is optional
+        total digits 5
+        decimal places 2
+    decimal InstructionalDays
+        documentation "The total number of Instructional days during the current school year."
+        is optional
+        total digits 5
+        decimal places 2
+    descriptor KindergartenSchedule
+        documentation "Kindergarten Schedule"
+        is optional
+    integer LengthOfDay
+        documentation "Length of Day."
+        is optional

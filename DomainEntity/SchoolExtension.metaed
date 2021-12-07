@@ -1,0 +1,4 @@
+Domain Entity EdFi.School additions
+   descriptor SchoolClassification
+      documentation "The numeric code representing the MARSS school classification."
+      is optional

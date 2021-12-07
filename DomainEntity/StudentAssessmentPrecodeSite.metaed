@@ -1,0 +1,30 @@
+Domain Entity StudentAssessmentPrecodeSite
+    documentation "Pre-code assessment administration site and organization information"
+    domain entity EdFi.EducationOrganization
+        documentation "Education organization"
+        is part of identity
+    descriptor PrecodeType
+        documentation "Type of pre-code site record. For example, MCA/MTAS, ACCESS/ALT-ACCESS"
+        is part of identity
+    shared string EdFi.ContactTitle
+        documentation "Title of administrative contact"
+        is optional
+    shared string EdFi.ElectronicMailAddress
+        documentation "Email address or login of administrative contact"
+        is optional
+        role name Contact
+    shared string EdFi.FirstName
+        documentation "First name of administrative contact"
+        is optional
+        role name Contact
+    shared string EdFi.LastSurname
+        documentation "Last name of administrative contact"
+        is optional
+        role name Contact
+    common EdFi.Telephone
+        documentation "The telephone number(s) for the administrative contact, and extension if applicable."
+        is optional collection
+        role name Contact
+    descriptor ShippingInstruction
+        documentation "Shipping instructions such as Labels, Shipping Date, Shipping Preference"
+        is optional collection

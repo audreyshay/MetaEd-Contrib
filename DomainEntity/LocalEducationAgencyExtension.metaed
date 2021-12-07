@@ -1,0 +1,7 @@
+Domain Entity EdFi.LocalEducationAgency additions
+  descriptor DistrictType
+    documentation "The two digit numeric code representing the MARSS district type."
+    is optional
+  descriptor EdFiSubmissionAccess
+    documentation "Indicates whether a district is approved to submit data."
+    is optional

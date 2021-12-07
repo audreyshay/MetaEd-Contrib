@@ -1,0 +1,25 @@
+Domain Entity EdFi.Course additions
+    common AssessmentTool
+        documentation "Assessment tool that has been implemented for the course. General purpose but intially implemented for Early Education."
+        is optional collection
+    descriptor CourseLevelType
+        documentation "The 'type level' of which the course is associated. E.g, Advanced, Articulated, Basic, Dual, General, No credit, Occupational"
+        is optional collection
+    common CurriculumUsed
+        documentation "Curriculum as implemented for the course. General purpose but intially implemented for Early Education."
+        is optional collection
+    descriptor EarlyEducationCourseLocation
+        documentation "Classification of instruction site for Early Education. E.g., child's home or care center."
+        is optional
+    domain entity EdFi.Program
+        documentation "Program associated to the course. General purpose but intially extended for Early Education."
+        is optional collection
+    integer SequenceLimit
+        documentation "The upper limit of this course within a sequence. E.g., (1 of N)"
+        is optional
+    descriptor StandardAddressed
+        documentation "Locality of entity who's learning standard is addressed by this course. E.g., State, Federal, or Local."
+        is optional
+    descriptor CareerCluster
+        documentation "Career cluster defines the industry or occupational focus for a career pathways program, plan of study, or course."
+        is optional

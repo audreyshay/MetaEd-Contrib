@@ -1,0 +1,34 @@
+Domain Entity EdFi.StudentAssessment additions
+    descriptor AssessmentFormat
+        documentation "Format for which an assessment was administered. E.g., Online or Paper"
+        is optional
+    domain entity EdFi.EducationOrganization
+        documentation "The site (EducationOrganization) where the assessment was administered."
+        is optional
+        role name Site
+    descriptor AssessmentCharacteristic
+        documentation "Generic characteristics about an Assessment other than Accommodations."
+        is optional collection
+    descriptor AssessmentTier
+        documentation "Tier descriptor for Assessment. E.g., Listening, Reading, Speaking, Writing"
+        is optional
+    string CatStudentTestId
+        documentation "CAT Student Test ID"
+        is optional
+        min length 1
+        max length 100
+    descriptor GeneralEnrollment
+        documentation "General type of enrollment for a student. E.g., R-Regular, N-Nonpublic, H-Homeschool"
+        is optional
+    string LearningLocatorCode
+        documentation "Learning locator code"
+        is optional
+        min length 1
+        max length 100
+    integer TimeOnTest
+        documentation "Total recorded time duration in seconds"
+        is optional
+    common extension EdFi.StudentObjectiveAssessment
+        documentation "The student's score and/or performance levels earned for an ObjectiveAssessment."
+        is optional collection
+    merge StudentObjectiveAssessment.ObjectiveAssessment.Assessment with Assessment

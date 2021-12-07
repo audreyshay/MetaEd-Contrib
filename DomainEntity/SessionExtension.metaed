@@ -1,0 +1,9 @@
+Domain Entity EdFi.Session additions
+    decimal DaysInSession
+        documentation "Total days in session."
+        is optional
+        total digits 5
+        decimal places 2
+    integer TermNumber
+        documentation "Term number."
+        is optional 

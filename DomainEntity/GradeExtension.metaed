@@ -1,0 +1,18 @@
+Domain Entity EdFi.Grade additions
+    decimal CollegeCreditEarned
+        documentation "College credit earned."
+        is optional
+        total digits 7
+        decimal places 3
+    string CollegeGradeEarned
+        documentation "College grade earned."
+        is optional
+        max length 16
+    decimal LocalCreditEarned
+        documentation "College credit earned."
+        is optional
+        total digits 7
+        decimal places 3
+    descriptor EdFi.AcademicSubject
+        documentation "This descriptor holds the description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language)."
+        is optional

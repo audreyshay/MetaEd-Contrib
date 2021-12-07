@@ -1,0 +1,44 @@
+Domain Entity StudentAssessmentPrecode
+    documentation "Pre-code information for assessment vendor"
+    association EdFi.StudentEducationOrganizationAssociation
+        documentation "The student demographic information"
+        is part of identity
+    descriptor PrecodeType
+        documentation "Type of pre-code record. For example, MCA/MTAS, ACCESS/ALT-ACCESS"
+        is part of identity
+    domain entity StudentAssessmentPrecodeSite
+        documentation "Pre-code assessment administration site and organization information"
+        is optional
+        role name Site
+    shared string EdFi.AssessmentTitle
+        documentation "Refers to the test name of the assessment taken by the student."
+        is optional
+    descriptor EdFi.Accommodation
+        documentation "The specific type of special variation used in how an examination is presented, how it is administered, or how the test taker is allowed to respond. This generally refers to changes that do not substantially alter what the examination measures. The proper use of accommodations does not substantially change academic level or performance criteria. For example:
+        Braille
+        Enlarged monitor view
+        Extra time
+        Large Print
+        Setting
+        Oral Administration
+        ..."
+        is optional collection
+    descriptor EdFi.GradeLevel
+        documentation "The grade level tested for student when assessed."
+        is optional
+        role name Assessed
+    descriptor EdFi.GradeLevel
+        documentation "The grade level for which student is enrolled."
+        is optional
+        role name Enrolled
+    descriptor EdFi.AcademicSubject
+        documentation "The description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language) of an assessment."
+        is optional collection
+    descriptor GeneralEnrollment
+        documentation "Student enrollment at the time of assessment pre-coding. For example H-Homeschool, N-Nonpublic, R-Regular"
+        is optional
+    string CustomGroup
+        documentation "District use special sort order"
+        is optional
+        min length 1
+        max length 100

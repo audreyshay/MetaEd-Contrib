@@ -1,0 +1,8 @@
+Domain Entity EdFi.ClassPeriod additions
+    string ClassPeriodDescription
+        documentation "Class period description."
+        is optional
+        max length 100
+    descriptor ClassPeriodType
+        documentation "Class period type. E.g., Before School, During School, After School, Evening School"
+        is optional

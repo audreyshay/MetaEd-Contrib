@@ -1,0 +1,17 @@
+Domain Entity ExamReimbursementRequest
+    documentation "Exam reimbursement request (formerly known as Graduate Required Records)."
+    descriptor EdFi.AssessmentCategory
+        documentation "Test that requires reimbursement. E.g., ACT, ACT plus Writing, SAT, SAT with Essay."
+        is required
+    bool ReimbursementRequested
+        documentation "Reimbursement was requested."
+        is required
+    association EdFi.StudentEducationOrganizationAssociation
+        documentation "The student that took the test for which reimbursement is requested."
+        is part of identity
+    date TestedDate
+        documentation "Date student took the test."
+        is part of identity
+    bool UnableToPay
+        documentation "Reimbursement for a student determined by the district as 'unable to pay'."
+        is optional
