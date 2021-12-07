@@ -1,0 +1,4 @@
+Descriptor AssessmentStatus
+    documentation "The state of a student assessment. E.g.,
+      Student has submitted a response for all scored items OR
+      Student has submitted a response to at least one scored item, but not all scored items"

@@ -1,0 +1,4 @@
+Descriptor StateAidCategory
+    documentation "State Aid Category is used to determine which district generates state aid for
+students and which state aid students are eligible to generate.  It is also used to validate
+DISTRICT NUMBER/TYPE and STUDENT RESIDENT DISTRICT NUMBER/TYPE."

@@ -1,0 +1,2 @@
+Descriptor PrecodeType
+    documentation "Type of pre-code record. For example, MCA/MTAS, ACCESS/ALT-ACCESS"

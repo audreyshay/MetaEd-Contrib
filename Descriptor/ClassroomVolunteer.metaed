@@ -1,0 +1,2 @@
+Descriptor ClassroomVolunteer
+    documentation "Classification of classroon volunteer capacity of a parent. E.g., Full-time volunteer or part-time volunteer. General purpose but intially implemented for Early Education."

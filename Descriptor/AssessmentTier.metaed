@@ -1,0 +1,2 @@
+Descriptor AssessmentTier
+    documentation "Tier descriptor for Assessment or Objective Assessment. E.g., Listening, Reading, Speaking, Writing"

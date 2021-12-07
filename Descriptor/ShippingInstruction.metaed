@@ -1,0 +1,2 @@
+Descriptor ShippingInstruction
+    documentation "Shipping instructions such as Labels, Shipping Date, Shipping Preference"

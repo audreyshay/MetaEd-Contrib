@@ -1,0 +1,2 @@
+Descriptor StandardAddressed
+    documentation "Locality of entity who's learning standard is addressed. E.g., State, Federal, or Local."

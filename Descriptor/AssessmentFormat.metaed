@@ -1,0 +1,2 @@
+Descriptor AssessmentFormat
+    documentation "Format for which an assessment was administered. E.g., O-Online or P-Paper"

@@ -1,0 +1,2 @@
+Descriptor MembershipAttendanceUnit
+    documentation "This descriptor indicates whether Membership and Attendance totals are being reported in terms of Days or Hours."

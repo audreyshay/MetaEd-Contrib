@@ -1,0 +1,2 @@
+Descriptor GeneralEnrollment
+    documentation "General type of enrollment for a student. E.g., R-Regular, N-Nonpublic, H-Homeschool"

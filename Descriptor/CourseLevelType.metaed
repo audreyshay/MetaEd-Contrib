@@ -1,0 +1,2 @@
+Descriptor CourseLevelType
+    documentation "The 'type level' of which the course is associated. E.g, Advanced, Articulated, Basic, Dual, General, No credit, Occupational"

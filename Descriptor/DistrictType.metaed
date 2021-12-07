@@ -1,0 +1,2 @@
+Descriptor DistrictType
+    documentation "A two digit numeric code representing the MARSS district type."
