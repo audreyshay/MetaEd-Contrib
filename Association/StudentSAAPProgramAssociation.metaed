@@ -1,0 +1,14 @@
+Association StudentSAAPProgramAssociation based on EdFi.GeneralStudentProgramAssociation
+    documentation "This association represents Students in a State Approved Alternative Program."
+    bool IndependentStudyIndicator
+        documentation "State-approved alternative programs (SAAP) that also have a state-approved Independent Study
+(IS) component use this flag to identify independent study participants."
+        is required
+    decimal SAAPCredits
+        documentation "SAAP Credits."
+        is required
+        total digits 4
+        decimal places 2
+    bool SAAPConcurrentIndicator
+        documentation "An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP)."
+        is required

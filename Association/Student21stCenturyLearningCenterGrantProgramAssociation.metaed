@@ -1,0 +1,10 @@
+Association Student21stCenturyLearningCenterGrantProgramAssociation based on EdFi.GeneralStudentProgramAssociation
+    documentation "This association represents Students in the 21st Century Community Learning Centers Grant Program."
+    integer AttendanceDays
+        documentation "Attendance days"
+        is optional
+    decimal AttendanceHours
+        documentation "Attendance hours"
+        is optional
+        total digits 6
+        decimal places 2

@@ -1,0 +1,22 @@
+Association EdFi.StudentEducationOrganizationAssociation additions
+    shared string EdFi.FirstName
+        documentation "A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change."
+        is optional
+    shared string EdFi.MiddleName
+        documentation "A secondary name given to an individual at birth, baptism, or during another naming ceremony."
+        is optional
+    shared string EdFi.LastSurname
+        documentation "The name borne in common by members of a family."
+        is optional
+    shared string EdFi.GenerationCodeSuffix
+        documentation "An appendage, if any, used to denote an individual's generation in his family (e.g., Jr., Sr., III)."
+        is optional
+    inline common EdFi.BirthData
+        documentation "The set of elements that capture relevant data regarding a person's birth, including birth date and place of birth."
+        is optional
+    descriptor AncestryEthnicOrigin
+        documentation "The ancestry ethnic origins that pertain to the general racial categories with which the individual identifies."
+        is optional collection
+    descriptor OptOutIndicators
+        documentation "Opt Out Indicators."
+        is optional collection

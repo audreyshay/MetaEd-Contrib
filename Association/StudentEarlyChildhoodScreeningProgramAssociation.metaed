@@ -1,0 +1,8 @@
+Association StudentEarlyChildhoodScreeningProgramAssociation based on EdFi.GeneralStudentProgramAssociation
+    documentation "This association represents Students in the Early Childhood Screening Association Program."
+    descriptor EarlyChildhoodScreeningExitStatus
+        documentation "Early Childhood Screening Exit Status."
+        is optional
+    descriptor EarlyChildhoodScreener
+        documentation "This descriptor contains codes indicating who completed a screening for a student in the Early Childhood Screening program."
+        is optional

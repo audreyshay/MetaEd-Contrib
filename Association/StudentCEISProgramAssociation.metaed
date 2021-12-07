@@ -1,0 +1,5 @@
+Association StudentCEISProgramAssociation based on EdFi.GeneralStudentProgramAssociation
+    documentation "This association represents Students in the Coordinated Early Intervening Service Program."
+    bool HiddenElement
+        documentation "This element is added to accommodate the need for an extra element in a subclass of StudentProgramAssociation. Will not be used or displayed in the API. "
+        is queryable only

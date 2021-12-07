@@ -1,0 +1,5 @@
+Association StudentGiftedTalentedProgramAssociation based on EdFi.GeneralStudentProgramAssociation
+    documentation "This association represents Students in the Gifted Talented Program."
+    descriptor GiftedTalentedParticipation
+        documentation "The Gifted Talented Participation Descriptor."
+        is required

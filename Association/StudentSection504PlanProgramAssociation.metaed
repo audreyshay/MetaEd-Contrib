@@ -1,0 +1,5 @@
+Association StudentSection504PlanProgramAssociation based on EdFi.GeneralStudentProgramAssociation
+    documentation "Students who have a Section 504 plan."
+    bool HiddenElement
+        documentation "This element is added to accommodate the need for an extra element in a subclass of StudentProgramAssociation. Will not be used or displayed in the API."
+        is queryable only

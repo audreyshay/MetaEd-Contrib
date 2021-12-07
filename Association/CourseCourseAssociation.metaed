@@ -1,0 +1,7 @@
+Association CourseCourseAssociation
+    documentation "Supports associations from State, District, and College courses."
+    domain entity EdFi.Course
+        documentation "This course."
+    domain entity EdFi.Course
+        documentation "Associated course."
+        role name ToCourse

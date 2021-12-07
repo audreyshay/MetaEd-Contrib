@@ -1,0 +1,11 @@
+Association EdFi.StudentSpecialEducationProgramAssociation additions
+    decimal SpecialEducationServiceHours
+        documentation "Special Education Service Hours."
+        is optional
+        total digits 5
+        decimal places 1
+    domain entity EdFi.LocalEducationAgency
+        documentation "A reference to the Minnesota school district."
+        is optional
+        role name Placing
+        

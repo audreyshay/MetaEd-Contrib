@@ -1,0 +1,23 @@
+Association EdFi.StudentSchoolAssociation additions
+    bool HomeboundServiceIndicator
+        documentation "The Homebound Service Indicator is used to validate Membership Days for students who have no Attendance Days. It is an indication of whether students were medically confined to their home and received instruction in the home during the enrollment period."
+        is optional
+    descriptor SpecialEducationEvaluationStatus
+        documentation "An indicator of the students' need for and participation in special education programs during this enrollment period."
+        is optional
+    domain entity EdFi.LocalEducationAgency
+        documentation "A reference to the Minnesota school district where students have established residence for educational purposes."
+        is optional
+        role name Resident
+    common Membership
+        documentation "Membership."
+        is optional
+    bool SpecialPupilIndicator
+        documentation "An indicator representing a Student  who qualifies as a Special Pupil for Care and Treatment at some time during the school year."
+        is optional
+    descriptor StateAidCategory
+        documentation "State Aid Category."
+        is optional
+    common Transportation
+        documentation "Transportation."
+        is optional

@@ -1,0 +1,14 @@
+Association EdFi.StudentSectionAssociation additions
+    domain entity EdFi.Course
+        documentation "Refers to the associated college course."
+        is optional
+        role name CollegeCourse
+    common InstructionalApproach
+        documentation "Instructional approach as implemented for the student section association. General purpose but intially implemented for Early Education."
+        is optional collection
+    descriptor SectionEnrollmentType
+        documentation "Section enrollment type."
+        is optional
+    common SiteBasedInitiative
+        documentation "Site-based initiative as implemented for the student section association. General purpose but intially implemented for Early Education."
+        is optional collection

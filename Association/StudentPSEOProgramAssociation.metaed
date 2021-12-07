@@ -1,0 +1,5 @@
+Association StudentPSEOProgramAssociation based on EdFi.GeneralStudentProgramAssociation
+    documentation "This association represents Students in the PSEO Program."
+    integer PSEOHighSchoolHours
+        documentation "Indicates PSEO High School Hours."
+        is optional

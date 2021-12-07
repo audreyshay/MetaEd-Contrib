@@ -1,0 +1,11 @@
+Association StudentEarlyEducationProgramAssociation based on EdFi.GeneralStudentProgramAssociation
+    documentation "This association represents Students in an Early Education Program."
+    common FundingSource
+        documentation "Funding source."
+        is optional collection
+    integer ServiceAttendanceHours
+        documentation "Indicates a student's service attendance hours."
+        is optional
+    integer ServiceMembershipHours
+        documentation "Indicates a student's service membership hours."
+        is optional
