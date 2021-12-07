@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AggregateExtensions logicalSchema="MN" schema="mn">
+  <Aggregate root="AncestryEthnicOriginDescriptor">
+    <Entity table="AncestryEthnicOriginDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="AssessmentCharacteristicDescriptor">
+    <Entity table="AssessmentCharacteristicDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="AssessmentFormatDescriptor">
+    <Entity table="AssessmentFormatDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="AssessmentStatusDescriptor">
+    <Entity table="AssessmentStatusDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="AssessmentTierDescriptor">
+    <Entity table="AssessmentTierDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="AssessmentToolDescriptor">
+    <Entity table="AssessmentToolDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="CareerClusterDescriptor">
+    <Entity table="CareerClusterDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="ClassPeriodTypeDescriptor">
+    <Entity table="ClassPeriodTypeDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="ClassroomVolunteerDescriptor">
+    <Entity table="ClassroomVolunteerDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="CourseCourseAssociation">
+    <Entity table="CourseCourseAssociation" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="CourseLevelTypeDescriptor">
+    <Entity table="CourseLevelTypeDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="DistrictTypeDescriptor">
+    <Entity table="DistrictTypeDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="EarlyChildhoodScreenerDescriptor">
+    <Entity table="EarlyChildhoodScreenerDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="EarlyChildhoodScreeningExitStatusDescriptor">
+    <Entity table="EarlyChildhoodScreeningExitStatusDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="EarlyEducationCourseLocationDescriptor">
+    <Entity table="EarlyEducationCourseLocationDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="EdFiSubmissionAccessDescriptor">
+    <Entity table="EdFiSubmissionAccessDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="ExamReimbursementRequest">
+    <Entity table="ExamReimbursementRequest" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="FundingSourceDescriptor">
+    <Entity table="FundingSourceDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="GeneralEnrollmentDescriptor">
+    <Entity table="GeneralEnrollmentDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="GiftedTalentedParticipationDescriptor">
+    <Entity table="GiftedTalentedParticipationDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="ImplementationStatusDescriptor">
+    <Entity table="ImplementationStatusDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="InstructionalApproachDescriptor">
+    <Entity table="InstructionalApproachDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="InstructionalDeliveryModeDescriptor">
+    <Entity table="InstructionalDeliveryModeDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="KindergartenScheduleDescriptor">
+    <Entity table="KindergartenScheduleDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="MembershipAttendanceUnitDescriptor">
+    <Entity table="MembershipAttendanceUnitDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="OptOutIndicatorsDescriptor">
+    <Entity table="OptOutIndicatorsDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="PrecodeTypeDescriptor">
+    <Entity table="PrecodeTypeDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="SchoolClassificationDescriptor">
+    <Entity table="SchoolClassificationDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="SectionEnrollmentTypeDescriptor">
+    <Entity table="SectionEnrollmentTypeDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="ShippingInstructionDescriptor">
+    <Entity table="ShippingInstructionDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="SiteBasedInitiativeDescriptor">
+    <Entity table="SiteBasedInitiativeDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="SpecialEducationEvaluationStatusDescriptor">
+    <Entity table="SpecialEducationEvaluationStatusDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="StandardAddressedDescriptor">
+    <Entity table="StandardAddressedDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="StateAidCategoryDescriptor">
+    <Entity table="StateAidCategoryDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="Student21stCenturyLearningCenterGrantProgramAssociation">
+    <Entity table="Student21stCenturyLearningCenterGrantProgramAssociation" isA="GeneralStudentProgramAssociation" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="StudentADSISProgramAssociation">
+    <Entity table="StudentADSISProgramAssociation" isA="GeneralStudentProgramAssociation" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="StudentAssessmentPrecode">
+    <Entity table="StudentAssessmentPrecode" schema="mn"/>
+    <Entity table="StudentAssessmentPrecodeAcademicSubject" schema="mn"/>
+    <Entity table="StudentAssessmentPrecodeAccommodation" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="StudentAssessmentPrecodeSite">
+    <Entity table="StudentAssessmentPrecodeSite" schema="mn"/>
+    <Entity table="StudentAssessmentPrecodeSiteContactTelephone" schema="mn"/>
+    <Entity table="StudentAssessmentPrecodeSiteShippingInstruction" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="StudentCEISProgramAssociation">
+    <Entity table="StudentCEISProgramAssociation" isA="GeneralStudentProgramAssociation" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="StudentDistanceLearnerProgramAssociation">
+    <Entity table="StudentDistanceLearnerProgramAssociation" isA="GeneralStudentProgramAssociation" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="StudentEarlyChildhoodScreeningProgramAssociation">
+    <Entity table="StudentEarlyChildhoodScreeningProgramAssociation" isA="GeneralStudentProgramAssociation" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="StudentEarlyEducationProgramAssociation">
+    <Entity table="StudentEarlyEducationProgramAssociation" isA="GeneralStudentProgramAssociation" schema="mn"/>
+    <Entity table="StudentEarlyEducationProgramAssociationFundingSource" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="StudentGiftedTalentedProgramAssociation">
+    <Entity table="StudentGiftedTalentedProgramAssociation" isA="GeneralStudentProgramAssociation" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="StudentPSEOConcurrentProgramAssociation">
+    <Entity table="StudentPSEOConcurrentProgramAssociation" isA="GeneralStudentProgramAssociation" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="StudentPSEOProgramAssociation">
+    <Entity table="StudentPSEOProgramAssociation" isA="GeneralStudentProgramAssociation" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="StudentSAAPProgramAssociation">
+    <Entity table="StudentSAAPProgramAssociation" isA="GeneralStudentProgramAssociation" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="StudentSection504PlanProgramAssociation">
+    <Entity table="StudentSection504PlanProgramAssociation" isA="GeneralStudentProgramAssociation" schema="mn"/>
+  </Aggregate>
+  <Aggregate root="TransportationCategoryDescriptor">
+    <Entity table="TransportationCategoryDescriptor" isA="Descriptor" schema="mn"/>
+  </Aggregate>
+  <AggregateExtension root="Course">
+    <Entity table="CourseAssessmentTool" schema="mn"/>
+    <Entity table="CourseCurriculumUsed" schema="mn"/>
+    <Entity table="CourseLevelType" schema="mn"/>
+    <Entity table="CourseProgram" schema="mn"/>
+  </AggregateExtension>
+  <AggregateExtension root="CourseOffering">
+    <Entity table="CourseOfferingInstructionalApproach" schema="mn"/>
+    <Entity table="CourseOfferingSiteBasedInitiative" schema="mn"/>
+  </AggregateExtension>
+  <AggregateExtension root="Parent">
+    <Entity table="ParentIdentificationCode" schema="mn"/>
+  </AggregateExtension>
+  <AggregateExtension root="StudentAssessment">
+    <Entity table="StudentAssessmentCharacteristic" schema="mn"/>
+  </AggregateExtension>
+  <AggregateExtension root="StudentEducationOrganizationAssociation">
+    <Entity table="StudentEducationOrganizationAssociationAncestryEthnicOrigin" schema="mn"/>
+    <Entity table="StudentEducationOrganizationAssociationOptOutIndicators" schema="mn"/>
+  </AggregateExtension>
+  <AggregateExtension root="StudentSchoolAssociation">
+    <Entity table="StudentSchoolAssociationMembership" schema="mn"/>
+    <Entity table="StudentSchoolAssociationTransportation" schema="mn"/>
+  </AggregateExtension>
+  <AggregateExtension root="StudentSectionAssociation">
+    <Entity table="StudentSectionAssociationInstructionalApproach" schema="mn"/>
+    <Entity table="StudentSectionAssociationSiteBasedInitiative" schema="mn"/>
+  </AggregateExtension>
+</AggregateExtensions>
