@@ -1,0 +1,9 @@
+Common Transportation
+    documentation "Entity containing Student Transportation information."
+    descriptor TransportationCategory
+        documentation "Student's to and from Transportation Category for the regular school term."
+        is required
+    domain entity EdFi.LocalEducationAgency
+        documentation "Transporting District."
+        is optional
+        role name Transporting

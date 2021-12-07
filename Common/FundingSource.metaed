@@ -1,0 +1,5 @@
+Common FundingSource
+documentation "Funding source."
+    descriptor FundingSource
+        documentation "Funding source."
+        is part of identity

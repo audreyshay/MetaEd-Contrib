@@ -1,0 +1,8 @@
+Common AssessmentTool
+    documentation "Assessment tool that has been implemented."
+    descriptor AssessmentTool
+        documentation "Assessment tool."
+        is part of identity
+    descriptor ImplementationStatus
+        documentation "Status of implementation of the assessment tool."
+        is optional

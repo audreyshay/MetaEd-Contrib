@@ -1,0 +1,9 @@
+Common SiteBasedInitiative
+    documentation "Site-based initiative as implemented."
+    descriptor SiteBasedInitiative
+        documentation "Site-based initiative."
+        is part of identity
+    descriptor ImplementationStatus
+        documentation "Status of implementation of the site-based initiative."
+        is optional
+        

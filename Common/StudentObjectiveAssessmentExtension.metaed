@@ -1,0 +1,16 @@
+Common EdFi.StudentObjectiveAssessment additions
+  descriptor EdFi.GradeLevel
+      documentation "Grade level for the objective assessment."
+      is optional
+      role name Cluster
+  descriptor AssessmentFormat
+    documentation "Format for which an objective assessment was administered. E.g., Paper"
+      is optional
+  descriptor AssessmentStatus
+      documentation "The state of a student assessment. E.g.,
+        Student has submitted a response for all scored items OR
+        Student has submitted a response to at least one scored item, but not all scored items"
+      is optional
+  descriptor AssessmentTier
+      documentation "Tier descriptor for objective assessment. E.g., Listening, Reading, Speaking, Writing"
+      is optional

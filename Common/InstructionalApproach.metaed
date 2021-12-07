@@ -1,0 +1,8 @@
+Common InstructionalApproach
+    documentation "Instructional approach as implemented."
+    descriptor InstructionalApproach
+        documentation "Instructional approach."
+        is part of identity
+    descriptor ImplementationStatus
+        documentation "Status of implementation of the instructional approach."
+        is optional

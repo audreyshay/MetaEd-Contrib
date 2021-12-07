@@ -1,0 +1,8 @@
+Common CurriculumUsed
+    documentation "Curriculum as implemented in an early learning classroom or group."
+    descriptor EdFi.CurriculumUsed
+        documentation "The type of curriculum used in an early learning classroom or group."
+        is part of identity
+    descriptor ImplementationStatus
+        documentation "Status of implementation of the curriculum used."
+        is optional

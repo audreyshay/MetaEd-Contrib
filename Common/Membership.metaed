@@ -1,0 +1,16 @@
+Common Membership
+    documentation "Entity containing Attendance Days or Hours, Membership Days or Hours, Percent Enrolled and flag indicated whether reported Membership and Attendance includes 'Days' or 'Hours'."
+    descriptor MembershipAttendanceUnit
+        documentation "Days or Hours."
+        is required
+    integer Membership
+        documentation "The total number of Instructional Days or Hours during which students were enrolled in the school during the current school year."
+        is required
+    decimal Attendance
+        documentation "The total number of Instructional Days or Hours during which students attended school during the current school year."
+        is required
+        total digits 5
+        decimal places 1
+    integer PercentEnrolled
+        documentation "Percent Enrolled"
+        is required
