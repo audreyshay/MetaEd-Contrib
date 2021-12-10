@@ -1,0 +1,4 @@
+Association EdFi.StudentEducationOrganizationResponsibilityAssociation additions
+    common Transfer
+        documentation "Indicates the school transfer information for a student."
+        is optional collection

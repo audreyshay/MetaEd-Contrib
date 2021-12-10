@@ -1,0 +1,4 @@
+Shared String MinutesPerWeekAverage
+    documentation "Indicates the minutes per week the course meets."
+    min length 1
+    max length 20

@@ -1,0 +1,4 @@
+Shared String AverageDaysPerWeek
+    documentation "Indicates the average days per week."
+    min length 1
+    max length 1

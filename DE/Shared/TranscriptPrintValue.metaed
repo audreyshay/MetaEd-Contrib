@@ -1,0 +1,4 @@
+Shared String TranscriptPrintValue
+    documentation "Indicates the value that is printed on the transcript for the mark."
+    min length 1
+    max length 3

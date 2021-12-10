@@ -1,0 +1,8 @@
+Interchange Medical
+    documentation "This interchange identifies medical records."
+    domain entity MedicalOfficeVisit
+    domain entity MedicalReferralFollowUp
+    domain entity MedicalScreening
+    domain entity MedicationBox
+    association PersonMedicationBoxAssociation
+    domain entity PersonImmunization

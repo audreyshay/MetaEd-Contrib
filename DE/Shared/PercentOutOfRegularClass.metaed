@@ -1,0 +1,4 @@
+Shared Decimal PercentOutOfRegularClass
+    documentation "Indicates the percentage of time spent out of regular class."
+    total digits 5
+    decimal places 2

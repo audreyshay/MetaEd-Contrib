@@ -1,0 +1,4 @@
+Shared String AveragePassTimeMinutesPerWeek
+    documentation "Indicates the number of times allowed in the hall per week for the course.."
+    min length 1
+    max length 20

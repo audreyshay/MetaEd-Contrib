@@ -1,0 +1,4 @@
+Shared String Development
+    documentation "The name of the housing development."
+    min length 1
+    max length 255

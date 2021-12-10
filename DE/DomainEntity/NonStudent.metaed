@@ -1,0 +1,29 @@
+Domain Entity NonStudent
+    documentation "Defines demographic information for people involved in incidents who are not students."
+    shared string NonStudentLocalId
+        documentation "The local identification number for the non student."
+        is part of identity
+    domain entity EdFi.LocalEducationAgency
+        documentation "School district number that relates to non-student."
+        is part of identity
+    inline common EdFi.Name
+        documentation "The full legal name of the non student."
+        is optional
+    inline common EdFi.BirthData
+        documentation "The set of elements capturing the releveant data for non student birth information."
+        is optional
+    bool HispanicLatinoEthnicity
+        documentation "Indicates if non student is of Hispanic origin."
+        is optional
+    common Ethnicity
+        documentation "Code for the ethnicity of the non student."
+        is optional
+    descriptor EdFi.Sex
+        documentation "Gender of the non student."
+        is optional
+    domain entity EdFi.School
+        documentation "School that relates to non-student."
+        is optional
+    domain entity EdFi.Person
+        documentation inherited
+        is optional

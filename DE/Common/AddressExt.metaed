@@ -1,0 +1,7 @@
+Common EdFi.Address additions
+    shared string Complex
+        documentation "The apartment or housing complex name."
+        is optional
+    shared string Development
+        documentation "The name of the housing development."
+        is optional

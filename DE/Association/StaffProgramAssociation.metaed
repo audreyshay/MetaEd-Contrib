@@ -1,0 +1,5 @@
+Association EdFi.StaffProgramAssociation additions
+    descriptor EdFi.Language
+        documentation "Indicates the language taught by the staff participating in the language immersion program."
+        is optional
+        role name Immersion

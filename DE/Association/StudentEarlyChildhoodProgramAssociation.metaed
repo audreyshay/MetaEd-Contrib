@@ -1,0 +1,20 @@
+Association StudentEarlyChildhoodProgramAssociation based on EdFi.GeneralStudentProgramAssociation
+    documentation "This association represents the early childhood program(S) that a student participates in or receives services from."
+    bool Regulation619DeterminedEligible
+        documentation "Indicates if the student is determined eligible for regulation 619."
+        is optional
+    date Regulation619PartCReferralDate
+        documentation "Indicates the date student was referred to Part C for regulation 619."
+        is optional
+    date DistrictNotificationDate
+        documentation "Indicates the transition conference date for student for regulation 619."
+        is optional
+    date IEPMeetingDate
+        documentation "Indicates date of IEP Meeting"
+        is optional
+    date IEPImplementationDate
+        documentation "Indicates implementation date of IEP."
+        is optional
+    descriptor ReasonForLateIEP
+      documentation "Indicates reason IEP is late."
+      is optional
