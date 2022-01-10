@@ -29,3 +29,6 @@ Association EdFi.StudentSchoolAssociation additions
   descriptor EnrollmentType
       documentation ""
       is optional collection
+  integer PartTimeInstructionalMinutes
+        documentation "Instructional minutes for up to two classes for part-time students"
+        is optional
