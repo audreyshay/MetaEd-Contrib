@@ -21,7 +21,7 @@ To contribute to this repository, please:
     1. List the intended ODS version number.
     1. (optional) Your contact information if community members have questions. It is understood that you are under no obligation to provide support; however, providing contact information helps in creating a community of practice.
 1. Create a new branch, commit your change to that branch, and push the change to GitHub.
-1. Submit a pull request for merge into the master branch.
+1. Submit a pull request for merge into the `main` branch.
 
 Your pull request will be reviewed by a repository manager. So long as your pull request follows these guidelines and appears to contribute something useful to the community, it will be approved and merged.
 
@@ -35,7 +35,7 @@ Your pull request will be reviewed by a repository manager. So long as your pull
 
 ## Legal Information
 
-Copyright (c) 2021 Ed-Fi Alliance, LLC and contributors.
+Copyright (c) 2023 Ed-Fi Alliance, LLC and contributors.
 
 Licensed under the [Apache License, Version 2.0](LICENSE) (the "License").
 
