@@ -20,10 +20,12 @@ To contribute to this repository, please:
     1. A brief description of the model.
     1. List the intended ODS version number.
     1. (optional) Your contact information if community members have questions. It is understood that you are under no obligation to provide support; however, providing contact information helps in creating a community of practice.
-1. Create a new branch, commit your change to that branch, and push the change to GitHub.
+1. Create a new branch, commit your change to that branch (making sure it is _signed_†), and push the change to GitHub.
 1. Submit a pull request for merge into the `main` branch.
 
 Your pull request will be reviewed by a repository manager. So long as your pull request follows these guidelines and appears to contribute something useful to the community, it will be approved and merged.
+
+† [Signing Git Commits (Tech Docs)](https://techdocs.ed-fi.org/display/ETKB/Signing+Git+Commits)
 
 ### Using Git
 
