@@ -1,0 +1,5 @@
+Association StudentEarlyLearningProgramAssociation based on EdFi.GeneralStudentProgramAssociation
+    documentation "NDE specific StudentEarlyLearningProgramAssociation."
+    descriptor EarlyLearningSetting
+        documentation "Indicates the classroom setting of the student's program participation."
+        is optional

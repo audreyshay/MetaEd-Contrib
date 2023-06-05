@@ -1,0 +1,22 @@
+Association EdFi.StudentSchoolAssociation additions
+decimal StudentDaysEnrolled
+    documentation "Override field to determine number of days the student was in membership for ADA and ADM calculation.  This field is optional, and records without a value will use the related calendar to determine days enrolled."
+    is optional
+    total digits 5
+    decimal places 2
+domain entity EdFi.LocalEducationAgency
+    documentation "District where student resides. If student resides out of state, use district of enrollment."
+    is required
+    role name Resident
+domain entity EdFi.School
+   documentation "School within a district where student resides. If student resides out of state, use school of enrollment or leave blank."
+   is optional
+   role name Resident
+domain entity EdFi.School
+    documentation "School within a district where student's records should be reported for state reporting purposes."
+    is required
+    role name Reporting
+domain entity EdFi.School
+   documentation "School from which the student expectes to graduate. Required only enrollment record is not at Expected High school of Graduation and for grades 9-12."
+   is optional
+   role name ExpectedHighSchoolOfGraduation

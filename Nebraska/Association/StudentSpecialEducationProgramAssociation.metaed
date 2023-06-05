@@ -1,0 +1,16 @@
+Association EdFi.StudentSpecialEducationProgramAssociation additions
+descriptor SpecialEducationProgram
+    documentation "Type of program a Special Education student is in - Part B or Part C."
+    is optional
+descriptor PlacementType
+    documentation "Placement type of the student."
+    is optional
+bool ToTakeAlternateAssessment
+    documentation "True = Indicates the student needs alternate assessment."
+    is optional
+date InitialSpecialEducationEntryDate
+    documentation "Date when the child's first IEP or IFSP"
+    is optional
+descriptor PartCTransitionDelayReason
+    documentation "The reason the Part C IDEA child was delayed in transitioning to Part B."
+    is optional

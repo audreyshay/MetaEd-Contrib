@@ -1,0 +1,7 @@
+Association EdFi.StudentEducationOrganizationAssociation additions
+descriptor ImmigrantIndicator
+    documentation "Description that best reflects the student's immigrant status."
+    is optional
+common StudentCrisisEvent
+    documentation "Information on the crisis that has affected a student."
+    is optional collection

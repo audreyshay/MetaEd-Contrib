@@ -1,0 +1,8 @@
+Common StudentCrisisEvent
+    documentation "Information on the crisis that has affected a student"
+    descriptor CrisisEvent
+      documentation "The specific event that affected the student"
+      is part of identity
+    bool DisplacedStudentIndicator
+      documentation "An indication that the student was displaced from their home due to the crisis. The student may or may not be considered homeless due to the displacement."
+      is required

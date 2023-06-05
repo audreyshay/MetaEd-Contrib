@@ -1,0 +1,16 @@
+Association EdFi.StudentDisciplineIncidentBehaviorAssociation additions
+    descriptor EdFi.Weapon
+        documentation "Identifies the type of weapon used during an incident."
+        is optional collection
+    bool GunFreeSchoolViolation
+        documentation "True = Student was charged with a Gun-Free Schools Violation."
+        is optional
+    bool SchoolRelatedArrestIndicator
+        documentation "Indicates if student was involved in a disciplinary incident that resulted in an arrest."
+        is optional
+    bool ReferralToLawEnforcement
+        documentation "Indicates if a student was referred to law enforcement."
+        is optional
+    bool SeriousBodilyInjury
+        documentation "Indicates if an incident resulted in serious bodily injury as defined by 18 U.S.C. Section 1365(3)(h)."
+        is optional

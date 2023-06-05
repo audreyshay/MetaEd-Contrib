@@ -1,0 +1,4 @@
+Association EdFi.StudentSectionAssociation additions
+    descriptor DualCredit
+        documentation "To indicate if student earned both high school and postsecondary credit for this course."
+        is optional

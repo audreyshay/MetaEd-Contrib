@@ -1,0 +1,7 @@
+Domain Entity EdFi.Section additions
+shared string CourseStaffIdOverride
+    documentation "Staff Id of non district employee correspoinding to the teacher of the course."
+    is optional
+descriptor SectionDelivery
+    documentation "Description of the delivery method for a section of a course."
+    is optional collection

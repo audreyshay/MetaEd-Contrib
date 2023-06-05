@@ -1,0 +1,7 @@
+Domain Entity EdFi.DisciplineIncident additions
+    bool HomicideIndicator
+        documentation "Indicates if this discipline incident involved homicide."
+        is optional
+    bool ShootingIndicator
+        documentation "Indicates if the discipline incident involved a shooting."
+        is optional

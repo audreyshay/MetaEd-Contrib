@@ -1,0 +1,9 @@
+Domain Entity AssessmentAdministration
+    documentation "Assessment administration used for rostering from the EdFi ODS."
+    domain entity EdFi.EducationOrganization
+        documentation "The education organization that is administering the assessment."
+        is part of identity
+    domain entity EdFi.Assessment
+        documentation "The assessment being administered"
+        is part of identity
+    
