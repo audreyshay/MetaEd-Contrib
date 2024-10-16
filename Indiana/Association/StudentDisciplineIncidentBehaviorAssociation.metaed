@@ -1,0 +1,4 @@
+Association EdFi.StudentDisciplineIncidentBehaviorAssociation additions
+    descriptor CriminalGangRelatedEvent
+        documentation  "The criminal gang related participation of a student in a discipline incident."
+        is optional

@@ -1,0 +1,4 @@
+Shared Integer EventMinutes
+    documentation "The amount of time for the event in minutes as recognized by the school."
+    min value 0
+    max value 1440

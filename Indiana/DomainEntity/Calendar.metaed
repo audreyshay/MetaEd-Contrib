@@ -1,0 +1,4 @@
+Domain Entity  EdFi.Calendar additions
+     bool InstructionalTimeInMinutesIndicator
+         documentation "Indicator of whether or not a school is calculating instructional time in minutes instead of days."
+         is required

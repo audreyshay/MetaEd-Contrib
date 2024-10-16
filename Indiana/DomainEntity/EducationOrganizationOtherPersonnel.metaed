@@ -1,0 +1,21 @@
+Domain Entity EducationOrganizationOtherPersonnel
+    documentation "Noncertified and other personnel employed by the School Corporation, organized by category (e.g., Office, Clerical, Cafeteria, Maintenance)."
+    domain entity EdFi.LocalEducationAgency
+        documentation "Reference to the LEA that employees the personnel."
+        is part of identity
+    descriptor OtherPersonnelCategory
+        documentation "Category for noncertified and other personnel."
+        is part of identity
+    descriptor OtherPersonnelTitle
+        documentation "Position title for noncertified and other personnel."
+        is part of identity
+    shared integer OtherPersonnelCount
+        documentation "Total number of noncertified and other personnel employed by the school corporation by position title."
+        is optional
+    decimal FullTimeEquivalency
+        documentation "The ratio between the hours of work expected in a position and the hours of work normally expected in a full-time position in the same setting."
+        is optional
+        total digits 9
+        decimal places 4
+        min value 0
+        max value 10000

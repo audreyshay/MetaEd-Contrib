@@ -1,0 +1,9 @@
+Common AdditionalEdOrgResponsibility
+    documentation "Additional education organization responsibility designations for the student."
+    integer SchoolCorpId
+        documentation "The state identifier for the school corporation with the assigned responsibility to the student."
+        is part of identity
+    descriptor EdFi.Responsibility
+        documentation "An indication of the education organization's responsibility for a student."
+        is part of identity
+        role name SchoolCorp

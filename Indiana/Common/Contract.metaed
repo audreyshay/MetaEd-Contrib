@@ -1,0 +1,14 @@
+Common Contract
+    documentation "Contract information for the staff member with the education organization (e.g. Contract Days, Contract Salary)."
+    shared integer ContractDays
+        documentation "Accurate number of days employed in this school corporation during the period of July 1 to June 30."
+        is required
+    shared integer ContractSalary
+        documentation "Full-year, base salary during July 1 to June 30 in whole dollar amounts. Report full year base salary and not the prorated amount the teacher will receive if not employed the full year."
+        is required
+    shared integer SupplementalSalary
+        documentation "The total supplemental salary for additional work, such as extended contracts, extracurricular, etc.? Earnings are to be July 1 to June 30. Allowable format is full dollars. Supplemental service teacher contracts (Summer School, Adult Education, and GED) are to be included."
+        is required
+    shared integer PercentTitleISalary
+        documentation "The total percent of the employee's salary that is paid by Title I. Base salary only. Allowable format is whole numbers only."
+        is required

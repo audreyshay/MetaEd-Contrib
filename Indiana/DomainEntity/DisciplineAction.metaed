@@ -1,0 +1,13 @@
+Domain Entity EdFi.DisciplineAction additions
+     bool InterimAlternativeEducationSetting
+       documentation "Indicator to denote if the special education student was referred to an interim alternative education setting."
+       is optional
+     descriptor DisciplineActionService
+         documentation "The services provided for the student during a discipline action."
+         is optional
+     descriptor StudentArrest
+         documentation "The arrest type for a discipline action."
+         is optional
+     descriptor ArrestReason
+         documentation "The arrest reason codes for a discipline action."
+         is optional

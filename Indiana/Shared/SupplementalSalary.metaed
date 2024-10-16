@@ -1,0 +1,4 @@
+Shared Integer SupplementalSalary
+    documentation "The total supplemental salary for additional work, such as extended contracts, extracurricular, etc.? Earnings are to be July 1 to June 30. Allowable format is full dollars. Supplemental service teacher contracts (Summer School, Adult Education, and GED) are to be included."
+    min value 0
+    max value 100

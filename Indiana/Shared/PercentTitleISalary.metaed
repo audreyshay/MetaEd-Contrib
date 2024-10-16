@@ -1,0 +1,4 @@
+Shared Integer PercentTitleISalary
+    documentation "The total percent of the employee's salary that is paid by Title I. Base salary only. Allowable format is whole numbers only."
+    min value 0
+    max value 100

@@ -1,0 +1,13 @@
+Association EdFi.StudentSpecialEducationProgramAssociation additions
+    descriptor CircumstancesRelevantToTimeline
+        documentation "The circumstance relevant to the evaluation timeline."
+        is optional
+    descriptor TimelineCompliance
+        documentation "Reason the special education deadline was missed or services did not begin."
+        is optional
+    date ParentalConsentDate
+        documentation "The date used to consider the evaluation timeline? Allowable formats are MMDDYYYY and MM/DD/YYYY. Date must be instructional day in your school calendar. If referral occurred in summer, parent constent / referal date should be first day of current school year."
+        is optional
+    date FirstStepsTransitionDate
+        documentation "On what date did special education services begin for the student transitioning from first steps? Allowable formats are MMDDYYYY and MM/DD/YYYY. Report only if student is transitioning from First Steps."
+        is optional

@@ -1,0 +1,7 @@
+Domain Entity EdFi.CalendarDate additions
+    shared integer EventMinutes
+        documentation "The amount of time for the event in minutes as recognized by the school."
+        is optional
+      shared decimal  EdFi.EventDuration
+        documentation "The amount of time for the event as recognized by the school: 1 day = 1, 1/2 day = 0.5, 1/3 day = 0.33."
+        is optional

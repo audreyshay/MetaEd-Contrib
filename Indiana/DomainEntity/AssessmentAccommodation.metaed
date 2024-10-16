@@ -1,0 +1,14 @@
+Domain Entity AssessmentAccommodation
+    documentation "This entity represents the variations used in how an assessment is presented or taken."
+
+    domain entity EdFi.Assessment
+        documentation "The assessment for which the accommodations are available."
+        is part of identity
+
+    descriptor EdFi.AcademicSubject
+          documentation "This descriptor holds the description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language)."
+          is part of identity
+
+    descriptor EdFi.Accommodation
+          documentation "This descriptor defines variations used in how an assessment is presented or taken."
+          is part of identity

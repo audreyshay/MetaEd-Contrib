@@ -1,0 +1,4 @@
+Shared String MembershipCategory
+    documentation "Type of student membership being recorded (e.g. Dual Enrollment, Membership for Adults)."
+    min length 1
+    max length 50

@@ -1,0 +1,7 @@
+Association EdFi.StaffEducationOrganizationEmploymentAssociation additions
+    common Contract
+        documentation "Contract information for the staff member with the education organization (e.g. Contract Days, Contract Salary)."
+        is optional
+    shared decimal EdFi.NumberOfYears named YearsOfPriorProfessionalExperience
+        documentation "The total number of years that an individual has previously held a similar professional position in one or more education institutions."
+        is optional

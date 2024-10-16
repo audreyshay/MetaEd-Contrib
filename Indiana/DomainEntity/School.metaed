@@ -1,0 +1,17 @@
+Domain Entity EdFi.School additions
+
+bool ChoiceIndicator
+  documentation "Indicator of whether or not the school is a Choice School."
+    is optional
+
+    descriptor Accreditation
+        documentation "School accreditation (e.g. Accreditted, Not State Accreditted, Recognized Program)."
+        is optional
+
+  date FreewayBeginDate
+    documentation "Freeway accreditation begin date."
+      is optional
+
+    date FreewayEndDate
+      documentation "Freeway accreditation end date."
+        is optional

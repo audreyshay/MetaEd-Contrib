@@ -1,0 +1,2 @@
+Descriptor ArrestReason
+    documentation "The arrest reason codes for a discipline action."

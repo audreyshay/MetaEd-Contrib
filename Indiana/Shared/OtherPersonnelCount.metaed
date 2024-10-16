@@ -1,0 +1,4 @@
+Shared Integer OtherPersonnelCount
+    documentation "Total number of noncertified and other personnel employed by the school corporation by position title."
+    min value 0
+    max value 10000

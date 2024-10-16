@@ -1,0 +1,11 @@
+Common MembershipDetails
+    documentation "Collection of information about student membership within an education organization."
+    shared integer InstructionalDays
+        documentation "The number of instructional days for the student at the education organization for a given school year. Allowable values are 1 - 180."
+        is optional
+    shared integer InstructionalMinutes
+        documentation "The number of instructional days for the student at the education organization during the course of one full day. Allowable values are 1 - 400."
+        is optional
+    shared string MembershipCategory
+        documentation "Type of student membership being recorded (e.g. Dual Enrollment, Membership for Adults)."
+        is optional

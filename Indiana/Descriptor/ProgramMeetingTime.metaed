@@ -1,0 +1,2 @@
+Descriptor ProgramMeetingTime
+    documentation "The time of day the student attends the program."

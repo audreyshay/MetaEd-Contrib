@@ -1,0 +1,7 @@
+Association EdFi.StudentEducationOrganizationAssociation additions
+    descriptor ELLInstrumentUsed
+            documentation "The instrument used to measure the English proficiency level."
+            is optional
+    date USInitialSchoolEntry
+        documentation "US initial school entry date"
+          is optional

@@ -1,0 +1,4 @@
+Shared Integer InstructionalMinutes
+    documentation "The number of instructional days for the student at the education organization during the course of one full day. Allowable values are 1 - 400."
+    min value 0
+    max value 400

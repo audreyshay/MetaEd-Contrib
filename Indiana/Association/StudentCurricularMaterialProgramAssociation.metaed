@@ -1,0 +1,10 @@
+Association StudentCurricularMaterialProgramAssociation based on EdFi.GeneralStudentProgramAssociation
+    documentation "Additional information on a student enrolled in an Curricular Material Program."
+    domain entity EdFi.Parent
+        documentation "The Parent Unique Identifier that the student is living with for Curricular Material Reimbursement program types."
+ 	  is optional
+    role name LivesWith
+    
+    bool StudentDoesNotLiveWithParent
+        documentation "Flag to indicate that student does not live with parent."
+        is required

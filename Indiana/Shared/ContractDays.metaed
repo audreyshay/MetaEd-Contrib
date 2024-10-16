@@ -1,0 +1,4 @@
+Shared Integer ContractDays
+    documentation "Accurate number of days employed in this school corporation during the period of July 1 to June 30."
+    min value 1
+    max value 365

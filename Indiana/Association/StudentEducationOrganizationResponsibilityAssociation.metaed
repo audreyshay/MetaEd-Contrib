@@ -1,0 +1,13 @@
+Association EdFi.StudentEducationOrganizationResponsibilityAssociation additions
+descriptor ADMCode
+    documentation "Student is enrolled and attending this reported school as a Resident Enrollment,Transfers Out, Cash Transfers, State Obligations, Placements In, or Dual Enrollment."
+    is optional
+shared integer InstructionalDays
+        documentation "The number of instructional days for the student at the education organization for a given school year. Allowable values are 1 - 180."
+        is optional
+shared integer InstructionalMinutes
+        documentation "The number of instructional days for the student at the education organization during the course of one full day. Allowable values are 1 - 400."
+        is optional
+common AdditionalEdOrgResponsibility
+    documentation "Additional education organization responsibility designation for the student."
+    is optional collection

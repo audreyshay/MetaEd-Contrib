@@ -1,0 +1,4 @@
+Shared Integer NonInstructionalMinutes
+    documentation "Total noninstructional minutes (e.g. Lunch, Recess) in a normal instructional school day."
+    min value 0
+    max value 400

@@ -1,0 +1,4 @@
+Shared Integer InstructionalDays
+    documentation "The number of instructional days for the student at the education organization for a given school year. Allowable values are 1 - 180."
+    min value 0
+    max value 180

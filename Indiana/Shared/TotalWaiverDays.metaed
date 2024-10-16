@@ -1,0 +1,4 @@
+Shared Integer TotalWaiverDays
+    documentation "The total number of days waived by the Department of Education for a School."
+    min value 0
+    max value 365
