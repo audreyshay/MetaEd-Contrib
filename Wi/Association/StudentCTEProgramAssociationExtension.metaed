@@ -1,0 +1,9 @@
+Association EdFi.StudentCTEProgramAssociation additions
+  descriptor CertificatedProgramStatus
+    documentation "Indicator of Certificated Program Status"
+    is optional
+
+  descriptor CteProgramArea
+    documentation "WI Program areas of concentration."
+    is optional collection
+    role name CTEConcentration

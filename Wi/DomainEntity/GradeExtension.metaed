@@ -1,0 +1,4 @@
+Domain Entity EdFi.Grade additions
+    descriptor CertificatedProgramStatus
+        documentation "Indicator of Certificated Program Status"
+        is optional
