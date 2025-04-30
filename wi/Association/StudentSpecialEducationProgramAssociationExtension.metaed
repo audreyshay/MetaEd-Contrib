@@ -1,5 +1,5 @@
-Association StudentSpecialEducationProgramAssociation additions
-  domain entity School
+Association EdFi.StudentSpecialEducationProgramAssociation additions
+  domain entity EdFi.School
       documentation ""
       is optional
-      with context FapeResponsible
+      role name FapeResponsible

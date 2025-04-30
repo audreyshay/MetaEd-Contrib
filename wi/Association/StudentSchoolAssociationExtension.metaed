@@ -1,18 +1,15 @@
-Association StudentSchoolAssociation additions
-  bool ParentPlacedPrivate
-    documentation "Identifies if a student is receiving Primary education services from a Private school and Special education services from a public schoolIndication of a student placed by a parent or guardian in private school, Parentally Placed Private, who receives special education or related services from the submitting district that meet state standards under a service plan (34 CFR 300.452--300.462)."
-    is optional
-   bool CompletedSchoolTerm
+Association EdFi.StudentSchoolAssociation additions
+ bool CompletedSchoolTerm
      documentation ""
      is optional
-  domain entity LocalEducationAgency
+  domain entity EdFi.LocalEducationAgency
     documentation ""
     is optional
-    with context ExpectedTransfer
-  domain entity School
+    role name ExpectedTransfer
+  domain entity EdFi.School
     documentation ""
     is optional
-    with context ExpectedTransfer
+    role name ExpectedTransfer
   decimal ActualDaysAttendance
     documentation ""
     is optional
@@ -29,3 +26,9 @@ Association StudentSchoolAssociation additions
   common ReceivingService
     documentation "The status of a student during a specific count date"
     is optional collection
+  descriptor EnrollmentType
+      documentation ""
+      is optional collection
+  integer PartTimeInstructionalMinutes
+        documentation "Instructional minutes for up to two classes for part-time students"
+        is optional

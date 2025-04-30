@@ -1,4 +1,4 @@
-Association StudentCTEProgramAssociation additions
+Association EdFi.StudentCTEProgramAssociation additions
   descriptor CertificatedProgramStatus
     documentation "Indicator of Certificated Program Status"
     is optional
@@ -15,11 +15,7 @@ Association StudentCTEProgramAssociation additions
   //  documentation "The career cluster representing the career path of the Vocational/Career Tech concentrator."
   //  is optional collection
 
-    descriptor IacCode
-      documentation "IacCode of concentration."
-      is optional
-      with context CTEConcentration
     descriptor CteProgramArea
       documentation "WI Program areas of concentration."
       is optional collection
-      with context CTEConcentration
+      role name CTEConcentration

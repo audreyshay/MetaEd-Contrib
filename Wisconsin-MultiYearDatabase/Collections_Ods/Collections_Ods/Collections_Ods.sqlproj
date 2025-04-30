@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Collections_Ods</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{dd9a6afb-67e5-4722-a0bf-13f0ffeff724}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Collections_Ods</RootNamespace>
+    <AssemblyName>Collections_Ods</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="edfi" />
+    <Folder Include="edfi\Tables" />
+    <Folder Include="edfiV3" />
+    <Folder Include="edfiV3\Tables" />
+    <Folder Include="extension" />
+    <Folder Include="extension\Tables" />
+    <Folder Include="wiV3" />
+    <Folder Include="wiV3\Tables" />
+    <Folder Include="Security" />
+    <Folder Include="Security\Schemas" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="edfi\Tables\AcademicHonorCategoryType.sql" />
+    <Build Include="edfi\Tables\AcademicSubjectDescriptor.sql" />
+    <Build Include="edfi\Tables\AcademicSubjectType.sql" />
+    <Build Include="edfi\Tables\AchievementCategoryDescriptor.sql" />
+    <Build Include="edfi\Tables\AchievementCategoryType.sql" />
+    <Build Include="edfi\Tables\AddressType.sql" />
+    <Build Include="edfi\Tables\AdministrativeFundingControlType.sql" />
+    <Build Include="edfi\Tables\AttendanceEventCategoryDescriptor.sql" />
+    <Build Include="edfi\Tables\AttendanceEventCategoryType.sql" />
+    <Build Include="edfi\Tables\BehaviorDescriptor.sql" />
+    <Build Include="edfi\Tables\BehaviorType.sql" />
+    <Build Include="edfi\Tables\CareerPathwayType.sql" />
+    <Build Include="edfi\Tables\CharterApprovalAgencyType.sql" />
+    <Build Include="edfi\Tables\CharterStatusType.sql" />
+    <Build Include="edfi\Tables\CitizenshipStatusType.sql" />
+    <Build Include="edfi\Tables\ClassPeriod.sql" />
+    <Build Include="edfi\Tables\ClassroomPositionDescriptor.sql" />
+    <Build Include="edfi\Tables\ClassroomPositionType.sql" />
+    <Build Include="edfi\Tables\CountryCodeType.sql" />
+    <Build Include="edfi\Tables\Course.sql" />
+    <Build Include="edfi\Tables\CourseDefinedByType.sql" />
+    <Build Include="edfi\Tables\CourseGPAApplicabilityType.sql" />
+    <Build Include="edfi\Tables\CourseIdentificationCode.sql" />
+    <Build Include="edfi\Tables\CourseIdentificationSystemDescriptor.sql" />
+    <Build Include="edfi\Tables\CourseIdentificationSystemType.sql" />
+    <Build Include="edfi\Tables\CourseLevelCharacteristic.sql" />
+    <Build Include="edfi\Tables\CourseLevelCharacteristicType.sql" />
+    <Build Include="edfi\Tables\CourseOffering.sql" />
+    <Build Include="edfi\Tables\CreditType.sql" />
+    <Build Include="edfi\Tables\Descriptor.sql" />
+    <Build Include="edfi\Tables\DiplomaLevelType.sql" />
+    <Build Include="edfi\Tables\DiplomaType.sql" />
+    <Build Include="edfi\Tables\DisabilityCategoryType.sql" />
+    <Build Include="edfi\Tables\DisabilityDescriptor.sql" />
+    <Build Include="edfi\Tables\DisabilityDeterminationSourceType.sql" />
+    <Build Include="edfi\Tables\DisabilityType.sql" />
+    <Build Include="edfi\Tables\DisciplineAction.sql" />
+    <Build Include="edfi\Tables\DisciplineActionDiscipline.sql" />
+    <Build Include="edfi\Tables\DisciplineActionDisciplineIncident.sql" />
+    <Build Include="edfi\Tables\DisciplineActionLengthDifferenceReasonType.sql" />
+    <Build Include="edfi\Tables\DisciplineDescriptor.sql" />
+    <Build Include="edfi\Tables\DisciplineIncident.sql" />
+    <Build Include="edfi\Tables\DisciplineType.sql" />
+    <Build Include="edfi\Tables\EducationalEnvironmentType.sql" />
+    <Build Include="edfi\Tables\EducationOrganization.sql" />
+    <Build Include="edfi\Tables\EducationOrganizationAddress.sql" />
+    <Build Include="edfi\Tables\EducationOrganizationIdentificationCode.sql" />
+    <Build Include="edfi\Tables\EducationOrganizationIdentificationSystemDescriptor.sql" />
+    <Build Include="edfi\Tables\EducationOrganizationIdentificationSystemType.sql" />
+    <Build Include="edfi\Tables\EducationServiceCenter.sql" />
+    <Build Include="edfi\Tables\EntryGradeLevelReasonType.sql" />
+    <Build Include="edfi\Tables\EntryType.sql" />
+    <Build Include="edfi\Tables\EntryTypeDescriptor.sql" />
+    <Build Include="edfi\Tables\ExitWithdrawType.sql" />
+    <Build Include="edfi\Tables\ExitWithdrawTypeDescriptor.sql" />
+    <Build Include="edfi\Tables\Grade.sql" />
+    <Build Include="edfi\Tables\GradeLevelDescriptor.sql" />
+    <Build Include="edfi\Tables\GradeLevelType.sql" />
+    <Build Include="edfi\Tables\GradeType.sql" />
+    <Build Include="edfi\Tables\GradingPeriod.sql" />
+    <Build Include="edfi\Tables\GradingPeriodDescriptor.sql" />
+    <Build Include="edfi\Tables\GradingPeriodType.sql" />
+    <Build Include="edfi\Tables\GraduationPlan.sql" />
+    <Build Include="edfi\Tables\GraduationPlanType.sql" />
+    <Build Include="edfi\Tables\GraduationPlanTypeDescriptor.sql" />
+    <Build Include="edfi\Tables\IncidentLocationType.sql" />
+    <Build Include="edfi\Tables\LanguageDescriptor.sql" />
+    <Build Include="edfi\Tables\LanguageType.sql" />
+    <Build Include="edfi\Tables\LanguageUseType.sql" />
+    <Build Include="edfi\Tables\LevelOfEducationDescriptor.sql" />
+    <Build Include="edfi\Tables\LevelOfEducationType.sql" />
+    <Build Include="edfi\Tables\LimitedEnglishProficiencyDescriptor.sql" />
+    <Build Include="edfi\Tables\LimitedEnglishProficiencyType.sql" />
+    <Build Include="edfi\Tables\LocalEducationAgency.sql" />
+    <Build Include="edfi\Tables\LocalEducationAgencyAccountability.sql" />
+    <Build Include="edfi\Tables\LocalEducationAgencyCategoryType.sql" />
+    <Build Include="edfi\Tables\Location.sql" />
+    <Build Include="edfi\Tables\MediumOfInstructionType.sql" />
+    <Build Include="edfi\Tables\OldEthnicityType.sql" />
+    <Build Include="edfi\Tables\OperationalStatusType.sql" />
+    <Build Include="edfi\Tables\PerformanceBaseConversionType.sql" />
+    <Build Include="edfi\Tables\PopulationServedType.sql" />
+    <Build Include="edfi\Tables\Program.sql" />
+    <Build Include="edfi\Tables\ProgramAssignmentDescriptor.sql" />
+    <Build Include="edfi\Tables\ProgramAssignmentType.sql" />
+    <Build Include="edfi\Tables\ProgramType.sql" />
+    <Build Include="edfi\Tables\RaceType.sql" />
+    <Build Include="edfi\Tables\ReasonExitedDescriptor.sql" />
+    <Build Include="edfi\Tables\ReasonExitedType.sql" />
+    <Build Include="edfi\Tables\RepeatIdentifierType.sql" />
+    <Build Include="edfi\Tables\ReporterDescriptionDescriptor.sql" />
+    <Build Include="edfi\Tables\ReporterDescriptionType.sql" />
+    <Build Include="edfi\Tables\ResidencyStatusDescriptor.sql" />
+    <Build Include="edfi\Tables\ResidencyStatusType.sql" />
+    <Build Include="edfi\Tables\ResponsibilityDescriptor.sql" />
+    <Build Include="edfi\Tables\ResponsibilityType.sql" />
+    <Build Include="edfi\Tables\School.sql" />
+    <Build Include="edfi\Tables\SchoolCategory.sql" />
+    <Build Include="edfi\Tables\SchoolCategoryType.sql" />
+    <Build Include="edfi\Tables\SchoolChoiceImplementStatusType.sql" />
+    <Build Include="edfi\Tables\SchoolFoodServicesEligibilityDescriptor.sql" />
+    <Build Include="edfi\Tables\SchoolFoodServicesEligibilityType.sql" />
+    <Build Include="edfi\Tables\SchoolGradeLevel.sql" />
+    <Build Include="edfi\Tables\SchoolType.sql" />
+    <Build Include="edfi\Tables\SchoolYearType.sql" />
+    <Build Include="edfi\Tables\Section.sql" />
+    <Build Include="edfi\Tables\SectionProgram.sql" />
+    <Build Include="edfi\Tables\Session.sql" />
+    <Build Include="edfi\Tables\SessionGradingPeriod.sql" />
+    <Build Include="edfi\Tables\SexType.sql" />
+    <Build Include="edfi\Tables\SpecialEducationSettingDescriptor.sql" />
+    <Build Include="edfi\Tables\SpecialEducationSettingType.sql" />
+    <Build Include="edfi\Tables\Staff.sql" />
+    <Build Include="edfi\Tables\StaffIdentificationCode.sql" />
+    <Build Include="edfi\Tables\StaffIdentificationSystemDescriptor.sql" />
+    <Build Include="edfi\Tables\StaffIdentificationSystemType.sql" />
+    <Build Include="edfi\Tables\StaffSectionAssociation.sql" />
+    <Build Include="edfi\Tables\StateAbbreviationType.sql" />
+    <Build Include="edfi\Tables\StateEducationAgency.sql" />
+    <Build Include="edfi\Tables\Student.sql" />
+    <Build Include="edfi\Tables\StudentAcademicRecord.sql" />
+    <Build Include="edfi\Tables\StudentAcademicRecordAcademicHonor.sql" />
+    <Build Include="edfi\Tables\StudentAcademicRecordDiploma.sql" />
+    <Build Include="edfi\Tables\StudentCharacteristic.sql" />
+    <Build Include="edfi\Tables\StudentCharacteristicDescriptor.sql" />
+    <Build Include="edfi\Tables\StudentCharacteristicType.sql" />
+    <Build Include="edfi\Tables\StudentCTEProgramAssociation.sql" />
+    <Build Include="edfi\Tables\StudentCTEProgramAssociationCTEProgram.sql" />
+    <Build Include="edfi\Tables\StudentDisability.sql" />
+    <Build Include="edfi\Tables\StudentDisciplineIncidentAssociation.sql" />
+    <Build Include="edfi\Tables\StudentDisciplineIncidentAssociationBehavior.sql" />
+    <Build Include="edfi\Tables\StudentEducationOrganizationAssociation.sql" />
+    <Build Include="edfi\Tables\StudentLanguage.sql" />
+    <Build Include="edfi\Tables\StudentLanguageUse.sql" />
+    <Build Include="edfi\Tables\StudentParticipationCodeType.sql" />
+    <Build Include="edfi\Tables\StudentProgramAssociation.sql" />
+    <Build Include="edfi\Tables\StudentRace.sql" />
+    <Build Include="edfi\Tables\StudentSchoolAssociation.sql" />
+    <Build Include="edfi\Tables\StudentSchoolAttendanceEvent.sql" />
+    <Build Include="edfi\Tables\StudentSectionAssociation.sql" />
+    <Build Include="edfi\Tables\StudentSpecialEducationProgramAssociation.sql" />
+    <Build Include="edfi\Tables\StudentVisa.sql" />
+    <Build Include="edfi\Tables\TelephoneNumberType.sql" />
+    <Build Include="edfi\Tables\TermDescriptor.sql" />
+    <Build Include="edfi\Tables\TermType.sql" />
+    <Build Include="edfi\Tables\VisaType.sql" />
+    <Build Include="edfiV3\Tables\AcademicSubjectDescriptor.sql" />
+    <Build Include="edfiV3\Tables\AchievementCategoryDescriptor.sql" />
+    <Build Include="edfiV3\Tables\AddressTypeDescriptor.sql" />
+    <Build Include="edfiV3\Tables\AdministrativeFundingControlDescriptor.sql" />
+    <Build Include="edfiV3\Tables\AttemptStatusDescriptor.sql" />
+    <Build Include="edfiV3\Tables\BehaviorDescriptor.sql" />
+    <Build Include="edfiV3\Tables\CareerPathwayDescriptor.sql" />
+    <Build Include="edfiV3\Tables\CharterApprovalAgencyTypeDescriptor.sql" />
+    <Build Include="edfiV3\Tables\CharterStatusDescriptor.sql" />
+    <Build Include="edfiV3\Tables\CitizenshipStatusDescriptor.sql" />
+    <Build Include="edfiV3\Tables\ClassPeriod.sql" />
+    <Build Include="edfiV3\Tables\ClassroomPositionDescriptor.sql" />
+    <Build Include="edfiV3\Tables\ContinuationOfServicesReasonDescriptor.sql" />
+    <Build Include="edfiV3\Tables\CountryDescriptor.sql" />
+    <Build Include="edfiV3\Tables\Course.sql" />
+    <Build Include="edfiV3\Tables\CourseIdentificationCode.sql" />
+    <Build Include="edfiV3\Tables\CourseIdentificationSystemDescriptor.sql" />
+    <Build Include="edfiV3\Tables\CourseLevelCharacteristic.sql" />
+    <Build Include="edfiV3\Tables\CourseLevelCharacteristicDescriptor.sql" />
+    <Build Include="edfiV3\Tables\CourseOffering.sql" />
+    <Build Include="edfiV3\Tables\Descriptor.sql" />
+    <Build Include="edfiV3\Tables\DiplomaTypeDescriptor.sql" />
+    <Build Include="edfiV3\Tables\DisabilityDescriptor.sql" />
+    <Build Include="edfiV3\Tables\DisabilityDesignationDescriptor.sql" />
+    <Build Include="edfiV3\Tables\DisabilityDeterminationSourceTypeDescriptor.sql" />
+    <Build Include="edfiV3\Tables\DisciplineAction.sql" />
+    <Build Include="edfiV3\Tables\DisciplineActionDiscipline.sql" />
+    <Build Include="edfiV3\Tables\DisciplineActionLengthDifferenceReasonDescriptor.sql" />
+    <Build Include="edfiV3\Tables\DisciplineActionStudentDisciplineIncidentAssociation.sql" />
+    <Build Include="edfiV3\Tables\DisciplineDescriptor.sql" />
+    <Build Include="edfiV3\Tables\DisciplineIncident.sql" />
+    <Build Include="edfiV3\Tables\DisciplineIncidentBehavior.sql" />
+    <Build Include="edfiV3\Tables\EducationOrganization.sql" />
+    <Build Include="edfiV3\Tables\EducationOrganizationAddress.sql" />
+    <Build Include="edfiV3\Tables\EducationOrganizationIdentificationCode.sql" />
+    <Build Include="edfiV3\Tables\EducationOrganizationIdentificationSystemDescriptor.sql" />
+    <Build Include="edfiV3\Tables\EducationServiceCenter.sql" />
+    <Build Include="edfiV3\Tables\ElectronicMailTypeDescriptor.sql" />
+    <Build Include="edfiV3\Tables\EntryGradeLevelReasonDescriptor.sql" />
+    <Build Include="edfiV3\Tables\EntryTypeDescriptor.sql" />
+    <Build Include="edfiV3\Tables\ExitWithdrawTypeDescriptor.sql" />
+    <Build Include="edfiV3\Tables\GeneralStudentProgramAssociation.sql" />
+    <Build Include="edfiV3\Tables\Grade.sql" />
+    <Build Include="edfiV3\Tables\GradeLevelDescriptor.sql" />
+    <Build Include="edfiV3\Tables\GradeTypeDescriptor.sql" />
+    <Build Include="edfiV3\Tables\GradingPeriod.sql" />
+    <Build Include="edfiV3\Tables\GradingPeriodDescriptor.sql" />
+    <Build Include="edfiV3\Tables\GunFreeSchoolsActReportingStatusDescriptor.sql" />
+    <Build Include="edfiV3\Tables\HomelessPrimaryNighttimeResidenceDescriptor.sql" />
+    <Build Include="edfiV3\Tables\InternetAccessDescriptor.sql" />
+    <Build Include="edfiV3\Tables\LanguageDescriptor.sql" />
+    <Build Include="edfiV3\Tables\LanguageInstructionProgramServiceDescriptor.sql" />
+    <Build Include="edfiV3\Tables\LanguageUseDescriptor.sql" />
+    <Build Include="edfiV3\Tables\LimitedEnglishProficiencyDescriptor.sql" />
+    <Build Include="edfiV3\Tables\LocalEducationAgency.sql" />
+    <Build Include="edfiV3\Tables\LocalEducationAgencyAccountability.sql" />
+    <Build Include="edfiV3\Tables\LocalEducationAgencyCategoryDescriptor.sql" />
+    <Build Include="edfiV3\Tables\Location.sql" />
+    <Build Include="edfiV3\Tables\MagnetSpecialProgramEmphasisSchoolDescriptor.sql" />
+    <Build Include="edfiV3\Tables\MediumOfInstructionDescriptor.sql" />
+    <Build Include="edfiV3\Tables\MonitoredDescriptor.sql" />
+    <Build Include="edfiV3\Tables\NeglectedOrDelinquentProgramDescriptor.sql" />
+    <Build Include="edfiV3\Tables\OldEthnicityDescriptor.sql" />
+    <Build Include="edfiV3\Tables\OperationalStatusDescriptor.sql" />
+    <Build Include="edfiV3\Tables\OtherNameTypeDescriptor.sql" />
+    <Build Include="edfiV3\Tables\ParticipationDescriptor.sql" />
+    <Build Include="edfiV3\Tables\PerformanceBaseConversionDescriptor.sql" />
+    <Build Include="edfiV3\Tables\ProficiencyDescriptor.sql" />
+    <Build Include="edfiV3\Tables\Program.sql" />
+    <Build Include="edfiV3\Tables\ProgramTypeDescriptor.sql" />
+    <Build Include="edfiV3\Tables\ProgressDescriptor.sql" />
+    <Build Include="edfiV3\Tables\ProgressLevelDescriptor.sql" />
+    <Build Include="edfiV3\Tables\RaceDescriptor.sql" />
+    <Build Include="edfiV3\Tables\ReasonExitedDescriptor.sql" />
+    <Build Include="edfiV3\Tables\ResidencyStatusDescriptor.sql" />
+    <Build Include="edfiV3\Tables\School.sql" />
+    <Build Include="edfiV3\Tables\SchoolCategory.sql" />
+    <Build Include="edfiV3\Tables\SchoolCategoryDescriptor.sql" />
+    <Build Include="edfiV3\Tables\SchoolChoiceImplementStatusDescriptor.sql" />
+    <Build Include="edfiV3\Tables\SchoolFoodServiceProgramServiceDescriptor.sql" />
+    <Build Include="edfiV3\Tables\SchoolGradeLevel.sql" />
+    <Build Include="edfiV3\Tables\SchoolTypeDescriptor.sql" />
+    <Build Include="edfiV3\Tables\SchoolYearType.sql" />
+    <Build Include="edfiV3\Tables\Section.sql" />
+    <Build Include="edfiV3\Tables\SectionClassPeriod.sql" />
+    <Build Include="edfiV3\Tables\SectionProgram.sql" />
+    <Build Include="edfiV3\Tables\Session.sql" />
+    <Build Include="edfiV3\Tables\SessionGradingPeriod.sql" />
+    <Build Include="edfiV3\Tables\SexDescriptor.sql" />
+    <Build Include="edfiV3\Tables\SpecialEducationSettingDescriptor.sql" />
+    <Build Include="edfiV3\Tables\Staff.sql" />
+    <Build Include="edfiV3\Tables\StaffElectronicMail.sql" />
+    <Build Include="edfiV3\Tables\StaffIdentificationCode.sql" />
+    <Build Include="edfiV3\Tables\StaffIdentificationSystemDescriptor.sql" />
+    <Build Include="edfiV3\Tables\StaffLanguage.sql" />
+    <Build Include="edfiV3\Tables\StaffLanguageUse.sql" />
+    <Build Include="edfiV3\Tables\StaffRace.sql" />
+    <Build Include="edfiV3\Tables\StaffSectionAssociation.sql" />
+    <Build Include="edfiV3\Tables\StateAbbreviationDescriptor.sql" />
+    <Build Include="edfiV3\Tables\StateEducationAgency.sql" />
+    <Build Include="edfiV3\Tables\Student.sql" />
+    <Build Include="edfiV3\Tables\StudentAcademicRecord.sql" />
+    <Build Include="edfiV3\Tables\StudentAcademicRecordDiploma.sql" />
+    <Build Include="edfiV3\Tables\StudentCharacteristicDescriptor.sql" />
+    <Build Include="edfiV3\Tables\StudentCTEProgramAssociation.sql" />
+    <Build Include="edfiV3\Tables\StudentCTEProgramAssociationCTEProgram.sql" />
+    <Build Include="edfiV3\Tables\StudentDisciplineIncidentAssociation.sql" />
+    <Build Include="edfiV3\Tables\StudentDisciplineIncidentAssociationBehavior.sql" />
+    <Build Include="edfiV3\Tables\StudentEducationOrganizationAssociation.sql" />
+    <Build Include="edfiV3\Tables\StudentEducationOrganizationAssociationDisability.sql" />
+    <Build Include="edfiV3\Tables\StudentEducationOrganizationAssociationDisabilityDesignation.sql" />
+    <Build Include="edfiV3\Tables\StudentEducationOrganizationAssociationElectronicMail.sql" />
+    <Build Include="edfiV3\Tables\StudentEducationOrganizationAssociationLanguage.sql" />
+    <Build Include="edfiV3\Tables\StudentEducationOrganizationAssociationLanguageUse.sql" />
+    <Build Include="edfiV3\Tables\StudentEducationOrganizationAssociationRace.sql" />
+    <Build Include="edfiV3\Tables\StudentEducationOrganizationAssociationStudentCharacteristic.sql" />
+    <Build Include="edfiV3\Tables\StudentEducationOrganizationAssociationStudentCharacteristicPeriod.sql" />
+    <Build Include="edfiV3\Tables\StudentEducationOrganizationAssociationStudentIdentificationCode.sql" />
+    <Build Include="edfiV3\Tables\StudentHomelessProgramAssociation.sql" />
+    <Build Include="edfiV3\Tables\StudentIdentificationSystemDescriptor.sql" />
+    <Build Include="edfiV3\Tables\StudentLanguageInstructionProgramAssociation.sql" />
+    <Build Include="edfiV3\Tables\StudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment.sql" />
+    <Build Include="edfiV3\Tables\StudentLanguageInstructionProgramAssociationLanguageInstructionProgramService.sql" />
+    <Build Include="edfiV3\Tables\StudentMigrantEducationProgramAssociation.sql" />
+    <Build Include="edfiV3\Tables\StudentNeglectedOrDelinquentProgramAssociation.sql" />
+    <Build Include="edfiV3\Tables\StudentOtherName.sql" />
+    <Build Include="edfiV3\Tables\StudentParticipationCodeDescriptor.sql" />
+    <Build Include="edfiV3\Tables\StudentProgramAssociation.sql" />
+    <Build Include="edfiV3\Tables\StudentSchoolAssociation.sql" />
+    <Build Include="edfiV3\Tables\StudentSchoolFoodServiceProgramAssociation.sql" />
+    <Build Include="edfiV3\Tables\StudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramService.sql" />
+    <Build Include="edfiV3\Tables\StudentSectionAssociation.sql" />
+    <Build Include="edfiV3\Tables\StudentSpecialEducationProgramAssociation.sql" />
+    <Build Include="edfiV3\Tables\StudentSpecialEducationProgramAssociationDisability.sql" />
+    <Build Include="edfiV3\Tables\StudentSpecialEducationProgramAssociationDisabilityDesignation.sql" />
+    <Build Include="edfiV3\Tables\StudentVisa.sql" />
+    <Build Include="edfiV3\Tables\TechnicalSkillsAssessmentDescriptor.sql" />
+    <Build Include="edfiV3\Tables\TermDescriptor.sql" />
+    <Build Include="edfiV3\Tables\TitleIPartASchoolDesignationDescriptor.sql" />
+    <Build Include="edfiV3\Tables\VisaDescriptor.sql" />
+    <Build Include="extension\Tables\CertificatedProgramStatusType.sql" />
+    <Build Include="extension\Tables\CountDateNameType.sql" />
+    <Build Include="extension\Tables\CountDateReceivingServiceType.sql" />
+    <Build Include="extension\Tables\CourseOfferingCareerPathway.sql" />
+    <Build Include="extension\Tables\CteProgramAreaType.sql" />
+    <Build Include="extension\Tables\DisciplineActionExtension.sql" />
+    <Build Include="extension\Tables\IacCodeType.sql" />
+    <Build Include="extension\Tables\ModifiedTermType.sql" />
+    <Build Include="extension\Tables\PrimaryNighttimeResidenceType.sql" />
+    <Build Include="extension\Tables\StateEndorsedRegionalCareerPathwayStatusType.sql" />
+    <Build Include="extension\Tables\StudentCTEProgramArea.sql" />
+    <Build Include="extension\Tables\StudentDisciplineIncidentAssociationBehaviorExtension.sql" />
+    <Build Include="extension\Tables\StudentDisciplineIncidentAssociationExtension.sql" />
+    <Build Include="extension\Tables\StudentHomelessProgramAssociation.sql" />
+    <Build Include="extension\Tables\StudentSchoolAssociationWisconsinExt.sql" />
+    <Build Include="extension\Tables\StudentSchoolAssociationWisconsinExtReceivingService.sql" />
+    <Build Include="extension\Tables\StudentSectionAssociationExtension.sql" />
+    <Build Include="extension\Tables\WiDpiGrade.sql" />
+    <Build Include="extension\Tables\WiDpiProgramScheduleType.sql" />
+    <Build Include="extension\Tables\WiDpiStudent.sql" />
+    <Build Include="extension\Tables\WiDpiStudentCTEProgram.sql" />
+    <Build Include="extension\Tables\WiDpiStudentSchoolAssociation.sql" />
+    <Build Include="extension\Tables\WiDpiStudentSpecialEducationProgramAssociationDisability.sql" />
+    <Build Include="wiV3\Tables\CertificatedProgramStatusDescriptor.sql" />
+    <Build Include="wiV3\Tables\CountDateNameDescriptor.sql" />
+    <Build Include="wiV3\Tables\CountDateReceivingServiceDescriptor.sql" />
+    <Build Include="wiV3\Tables\CourseOfferingCareerPathway.sql" />
+    <Build Include="wiV3\Tables\CteProgramAreaDescriptor.sql" />
+    <Build Include="wiV3\Tables\DisciplineActionExtension.sql" />
+    <Build Include="wiV3\Tables\EnrollmentTypeDescriptor.sql" />
+    <Build Include="wiV3\Tables\GradeExtension.sql" />
+    <Build Include="wiV3\Tables\IacCodeDescriptor.sql" />
+    <Build Include="wiV3\Tables\ModifiedTermDescriptor.sql" />
+    <Build Include="wiV3\Tables\StateEndorsedRegionalCareerPathwayStatusDescriptor.sql" />
+    <Build Include="wiV3\Tables\StudentCTEProgramAssociationCTEConcentrationCteProgramArea.sql" />
+    <Build Include="wiV3\Tables\StudentCTEProgramAssociationExtension.sql" />
+    <Build Include="wiV3\Tables\StudentDisciplineIncidentAssociationExtension.sql" />
+    <Build Include="wiV3\Tables\StudentEducationOrganizationAssociationExtension.sql" />
+    <Build Include="wiV3\Tables\StudentSchoolAssociationEnrollmentType.sql" />
+    <Build Include="wiV3\Tables\StudentSchoolAssociationExtension.sql" />
+    <Build Include="wiV3\Tables\StudentSchoolAssociationReceivingService.sql" />
+    <Build Include="wiV3\Tables\StudentSpecialEducationProgramAssociationExtension.sql" />
+    <Build Include="Security\Schemas\edfi.sql" />
+    <Build Include="Security\Schemas\edfiV3.sql" />
+    <Build Include="Security\Schemas\extension.sql" />
+    <Build Include="Security\Schemas\wiV3.sql" />
+  </ItemGroup>
+</Project>

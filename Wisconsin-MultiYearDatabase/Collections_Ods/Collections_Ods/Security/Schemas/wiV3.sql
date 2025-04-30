@@ -1,0 +1,2 @@
+﻿CREATE SCHEMA [wiV3]
+	AUTHORIZATION [dbo];
