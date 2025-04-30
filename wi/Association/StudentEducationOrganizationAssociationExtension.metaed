@@ -1,0 +1,5 @@
+Association StudentEducationOrganizationAssociation additions
+domain entity LocalEducationAgency
+  documentation ""
+  is optional
+  with context Resident
