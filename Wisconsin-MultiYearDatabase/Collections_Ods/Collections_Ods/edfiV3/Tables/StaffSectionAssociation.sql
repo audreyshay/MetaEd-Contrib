@@ -1,0 +1,23 @@
+﻿CREATE TABLE [edfiV3].[StaffSectionAssociation] (
+    [ApiSchoolYear]	   SMALLINT NOT NULL,
+	[LocalCourseCode]                 NVARCHAR (60)    NOT NULL,
+    [SchoolId]                        INT              NOT NULL,
+    [SchoolYear]                      SMALLINT         NOT NULL,
+    [SectionIdentifier]               NVARCHAR (255)   NOT NULL,
+    [SessionName]                     NVARCHAR (60)    NOT NULL,
+    [StaffUSI]                        INT              NOT NULL,
+    [ClassroomPositionDescriptorId]   INT              NOT NULL,
+    [BeginDate]                       DATE             NULL,
+    [EndDate]                         DATE             NULL,
+    [HighlyQualifiedTeacher]          BIT              NULL,
+    [TeacherStudentDataLinkExclusion] BIT              NULL,
+    [PercentageContribution]          DECIMAL (5, 4)   NULL,
+    [CreateDate]                      DATETIME2 (7)         NOT NULL,
+    [LastModifiedDate]                DATETIME2 (7)         NOT NULL,
+    [Id]                              UNIQUEIDENTIFIER NOT NULL,
+	[IsActive] BIT CONSTRAINT [V3_StaffSectionAssociation_DF_IsActive] DEFAULT ((1)) NOT NULL,
+    CONSTRAINT [V3_StaffSectionAssociation_PK] PRIMARY KEY CLUSTERED ([ApiSchoolYear] ASC, [SchoolId] ASC, [SchoolYear] ASC, [StaffUSI] ASC, [LocalCourseCode] ASC, [SectionIdentifier] ASC, [SessionName] ASC),
+    CONSTRAINT [V3_FK_StaffSectionAssociation_ClassroomPositionDescriptor] FOREIGN KEY ([ClassroomPositionDescriptorId]) REFERENCES [edfiV3].[ClassroomPositionDescriptor] ([ClassroomPositionDescriptorId]),
+    CONSTRAINT [V3_FK_StaffSectionAssociation_Section] FOREIGN KEY ([ApiSchoolYear], [SchoolId], [SchoolYear], [LocalCourseCode], [SectionIdentifier], [SessionName]) REFERENCES [edfiV3].[Section] ([ApiSchoolYear], [SchoolId], [SchoolYear], [LocalCourseCode], [SectionIdentifier], [SessionName]) ON UPDATE CASCADE,
+    CONSTRAINT [V3_FK_StaffSectionAssociation_Staff] FOREIGN KEY ([ApiSchoolYear], [StaffUSI]) REFERENCES [edfiV3].[Staff] ([ApiSchoolYear], [StaffUSI])
+);

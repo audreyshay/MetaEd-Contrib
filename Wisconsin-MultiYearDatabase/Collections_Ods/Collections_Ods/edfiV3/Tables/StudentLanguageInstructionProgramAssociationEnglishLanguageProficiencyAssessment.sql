@@ -1,0 +1,22 @@
+﻿CREATE TABLE [edfiV3].[StudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment] (
+    [ApiSchoolYear]	   SMALLINT NOT NULL,
+    [BeginDate]                      DATE          NOT NULL,
+    [EducationOrganizationId]        INT           NOT NULL,
+    [ProgramEducationOrganizationId] INT           NOT NULL,
+    [ProgramName]                    NVARCHAR (60) NOT NULL,
+    [ProgramTypeDescriptorId]        INT           NOT NULL,
+    [SchoolYear]                     SMALLINT      NOT NULL,
+    [StudentUSI]                     INT           NOT NULL,
+    [ParticipationDescriptorId]      INT           NULL,
+    [ProficiencyDescriptorId]        INT           NULL,
+    [ProgressDescriptorId]           INT           NULL,
+    [MonitoredDescriptorId]          INT           NULL,
+    [CreateDate]                     DATETIME2 (7)      NOT NULL,
+    CONSTRAINT [V3_StudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment_PK] PRIMARY KEY CLUSTERED ([ApiSchoolYear] ASC, [EducationOrganizationId] ASC, [StudentUSI] ASC, [BeginDate] ASC, [ProgramEducationOrganizationId] ASC, [ProgramName] ASC, [ProgramTypeDescriptorId] ASC,[SchoolYear] ASC),
+    CONSTRAINT [V3_FK_StudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment_MonitoredDescriptor] FOREIGN KEY ([MonitoredDescriptorId]) REFERENCES [edfiV3].[MonitoredDescriptor] ([MonitoredDescriptorId]),
+    CONSTRAINT [V3_FK_StudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment_ParticipationDescriptor] FOREIGN KEY ([ParticipationDescriptorId]) REFERENCES [edfiV3].[ParticipationDescriptor] ([ParticipationDescriptorId]),
+    CONSTRAINT [V3_FK_StudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment_ProficiencyDescriptor] FOREIGN KEY ([ProficiencyDescriptorId]) REFERENCES [edfiV3].[ProficiencyDescriptor] ([ProficiencyDescriptorId]),
+    CONSTRAINT [V3_FK_StudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment_ProgressDescriptor] FOREIGN KEY ([ProgressDescriptorId]) REFERENCES [edfiV3].[ProgressDescriptor] ([ProgressDescriptorId]),
+    CONSTRAINT [V3_FK_StudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment_SchoolYearType] FOREIGN KEY ([SchoolYear]) REFERENCES [edfiV3].[SchoolYearType] ([SchoolYear]),
+    CONSTRAINT [V3_FK_StudentLanguageInstructionProgramAssociationEnglishLanguageProficiencyAssessment_StudentLanguageInstructionProgramAssociat] FOREIGN KEY ([ApiSchoolYear], [EducationOrganizationId], [StudentUSI], [BeginDate], [ProgramEducationOrganizationId], [ProgramName], [ProgramTypeDescriptorId]) REFERENCES [edfiV3].[StudentLanguageInstructionProgramAssociation] ([ApiSchoolYear], [EducationOrganizationId], [StudentUSI], [BeginDate], [ProgramEducationOrganizationId], [ProgramName], [ProgramTypeDescriptorId]) ON DELETE CASCADE
+);

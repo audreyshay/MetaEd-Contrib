@@ -1,0 +1,7 @@
+Domain Entity EdFi.DisciplineAction additions
+    descriptor ModifiedTerm
+        documentation "Identifies if the duration of the expulsion has been modified from the federally required one year of expulsion for a fire arms incident."
+        is optional
+    bool EarlyReinstatementCondition
+        documentation "Following an expulsion, the student had early reinstatement condition to return to school prior to the end of the expulsion."
+        is optional

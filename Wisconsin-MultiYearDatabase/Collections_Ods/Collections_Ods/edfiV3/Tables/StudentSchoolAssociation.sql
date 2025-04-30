@@ -1,0 +1,58 @@
+﻿CREATE TABLE [edfiV3].[StudentSchoolAssociation] (
+    [ApiSchoolYear]	   SMALLINT NOT NULL,
+    [EntryDate]                         DATE             NOT NULL,
+    [SchoolId]                          INT              NOT NULL,
+    [StudentUSI]                        INT              NOT NULL,
+    [PrimarySchool]                     BIT              NULL,
+    [EntryGradeLevelDescriptorId]       INT              NOT NULL,
+    [EntryGradeLevelReasonDescriptorId] INT              NULL,
+    [EntryTypeDescriptorId]             INT              NULL,
+    [RepeatGradeIndicator]              BIT              NULL,
+    [ClassOfSchoolYear]                 SMALLINT         NULL,
+    [SchoolChoiceTransfer]              BIT              NULL,
+    [ExitWithdrawDate]                  DATE             NULL,
+    [ExitWithdrawTypeDescriptorId]      INT              NULL,
+    [ResidencyStatusDescriptorId]       INT              NULL,
+    [GraduationPlanTypeDescriptorId]    INT              NULL,
+    [EducationOrganizationId]           INT              NULL,
+    [GraduationSchoolYear]              SMALLINT         NULL,
+    [EmployedWhileEnrolled]             BIT              NULL,
+    [CalendarCode]                      NVARCHAR (60)    NULL,
+    [SchoolYear]                        SMALLINT         NULL,
+    [CreateDate]                        DATETIME2 (7)         NOT NULL,
+    [LastModifiedDate]                  DATETIME2 (7)         NOT NULL,
+    [Id]                                UNIQUEIDENTIFIER NOT NULL,
+	[IsActive] BIT CONSTRAINT [V3_StudentSchoolAssociation_DF_IsActive] DEFAULT ((1)) NOT NULL,
+	[DpiCalcDateModified]						DATETIME         NULL,
+	[EffectiveBeginDate]				  DATE		 NULL,
+	[EffectiveEndDate]					  DATE		 NULL,
+	[Auto] BIT CONSTRAINT [V3_StudentSchoolAssociation_DF_Auto] DEFAULT ((0)) NOT NULL,
+	[DpiOverlap] BIT NULL, 
+	[DpiExpectedTransferAgency] INT NULL, 
+	[DpiAccountableSchoolId]          INT              NULL,
+	[DpiCteParticipant]					BIT              NULL,
+	[CountInclusionTfs]              BIT              NULL,
+	[CountInclusionCc]					BIT              NULL,
+	[DpiValidEnrollment] BIT NULL,
+	[ExpectedTransferResponse]              INT              NULL,
+	[EtrDateModified]						DATETIME         NULL,
+	CONSTRAINT [V3_StudentSchoolAssociation_PK] PRIMARY KEY CLUSTERED ([ApiSchoolYear] ASC, [SchoolId] ASC, [StudentUSI] ASC, [EntryDate] ASC),
+    CONSTRAINT [V3_FK_StudentSchoolAssociation_EntryGradeLevelReasonDescriptor] FOREIGN KEY ([EntryGradeLevelReasonDescriptorId]) REFERENCES [edfiV3].[EntryGradeLevelReasonDescriptor] ([EntryGradeLevelReasonDescriptorId]),
+    CONSTRAINT [V3_FK_StudentSchoolAssociation_EntryTypeDescriptor] FOREIGN KEY ([EntryTypeDescriptorId]) REFERENCES [edfiV3].[EntryTypeDescriptor] ([EntryTypeDescriptorId]),
+    CONSTRAINT [V3_FK_StudentSchoolAssociation_ExitWithdrawTypeDescriptor] FOREIGN KEY ([ExitWithdrawTypeDescriptorId]) REFERENCES [edfiV3].[ExitWithdrawTypeDescriptor] ([ExitWithdrawTypeDescriptorId]),
+    CONSTRAINT [V3_FK_StudentSchoolAssociation_GradeLevelDescriptor] FOREIGN KEY ([EntryGradeLevelDescriptorId]) REFERENCES [edfiV3].[GradeLevelDescriptor] ([GradeLevelDescriptorId]),
+    CONSTRAINT [V3_FK_StudentSchoolAssociation_ResidencyStatusDescriptor] FOREIGN KEY ([ResidencyStatusDescriptorId]) REFERENCES [edfiV3].[ResidencyStatusDescriptor] ([ResidencyStatusDescriptorId]),
+    CONSTRAINT [V3_FK_StudentSchoolAssociation_School] FOREIGN KEY ([ApiSchoolYear], [SchoolId]) REFERENCES [edfiV3].[School] ([ApiSchoolYear], [SchoolId]),
+    CONSTRAINT [V3_FK_StudentSchoolAssociation_SchoolYearType] FOREIGN KEY ([SchoolYear]) REFERENCES [edfiV3].[SchoolYearType] ([SchoolYear]),
+    CONSTRAINT [V3_FK_StudentSchoolAssociation_SchoolYearType1] FOREIGN KEY ([ClassOfSchoolYear]) REFERENCES [edfiV3].[SchoolYearType] ([SchoolYear]),
+    CONSTRAINT [V3_FK_StudentSchoolAssociation_Student] FOREIGN KEY ([ApiSchoolYear], [StudentUSI]) REFERENCES [edfiV3].[Student] ([ApiSchoolYear],[StudentUSI]),
+	CONSTRAINT [V3_FK_StudentSchoolAssociation_DpiAccountableSchoolId] FOREIGN KEY ([ApiSchoolYear], [DpiAccountableSchoolId]) REFERENCES [edfiV3].[School] ([ApiSchoolYear], [SchoolId]),
+   --	CONSTRAINT [V3_FK_StudentSchoolAssociation_ExpectedTransferResponse] FOREIGN KEY ([ExpectedTransferResponse]) REFERENCES [validate].[ExpectedTransferResponse] ([Id])
+);
+
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [V3_UX_StudentSchoolAssociation_Id]
+    ON [edfiV3].[StudentSchoolAssociation]([Id] ASC) WITH (FILLFACTOR = 75, PAD_INDEX = ON);
+

@@ -1,0 +1,2 @@
+﻿CREATE SCHEMA [edfiV3]
+    AUTHORIZATION [dbo];
