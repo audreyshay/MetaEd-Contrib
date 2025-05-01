@@ -1,0 +1,5 @@
+Association EdFi.StaffEducationOrganizationEmploymentAssociation additions
+shared string EdFi.IdentificationCode
+        documentation "A unique number or alphanumeric code assigned to a staff member by a school or school system."
+        is required
+        role name LocalPerson

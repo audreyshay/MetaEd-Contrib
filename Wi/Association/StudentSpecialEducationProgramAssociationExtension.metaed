@@ -1,5 +1,24 @@
 Association EdFi.StudentSpecialEducationProgramAssociation additions
   domain entity EdFi.School
       documentation ""
-      is optional
+      is required
       role name FapeResponsible
+  descriptor RccPlacementType
+    documentation "	Indicates the placement type for the student's RCC placement. Possible values include 'County Placed,' 'Parent Placed,' and 'IEP Team Placed'."
+    is optional
+  domain entity EdFi.CommunityProvider
+    documentation "The unique identifier assigned to the RCC facility for placements within the state."
+    is optional
+    role name Rcc
+  shared string EdFi.NameOfInstitution 
+    documentation "A name for the RCC facility for out-of-state placements."
+    is optional
+    role name Rcc
+  shared string EdFi.City
+    documentation "The city in which the out-of-state RCC is located."
+    is optional
+    role name Rcc
+  descriptor EdFi.StateAbbreviation
+    documentation "The abbreviation for the state (within the United States) or outlying area in which an RCC is located."
+    is optional
+    role name Rcc

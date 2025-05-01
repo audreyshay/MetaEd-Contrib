@@ -1,15 +1,4 @@
 Association EdFi.StudentSchoolAssociation additions
- bool CompletedSchoolTerm
-     documentation ""
-     is optional
-  domain entity EdFi.LocalEducationAgency
-    documentation ""
-    is optional
-    role name ExpectedTransfer
-  domain entity EdFi.School
-    documentation ""
-    is optional
-    role name ExpectedTransfer
   decimal ActualDaysAttendance
     documentation ""
     is optional
@@ -20,15 +9,12 @@ Association EdFi.StudentSchoolAssociation additions
     is optional
     total digits 4
     decimal places 1
-  bool PrivateSchoolChoiceProgramParticipant
-    documentation ""
-    is optional
   common ReceivingService
     documentation "The status of a student during a specific count date"
     is optional collection
-  descriptor EnrollmentType
-      documentation ""
-      is optional collection
   integer PartTimeInstructionalMinutes
-        documentation "Instructional minutes for up to two classes for part-time students"
-        is optional
+    documentation "Instructional minutes for up to two classes for part-time students"
+    is optional
+  common ResidencyPeriod
+    documentation "The Residency Status of a student for a given portion of a StudentSchoolAssociation when other than a full-time resident for the entire StudentSchoolAssociation."
+    is optional collection
