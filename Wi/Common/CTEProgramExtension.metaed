@@ -1,4 +1,0 @@
-Common EdFi.CTEProgram additions
-  descriptor CteProgramArea
-      documentation "WI Program areas of concentration."
-      is optional collection
